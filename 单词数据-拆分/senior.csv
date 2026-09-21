@@ -1,0 +1,1973 @@
+word,meaning,phonetic,example,hit
+"agent","n. 代理人，经济人","'eidʒәnt","",1
+"system","n. 体系；系统","'sistәm","",1
+"pattern","n. 式样","'pætәn","",1
+"data","n. 资料，数据","'deitә","",1
+"skill","n. 技能，技巧","'skil","",1
+"skilled","adj. 熟练的；有技能的","'skild","",1
+"file","n.公文柜；档案(计算机)文档","fail","",1
+"process","n&v. 过程,加工,处理","'prɒses","",1
+"complex","a.&n. 复杂的，建筑群","kәm'pleks","",1
+"output","n. 产量，输出量","'autput","",1
+"debt","n. 债务；欠款","det","",1
+"d","oes doesn't = does not v. 动词do的第三人称单数现在式","di:","",1
+"likely","a.很可能的","'laikli","",1
+"design","n.& vt. n. 设计，策划 图案，图样，样式","di'zain","",1
+"rag","n. 破布，抹布","ræg","",1
+"running","n. 跑步","'rʌniŋ","",1
+"context","上下文","'kɒntekst","",1
+"document","n. 文件；文献","'dɒkjumәnt","",1
+"function","n.&v. 作用,功能,运转","'fʌŋkʃәn","",1
+"specific","a.明确的,具体的,独特的","spi'sifik","",1
+"application","n. 申请",".æpli'keiʃәn","",1
+"create","vt. 创造； 造成","kri:'eit","",1
+"support","vt.& n. 支持，赞助","sә'pɒ:t","",1
+"content","a.甘愿的,满意的 n.内容","kәn'tent","",1
+"request","n. 请求，要求的事物","ri'kwest","",1
+"framework","n.（建筑物）框架，结构","'freimwә:k","",1
+"session","n.一场,一节,一段时间","'seʃәn","",1
+"basin","n. 水盆，脸盆","'beisn","",1
+"chapter","n. 章","'tʃæptә","",1
+"approach","n.&v. 靠近，接近，建议，要求","ә'prәutʃ","",1
+"format","n.安排，计划，设计","'fɒ:mæt","",1
+"service","n. 服务","'sә:vis","",1
+"chain","n. 链； 链条","tʃein","",1
+"target","n&v. 目标，把…作为攻击目标","'tɑ:git","",1
+"learned","adj. 有才华的；博学的","'lә:nid","",1
+"color","n. 颜色 vt.给…着色，涂色","'kʌlә","",1
+"within","prep. 在……里面","wi'ðin","",1
+"web","n. 网，网状物","web","",1
+"require","vt. 需求；要求","ri'kwaiә","",1
+"method","n. 方法，办法","'meθәd","",1
+"project","n. 工程","'prɒdʒekt","",1
+"goods","n. 商品，货物","guds","",1
+"reference","n.提到,涉及,谈及,查询","'refәrәns","",1
+"blanket","n. 毛毯，毯子","'blæŋkit","",1
+"summary","n. 摘要，概要","'sʌmәri","",1
+"component","n. 组成部分，部件","kәm'pәunәnt","",1
+"perform","v. 表演，履行；行动","pә'fɒ:m","",1
+"section","n. 段，部分，部门","'sekʃәn","",1
+"access","n.&v. 通道，入径，存取（计算机文件）","'ækses","",1
+"communication","n.交际,交往;通","kә.mju:ni'keiʃәn","",1
+"development","n. 发展，发达，发育，开发","di'velәpmәnt","",1
+"complete","adj. 完成vt. 完成，结束","kәm'pli:t","",1
+"available","adj. 可获得的，有空的","ә'veilәbl","",1
+"add","vt.添加，增加","æd","",1
+"version","n. 变体，变种，改写本","'vә:ʒәn","",1
+"quality","n. 质量，性质","'kwɒlәti","",1
+"autonomous","adj. 自治的，自主的","ɒ:'tɒnәmәs","",1
+"operation","n. 手术，操作",".ɒpә'reiʃәn","",1
+"lamb","n. 羔羊","læm","",1
+"dynamic","a.充满活力,精力充沛的","dai'næmik","",1
+"command","n. & v. 命令","kә'mɑ:nd","",1
+"control","vt.& n. 控制","kәn'trәul","",1
+"initial","adj. 开始的，最初的","i'niʃәl","",1
+"visual","adj. 视力的，视觉的","'viʒuәl","",1
+"analysis","n. 分析，分析结果","ә'nælәsis","",1
+"optional","adj. 可选择的，选修的","'ɒpʃәnl","",1
+"via","prep. 经过（某地），通过","vaiә","",1
+"thinking","n. 思索;见解;想法","'θiŋkiŋ","",1
+"practical","adj. 实际的，适用的","'præktikl","",1
+"software","n. 软件","'sɒftwєә","",1
+"value","n. 价值，益处","'vælju:","",1
+"style","n. 方式，作风，款式","stail","",1
+"opener","n. 开具，启子","'әupәnә","",1
+"opening","n. 开放，口子","'әupәniŋ","",1
+"handle","n. 柄，把柄 v. 处理","hændl","",1
+"primary","adj. 初等的；初级的","'praimәri","",1
+"cash","n. 现金，现钞 v. 兑现","kæʃ","",1
+"failure","n. 失败","'feiljә","",1
+"ad","(缩) =advertisement n.广告","æd","",1
+"ad.","(用于否定句或短语后)也","","",1
+"instead","adv. 代替，顶替","in'sted","",1
+"explicit","a.清楚明白,易于理解的","ik'splisit","",1
+"raw","a.生的,未煮过的,未加工的","rɒ:","",1
+"beyond","prep. (表示位置) 在…的那边","bi'jɒnd","",1
+"partly","ad.部分地,在一定程度上","'pɑ:tli","",1
+"concept","n. 概念","'kɒnsept","",1
+"graph","n. 图表，曲线图","græf","",1
+"requirement","n. 需要； 要求； 必要的条件","ri'kwaiәmәnt","",1
+"standard","n. & a. 标准（的）","'stændәd","",1
+"demonstrate","证明；演示","'demәnstreit","",1
+"react","v. 回应，过敏，起物理，化学反应","ri'ækt","",1
+"ripe","adj. 成熟的，熟的","raip","",1
+"various","adj. 各种各样的，不同的","'vєәriәs","",1
+"crucial","关键的","'kru:ʃәl","",1
+"accuracy","n. 准确，精确","'ækjurәsi","",1
+"achieve","vt. 达到，取得","ә'tʃi:v","",1
+"comprehensive","全面的",".kɒmpri'hensiv","",1
+"limit","vt. 限制；减少","'limit","",1
+"entire","adj. 整个的，全部的","in'taiә","",1
+"database","n. 资料库，数据库","'deitәbeis","",1
+"product","n. 产品，制品","'prɒdʌkt","",1
+"flow","vi. 流动","flәu","",1
+"fundamental","adj. 十分重大的，根本的",".fʌndә'mentәl","",1
+"technique","n. 技术;技巧,方法","tek'ni:k","",1
+"security","n. 安全，平安","si'kjuriti","",1
+"chat","n. & vi. 聊天，闲谈","tʃæt","",1
+"consider","vt. 考虑","kәn'sidŋ","",1
+"keeper","n. （动物园中的）饲养员，看守人","'ki:pә","",1
+"load","n. 担子，货物","lәud","",1
+"crew","n. 全体船员","kru:","",1
+"architecture","n.建筑学，建筑设计，风格","'ɑ:kitektʃә","",1
+"platform","n. 讲台,(车站的)月台","'plætfɒ:m","",1
+"custom","n. 习惯，习俗，风俗习惯","'kʌstәm","",1
+"customs","n. 海关，关税","'kʌstәm","",1
+"social","adj. 社会的；社交的","'sәuʃәl","",1
+"leading","adj. 最主要的，第一位的","'li:diŋ","",1
+"level","n. 水平线，水平","'levl","",1
+"address","n. 地址","ә'dres","",1
+"gown","n. 礼服，长外衣，睡衣","gaun","",1
+"role","n. 角色","rәul","",1
+"independent","a.独立的,有主见的",".indi'pendәnt","",1
+"local","adj. 当地的；地方的","'lәukәl","",1
+"powerful","adj. 效力大的，强有力的，强大的","'pauәful","",1
+"analyze","v. 分析","'ænәlaiz","",1
+"avoid","v. 避免，躲开，逃避","ә'vɒid","",1
+"import","v.& n. 进口，输入","im'pɒ:t","",1
+"maple","n. 枫树","'meipl","",1
+"appropriate","adj. 合适的，恰当的","ә'prәupriәt","",1
+"condition","n. 条件，状况","kәn'diʃәn","",1
+"contain","v. 包含；包括；能容纳","kәn'tein","",1
+"adapt","v. 使适应，适合，改编","ә'dæpt","",1
+"sigh","vi. 叹息；叹气","sai","",1
+"immediate","adj. 立即的，马上","i'mi:diәt","",1
+"represent","vt. 代表",".repri'zent","",1
+"technical","adj. 技术的，工艺的","'teknikl","",1
+"lid","n. 盖子","lid","",1
+"particular","adj. 特殊的，个别的","pә'tikjulә","",1
+"package","n. （尤指包装好或密封的容器）一包，一袋，一盒","'pækidʒ","",1
+"accurate","准确的","'ækjurәt","",1
+"select","vt. 选择，挑选，选拔","si'lekt","",1
+"basic","adj. 基本的","'beisik","",1
+"case","n. 情况；病例；案件；真相 n. 箱；盒；容器","keis","",1
+"conclusion","n. 结论；结束","kәn'klu:ʒәn","",1
+"principle","n. 道德原则，法则","'prinsipl","",1
+"similar","adj. 相似的，像","'similә","",1
+"link","v. 连接； 联系","liŋk","",1
+"draft","n.&v. 草稿，草案，起草，草拟","dræft. drɑ:ft","",1
+"sew","vi. 缝, 缝制；缝补；缝纫","sәu","",1
+"slide","n.幻灯片,滑道 v.滑行,滑动","slaid","",1
+"status","n. 法律地位（身份）","'steitәs","",1
+"helmet","n. 头盔","'helmit","",1
+"refer","vi. 谈到,提到,涉及,有关","ri'fә:","",1
+"referee","n. 裁判，仲裁，调解员",".refә'ri:","",1
+"stage","n. 舞台；阶段","steidʒ","",1
+"dam","n. 水坝，堰堤","dæm","",1
+"damp","adj. & n. 潮湿（的）","dæmp","",1
+"dawn","n. 黎明，拂晓","dɒ:n","",1
+"policy","n. 政策，方针，原则","'pɒlisi","",1
+"precise","adj. 准确,精确的,确切的","pri'sais","",1
+"benefit","n.&v.优势,益处,使…受益","'benifit","",1
+"shark","n. 鲨鱼","ʃɑ:k","",1
+"construct","v. 构筑；建造，建设","kәn'strʌkt","",1
+"evaluate","v.估值，评价，评估","i'væljueit","",1
+"reliable","adj. 可信赖的，可依靠的","ri'laiәbl","",1
+"writing","n. 书写，写","'raitiŋ","",1
+"separately","adv. 单独地，各自地","'sepәrәtli","",1
+"studio","n. 工作室，演播室","'stju:diәu","",1
+"actual","adj. 实际的；现实的","'æktʃuәl","",1
+"author","n. 作者，作家","'ɒ:θә","",1
+"employ","vt. 雇佣","im'plɒi","",1
+"bat","n. （棒球、板球的）球棒 n. 蝙蝠","bæt","",1
+"bay","n. 湾； 海湾","bei","",1
+"block","n. 大块；（木、石等）块；街区；路障 vt. 阻塞；阻挡","blɒk","",1
+"height","n. 高，高度","hait","",1
+"gather","v. 聚集；采集","'gæðә","",1
+"paragraph","n. （文章的）段落","'pærәgrɑ:f","",1
+"topic","n. 题目，话题","'tɒpik","",1
+"adjust","v.调整,调节,适应,习惯","ә'dʒʌst","",1
+"master","vt. 精通，掌握","'mɑ:stә. 'mæstә","",1
+"diverse","v. 不同的，多种多样，形形色色的","dai'vә:s","",1
+"stream","n. 小河；溪流","stri:m","",1
+"capable","有能力的","'keipәbl","",1
+"drive","v. 驾驶，开（车）；驱赶","draiv","",1
+"title","n. 标题，题目","'taitl","",1
+"correspond","vi. 一致；与……相当；(与人)通信，有书信往来",".kɒri'spɒnd","",1
+"modem","n. 调制解调器","'mәudem","",1
+"operator","n. 接线员","'ɒpәreitә","",1
+"outcome","n. 结果，效果","'autkʌm","",1
+"power","n. 力，动力，电力","'pauә","",1
+"publicly","adv. 当众；公开地","'pʌblikli","",1
+"smart","adj. 灵巧的，伶俐的；（人、服装等）时髦的，帅的","smɑ:t","",1
+"spear","n. 矛，枪，梭镖","spiә","",1
+"t","he butterfly 蝶泳","ti:","",1
+"convey","v. 表达，传递（思想，感情等）","kәn'vei","",1
+"coordinate","协调","kәu'ɒ:dineit","",1
+"transform","v.使改变形态,使改观","træns'fɒ:m","",1
+"connection","n.连接物;接触,联系","kә'nekʃәn","",1
+"determine","vt. 决定；决心","di'tә:min","",1
+"purpose","n. 目的，意图","'pә:pәs","",1
+"consistent","adj. 一致的，始终如一的，连续的","kәn'sistәnt","",1
+"inform","vt. 告诉； 通知","in'fɒ:m","",1
+"theme","n. 主题","θi:m","",1
+"unique","adj. 惟一的,独一无二的","ju:'ni:k","",1
+"wing","n. 机翼，翅膀","wiŋ","",1
+"expression","n. 表达；词句；表示，说法；表情","ik'spreʃәn","",1
+"range","n&v. 变化，变动，排序","'reindʒ","",1
+"stable","adj. 稳固的，牢固的","'steibl","",1
+"surface","n. 表面","'sә:fis","",1
+"trust","vt. 相信，信任，信赖","trʌst","",1
+"reduce","vt. 减少，缩减","ri'dju:s","",1
+"f","n. 女(的)；雌(的)； 英尺","ef","",1
+"properly","adv. 适当地","'prɒpәli","",1
+"relationship","n. 关系","ri'leiʃәnʃip","",1
+"flash","n. 闪；闪光； 转瞬间","flæʃ","",1
+"vase","n. （花）瓶；瓶饰","veis","",1
+"classify","v. 分类，归类","'klæsifai","",1
+"contribution","n. 贡献",".kɒntri'bju:ʃәn","",1
+"enterprise","n.公司，企，事业单位","'entәpraiz","",1
+"medium","n.媒体,中间的,中等的","'mi:diәm","",1
+"maid","n. 女仆；侍女","meid","",1
+"storage","n. 贮藏； 储存","'stɒ:ridʒ","",1
+"ground","n. 地面","graund","",1
+"hook","n.& v. 钩子；衔接，连接","huk","",1
+"recorder","n. 录音机","ri'kɒ:dә","",1
+"remote","adj. 偏远的，偏僻的","ri'mәut","",1
+"risk","n&v. 危险，风险，冒险","risk","",1
+"budget","n. 预算","'bʌdʒit","",1
+"commit","v.犯（罪，错），自杀","kә'mit","",1
+"explore","v. 探险","ik'splɒ:","",1
+"explorer","n. 探险者","ik'splɒ:rә","",1
+"glance","vi. 匆匆一看；一瞥","'glɑ:ns","",1
+"legal","a.与法律有关的，法律的","'li:gәl","",1
+"permission","n. 允许,许可,同意","pә'miʃәn","",1
+"shortly","adv. 不久","'ʃɒ:tli","",1
+"shorts","n. 短裤；运动短裤","ʃɔ:ts","",1
+"aim","n.目的；目标v. 计划，打算；瞄准；针对","eim","",1
+"comment","n. 评论","'kɒment","",1
+"printer","n. 打印机","'printә","",1
+"printing","n. 印刷，印刷术","'printiŋ","",1
+"simply","ad.简单地,(加强语气)的确","'simpli","",1
+"submit","v. 提交，呈递（文件，建议等","sәb'mit","",1
+"aspect","n. 方面，外观，外表","'æspekt","",1
+"boxing","n. 拳击（运动）","'bɒksiŋ","",1
+"choice","n. 选择；抉择","tʃɒis","",1
+"greeting","n. 祝贺","'gri:tiŋ","",1
+"receiver","n. 电话听筒","ri'si:vә","",1
+"terminal","a.(火车汽车飞机)终点站","'tә:minәl","",1
+"argument","n. 争论，辩论","'ɑ:gjumәnt","",1
+"attempt","vt. 试图，尝试","ә'tempt","",1
+"engine","n. 发动机，引擎","'endʒin","",1
+"explanation","n. 解释，说明",".eksplә'neiʃәn","",1
+"extension","n.扩大，延伸","ik'stenʃәn","",1
+"frog","n. 青蛙","frɒg","",1
+"intelligence","n.智力,才智,智慧","in'telidʒәns","",1
+"ray","n. 光辉，光线","rei","",1
+"temporary","adj. 短暂的，暂时的","'tempәrәri","",1
+"category","n. 类别，种类","'kætigәri","",1
+"dine","v. 吃饭；（指正式）进餐","dain","",1
+"loaf","n. 一个面包","lәuf","",1
+"thread","n. 线","θred","",1
+"capacity","容量；能力","kә'pæsiti","",1
+"boundary","n. 边界，界限","'baundri","",1
+"combine","vt. 使联合；使结合","kәm'bain","",1
+"false","adj. 不正确的；假的","fɒ:ls","",1
+"background","n. 背景","'bækgraund","",1
+"comedy","n. 喜剧","'kɒmidi","",1
+"conduct","vt. 引导，带领","\"'kɔndʌkt","",1
+"host","n. 主人；节目主持人 v. 做主人招待","hәust","",1
+"recommend","v. 推荐",".rekә'mend","",1
+"replace","vt. 取代","ri'pleis","",1
+"respond","v.回答,回应,作出反应","ri'spɒnd","",1
+"debate","n. & v.讨论，辩论","di'beit","",1
+"reviewer","n. 评论者；书评家","ri'vju:ә(r)","",1
+"trend","n. 趋势，倾向，动态","trend","",1
+"cycle","vi. 骑自行车","'saikl","",1
+"ending","n. 结局；结尾，最后","'endiŋ","",1
+"media","n. 大众传播媒介","'mi:diә","",1
+"cell","n.（监狱的）单人牢房；（修道院等的）单人小室；（蜂巢的）小蜂窝，蜂房；［生物］ 细胞","sel","",1
+"cellar","n. 地窖；地下储藏室","'selә","",1
+"constant","adj. 经常的，不断的","'kɒnstәnt","",1
+"due","adj. 预期的；约定的","dju:","",1
+"mass","n. 众多;大量;（复）群众","mæs","",1
+"production","n. 生产；制造","prә'dʌkʃәn","",1
+"switch","v&n. 开关,转换,改变","switʃ","",1
+"brand","n. 品牌","brænd","",1
+"evolution","n. 进化，演变",".i:vә'lu:ʃәn","",1
+"guidance","n. 引导，指导","'gaidns","",1
+"indicate","v.表明，象征，暗示","'indikeit","",1
+"material","n. 材料，原料","mә'tiәriәl","",1
+"outline","n. 概述，略述","'autlain","",1
+"preview","vt. 预习;试演;预展","'pri:vju:","",1
+"translation","n. 翻译；译文","træns'leiʃәn","",1
+"unite","v. 联合，团结","ju:'nait","",1
+"view","n. 看法,见解;风景,景色","vju:","",1
+"claw","n. 爪","klɒ:","",1
+"container","n. 容器","kәn'teinә","",1
+"otherwise","ad.要不然,否则,另样","'ʌðәwaiz","",1
+"patent","n.专利权，专利证书","'pætnt. 'peitnt","",1
+"weekly","adj. 每周的","'wi:kli","",1
+"account","n. 账目;描述","ә'kaunt","",1
+"alternative","a.可供替代,非传统的","ɒ:l'tә:nәtiv","",1
+"branch","n. 树枝；分枝；分公司，分店；支部","bræntʃ","",1
+"latest","a.最近，最新的；最晚的","'leitist","",1
+"organization","n. 组织，机构",".ɒ:gәnai'zeiʃәn","",1
+"register","n. 登记簿，花名册，注册员 v. 登记，注册","'redʒistә","",1
+"simplify","v. 使简化，使简易","'simplifai","",1
+"transport","n.& vt.运输","træns'pɒ:t","",1
+"importance","n. 重要性","im'pɒ:tәns","",1
+"suitable","adj. 合适的，适宜的","'sju:tәbl","",1
+"temple","n. 庙宇，寺院","templ","",1
+"totally","adv. 总合地，完全地","'tәutli","",1
+"truly","adv. 真正地，真实地","'tru:li","",1
+"trunk","n. 树干；大箱子","trʌŋk","",1
+"vital","adj. 必不可少的，对…极重要的","'vaitl","",1
+"bound","adj. 被束缚的；被绑的；有义务的 v.& n. 跳跃","baund","",1
+"contribute","v. 贡献","kәn'tribju:t","",1
+"lack","n.& vt. 缺乏，缺少","læk","",1
+"merely","adv. 仅仅，只不过","'miәli","",1
+"perfect","adj. 完美的，极好的","'pә:fikt","",1
+"routine","n. 常规,正常顺序,无聊","ru:'ti:n","",1
+"tip","n.& v.顶端，尖端；告诫； 提示 (给)小费","tip","",1
+"ambiguous","adj. 模棱两可的","æm'bigjuәs","",1
+"arch","n. 拱，拱门","ɑ:tʃ","",1
+"are","v.(be) 是","ɑ:","",1
+"communicate","v. 交际；传达（感情，信息等）","kә'mju:nikeit","",1
+"deliver","vt. 投递（信件，邮包等）","di'livә","",1
+"dull","adj. 阴暗的；单调无味","dʌl","",1
+"native","adj. 本土的，本国的","'neitiv","",1
+"ouch","int（突然受痛时叫声）哎哟","autʃ","",1
+"p","arallel n. 极其相似的人,纬线","pi:","",1
+"per","prep. 每，每一","pә:","",1
+"pest","n. 害虫","pest","",1
+"private","adj. 私人的","'praivit","",1
+"remove","vt. 移动，拿走，脱掉（衣服等）","ri'mu:v","",1
+"saying","n. 说，俗话，谚语","'seiiŋ","",1
+"skip","v. 蹦蹦跳跳；跳绳","skip","",1
+"skipping","rope （跳绳用）绳","'skipiŋ","",1
+"therefore","adv. 因此，所以","'ðєәfɒ:","",1
+"assess","v.评价,评定（性质,质量）","ә'ses","",1
+"assessment","n. 看法，评价","ә'sesmәnt","",1
+"c","enter n. 中心，中央","si:","",1
+"conflict","n. 冲突，争执，争论","'kɒnflikt","",1
+"effect","n. 效果；作用","i'fekt","",1
+"expand","v.扩大，增加，扩展","ik'spænd","",1
+"flexible","a.灵活的，可变动的","'fleksәbl","",1
+"mud","n. 泥, 泥浆","mʌd","",1
+"partner","n. 搭档，合作者","'pɑ:tnә","",1
+"personally","adv. 就自己而言","'pә:sәnli","",1
+"physical","adj. 身体的；物理的","'fizikl","",1
+"preference","n. 选择，趋向","'prefәrәns","",1
+"scores","n. 许多，很多","skɔ:z","",1
+"signal","n. 信号，暗号","'signl","",1
+"skin","n. 皮，皮肤；兽皮","skin","",1
+"tube","n. 管，管状物","tju:b","",1
+"waiter","n. （餐厅）男服务员","'weitә","",1
+"afte","r ad. 在后；后来prep. 在…之后；在后面conj. 在…以后","","",1
+"distance","n. 距离","'distәns","",1
+"effort","n. 努力，艰难的尝试","'efәt","",1
+"handy","adj. 便利的，顺手的","'hændi","",1
+"major","adj. 较大的；主要的","'meidʒә","",1
+"measure","v. 量","'meʒә","",1
+"official","n.（公司、团体或政府）官员 ,高级职员 a.官方,政府的","ә'fiʃәl","",1
+"position","n. 位置","pә'ziʃәn","",1
+"strength","n. 力量，力气","streŋθ","",1
+"trick","n. 诡计，把戏","trik","",1
+"accomplish","v. 完成","ә'kʌmpliʃ","",1
+"appendix","n. 附录，阑尾","ә'pendiks","",1
+"character","n.（汉）字.字体；品格","'kærәktә","",1
+"choir","n. 合唱团，教堂的唱诗班","'kwaiә","",1
+"concern","v.&n. 涉及，关心","kәn'sә:n","",1
+"fall","n. （美）秋季","fɒ:l","",1
+"hive","n. 蜂房；蜂箱","haiv","",1
+"identity","n. 身份，特征","ai'dentiti","",1
+"occur","vi. 发生","ә'kә:","",1
+"recognize","vt.认出","'rekәgnaiz","",1
+"reflect","v. 反映，反射","ri'flekt","",1
+"regardless","adj. 不顾，不加理会","ri'gɑ:dlis","",1
+"signature","n. 签名","'signәtʃә","",1
+"variety","n. 种种，种类","vә'raiәti","",1
+"contact","联系","'kɒntækt","",1
+"contrast","对比","kәn'træst","",1
+"academic","a.&n. 学术的，教学的",".ækә'demik","",1
+"automatic","adj. 自动的，机械的",".ɒ:tә'mætik","",1
+"brief","adj. 简洁的","bri:f","",1
+"challenging","a.具有挑战性的","'tʃælindʒiŋ","",1
+"exchange","n. 交换，掉换；交流","iks'tʃeindʒ","",1
+"frequent","adj. 经常的；频繁的","'fri:kwәnt","",1
+"lung","n. 肺；肺脏","lʌŋ","",1
+"obtain","vt. 获得；得到","әb'tein","",1
+"polish","v.擦亮 n.擦光剂,亮光剂","'pɒliʃ","",1
+"procedure","n. 程序,手续,待遇","prә'si:dʒә","",1
+"publish","t. 出版，发行","'pʌbliʃ","",1
+"systematic","a.系统的,有条理的",".sisti'mætik","",1
+"appear","vi. 出现","ә'piә","",1
+"collection","n. 收藏品，收集物","kә'lekʃәn","",1
+"confirm","v. 证实，证明，确认","kәn'fә:m","",1
+"hong","* n. 香港","hɔŋ","",1
+"howl","vi. 嚎叫，嚎哭 hug /hʌɡ/ v. 拥抱","haul","",1
+"jar","n. 罐子；坛子","dʒɑ:","",1
+"jaw","n. 下巴","dʒɒ:","",1
+"rank","n. 职衔，军衔","ræŋk","",1
+"rate","n&v. 率，评估，评价","reit","",1
+"secure","a.安心的,有把握的,牢靠的","si'kjuә","",1
+"straightforward","a&ad. 简单的，坦率的","streit'fɒ:wәd","",1
+"cave","n. 洞，穴；地窖","keiv","",1
+"credit","n. 信用；信赖；信誉","'kredit","",1
+"freedom","n. 自由","'fri:dәm","",1
+"incorrect","adj. 不正确的，错误的",".inkә'rekt","",1
+"introduction","n. 引进，介绍",".intrә'dʌkʃәn","",1
+"mop","n.&v. 拖把 拖地","mɒp","",1
+"ruin","vt. （使）毁坏；（使） 毁灭 n. (复) 废墟；遗迹","ruin","",1
+"universal","adj. 普遍的，全体的",".ju:ni'vә:sl","",1
+"valid","a.有效的,合理的,有根据的","'vælid","",1
+"vast","adj. 巨大的，广阔的","vɑ:st","",1
+"behalf","n. 代表某人，为了某人","bi'hɑ:f","",1
+"concrete","adj. 混凝土制的","'kɒnkri:t","",1
+"deliberately","ad.故意,蓄意,存心","di'libәrәtli","",1
+"figure","n.数字；数目；图；图形；（人的）身型；人物；（绘画、雕刻）人物像 vt.（美口语）认为，判断.（在心里）想像，描绘","'figә","",1
+"predict","v. 预言，预告，预报","pri'dikt","",1
+"random","a.随意,未经事先考虑的","'rændәm","",1
+"rewrite","vt. 重写","ri:'rait","",1
+"deliberate","故意的；深思的","di'libәrәt","",1
+"accent","n. 口音，音调","'æksәnt","",1
+"calculate","v. 计算，核算，推测","'kælkjuleit","",1
+"compare","vt. 比较，对照","kәm'pєә","",1
+"depth","n. 深，深度","depθ","",1
+"interpreter","n.翻译","in'tә:pritә","",1
+"mistaken","adj. 错误的","mis'teikәn","",1
+"pure","adj. 纯的, 不掺杂的","pjuә","",1
+"rapid","adj. 快的，迅速的","'ræpid","",1
+"sense","n. 感觉，意识","sens","",1
+"zip","v.& n.拉开(或扣上)……的拉链；拉链","zip","",1
+"claim","声称；主张","kleim","",1
+"assume","v. 假定，假设","ә'sju:m","",1
+"bun","n. 馒头；小甜面包","bʌn","",1
+"catalogue","n. 目录","'kætәlɒg","",1
+"clarify","v. 澄清，阐明","'klærifai","",1
+"consideration","n. 考虑；关心","kәn.sidә'reiʃәn","",1
+"edition","n.（发行物的）版，版（本）","i'diʃәn","",1
+"expose","vt. 揭露","ik'spәuz","",1
+"favor","n. 恩惠；好意；帮助","'feivә","",1
+"fist","n. 拳(头)","fist","",1
+"guard","n. 防护装置，警戒","gɑ:d","",1
+"poet","n. 诗人","'pәuit","",1
+"pot","n. 锅，壶，瓶，罐","pɒt","",1
+"preserve","v.保护，保留，保存","pri'zә:v","",1
+"root","n. 根，根源，起源","ru:t","",1
+"scratch","v&n. 划破，划痕，划伤","skrætʃ","",1
+"sensitive","a.体贴的,善解人意的","'sensitiv","",1
+"specialist","n. （医学）专家，专科医生；专家；专业人员","'speiʃәlist","",1
+"acknowledge","v. 承认","әk'nɒlidʒ","",1
+"amount","n.&v. 金额，数量，总计","ә'maunt","",1
+"artificial","adj. 人工的，人造的",".ɑ:ti'fiʃәl","",1
+"delete","v. 删去","di'li:t","",1
+"evidence","n. 证据，证明","'evidәns","",1
+"flee","(fled, fled) v. 逃走；逃跑","fli:","",1
+"literature","n. 文学","'litәrәtʃә","",1
+"pin","n. 别针 v. 别住, 钉住","pin","",1
+"pine","n. 松树","pain","",1
+"pint","n.（液量单位）品脱","paint","",1
+"rebuild","vt. 重建","ri'bild","",1
+"responsibility","n. 责任，负责","ri.spɒnsә'biliti","",1
+"throughout","prep. 遍及，贯穿","θru:'aut","",1
+"urgent","adj. 紧急的，紧迫的","'ә:dʒәnt","",1
+"whisper","v. 低语，私下说","'hwispә","",1
+"despite","尽管","di'spait","",1
+"alongside","ad.在…旁边,与…同时","ә'lɒŋ'said","",1
+"apply","v. 申请","ә'plai","",1
+"aware","adj. 知道，意识到，发觉","ә'wєә","",1
+"bar","n. 条（长方）块，棒，横木 n.（酒店的）买酒柜台；酒吧；（卖东西的）柜台","bɑ:","",1
+"bark","v. 狗叫 n. 狗叫声","bɑ:k","",1
+"differ","v. 相异，有区别","'difә","",1
+"float","vi. 漂浮，浮动","flәut","",1
+"pray","v. 祈祷；祈求","prei","",1
+"rely","v. 依赖，依靠","ri'lai","",1
+"restrict","v. 限制","ri'strikt","",1
+"scan","v. 略读，浏览，扫描","skæn","",1
+"split","v. 撕开;切开","split","",1
+"steak","n. 牛排，肉排，鱼排","steik","",1
+"steel","n. 钢，钢铁","sti:l","",1
+"thorough","adj. 彻底的","'θʌrә","",1
+"valuable","adj. 值钱的，贵重的","'væljuәbl","",1
+"abstract","a.&n. 抽象的（作品）","'æbstrækt","",1
+"affect","vt. 影响","ә'fekt","",1
+"agreement","n. 同意，一致；协定，协议","ә'gri:mәnt","",1
+"charge","v. 要求收费；索价；将(电池)充电 n. 费用；价钱","tʃɑ:dʒ","",1
+"click","v. 点击（计算机用语）","klik","",1
+"consist","v. 包含，组成，构成","kәn'sist","",1
+"damage","n.& vt. 毁坏，损害","'dæmidʒ","",1
+"drug","n. 药，药物；毒品","drʌg","",1
+"export","n.&v.出口，输出","ik'spɒ:t","",1
+"holy","adj. 神圣的","'hәuli","",1
+"intend","vt. 想要，打算","in'tend","",1
+"possess","vt. 占有；拥有","pә'zes","",1
+"restriction","n. 限制，约束","ri'strikʃәn","",1
+"arise","vi. 起来，升起；出现","ә'raiz","",1
+"audience","n. 观众，听众","'ɒ:diәns","",1
+"carve","vt.刻；雕刻","kɑ:v","",1
+"central","adj. 中心，中央；主要的","'sentrәl","",1
+"companion","n. 同伴；同事","kәm'pænjәn","",1
+"conclude","v. 完成，结束","kәn'klu:d","",1
+"france*","n. 法国","","",1
+"loss","n. 丧失；损耗","lɒs","",1
+"manner","n. 方式，态度，举止","'mænә","",1
+"maximum","a.& n. 最大量(的)； 最大限度(的)","'mæksimәn","",1
+"presentation","n. 演示，演出",".prezәn'teiʃәn","",1
+"primitive","adj. 原始的，远古的","'primitiv","",1
+"reject","v. 拒绝","ri'dʒekt","",1
+"sleepy","adj. 想睡的,困倦的,瞌睡的","'sli:pi","",1
+"statement","n.声明，陈诉，说法","'steitmәnt","",1
+"transparent","a.透明的，清澈的","træns'pærәnt","",1
+"boost","提升","bu:st","",1
+"adaptation","n. 适应，改编本",".ædæp'teiʃәn","",1
+"addition","n.增加;（算数用语）加","ә'diʃәn","",1
+"border","n. 边缘；边境，国界","'bɒ:dә","",1
+"clone","n.克隆（无性繁殖出来的有机体群）","klәun","",1
+"corrupt","a.&v. 贪污的，腐败的，使腐化，堕落","kә'rʌpt","",1
+"gram","n. 克(重量单位)","græm","",1
+"ha","int. 哈(笑声)","hɑ:","",1
+"hawk","n. 鹰","hɒ:k","",1
+"industry","n. 工业，产业","'indәstri","",1
+"period","n. 时期，时代","'piәriәd","",1
+"possibility","vn. 可能，可能性",".pɒsә'biliti","",1
+"promote","v.促进,推动,促销,晋升","prәu'mәut","",1
+"recover","vi. 痊愈；恢复","ri'kʌvә","",1
+"regular","adj. 规则的，经常","'regjulә","",1
+"rigid","adj. 死板的,僵硬的,固执的","'ridʒid","",1
+"struggle","vi. 斗争","'strʌgl","",1
+"yell","v. 叫喊，吼叫","jel","",1
+"announce","vt. 宣布，宣告","ә'nauns","",1
+"assist","v. 帮助，协助","ә'sist","",1
+"assumption","n. 假定，假设","ә'sʌmpʃәn","",1
+"bitter","adj. 有苦味的；痛苦的，难过的；严酷的","'bitә","",1
+"characteristic","adj. 典型的，独特的",".kærәktә'ristik","",1
+"consequence","n. 结果，后果","'kɒnsikwәns","",1
+"declare","vt. 声明；断言","di'klєә","",1
+"distribute","v. 分发，分配","di'stribju:t","",1
+"editor","n. 编辑","'editә","",1
+"fare","n.（车或船的）费用，票（价）","fєә","",1
+"force","vt. 强迫，迫使","fɒ:s","",1
+"gain","vt. 赢得；挣得","gein","",1
+"identification","n. 鉴定，辨别","ai.dentifi'keiʃәn","",1
+"spade","n. 铲子;纸牌中的黑桃","speid","",1
+"swap","v. 交换（东西）","swɒp","",1
+"zone","n. 区域；范围","zәun","",1
+"attribute","归因于","ә'tribju:t","",1
+"absolute","adj. 完全，全部，绝对的","'æbsәlu:t","",1
+"according","adv. 按照，根据","ә'kɒ:diŋ","",1
+"allocate","v. 拨给,划归,分配…给","'ælәukeit","",1
+"campaign","n. 运动，战役","kæm'pein","",1
+"candidate","n. 候选人，申请人","'kændideit","",1
+"certificate","n. 证明，证明书","sә'tifikeit","",1
+"construction","n.建造,建设,建筑物","kәn'strʌkʃәn","",1
+"dimension","n.量度，尺寸，面积，程度，范围","dai'menʃәn","",1
+"distinguish","v. 区分，辨别，分清","dis'tiŋgwiʃ","",1
+"easily","adv. 容易地","'i:zili","",1
+"familiar","adj. 熟悉的","fә'miljә","",1
+"forward","ad.将来.今后.向前，前进","'fɒ:wәd","",1
+"minimum","a.最小的","'minimәm","",1
+"passive","adj. 被动的","'pæsiv","",1
+"porter","n. （火车站或旅馆处的）搬运工","'pɒ:tә","",1
+"protection","n. 保护","prә'tekʃәn","",1
+"relative","n. 亲属，亲戚","'relәtiv","",1
+"roll","v. 滚动, 打滚 n. 面包圈，小圆面包；卷状物","rәul","",1
+"roller","n. 滚筒； 辊","'rәulә","",1
+"shame","n. 遗憾的事；羞愧","ʃeim","",1
+"shave","v. 刮（脸，胡子）","ʃeiv","",1
+"superior","adj. 更胜一筹的 n. 上级，上司","sju:'piәriә","",1
+"tend","v. 往往会，常常就，倾向，趋于","tend","",1
+"website","n. 网络","","",1
+"weakness","n. 软弱","'wi:knis","",1
+"acid","adj. 酸的","'æsid","",1
+"acre","n. 英亩","'eikә","",1
+"advance","v. 推进，促进；前进","әd'vɑ:ns","",1
+"ant","n. 蚂蚁","ænt","",1
+"atom","n. 原子，微粒","'ætәm","",1
+"balance","n. 平衡","'bælәns","",1
+"bc","n. 公元前","","",1
+"competitor","n. 竞赛者，比赛者","kәm'petitә","",1
+"degree","n. 程度；度数；学位","di'gri:","",1
+"division","n. （算术用语）除","di'viʒәn","",1
+"earn","vt. 挣得，赚得","ә:n","",1
+"fitting","试衣间","'fitiŋ","",1
+"fragile","a.易碎的，易损的","'frædʒail","",1
+"instrument","n. 乐器;工具,器械","'instrumәnt","",1
+"overhead","a.在头顶上;架空的","'әuvәhed","",1
+"profit","n. 利润，收益","'prɒfit","",1
+"reality","n. 现实","ri'æliti","",1
+"reasonable","adj. 合乎情理的","'ri:znәbl","",1
+"regards","n. 问候，致意","ri'gɑ:d","",1
+"scene","n. （戏剧、电影等的）一场，场景，布景","si:n","",1
+"schedule","n. 工作计划，日程安排v. 安排时间，预定","'skedʒuәl","",1
+"slight","adj. 轻微的，细小的","slait","",1
+"suite","n. 套间；组曲","swi:t","",1
+"warmth","n. 暖和，温暖","wɒ:mθ","",1
+"accelerate","v.（使）加速，加快","әk'selәreit","",1
+"appreciate","v. 欣赏； 感激","ә'pri:ʃieit","",1
+"basis","n. 原因，缘由，要素","'beisis","",1
+"beauty","n. 美丽，美人","'bju:ti","",1
+"belong","vi. 属，附属","bi'lɒŋ","",1
+"boil","v. 沸腾；烧开；煮……","bɒil","",1
+"bone","n. 骨头，骨质（复数bones骨骼；骨骸）","bәun","",1
+"bow","v.& n. 鞠躬，弯腰行礼","bәu.bau","",1
+"broad","adj. 宽的，宽大的","brɒ:d","",1
+"circumstance","n.条件,环境,状况","'sә:kәmstәns","",1
+"delay","v.& n. 拖延，延误，延迟，延期；耽搁","di'lei","",1
+"destination","n.目的地，终点",".desti'neiʃәn","",1
+"dvd","数码影碟(digital versatile disk)","","",1
+"electronic","adj. 电子的",".ilek'trɒnik","",1
+"extra","adj. 额外的，外加的","'ekstrә","",1
+"flat","adj. 平的 n. 楼中一套房间； 公寓(常用复数)","flæt","",1
+"forecast","n. & vt. 预告","'fɒ:kɑ:st","",1
+"govern","v. 统治；管理","'gʌvәn","",1
+"influence","n.& v. 影响","'influәns","",1
+"insert","vt. 插入","in'sә:t","",1
+"instant","adj. 瞬间；刹那","'instәnt","",1
+"intention","n. 打算,计划,意图","in'tenʃәn","",1
+"mix","v. 混合，搅拌","miks","",1
+"overcome","v. 克服，解决",".әuvә'kʌm","",1
+"prohibit","v. 禁止","prә'hibit","",1
+"prove","vt. 证明","pru:v","",1
+"senior","adj. 年长的,资深的,高年级的 n. 上级，长辈，高年级生","'si:njә","",1
+"solid","adj. 结实的,固体的 n.固体","'sɒlid","",1
+"string","n. 细绳，线，带","striŋ","",1
+"subjective","adj. 主观的","sәb'dʒektiv","",1
+"wash","n.洗(涤)冲洗,洗剂,泼溅,洗的衣服 v.洗(涤),冲洗,流过,弄湿","wɒʃ","",1
+"wax","n. 蜡","wæks","",1
+"zoom","v. 快速移动，迅速前往，猛涨","zu:m","",1
+"anticipate","预期","æn'tisipeit","",1
+"accessible","adj. 可到达的，可接受的，易相处的）","әk'sesәbl","",1
+"adjustment","n. 调整，适应","ә'dʒʌstmәnt","",1
+"adopt","v. 收养，领养","ә'dɒpt","",1
+"aid","n. 援助；救护；辅助器具","eid","",1
+"aids","n. 艾滋病","eidz","",1
+"announcement","n. 通告，通知","ә'naunsmәnt","",1
+"arithmetic","n. 算术","ә'riθmәtik","",1
+"being","n. 物；生物；人","'bi:iŋ","",1
+"clap","vi. 拍手；鼓掌","klæp","",1
+"clay","n. 黏土，陶土","klei","",1
+"correction","n. 改正","kә'rekʃәn","",1
+"deadline","n.最后期限，截止日期","'dedlain","",1
+"exit","n. 出口，太平门","'eksit","",1
+"fault","n. 缺点，毛病","fɒ:lt","",1
+"finance","n.资金，财政，财务","fai'næns","",1
+"frontier","n. 前沿 ，边界；前线","'frʌntjә","",1
+"grasp","v. 抓住；紧握","græsp","",1
+"guarantee","v. 保证，担保",".gærәn'ti:","",1
+"length","n. 长，长度，段，节","leŋθ","",1
+"mental","adj. 精神的；脑力的","'mentl","",1
+"mentally","adv. 精神上；智力上","'mentli","",1
+"messy","adj. 乱七八糟的","'mesi","",1
+"observe","v. 观察，监视，观测","әb'zә:v","",1
+"personnel","n. 全体人员，职员",".pә:sә'nel","",1
+"pole","n. 杆，电线杆；","pәul","",1
+"respect","vt.& n. 尊敬，尊重","ri'spekt","",1
+"reward","n. 奖赏","ri'wɒ:d","",1
+"seek","vt.试图;探寻","si:k","",1
+"separation","n. 分离，隔离",".sepә'reiʃәn","",1
+"shadow","n. 影子, 阴影","'ʃædәu","",1
+"smog","n. 烟雾(= smoke + fog)","smәug","",1
+"smooth","adj. 光滑的;平坦的","smu:ð","",1
+"tap","n. (自来水煤气等的)龙头","'tæp","",1
+"ugly","adj. 丑陋的；难看的","'ʌgli","",1
+"wire","n. 电线","'waiә","",1
+"accumulate","v. 积累，积聚","ә'kju:mjuleit","",1
+"actor","n. 男演员","'æktә","",1
+"approximately","ad.近似，大约","ә'prɒksimәtli","",1
+"assistance","n. 帮助，援助，支持","ә'sistәns","",1
+"average","a.平均；普通的 n.平均数","'ævәridʒ","",1
+"classic","adj. 一流的，典型的，有代表性的","'klæsik","",1
+"classical","adj. 传统的；古典的","'klæsikl","",1
+"consensus","n. 一致的意见，共识","kәn'sensәs","",1
+"cube","n. 立方体","kju:b","",1
+"drawback","n.缺点，不利条件","'drɒ:bæk","",1
+"expectation","n. 预料；期望",".ekspek'teiʃәn","",1
+"extreme","adj. 极其的，非常的","ik'stri:m","",1
+"extremely","adv. 极其，非常","ik'stri:mli","",1
+"fluency","n.（外语）流利，流畅","'flu:әnsi","",1
+"glue","n. 胶水","glu:","",1
+"mm","n. 毫米","","",1
+"negotiate","v.谈判，协商","ni'gәuʃieit","",1
+"origin","n. 起源，由来","'ɒridʒin","",1
+"overlook","v. 忽略,不予理会",".әuvә'luk","",1
+"pace","n. 步子；节奏","peis","",1
+"permanent","adj. 永久的，永恒的","'pә:mәnәnt","",1
+"plain","adj. 家常的； 普通的","plein","",1
+"preparation","n. 准备",".prepә'reiʃәn","",1
+"rare","adj. 罕见的，稀有的","rєә","",1
+"refresh","v. 使恢复精力，提醒","ri'freʃ","",1
+"reuse","vt. 重新使用；循环使用","ri:'ju:z","",1
+"revision","n. 复习，温习","ri'viʒәn","",1
+"slim","adj. 苗条的，纤细的","slim","",1
+"slip","n. 片，条，纸片，纸条","slip","",1
+"sort","v&t. 把…分类，拣选 n. 种类，类别","sɒ:t","",1
+"surround","vt. 围绕；包围","sә'raund","",1
+"surrounding","adj. 周围的","sә'raundiŋ","",1
+"theory","n. 理论","'θiәri","",1
+"absence","n. 不在，缺席","'æbsәns","",1
+"ambition","n.目标,野心,雄心,抱负","æm'biʃәn","",1
+"appreciation","n. 欣赏,鉴定,评估","ә.pri:ʃi'eiʃәn","",1
+"attach","v. 把…固定，重视","ә'tætʃ","",1
+"authority","n.权力,权威,威信,官方","ɒ:'θɒriti","",1
+"bride","n. 新娘","braid","",1
+"colleague","n. 同事","'kɒli:g","",1
+"commitment","n. 承诺,允诺,承担","kә'mitmәnt","",1
+"consult","v. 咨询，商量","kәn'sʌlt","",1
+"consultant","n. 顾问","kәn'sʌltәnt","",1
+"consume","v. 消耗，耗费（燃料，能量，时间等）","kәn'sju:m","",1
+"conventional","adj. 依照惯例的，习惯的","kәn'venʃәnl","",1
+"corporation","n. （大）公司",".kɒ:pә'reiʃәn","",1
+"criterion","n. 标准，准则，原则","krai'tiәriәn","",1
+"determination","n. 决心","di.tә:mi'neiʃәn","",1
+"dilemma","n. （进退两难的）窘境，困境","di'lemә","",1
+"fade","vi. 褪色，（颜色）消退","feid","",1
+"fuel","n. 燃料","'fjuәl","",1
+"god","n. 神，（大写）上帝","^ɔd","",1
+"incident","n. 事件","'insidәnt","",1
+"invitation","n. 邀请，请帖",".invi'teiʃәn","",1
+"medical","adj. 医学的，医疗的","'medikl","",1
+"obvious","adj. 显然","'ɒbviәs","",1
+"sauce","n. 酱汁； 调味汁","sɒ:s","",1
+"self","n. 自己，自我，自身","self","",1
+"silent","adj. 无声的，无对话的","'sailәnt","",1
+"sincerely","adv. 真诚地","sin'siәli","",1
+"strait","n. 海峡","streit","",1
+"stress","n. 精神压力，心理负担 v. 强调，重读","stres","",1
+"symptom","n. 症状","'simptәm","",1
+"unable","a.不能的，不能胜任的","ʌn'eibl","",1
+"uniform","n. 制服","'ju:nifɒ:m","",1
+"vehicle","n. 交通工具，车辆","'vi:ikl","",1
+"vocabulary","n. 词汇, 词汇表","vә'kæbjulәri","",1
+"wild","adj. 未开发的，荒凉的；野生的，野的 wildlife /ˈwaɪldlaɪf/ n. 野生动物","waild","",1
+"wise","adj. 聪明,英明的,有见识的","waiz","",1
+"ahead","adv. 在前，向前","ә'hed","",1
+"alley","n. 小巷，胡同","'æli","",1
+"angle","n. 角度","'æŋgl","",1
+"apart","ad,&a. 相隔，相距，除外","ә'pɑ:t","",1
+"approve","v.赞成,同意,批准,通过","ә'pru:v","",1
+"argue","vi. 争辩， 争论","'ɑ:gju","",1
+"attitude","n. 态度，看法","'ætitju:d","",1
+"backward","adv. 向后","'bækwәd","",1
+"bench","n. 长凳；工作台","bentʃ","",1
+"bend","vt. 使弯曲","bend","",1
+"bent","adj. 弯的","bent","",1
+"bomb","n. 炸弹 v. 轰炸","bɒm","",1
+"breath","n. 气息；呼吸","breθ","",1
+"brilliant","adj. 巧妙的，使人印象深刻的，技艺高的","'briljәnt","",1
+"calm","adj. 镇静,沉着的 v.镇静沉着","kɑ:m","",1
+"chaos","n. 混乱，杂乱，紊乱","'keiɒs","",1
+"concentrate","v. 聚精会神","'kɒnsәntreit","",1
+"confuse","v. 使迷惑，混淆","kәn'fju:z","",1
+"contemporary","a.属同时期的，同一时代的","kәn'tempәrәri","",1
+"cosy","a.暖和舒适的,亲密无间的","","",1
+"decade","n. 十年期","'dekeid","",1
+"department","n. 部门；（机关的）司，处；（大学的）系","di'pɑ:tmәnt","",1
+"disabled","adj. 残废的，残疾的","dis'eibld","",1
+"ease","v. 减轻；缓解（难度或严重程度）","i:z","",1
+"fluent","adj. （外语）流利的，流畅","'flu:әnt","",1
+"garbage","n. 垃圾","'gɑ:bidʒ","",1
+"harmful","a.有害的；致伤的","'hɑ:mful","",1
+"ignore","v. 忽视，对…不理会","ig'nɒ:","",1
+"interrupt","v. 打扰，打断",".intә'rʌpt","",1
+"jog","v. 慢跑","dʒɒg","",1
+"lost","失物招领处","lɒst","",1
+"ox","n. 牛；公牛","ɒks","",1
+"parcel","n. 包裹","'pɑ:sl","",1
+"plug","n. 塞子 vt.（用塞子）把…塞住","plʌg","",1
+"poster","n. (贴在公共场所的大型)招贴；广告(画)","'pәustә","",1
+"privilege","特权，特殊待遇","'privilidʒ","",1
+"purchase","v. 购买，采购","'pә:tʃәs","",1
+"recipe","n. 烹饪法，食谱","'resipi","",1
+"rectangle","n. & a.长方形,长方形的","'rektæŋgl","",1
+"repairs","n. 修理工作","ri'pєә","",1
+"seed","n. 种子","si:d","",1
+"shoulder","n. 肩膀,(道路的)路肩","'ʃәuldә","",1
+"socket","n. （电源）插座","'sɒkit","",1
+"soul","n. 灵魂；心灵；气魄","sәul","",1
+"strengthen","vt. 加强，增强","'streŋθәn","",1
+"suffer","vi. 受苦，遭受","'sʌfә","",1
+"suffering","n. 痛苦，苦难","'sʌfәriŋ","",1
+"survive","v.生存，存活，幸免于难","sә'vaiv","",1
+"tram","n. 有轨电车","træm","",1
+"tyre","n. 轮胎","'taiә","",1
+"undo","v. 解开，松开",".ʌn'du:","",1
+"upper","adj. 较高的，较上的","'ʌpә","",1
+"vertical","adj. 垂直的，纵向的","'vә:tikl","",1
+"vice","n. 罪行，不道德行为","vais","",1
+"widespread","a.分布广的,普遍的","'waidspred","",1
+"dramatic","戏剧性的；显著的","drә'mætik","",1
+"absorb","v. 吸收，使全神贯注","әb'sɒ:b","",1
+"acquisition","n. 获得，得到",".ækwi'ziʃәn","",1
+"admit","vt. 承认，准许（入场，入学，入会）","әd'mit","",1
+"advocate","v. 拥护，支持，提倡","'ædvәkeit","",1
+"aggressive","adj. 侵略的；咄咄逼人","ә'gresiv","",1
+"anger","n. 怒，愤怒","'æŋgә","",1
+"anxiety","n. 担忧，焦虑","æŋ'zaiәti","",1
+"appearance","n. 出现，露面；容貌","ә'piәrәns","",1
+"apron","n. （机场的）停机坪","'eiprәn","",1
+"architect","n. 建筑师，设计师","'ɑ:kitekt","",1
+"arrangement","n. 安排，布置","ә'reindʒmәnt","",1
+"associate","v. 联想，联系","ә'sәuʃieit","",1
+"attain","v.（经过努力）获得,得到","ә'tein","",1
+"awesome","a.令人惊叹,很困难的","'ɒ:sәm","",1
+"bare","adj. 裸露的，光秃秃的","bєә","",1
+"battery","n. 电池","'bætәri","",1
+"burden","n. （义务，责任的）重担，负担","'bә:dn","",1
+"casual","adj. 漫不经心的，不经意的，非正式的","'kæʒjuәl","",1
+"cater","v. 提供饮食，承办酒席","'keitә","",1
+"coach","n. 教练；马车；长途车","kәutʃ","",1
+"compass","n. 罗盘，指南针","'kʌmpәs","",1
+"comprehension","n. 理解",".kɒmpri'henʃәn","",1
+"contradictory","a.相互矛盾,对立的",".kɒntrә'diktәri","",1
+"convenient","adj. 便利的，方便的","kәn'vi:njәnt","",1
+"curious","adj. 好奇的；奇异的","'kjuәriәs","",1
+"expense","n. 消费； 支出","ik'spens","",1
+"fair","adj. 公平的，合理的 a. (肤色)白皙的； （人）白肤金发的 n. 集市；庙会；展览会","fєә","",1
+"fairly","adv. 公正地，正当地；相当（程度）地","'fєәli","",1
+"fortunate","adj. 幸运的； 侥幸的","'fɒ:tʃәnit","",1
+"furnished","adj. 配备了家具的","'fә:niʃ","",1
+"gale","n. 强风（约每小时60英里）","geil","",1
+"gallery","n. 画廊；美术品陈列室","'gælәri","",1
+"gas","n. 煤气","gæs","",1
+"gay","adj. （男）同性恋的；快活的，愉快的","gei","",1
+"headline","n. （报刊的）大字标题","'hedlain","",1
+"inspire","vt. 鼓舞； 激励","in'spaiә","",1
+"iron","n. 铁，熨斗 vt. 熨烫","'aiәn","",1
+"lorry","n.（英）运货汽车，卡车","'lɒri","",1
+"majority","n. 大多数","mә'dʒɒriti","",1
+"mask","n. 口罩；面罩(具)；遮盖物 v. 戴面具；掩饰；伪装","mæsk","",1
+"misunderstand","v. 误会；不理解",".misʌndә'stænd","",1
+"owe","vt. 欠（债等）","әu","",1
+"paris","n. 巴黎","'pæris","",1
+"percentage","n. 百分率","pә'sentidʒ","",1
+"plot","v.&n. 故事情节，密谋","plɒt","",1
+"possession","n. 所有，拥有；财产，所有物","pә'zeʃәn","",1
+"puzzle","n. 难题,（字、画）谜","'pʌzl","",1
+"puzzled","adj. 迷惑的，困惑的","","",1
+"quake","n.& v. 震动，颤抖","kweik","",1
+"reporter","n. 记者，新闻通讯员","ri'pɒ:tә","",1
+"shade","n. 阴凉处，树荫处","ʃeid","",1
+"speaker","n. 演讲人，演说家","'spi:kә","",1
+"spend","v. 度过；花费（钱、时间等）","spend","",1
+"spin","v.& n. 纺，（使）快速旋转；旋转，旋转运动","spin","",1
+"spray","n.&v. 水雾,喷雾(器)喷洒","sprei","",1
+"spread","v. 延伸； 展开","spred","",1
+"substitute","v. 代替，取代","'sʌbstitju:t","",1
+"tin","n. （英）罐头，听头","tin","",1
+"toast","v&n. 烤","tәust","",1
+"translator","n. 翻译家，译者","træn'leitә","",1
+"treatment","n. 治疗,疗法","'tri:tmәnt","",1
+"tutor","n. 家庭教师，私人教师，导师","'tju:tә","",1
+"uncertain","a.不确定的",".ʌn'sә:tn","",1
+"unsuccessful","adj. 不成功,失败的",".ʌnsәk'sesful","",1
+"vague","adj. 含糊的，紧迫的","veig","",1
+"vest","n. 背心，内衣","vest","",1
+"wisdom","n. 智慧","'wizdәm","",1
+"workforce","n. 劳动力","","",1
+"barely","仅仅；几乎不","'bєәli","",1
+"comprise","包含","kәm'praiz","",1
+"conscious","有意识的","'kɒnʃәs","",1
+"considerable","相当大的","kәn'sidәrәbl","",1
+"constitute","构成","kәn'stitjut","",1
+"dedicate","致力于","'dedikeit","",1
+"derive","源自","di'raiv","",1
+"dominate","主导","'dɒmineit","",1
+"absent","adj. 缺席，不在","'æbsәnt","",1
+"accommodation","n.住宿，膳宿","ә.kɒmә'deiʃәn","",1
+"accompany","v. 陪同，陪伴，与…同时发生","ә'kʌmpәni","",1
+"achievement","n. 成就,成绩,功绩","ә'tʃi:vmәnt","",1
+"acquire","v. 获得，得到","ә'kwaiә","",1
+"advise","vt. 忠告，劝告，建议","әd'vaiz","",1
+"arrange","v. 安排，布置","ә'reindʒ","",1
+"atmosphere","n. 大气；气氛","'ætmәsfiә","",1
+"beam","n. 平衡木","bi:m","",1
+"bingo","n. 宾戈游戏","'biŋgәu","",1
+"bleed","vi. 出血，流血","bli:d","",1
+"bless","vt. 保佑，降福","bles","",1
+"booth","n.岗；（为某种用途而设的）亭或小隔间","bu:θ","",1
+"cab","n. （美）出租车","kæb","",1
+"canal","n. 运河；水道","kә'næl","",1
+"cheek","n. 面颊，脸蛋","tʃi:k","",1
+"chef","n. 厨师长，主厨","ʃef","",1
+"chest","n. 箱子；盒子；胸部","tʃest","",1
+"chew","vt. 咀嚼","tʃu:","",1
+"compromise","v. 妥协,折中,让步","'kɒmprәmaiz","",1
+"conference","n. (正式的)会议；讨论","'kɒnfәrәns","",1
+"counter","n. 柜台，结账处","'kauntә","",1
+"court","n. 法庭；法院","kɒ:t","",1
+"currency","n. 货币；现金","'kʌrәnsi","",1
+"curriculum","n.（学校的）全部课程","kә'rikjulәm","",1
+"decline","v. 减少,下降,衰退,谢绝","di'klain","",1
+"distant","adj. 远的，遥远的","'distәnt","",1
+"distinction","n.差别,区别,优秀,卓越","dis'tiŋkʃәn","",1
+"doubt","n.& v. 怀疑，疑惑","daut","",1
+"drum","n. 鼓","drʌm","",1
+"elect","vt. （投票）选举","i'lekt","",1
+"elegant","a.文雅的,漂亮的,精美的","'eligәnt","",1
+"e","verybody pron. 每人，人人","i:","",1
+"evident","a.清楚的，显而易见的","'evidәnt","",1
+"explode","v. （使）爆炸","ik'splәud","",1
+"firm","n.公司;企业 a.坚固的,坚定的","fә:m","",1
+"firmly","adv. 牢牢地","'fә:mli","",1
+"foresee","(foresaw, foreseen) vt.预见.预知","fɒ:'si:","",1
+"globe","n. 地球仪,地球","glәub","",1
+"golden","adj. 金(黄)色的","'gәuldn","",1
+"harmony","n. 融洽，和睦","'hɑ:mәni","",1
+"hunt","vt. 寻找；狩猎，猎取","hʌnt","",1
+"hunter","n. 猎人","'hʌntә","",1
+"institution","n. (慈善、宗教等性质的)公共机构； 学校",".insti'tju:ʃәn","",1
+"justice","n. 正义；公正；司法","'dʒʌstis","",1
+"leak","vi. 漏； 渗","li:k","",1
+"literary","adj. 文学的","'litәrәri","",1
+"moral","a.道德的 n.寓意,道德启示","'mɒrәl","",1
+"motivation","n. （做事的）动机",".mәuti'veiʃәn","",1
+"navy","n. 海军","'neivi","",1
+"opposite","n. 相反，","'ɒpәzit","",1
+"reading","n. 阅读；朗读","'ri:diŋ","",1
+"relate","vi. 有关； 涉及","ri'leit","",1
+"settle","vi. 安家，定居","'setl","",1
+"settler","n. 移居者，开拓者","'setlә","",1
+"significance","n. 重要性，意义","sig'nifikәns","",1
+"statistics","n. 统计数字，统计资料，统计学","stә'tistiks","",1
+"suck","vt. 吸吮","sʌk","",1
+"symbol","n. 象征","'simbl","",1
+"talent","n. 天才，天赋","'tælәnt","",1
+"tank","n. 储水容量；坦克","tæŋk","",1
+"theoretical","adj. 理论的","θiә'retikәl","",1
+"tight","adj. 紧的","tait","",1
+"tiny","adj. tinier, tiniest a. 极小的，微小的","'taini","",1
+"trial","n. 审判；试验；试用","'traiәl","",1
+"tune","n. 曲调，曲子","tju:n","",1
+"undertake","v. 承担，从事，负责",".ʌndә'teik","",1
+"violate","v. 违反（法律、协议等），侵犯","'vaiәleit","",1
+"assure","保证","ә'ʃuә","",1
+"cease","停止","si:s","",1
+"abuse","v.（酗酒）滥用,虐待,恶语","ә'bju:s.ә'bju:z","",1
+"academy","n.专科学院,（美）私立学校","ә'kædәmi","",1
+"accuse","v. 正确无误的,精确的","ә'kju:z","",1
+"ache","vi.& n. 痛，疼痛","eik","",1
+"addicted","adj. 上瘾，成瘾，入迷","ә'diktid","",1
+"adequate","adj. 合适的，合乎需要的","'ædikwәt","",1
+"administration","n.管理,行政部门","әd.mini'streiʃәn","",1
+"admire","v. 钦佩；羡慕","әd'maiә","",1
+"alarm","n. 警报","ә'lɑ:m","",1
+"algebra","n. 代数","'ældʒibrә","",1
+"amateur","adj. 业余爱好的","'æmәtә","",1
+"anecdote","n. 逸事，趣闻","'ænikdәut","",1
+"ankle","n. 踝，踝关节","'æŋkl","",1
+"anxious","adj. 忧虑的，焦急的","'æŋʃәs","",1
+"apparent","adj. 显而易见","ә'pærәnt","",1
+"appeal","v. 上诉，申诉，吸引力","ә'pi:l","",1
+"appoint","v. 任命，委任，安排，确定（时间，地点）","ә'pɒint","",1
+"arbitrary","adj. 随心所欲的，独裁的，专断的","'ɑ:bitrәri","",1
+"association","n. 协会，社团，联系","ә.sәuʃә'eiʃәn","",1
+"astonish","vt. 使惊讶","ә'stɒniʃ","",1
+"bag","n. 书包；提包；袋子","bæg","",1
+"ban","n. 禁令 v. 禁止；取缔","bæn","",1
+"barrier","n. 屏障，障碍，关卡","'bæriә","",1
+"behave","v. 守规矩，行为","bi'heiv","",1
+"behaviour","n. 行为，举止","bi'heivjә","",1
+"beneath","prep. 在…下方（面）","bi'ni:θ","",1
+"beneficial","adj. 有利的，有帮助的，有用的",".beni'fiʃәl","",1
+"blame","n.& v. 责备；责怪","bleim","",1
+"bond","n.&v. 纽带，联系，使牢固","bɒnd","",1
+"bounce","v. 弹起，蹦，上下晃动","bauns","",1
+"brake","n. 闸 vi. 刹车","breik","",1
+"breakthrough","n. 重大进展，突破","'breikθru:","",1
+"bucket","n. 铲斗；桶","'bʌkit","",1
+"bush","n. 灌木丛，矮树丛","buʃ","",1
+"carbon","n. 碳","'kɑ:bәn","",1
+"cast","v. 扔，抛，撒","kɑ:st. kæst","",1
+"castle","n. 城堡","'kæsl. 'kɑ:sl","",1
+"cheer","n. & vi.欢呼； 喝彩","tʃiә","",1
+"cheers","int. 干杯，(口)谢谢，再见","tʃiәz","",1
+"chief","adj. 主要,首要的 n.领导，头","tʃi:f","",1
+"chips","n. (pl.)炸土豆条（片）","tʃips","",1
+"cleaner","n.清洁工.,清洁器.,清洁剂","'kli:nә","",1
+"collision","n. 碰撞事故","kә'liʒәn","",1
+"comb","n. 梳子 v. 梳","kәum","",1
+"comma","n. 逗号","'kɒmә","",1
+"conservative","adj. 保守的，守旧的；保守主义的；谨慎的 n.保守的人，保守主义","kәn'sә:vәtiv","",1
+"contradict","v. 反驳，驳斥，批驳",".kɒntrә'dikt","",1
+"contrary","n.&a. 相反 相反的","'kɒntrәri","",1
+"controversial","a.引起争论的,有争议的",".kɒntrә'vә:ʃәl","",1
+"coral","n. 珊瑚；珊瑚虫","'kɒrәl","",1
+"crazy","adj. 疯狂的","'kreizi","",1
+"dash","v. & n. 快跑，冲刺，短跑","dæʃ","",1
+"decrease","v.减少，减小，降低","'di:kri:s","",1
+"deed","n. 行为；事迹","di:d","",1
+"defeat","vt. 击败；战胜","di'fi:t","",1
+"desire","vt. & n. 要求；期望","di'zaiә","",1
+"diamond","n. 钻石，金刚石；纸牌中的方块","'daiәmәnd","",1
+"disadvantage","n. 不利条件；弱点",".disәd'vɑ:ntidʒ","",1
+"disaster","n. 灾难；祸患","di'zɑ:stә","",1
+"discourage","vt. （使）气馁；打消（做…的念头）","dis'kʌridʒ","",1
+"disk","n. 磁盘","disk","",1
+"dot","n. 点，小点，圆点","dɒt","",1
+"driver","n. 司机，驾驶员","'draivә","",1
+"dusty","adj. 尘土般的，尘土多的","'dʌsti","",1
+"electric","adj. 电的","i'lektik","",1
+"electrical","adj. 电的；电器的","i'lektrikәl","",1
+"encouragement","n. 鼓励","in'kʌridʒmәnt","",1
+"endless","adj. 无止境的； 没完的","'endlis","",1
+"energ","y n. 精力，能量","","",1
+"favorite","adj. 喜爱的 n. 特别喜爱的人（或物）","'feivәrit","",1
+"ferry","n. 渡船","'feri","",1
+"fighter","v. 战士；斗士","'faitә","",1
+"folk","adj. 民间的","fәuk","",1
+"forbid","(forbade, forbidden) vt. 禁止，不许","fә'bid","",1
+"gardening","n. 园艺学","'gɑ:dniŋ","",1
+"gesture","n. 姿势，手势","'dʒestʃә","",1
+"gifted","adj. 有天赋的；有才华的","'giftid","",1
+"grain","n. 谷物，谷类","grein","",1
+"gravity","n. 重力，地球引力","'græviti","",1
+"heap","n. 堆 v. 堆起来","hi:p","",1
+"hire","vt. 租用","haiә","",1
+"humorous","adj. 富于幽默的","'hju:mәrәs","",1
+"impress","vt. 留下极深的印象","im'pres","",1
+"interval","n. 间歇；间隔","'intәvәl","",1
+"jazz","n. 爵士音乐，爵士舞曲","dʒæz","",1
+"latter","n.（两者之中的）后者","'lætә","",1
+"litre","n. 升； 公升","li:tә(r)","",1
+"madam","n. 夫人,女士","'mædәm","",1
+"mat","n. 垫子","mæt","",1
+"memorize","v. 记忆","'memәraiz","",1
+"musical","adj. 音乐的，爱好音乐的 n. 音乐片","'mju:zikl","",1
+"musician","n. 音乐家，乐师","mju:'ziʃәn","",1
+"nationality","n. 国籍",".næʃә'nælәti","",1
+"officer","n. 军官;公务员,官员；警察，警官","'ɒfisә","",1
+"outward","adv. 向外的，外出的","'autwәd","",1
+"panic","a&v.惊慌,恐慌,惶恐不安","'pænik","",1
+"participate","v. 参加，参与","pɑ:'tisipeit","",1
+"pedestrian","n. 步行者，行人","pә'destriәn","",1
+"performer","n. 表演者，执行者","pә'fɒ:mә","",1
+"poem","n. 诗","'pәuim","",1
+"poison","n. 毒药","'pɒizn","",1
+"political","adj. 政治的","pә'litikl","",1
+"portable","a.手提的，便携式的","'pɒ:tәbl","",1
+"precious","adj. 宝贵的, 珍贵的","'preʃәs","",1
+"prejudice","n. 偏见，成见","'predʒudis","",1
+"pressure","n. 压迫,压力,压强","'preʃә","",1
+"prison","n. 监狱","'prizn","",1
+"profession","n.（需要有高等教育学位的）职业（如医生或律师）","prә'feʃәn","",1
+"pulse","n. 脉搏，（光、能量、波等的）脉动，搏动","pʌls","",1
+"recite","v. 背诵","ri'sait","",1
+"redirect","vt. 使改变，使转移",".ri:di'rekt","",1
+"relation","n. 关系； 亲属","ri'leiʃәn","",1
+"relief","n. 轻松,解脱,缓和,救济","ri'li:f","",1
+"religion","n. 宗教","ri'lidʒәn","",1
+"reserve","n. & v. 储备；预定","ri'zә:v","",1
+"revolution","n. 革命，变革",".revә'lu:ʃәn","",1
+"roof","n. 屋顶，顶部","ru:f","",1
+"rope","n. 绳，索","rәup","",1
+"scholar","n. 学者","'skɒlә","",1
+"seal","n. 海豹","si:l","",1
+"sex","n. 性，性别","seks","",1
+"solar","adj. 太阳的","'sәulә","",1
+"spare","adj. 空闲,多余的，剩余的","spєә","",1
+"sponsor","n. 赞助者，赞助商","'spɒnsә","",1
+"subscribe","v.订阅,订购（报刊等）","sәb'skraib","",1
+"suspect","n. 犯罪嫌疑人","sә'spekt","",1
+"tax","n. 税，税款","tæks","",1
+"tendency","n. 倾向，偏好，性情","'tendәnsi","",1
+"tournament","n. 锦标赛，联赛","'tә:nәmәnt","",1
+"twist","v&n. 使弯曲，转动","twist","",1
+"unemployment","n.失业,失业状态",".ʌnim'plɒimәnt","",1
+"union","n. 联合,联盟；工会","'ju:njәn","",1
+"unsafe","adj. 不安全的；危险的",".ʌn'seif","",1
+"upward","adv. 向上；往上","'ʌpwәd","",1
+"viewer","n. 观看者","'vju:ә","",1
+"waist","n. 腰，腰部，腰围","weist","",1
+"wall","n. 墙","wɒ:l","",1
+"wealth","n. 财产，财富","welθ","",1
+"wealthy","adj. 富的","'welθi","",1
+"wipe","v. 擦；擦净；擦干","waip","",1
+"worldwide","adj. 遍及全球的，世界范围的","'wә:ldwaid","",1
+"yawn","v. 打哈欠","jɒ:n","",1
+"cite","引用","sait","",1
+"compel","迫使","kәm'pel","",1
+"confront","面对","kәn'frʌnt","",1
+"cultivate","培养","'kʌltiveit","",1
+"definite","明确的","'definit","",1
+"abandon","v.抛弃，舍弃，放弃","ә'bændәn","",1
+"abnormal","adj. 反常的，变态的","æb'nɒ:mәl","",1
+"abolish","v. 废除，废止","ә'bɒliʃ","",1
+"accountant","n. 会计，会计师","ә'kauntәnt","",1
+"admission","n. 准入, 接纳","әd'miʃәn","",1
+"adult","n. 成年人","'ædʌlt","",1
+"advertise","vt. 为……做广告","'ædvәtaiz","",1
+"affair","n. 事，事情","ә'fєә","",1
+"affection","n. 喜爱，钟爱","ә'fekʃәn","",1
+"afterward","adv. 后来","'ɑ:ftәwәd","",1
+"agency","n. 代理机构","'eidʒәnsi","",1
+"agriculture","n. 农业，农学","'ægrikʌltʃә","",1
+"allergic","adj. 过敏的，厌恶","ә'lә:dʒik","",1
+"aloud","adv. 大声地","ә'laud","",1
+"ample","adj. 足够的，丰裕的","'æmpl","",1
+"amuse","vt. （使人）快乐，逗乐","ә'mju:z","",1
+"ancestor","n. 祖宗； 祖先","'ænsestә","",1
+"ancient","adj. 古代的，古老的","'einʃәnt","",1
+"annoy","vt. （使）烦恼","ә'nɒi","",1
+"annual","adj. 每年的，年度的，一年一次的","'ænjuәl","",1
+"applaud","v.&n. 鼓掌,赞许,赞赏","ә'plɒ:d","",1
+"appointment","n. 约会","ә'pɒintmәnt","",1
+"arctic","adj. 北极的","'ɑ:ktik","",1
+"authentic","adj. 真正的，真品的","ɒ:'θentik","",1
+"avenue","n. 大道","'ævәnju:","",1
+"award","n. 奖品，奖励","ә'wɒ:d","",1
+"awkward","a.令人尴尬,使人难堪的","'ɒ:kwәd","",1
+"bacon","n. 咸猪肉；熏猪肉","'beikәn","",1
+"bargain","n. （经讨价还价后）成交的商品；廉价货 v. 讨价还价","'bɑ:gin","",1
+"basement","n. 地下室","'beismәnt","",1
+"belief","n. 信条，信念","bi'li:f","",1
+"bid","v&n. 出价，投标，向（某人）道别","bid","",1
+"bite","v. 咬；叮","bait","",1
+"bonus","n. 津贴，奖金，红利","'bәunәs","",1
+"bored","a.（对人，事）厌倦的，烦闷的","","",1
+"boss","n. 领班；老板","bɒs","",1
+"botanical","adj. 植物学的","bә'tænikәl","",1
+"brick","n. 砖；砖块","brik","",1
+"brochure","n. 资料（或广告）手册","'brәuʃә","",1
+"burst","v. 突然发生； 突然发作","bә:st","",1
+"cancel","vt. 取消","'kænsәl","",1
+"caution","n. 谨慎，小心，警告","'kɒ:ʃәn","",1
+"cautious","adj. 小心的，谨慎的","'kɒ:ʃәs","",1
+"ceremony","n. 典礼，仪式，礼节","'serimәni","",1
+"cheat","n. & v. 骗取，哄骗；作弊","tʃi:t","",1
+"chemical","adj. 化学的 n. 化学品","'kemikl","",1
+"choke","n. & v. 窒息","tʃәuk","",1
+"civil","adj. 国内的；平民（非军人）的；民用的","'sivәl","",1
+"clinic","n. 诊所","'klinik","",1
+"committee","n. 委员会","kә'miti","",1
+"communism","n. 共产主义","'kɒmjunizm","",1
+"compensate","v. 补偿，弥补","'kɒmpenseit","",1
+"compete","vi. 比赛，竞赛","kәm'pi:t","",1
+"condemn","v. 谴责，指责，宣判","kәn'dem","",1
+"confidential","adj. 机密的，保密的",".kɒnfi'denʃәl","",1
+"conservation","n 保存；（自然资源的）保护，管理",".kɒnsә'veiʃәn","",1
+"considerate","adj. 体贴的","kәn'sidәrit","",1
+"constitution","n. 宪法，章程，身体素质",".kɒnsti'tju:ʃәn","",1
+"convenience","n. 便利","kә'vi:njәns","",1
+"convince","v. 使确信，使信服","kәn'vins","",1
+"cure","n. & vt. 治疗；医好","kjuә","",1
+"danger","n. 危险","'deindʒә","",1
+"decoration","n.装饰，修饰",".dekә'reiʃәn","",1
+"defend","vt. 防守；保卫","di'fend","",1
+"defense","n. & v. 防御；防务","di'fens","",1
+"delicate","a.易损的，易碎的","'delikәt","",1
+"delighted","adj. 高兴的，快乐的","di'laitid","",1
+"deposit","v.&n. 订金，押金，放下，放置，储存","di'pɒzit","",1
+"disability","n.. 残疾；无能","disә'biliti","",1
+"disappoint","vt. 使失望",".disә'pɒint","",1
+"dismiss","vt. 让……离开；遣散；解散；解雇","dis'mis","",1
+"downward","adv. 向下","'daunwәd","",1
+"ecology","n. 生态，生态学","i:'kɒlәdʒi","",1
+"educate","vt. 教育，培养","'edjukeit","",1
+"emergency","n.紧急情况或状态","i'mә:dʒәnsi","",1
+"energetic","adj. 精力旺盛的",".enә'dʒetik","",1
+"enlarge","vt. 扩大","in'lɑ:dʒ","",1
+"entertainment","n. 娱乐",".entә'teinmәnt","",1
+"existence","n.存在；生存；存在物","ig'zistәns","",1
+"extraordinary","adj. 离奇的；使人惊奇的","ik'strɒ:dәnәri","",1
+"fancy","a.花式；装饰的；奇特的","'fænsi","",1
+"fellow","n. 同伴；伙伴","'felәu","",1
+"fiction","n.小说，虚构的事","'fikʃәn","",1
+"fierce","adj. 猛烈的","fiәs","",1
+"flesh","n. 肉","'fleʃ","",1
+"flu","n. 流行性感冒","flu:","",1
+"fold","vt. 折叠；合拢","fәuld","",1
+"former","adj. 以前的，从前的；（两者之中的）前者","'fɒ:mә","",1
+"fortune","n. 财产；运气","'fɒ:tʃәn","",1
+"franc","n. 法郎","fræŋk","",1
+"frost","n. 霜","frɒst","",1
+"guilty","a.有罪,犯法的,做错事的","'gilti","",1
+"hammer","n. 锤子，锣锤","'hæmә","",1
+"hatch","v. （鸟、鸡）孵蛋","hætʃ","",1
+"hay","n. 作饲料用的干草","hei","",1
+"hibernate","vi. 冬眠","'haibәneit","",1
+"impression","n. 印象，感觉","im'preʃәn","",1
+"income","n. 收入，所得","'inkʌm","",1
+"independence","n. 独立",".indi'pendәns","",1
+"innocent","a.无辜的，清白的","'inәsәnt","",1
+"institute","n. (研究)所, 院，学院","'institju:t","",1
+"insurance","n. 保险","in'ʃurәns","",1
+"insure","vt. 给……保险","in'ʃuә","",1
+"irish","adj. 爱尔兰的，爱尔兰人的","'airiʃ","",1
+"jet","n. 喷气式飞机；喷射（器）","dʒet","",1
+"junk","n. （口语）废品，破烂货","dʒʌŋk","",1
+"kindness","n. 仁慈；善良","'kaindnis","",1
+"lame","adj. 跛的，瘸的，残废的","leim","",1
+"leftover","a.剩余,剩下的n.剩饭菜","'leftәuvә","",1
+"lemon","n. 柠檬 a. 柠檬色(味)的","'lemәn","",1
+"liberate","vt. 解放，使获自由","'libәreit","",1
+"loose","adj. 松散的； 宽松的","lu:s","",1
+"male","adj. 男（性）的；雄的","meil","",1
+"mature","adj. 成熟的","mә'tjuә","",1
+"meanwhile","adv. 同时","'mi:nhwail","",1
+"memorial","n. 纪念馆","mi'mɒ:riәl","",1
+"mess","n. 凌乱","mes","",1
+"mixture","n. 混合物","'mikstʃә","",1
+"modest","adj. 谦虚的；谦逊的","'mɒdist","",1
+"noble","adj. 高贵的，贵族的","'nәubl","",1
+"nowadays","adv. 当今，现在","'nauәdeiz","",1
+"numb","adj. 麻木的，失去知觉的，迟钝的","nʌm","",1
+"nut","n.坚果,果仁(胡桃,栗子等)","nʌt","",1
+"occupation","n. 职业，工作",".ɒkju'peiʃәn","",1
+"oppose","vt. 反对；反抗","ә'pәuz","",1
+"optimistic","adj. 乐观的",".ɒpti'mistik","",1
+"orbit","n.（天体等的）运行轨道","'ɒ:bit","",1
+"organ","n. （人，动物）器官","'ɒ:gәn","",1
+"outer","adj. 外部的，外面的","'autә","",1
+"oval","n.& adj.椭圆；椭圆形的","'әuvәl","",1
+"phenomenon","n. 现象","fi'nɒminәn","",1
+"physician","n.(有行医执照的)医生","fi'ziʃәn","",1
+"pillow","n. 枕头","'pilәu","",1
+"pipe","n. 管子，输送管","paip","",1
+"politician","n. 政治家",".pɒli'tiʃәn","",1
+"pond","n. 池塘","pɒnd","",1
+"premier","n. 首相，总理","'pri:mjә","",1
+"prescription","n. 处方，药方","pri'skripʃәn","",1
+"president","n. 总统；主席","'prezidәnt","",1
+"psychology","n. 心理学","sai'kɒlәdʒi","",1
+"qualification","n. 资格，学历",".kwɒlifi'keiʃәn","",1
+"quantity","n. 量，数","'kwɒntәti","",1
+"questionnaire","n. 调查表，问卷","kwestʃә'nєә","",1
+"radium","n. 镭","'reidiәm","",1
+"receipt","n. 收据","ri'si:t","",1
+"reform","v&n. 改革，改进，改良","ri'fɒ:m","",1
+"refusal","n. 拒绝","ri'fju:zl","",1
+"r","elevant a. 紧密相关,有意义的","ɑ:(r)","",1
+"religious","adj. 宗教的","ri'lidʒәs","",1
+"remind","vt. 提醒，使记起","ri'maind","",1
+"representative","n.代表,典型人物",".repri'zentәtiv","",1
+"reputation","n. 名声，名誉",".repju'teiʃәn","",1
+"rescue","vt. 营救，援救","'reskju:","",1
+"reservation","n. 预定",".rezә'veiʃәn","",1
+"resist","v. 抵抗；挡开","ri'zist","",1
+"rid","vt. 使摆脱","rid","",1
+"rot","vi. 烂； 腐败","rɒt","",1
+"sacred","adj. 害怕，恐惧，担心","'seikrid","",1
+"savage","n. 野蛮人，未开化的人","'sævidʒ","",1
+"scar","n. 伤疤，伤痕","skɑ:","",1
+"scare","v. 使害怕，使恐惧","skєә","",1
+"scarf","n. 领巾，围巾","skɑ:f","",1
+"scream","n. 尖叫","skri:m","",1
+"selfish","adj. 自私的","'selfiʃ","",1
+"settlement","n. 新拓居地；（美）部落，村落","'setlmәnt","",1
+"shake","v. （使）动摇，震动","ʃeik","",1
+"shanghai","n. 上海","'ʃæŋhai","",1
+"shelter","n. 掩蔽；隐蔽处","'ʃeltә","",1
+"shock","vt. 使震惊","ʃɒk","",1
+"shooting","n. 射击","'ʃu:tiŋ","",1
+"shrink","v. 缩小，收缩，减少","ʃriŋk","",1
+"sight","n. 情景，风景；视力","sait","",1
+"slice","n. 片，切面（薄）片","slais","",1
+"smelly","adj. 有臭味的,发出臭味的","'smeli","",1
+"smoker","n. 吸烟者","'smәukә","",1
+"sob","n.& v. 抽泣，啜泣","sɒb","",1
+"socialism","n. 社会主义","'sәuʃәlizm","",1
+"spy","n. 密探,间谍 v.侦探,刺探","spai","",1
+"staff","n. 全体职工（雇员）","stɑ:f","",1
+"stain","n. 污点，污渍，染色剂","stein","",1
+"stair","n. 楼梯","stєә","",1
+"starve","v. 饿死","stɑ:v","",1
+"statesman","women) /ˈsteɪtsmən/ n. 政治家","'steitsmәn","",1
+"statue","n. 法令，法规，章程","'stætju","",1
+"steady","adj. 稳固的；平稳的","'stedi","",1
+"steam","n. 汽，水蒸气","sti:m","",1
+"stout","adj. 肥壮的，厚实牢固的","staut","",1
+"stove","n. （供烹饪用的 ）火炉，煤炉，电炉","stәuv","",1
+"straw","n. 稻草","strɒ:","",1
+"superb","adj. 卓越的,质量极高的","sju'pә:b","",1
+"supreme","a.至高无上的,最高的","sju'pri:m","",1
+"surgeon","n. 外科医生","'sә:dʒәn","",1
+"surplus","n. 过剩，剩余","'sә:plәs","",1
+"survival","n. 存活，幸存","sә'vaivәl","",1
+"swear","v.咒骂.,诅咒","swєә","",1
+"sweat","n. 汗，汗水","swet","",1
+"swell","v. 肿胀","swel","",1
+"swift","adj. 快的，迅速的","swift","",1
+"swiss","adj. 瑞士人的 n. 瑞士人","swis","",1
+"temptation","n. 引诱；诱惑","temp'teiʃәn","",1
+"tense","adj. 心烦意乱的，紧张的","tens","",1
+"tension","n. 紧张局势，矛盾","'tenʃәn","",1
+"tentative","adj. 不确定的，踌躇的","'tentәtiv","",1
+"thrill","n&v. 兴奋，激动","θril","",1
+"thriller","n. 惊险小说","'θrilә","",1
+"thunder","n.& v. 雷声，打雷","'θʌndә","",1
+"tolerate","v. 容许，允许，忍受","'tɒlәreit","",1
+"troop","n. 部队","tru:p","",1
+"underline","v. 在…下划线","'ʌndәlain","",1
+"unhealthy","a.不健康的,不卫生的",".ʌn'helθi","",1
+"upset","adj. 心烦的，苦恼的","ʌp'set","",1
+"urban","adj. 城市的，都市的","'ә:bәn","",1
+"urge","v. 敦促，催促，力劝","ә:dʒ","",1
+"vain","n. 自负的，自视过高的，徒劳的，无效的","vein","",1
+"violence","n. 暴力行为","'vaiәlәns","",1
+"violent","adj. 暴力的","'vaiәlәnt","",1
+"virtue","n. 美德,正直的品行,德行","'vә:tju:","",1
+"visa","n. 签证，背签","'vi:zә","",1
+"vivid","adj. 生动，逼真的，鲜明的","'vivid","",1
+"voluntary","adj. 自愿的，主动的","'vɒlәntәri","",1
+"vote","vi. 选举，投票","vәut","",1
+"wag","v. 摇动；摆动","wæg","",1
+"wage","n. 工资，工钱，报酬","weidʒ","",1
+"wander","vi.漫游,游荡,漫步,流浪","'wɒndә","",1
+"ward","n. 保卫,看护,病房,收容所","wɒ:d","",1
+"warehouse","n. 仓库，货栈","'wєәhaus","",1
+"welfare","n. 幸福，福利","'welfєә","",1
+"withdraw","v. 撤回，撤离","wið'drɒ:","",1
+"witness","v&n. 目击者，见证人","'witnis","",1
+"worthwhile","adj. 值得做的","'wә:θ'hwail","",1
+"worthy","adj. 值得的","'wә:ði","",1
+"bloom","开花","blu:m","",1
+"depart","离开","di'pɑ:t","",1
+"erupt","v.（火山）爆发，喷发","i'rʌpt","",0
+"simple-minded","a.纯朴,头脑简单","ˈsɪmpəlˈmaɪndɪd","",0
+"sadness","n. 悲哀，忧伤","'sædnis","",0
+"cartoon","n. 动画片，卡通；漫画","kɑ:'tu:n","",0
+"bowling","n. 保龄球","'bәuliŋ","",0
+"barbecue","n. 烤肉野餐","'bɑ:bikju:","",0
+"unmarried","adj. 未婚的，独身的",".ʌn'mærid","",0
+"watermelon","n. 西瓜","'wɒtә.melәn","",0
+"flour","n. 面粉，粉","'flauә","",0
+"birdcage","n. 鸟笼","'bә:dkeidʒ","",0
+"right-handed","adj. 惯用右手的","rait'hændid","",0
+"powder","n. 粉，粉末","'paudә","",0
+"w","eatherman n.气象员,预报天气的人","'dʌb(ә)lju:","",0
+"persuade","vt. 说服，劝说","pә'sweid","",0
+"rooster","n. (美)公鸡","'ru:stә","",0
+"arrest","v. 逮捕，拘留","ә'rest","",0
+"hilly","adj. 丘陵的； 多小山的","'hili","",0
+"subtraction","n.（算数中的）减","sәb'trækʃәn","",0
+"marriage","n. 结婚，婚姻","'mæridʒ","",0
+"body-building","n. 健美","\"'bɔdi","",0
+"tibeta","n. 西藏人；西藏语","","",0
+"europe*","n. 欧洲","","",0
+"u.s.a.","n. 美国（美利坚合众国）","","",0
+"drown","vi. 溺死；淹没","draun","",0
+"cuisine","n. 饭菜，佳肴","kwi:'zi:n","",0
+"royal","adj. 皇家的，王室的，国王的，女王的","'rɒiәl","",0
+"crayon","n 蜡笔；蜡笔画","'kreiәn","",0
+"retire","v. 退休","ri'taiә","",0
+"u.n.","n. 联合国","","",0
+"eyewitness","n. 目击证人","ai'witnis","",0
+"hooray","int. 好哇！（欢呼声）","hu'rei","",0
+"ballet","n. 芭蕾舞","'bælei","",0
+"mustard","n. 芥末，芥子粉","'mʌstәd","",0
+"smoke-free","adj. 非吸烟的,无烟的","sməuk fri:","",0
+"astronomy","n. 天文学","ә'strɒnәmi","",0
+"sailor","n. 水手，海员","'seilә","",0
+"carriage","n. 四轮马车;（火车）客车厢","'kæridʒ","",0
+"p.m.","n. 下午,午后","","",0
+"am","v. be的人称形式之一","æm","",0
+"outgoing","adj. 爱交际的,外向的","'autgәuiŋ","",0
+"nutrition","n. 营养，滋养","nju:'triʃәn","",0
+"walnut","n. 核桃，胡桃","'wɒ:lnәt","",0
+"self-service","n.自助,自我服务的","'self'sә:vis","",0
+"beard","n. （下巴上的）胡须","biәd","",0
+"mouthful","n. 满口，一口","'mauθful","",0
+"circulate","v. （液体或气体）环流，循环","'sә:kjuleit","",0
+"ottawa","n. 渥太华","'ɔtәwә","",0
+"seize","vt. 抓住(时机等)","si:z","",0
+"bathtub","n. 澡盆","'bɑ:θtʌb","",0
+"album","n. 相册，影集，集邮簿","'ælbәm","",0
+"punctuate","v. 加标点","'pʌŋktjueit","",0
+"attraction","n. 吸引，爱慕","ә'trækʃәn","",0
+"racial","adj. 种族的","'reiʃәl","",0
+"climate","n. 气候","'klaimit","",0
+"shallow","adj. 浅的,不深的,肤浅的","'ʃælәu","",0
+"poisonous","adj. 有毒的，致命的","'pɒizәnәs","",0
+"pen-friend","n. 笔友","","",0
+"feast","n.盛宴，宴会，（宗教的）节日","fi:st","",0
+"violinist","n. 提琴家，提琴手",".vaiә'linist","",0
+"centimetre","(美 centimeter) n. 公分，厘米","\"'senti","",0
+"eventually","ad.最终地","i'ventʃuәli","",0
+"crowded","adj. 拥挤的","'kraudid","",0
+"thunderstorm","n.雷电交加暴风雨","'θʌndәstɒ:m","",0
+"nephew","n. 侄子，外甥","'nefju:","",0
+"resemble","v. （不用进行时）像，看起来像","ri'zembl","",0
+"ashamed","adj. 惭愧； 害臊","ә'ʃeimd","",0
+"receptionist","n. 接待员","ri'sepʃәnist","",0
+"beddings","n. 卧具，铺盖","'bedɪŋ","",0
+"roundabout","adj. & n. 绕道的，不直接的；转盘路","'raundә.baut","",0
+"bathe","vi. 洗澡；游泳","beið","",0
+"garage","n. 汽车间（库）","gә'rɑ:ʒ. 'gærɑ:ʒ","",0
+"adore","v. （不用于进行时）热爱，爱慕某人","ә'dɒ:","",0
+"peasant","n. 农民；佃农","'peznt","",0
+"outstanding","adj. 优秀的，杰出的",".aut'stændiŋ","",0
+"daylight","n. 日光，白昼； 黎明","'deilait","",0
+"badminton","n. 羽毛球","'bædmintәn","",0
+"slave","n. 奴隶","sleiv","",0
+"moustache","n. 小胡子","'mʌstæʃ","",0
+"vanilla","n. 香草","vә'nilә","",0
+"disappointment","n. 失望；沮丧",".disә'pɒintmәnt","",0
+"souvenirs","n.旅游纪念品,纪念物","su:və'nɪəz","",0
+"yummy","adj. 很好吃的","'jʌmi","",0
+"buddhist","n. 佛教徒","'budist","",0
+"conscience","n. 良心，良知，内疚","'kɒnʃәns","",0
+"changeable","a.易变的，变化无常的","'tʃeindʒәbl","",0
+"spelling","n. 拼写，拼读","'speliŋ","",0
+"peach","n. 桃子","pi:tʃ","",0
+"bathrobe","n. 浴衣","'bɑ:θrәub","",0
+"stewardess","n.女乘务员,空中小姐","'stju:wәdis","",0
+"firewood","n. 木柴","'faiәwud","",0
+"telescope","n. 望远镜","'teliskәup","",0
+"giraffe","n. 长颈鹿","dʒi'rɑ:f","",0
+"hydrogen","n. 氢","'haidrәdʒәn","",0
+"collar","n. 衣领； 硬领","'kɒlә","",0
+"laser","n. 激光","'leizә","",0
+"drier","n. 烘干机；吹风机","'draiә","",0
+"capsule","n. （药）胶囊","'kæpsju:l","",0
+"paddle","n. 桨状物，蹼","'pædl","",0
+"adolescence","n. 青春，青春期",".ædәu'lesәns","",0
+"fortnight","n. 十四日，两星期","'fɒ:tnait","",0
+"lawyer","n. 律师","'lɒ:jә","",0
+"heroine","n. 女英雄，女主角","'herәuin","",0
+"pretend","vi. 假装，装作","pri'tend","",0
+"eastwards","adv. 向东","'i:stwәdz","",0
+"softball","n. 垒球","'sɒftbɒ:l","",0
+"cigarette","n. 纸烟，香烟",".sigә'ret","",0
+"semicircle","n. 半圆","'semi.sә:kl","",0
+"terror","n. 恐惧，惊恐","'terә","",0
+"glory","n.巨大的光荣; 荣誉;赞美","'glɒ:ri","",0
+"miniskirt","n. 超短裙","'miniskә:t","",0
+"resign","v. 辞职","ri'zain","",0
+"shabby","a.破旧,破烂,衣衫褴褛的","'ʃæbi","",0
+"luggage","n. (总称)行李","'lʌgidʒ","",0
+"fairness","n. 公平；公正","'fєәnis","",0
+"alcoholic","a.&n. 含酒精的，酒鬼",".ælkә'hɒlik","",0
+"sister-in-law","n. 嫂，弟媳","","",0
+"antique","n. 古董","æn'ti:k","",0
+"northwards","adv. 向北","'nɔ:θwәdz","",0
+"hostess","n. 女主人","'hәustis","",0
+"cance","r n. 癌","","",0
+"athletics","n. 田径","æθ'letiks","",0
+"veal","n. （食用）小牛肉","vi:l","",0
+"childhood","n. 幼年时代，童年","'tʃaildhud","",0
+"eager","adj. 渴望的，热切的","'i:gә","",0
+"dizzy","adj. 头眩目晕的","'dizi","",0
+"stainless","adj. 无污点的","'steinlis","",0
+"hurricane","n. 飓风，十二级风","'hә:rikәn","",0
+"nylon","n. 尼龙","'nailɒn","",0
+"mountainous","adj. 多山的","'mauntinәs","",0
+"rugby","n. （英）橄榄球","'rʌ^bi","",0
+"unconscious","a.昏迷,不省人事的",".ʌn'kɒnʃәs","",0
+"steward","n. (火车、飞机、轮船等)男服务员；男乘务员","'stju:wәd","",0
+"stadium","n. （露天）体育场","'steidiәm","",0
+"sparrow","n. 麻雀，雀型鸟类","'spærәu","",0
+"oceania*","n. 点钟","","",0
+"baggage","n. 行李","'bægidʒ","",0
+"carpet","n. 地毯","'kɑ:pit","",0
+"facial","adj. 面部用的","'feiʃәl","",0
+"amusement","n. 娱乐","ә'mju:zmәnt","",0
+"empire","n. 帝国","'empaiә","",0
+"cooker","n. 炊具(锅、炉灶、烤炉等)","'kukә","",0
+"postpone","vt. 推迟，延期","pәust'pәun","",0
+"marathon","n. 马拉松","'mærәθәn","",0
+"continent","n. 大陆，大洲；陆地","'kɒntinәnt","",0
+"nuclear","adj. 原子核的，原子能的，核动力的","'nju:kliә","",0
+"tasteless","adj. 无滋味的","'teistlis","",0
+"pancake","n. 薄煎饼","'pænkeik","",0
+"inland","adj. 内陆的；内地的","'inlәnd","",0
+"embassy","n. 大使馆","'embәsi","",0
+"gentle","adj. 温柔的，轻轻的","'dʒentl","",0
+"woollen","adj. 羊毛的，羊毛制的","'wulin","",0
+"silver","n. 银","'silvә","",0
+"petrol","n. 石油","'petrәl","",0
+"champion","n. 冠军，优胜者","'tʃæmpiәn","",0
+"vacation","n. 假期，休假","vei'keiʃәn","",0
+"sculpture","n. 雕塑（术），雕刻（术），雕刻作品，雕像","'skʌlptʃә","",0
+"ministry","n.（政府的）部","'ministri","",0
+"fingernail","n. 指甲","'fiŋgәneil","",0
+"snowman","n. 雪人","'snәumæn","",0
+"motto","n. 箴言，格言","'mɒtәu","",0
+"altogether","adv. 总共",".ɒ:ltә'geðә","",0
+"squirrel","n. 松鼠","'skwә:rәl","",0
+"snowy","adj. 雪(白)的；下雪的；多(积)雪的","'snәui","",0
+"punishment","n. 惩罚","'pʌniʃmәnt","",0
+"happiness","n. 幸福，愉快","'hæpinis","",0
+"citizen","n. 公民；居民","'sitizn","",0
+"diploma","n.毕业文凭；学位证书","di'plәumә","",0
+"strawberry","n. 草莓","'strɒ:bәri","",0
+"superman","n. 超人","'sju:pәmæn","",0
+"catholic","adj. 天主教的","'kæθәlik","",0
+"biography","n. 传记","bai'ɒgrәfi","",0
+"applicant","n. 申请人","'æplikәnt","",0
+"astronaut","n. 宇航员","'æstrәnɒ:t","",0
+"stubborn","adj. 固执的，倔强的","'stʌbәn","",0
+"sacrifice","vt. 牺牲","'sækrifais","",0
+"disobey","vt. 不服从",".disә'bei","",0
+"arabic","adj. 阿拉伯语的 n. 阿拉伯语","'ærәbik","",0
+"attentively","adv. 注意地","ә'tentivli","",0
+"cordless","adj. 无线的","'kɒ:dlis","",0
+"greek","a.&n. 希腊的，希腊人的，希腊语的 ; 希腊人，希腊语","gri:k","",0
+"irrigate","vt. 灌溉","'irigeit","",0
+"weed","n. 杂草，野草","wi:d","",0
+"willingly","adv. 乐意地","'wiliŋli","",0
+"irrigation","n. 灌溉",".iri'geiʃәn","",0
+"battleground","n. 战场","'bætlgraund","",0
+"minister","n. 部长；牧师","'ministә","",0
+"troublesome","a.令人烦恼, 讨厌","'trʌblsәm","",0
+"sneaker","n. （复）轻便运动鞋（美）","'sni:kә","",0
+"tease","v. 取笑，戏弄，寻开心","ti:z","",0
+"backache","n. 背痛","'bækeik","",0
+"zipper","n. 拉链","'zipә","",0
+"discrimination","n. 歧视","dis.krimi'neiʃәn","",0
+"abortion","v. 人工流产，堕胎","ә'bɒ:ʃәn","",0
+"aluminium","n. （化）铝",".ælju'miniәm","",0
+"herb","n. 草药","hә:b","",0
+"shaver","pron. 她","'ʃeivә","",0
+"breathless","adj. 气喘吁吁的，上气不接下气的","'breθlis","",0
+"bakery","n. 面包店","'beikәri","",0
+"snowball","n. 雪球","'snәubɒ:l","",0
+"slavery","n. 奴隶制度","'sleivәri","",0
+"graduation","n. 毕业，毕业典礼",".grædʒu'eiʃәn","",0
+"seaman","n. 水手； 海员","'si:mәn","",0
+"peaceful","adj. 和平的，安宁的","'pi:sful","",0
+"belgium","* n. 比利时","'beldʒәm","",0
+"blood","n. 血，血液","blʌd","",0
+"burial","n. 埋葬","'beriәl","",0
+"disagree","vi. 意见不一致，持不同意见",".disә'gri:","",0
+"forehead","n. 前额","'fɒ:rid","",0
+"grill","n. （烧食物的）烤架","gril","",0
+"bungalow","n. 平房","'bʌŋgәlәu","",0
+"emperor","n. 皇帝","'empәrә","",0
+"ownership","n. 所有制","'әunәʃip","",0
+"ridiculous","adj. 荒谬的，愚蠢的","ri'dikjulәs","",0
+"throat","n. 喉咙","θrәut","",0
+"wrist","n. 手腕，腕关节","rist","",0
+"disgusting","a.极糟的，令人不快的，令人厌恶的","dis'gʌstiŋ","",0
+"unbelievable","a.难以置信的",".ʌnbi'li:vәbl","",0
+"absurd","a.荒谬的，怪诞不经的","әb'sә:d","",0
+"alphabet","n. 字母表，字母","'ælfәbit","",0
+"birthplace","n. 出生地；故乡","'bә:θpleis","",0
+"tremble","v. 颤抖","'trembl","",0
+"civilization","n. 文明","si.vilai'zeiʃәn","",0
+"microcomputer","n. 微机",".maikrәu'kɒmpjutә","",0
+"faith","n. 信仰；信念","feiθ","",0
+"botany","n. 植物； 植物学","'bɒtәni","",0
+"novelist","n. 小说家","'nɒvәlist","",0
+"unpleasant","adj. 使人不愉快的",".ʌn'pleznt","",0
+"oxygen","n. 氧；氧气","'ɒksәdʒәn","",0
+"forgive","(forgave, forgiven) vt. 原谅，宽恕","fә'giv","",0
+"balcony","n. 阳台；楼座","'bælkәni","",0
+"sunburnt","adj. 晒黑的","'sʌnb\\\\\\\\:nt","",0
+"breast","n. 乳房，胸脯","brest","",0
+"ice--cream","n. 冰淇淋","","",0
+"letter-box","n. 信箱","'letəbɔks","",0
+"microwave","n. 微波","'maikrәuweiv","",0
+"weep","v. 哭泣，流泪","wi:p","",0
+"whale","n. 鲸","hweil","",0
+"firework","n. 焰火","","",0
+"sickness","n. 疾病","'siknis","",0
+"cruel","adj. 残忍的，残酷的；无情的","'kru:әl","",0
+"adolescent","n. 青少年",".ædәu'lesәnt","",0
+"prayer","n. 祈祷","prєә. 'preiә","",0
+"zebra","n. 斑马","'zi:brә","",0
+"pencil-","转笔刀","","",0
+"locust","n. 蝗虫","'lәukәst","",0
+"sleeve","n. 袖子，袖套","sli:v","",0
+"district","n. 区；地区；区域","'distrikt","",0
+"furniture","n. （总称）家具","'fәnitʃә","",0
+"glare","v. 瞪眼,怒目而视,闪耀","glєә","",0
+"fright","n. 惊恐；恐吓","frait","",0
+"atlantic","adj. 大西洋的","әt'læntik","",0
+"sideways","adv. 斜向一边的","'saidweiz","",0
+"divorce","v. 离婚","di'vɒ:s","",0
+"playmate","n. 玩伴","'pleimeit","",0
+"sword","n. 剑，刀","sɒ:d","",0
+"dessert","n. 甜点","di'zә:t","",0
+"socialist","adj. 社会主义的","'sәuʃәlist","",0
+"bedclothes","n. 铺盖（被褥等）","'bedklәuðz","",0
+"boat-race","n. 划船比赛","'bəutreis","",0
+"snatch","v. 夺，夺得，夺走","snætʃ","",0
+"clerk","n. 书记员；办事员；职员","klә:k","",0
+"belly","n. 肚子","'beli","",0
+"humour","n.幽默,幽默感","'hju:mә","",0
+"jewelry","n. （总称）珠宝","'dʒu:әlri","",0
+"refrigerator","n. 冰箱","ri'fridʒәreitә","",0
+"criminal","n. 罪犯","'kriminәl","",0
+"vinegar","n. 醋","'vinigә","",0
+"remark","n. 陈述；话；议论","ri'mɑ:k","",0
+"tortoise","n. 乌龟","'tɒ:tәs","",0
+"handsome","adj. 英俊的","'hænsәm","",0
+"mercy","n. 怜悯","'mә:si","",0
+"swallow","vt. 吞下；咽下","'swɒlәu","",0
+"gentleman","n. 绅士，先生；有身份、有教养的人","'dʒentlmәn","",0
+"prisoner","n. 囚犯","'priznә","",0
+"bridegroom","n. 新郎","'braidgrum","",0
+"merciful","adj. 仁慈的；宽大的","'mә:siful","",0
+"school-leaver","n.(英)学校毕业生","sku:l 'li:və(r)","",0
+"aside","adv. 在旁边","ә'said","",0
+"fantasy","n 幻想，梦想","'fæntәsi","",0
+"allowance","n. 津贴，补助","ә'lauәns","",0
+"motherland","n. 祖国","'mʌðәlænd","",0
+"medicine","n. 药","'medisin","",0
+"harmless","adj. 无害的;不致伤的","'hɑ:mlis","",0
+"appetite","n. 食欲，胃口","'æpitait","",0
+"handful","n.(一)把；少数，少量","'hændful","",0
+"freezing","adj. 冻结的；极冷的","'fri:ziŋ","",0
+"organiser","n. 组织者","","",0
+"theft","n. 盗窃案 their /ðeə(r)/ pron. 他(她,它)们的","θeft","",0
+"wrestle","v. 摔跤","'resl","",0
+"mushroom","n. 蘑菇","'mʌʃrum","",0
+"suitcase","n.(旅行用)小提箱,衣箱","'sju:tkeis","",0
+"tennis","n. 网球","'tenis","",0
+"chairwoman","n. 女主席, 女会长；女议长","'tʃєәwumәn","",0
+"stranger","n. 陌生人，外人","'streindʒә","",0
+"astronomer","n. 天文学家","ә'strɒnәmә","",0
+"african","adj. 非洲的，非洲人的n. 非洲人","'æfrikәn","",0
+"mexico","* n. 墨西哥","'meksikәu","",0
+"lounge","n. 休息厅；休息室","laundʒ","",0
+"offence","n. 违法行为，犯罪","ә'fens","",0
+"prairie","n. 大草原","'prєәri","",0
+"outspoken","adj. 直率，坦诚",".aut'spәukәn","",0
+"airspace","n.领空,（某国的）空域","'єәspeis","",0
+"tax-free","免税的","","",0
+"nationwide","ad.全国范围内的,全国性的","'neiʃәnwaid","",0
+"left-wing","n. 左翼的","'leftwiŋ","",0
+"worn","adj. 用坏,用旧的,疲惫的","wɒ:n","",0
+"agenda","n. （会议）议程表，议事日程","ә'dʒendә","",0
+"seaside","n. 海滨","'si:said","",0
+"bathroom","n. 浴室，盥洗室","'bɑ:θru:m","",0
+"punish","v. 惩罚，处罚","'pʌniʃ","",0
+"civilian","n. 平民，老百姓","si'viljәn","",0
+"inn","n. 小旅店；小饭店","in","",0
+"tanker","n. 油船","'tæŋkә","",0
+"embarrass","v.使窘迫，尴尬","im'bærәs","",0
+"untrue","adj. 不真实的，假的",".ʌn'tru:","",0
+"recreation","n. 娱乐，消遣",".rekri'eiʃәn","",0
+"accustomed","adj. 习惯于,惯常的","ә'kʌstәmd","",0
+"barber","n. （为男人理发）理发师","'bɑ:bә","",0
+"buddhism","n. 佛教","'budizm","",0
+"tasty","adj. 味道好的","'teisti","",0
+"tissue","n. （人，动植物的）组织，纸巾","'tiʃu:","",0
+"liberation","n. 解放",".libә'reiʃәn","",0
+"cheerful","a.兴高采烈的，快活的","'tʃiәful","",0
+"ambassador","n.大使","æm'bæsәdә","",0
+"missile","n 导弹","'misail","",0
+"unimportant","a.不重要的,无意义",".ʌnim'pɒ:tnt","",0
+"marble","n. 大理石；玻璃弹子","'mɑ:bl","",0
+"bean","n. 豆，豆科植物","bi:n","",0
+"pregnant","adj. 怀孕的","'pregnәnt","",0
+"cyclist","n. 骑自行车的人","'saiklist","",0
+"sailing","n. 航海","'seiliŋ","",0
+"dormitory","n. 学生宿舍（缩写式dorm）","'dɒ:mitәri","",0
+"funeral","n. 葬礼","'fju:nәrәl","",0
+"paperwork","n. 日常文书工作","'peipәwә:k","",0
+"labourer","n.体力劳动者","'leibәrә","",0
+"u.k.","n.英国，联合王国","","",0
+"triangle","n.&adj.三角形;三角形的","'traiæŋgl","",0
+"voyage","n. 航行，旅行","'vɒiidʒ","",0
+"unbearable","a.难耐得,无法接受的",".ʌn'bєәrәbl","",0
+"seashell","n. 海贝","'si:ʃel","",0
+"antarctic","adj. 南极的","ænt'ɑ:ktik","",0
+"garlic","n. 大蒜","'gɑ:lik","",0
+"biscuit","n. 饼干","'biskit","",0
+"nursery","n. 托儿所","'nә:sәri","",0
+"see-saw","n. 跷跷板（游戏）","ˈsi:ˌsɔ:","",0
+"competence","n.能力,胜任,管辖权","'kɒmpitәns","",0
+"taxipayer","n. 茶；茶叶","","",0
+"buffet","n. 自助餐","'bʌfit","",0
+"squid","n. 鱿鱼","skwid","",0
+"friction","n. 摩擦","'frikʃәn","",0
+"sceptical","a.怀疑的","'skeptikl","",0
+"part-time","a.& ad. 兼职的； 部分时间的（地）","","",0
+"dinosaur","n. 恐龙","'dainәsɒ:","",0
+"boycott","v. 拒绝购买，抵制","'bɒikɒt","",0
+"canteen","n. 餐厅；食堂","kæn'ti:n","",0
+"dioxide","n.二氧化物","dai'ɒksaid","",0
+"lightning","n.闪电","'laitniŋ","",0
+"crime","n. （法律上的）罪，犯罪","kraim","",0
+"rhyme","n&v. 押韵","raim","",0
+"yoghurt","n. 酸奶","'jәugә:t","",0
+"helicopter","n. 直升飞机","'helikɒptә","",0
+"vacant","adj. 空缺的，未被占用的","'veikәnt","",0
+"pineapple","n. 菠萝","'pain.æpl","",0
+"unfold","vt. 展开，打开",".ʌn'fәuld","",0
+"midday","n. 中午, 正午","'middei","",0
+"unrest","n. 不安；骚动",".ʌn'rest","",0
+"merchant","adj. 商业的；商人的 n. 商人；生意人","'mә:tʃәnt","",0
+"lantern","n. 灯笼；提灯","'læntәn","",0
+"eyesight","n. 视力；视觉","'aisait","",0
+"shopkeeper","n. 店主，零售商人","'ʃɒp.ki:pә","",0
+"perfume","n. 香水","'pә:fju:m","",0
+"christian","n. 基督教徒和天主教徒的总称","'kristʃәn","",0
+"educator","n. 教育家","'edjukeitә","",0
+"retell","vt. 重讲，重复，复述","ri:'tel","",0
+"chopsticks","n. 筷子","'tʃɒpstiks","",0
+"hillside","n. （小山）山腰，山坡","'hilsaid","",0
+"agricultural","adj. 农业的",".ægri'kʌltʃәrәl","",0
+"unwilling","adj. 不愿意的，勉强的",".ʌn'wiliŋ","",0
+"chemist","n. 药剂师；化学家","'kemist","",0
+"ought","v.& aux.应该，应当","ɒ:t","",0
+"creature","n. 生物，动物","'kri:tʃә","",0
+"goldfish","n. 金鱼","'gәuldfiʃ","",0
+"judgement","n. 裁判","'dʒʌdʒmәnt","",0
+"uncomfortable","adj. 令人不舒服的",".ʌn'kʌmfәtәbl","",0
+"injury","n. 受伤处","'indʒәri","",0
+"hardship","n. 困难","'hɑ:dʃip","",0
+"ireland","* n. 爱尔兰","'aiәlәnd","",0
+"freeway","n. 高速公路","'fri:wei","",0
+"kettle","n. (烧水用的)水壶","'ketl","",0
+"mankind","n. 人类;（总称）人","mæn'kaind","",0
+"unconditional","a.无条件，绝对的",".ʌnkәn'diʃәnl","",0
+"spiritual","adj. 精神的； 心灵的","'spiritʃuәl","",0
+"seaweed","n. 海草,海藻,海带","'si:wi:d","",0
+"ripen","v. 成熟","'raipәn","",0
+"battle","n. 战斗；战役","'bætl","",0
+"easy--going","adj. 随和的","","",0
+"shortcoming","n. 缺点，短处","'ʃɒ:t'kʌmiŋ","",0
+"pension","n. 养老金","'penʃәn","",0
+"antarctica","* n. 南极洲","ænt'ɑ:ktikә","",0
+"worthless","a.没有价值,没有用的","'wә:θlis","",0
+"razor","n. 剃须刀","'reizә","",0
+"brewery","n. 啤酒厂（公司）","'bru:әri","",0
+"washing","n. 洗衣机","'wɒʃiŋ","",0
+"m","ad a. 发疯的；生气的","em","",0
+"symphony","n. 交响乐","'simfәni","",0
+"liberty","n. 自由","'libәli","",0
+"injure","vt. 损害，伤害","'indʒә","",0
+"typewriter","n. 打字机","'taip.raitә","",0
+"moscow","n. 莫斯科","'mɒskau","",0
+"jewel","n. 宝石","'dʒu:әl","",0
+"enquiry","n. 询问","in'kwaiәri","",0
+"wooden","adj. 木制的","'wudn","",0
+"desperate","a.（因绝望而）不惜冒险的，不顾一切的，拼命的","'despәrәt","",0
+"devotion","n. 奉献，奉献精神","di'vәuʃәn","",0
+"flame","n. 火焰，光辉","fleim","",0
+"cathedral","n. 大教堂（天主教）","kә'θi:drәl","",0
+"gallon","n. 加仑","'gælәn","",0
+"service-charge","n. 服务费,小费","","",0
+"bookcase","n. 书橱","'bukkeis","",0
+"mosquito","n.蚊子","mә'ski:tәu","",0
+"workmate","n. 同事；工友","","",0
+"thermos","n. 热水瓶","'θә:mәs","",0
+"cold-blooded","adj. (动物) 冷血的","kәjld'blʌdid","",0
+"circus","n. 马戏团","'sә:kәs","",0
+"omelette","n. 煎蛋卷；煎蛋饼","'ɒmlit","",0
+"right-wing","n. 右翼","'raitwiŋ","",0
+"arrival","n. 到来，到达","ә'raivl","",0
+"immigration","n. 移民",".imi'greiʃәn","",0
+"h","ang(hanged,hanged) v. 处（人）绞刑；上吊","eitʃ","",0
+"businesswoman","n. 商人（女）；女企业家","'bizniswjmæn","",0
+"switzerland","* n. 瑞士","'switsәlәnd","",0
+"departure","n. 离开，启程","di'pɑ:tʃә","",0
+"suspension","n.暂令停职,推迟,延期","sә'spenʃәn","",0
+"best--seller","n. 畅销书","","",0
+"married","adj. 已婚的","'mærid","",0
+"skillful","adj. 熟练,精湛的,灵巧的","'skilful","",0
+"sideway","n. 岔路，旁路","'saidwei","",0
+"radiation","n. 放射，放射物",".reidi'eiʃәn","",0
+"tobacco","n. 烟草，烟叶","tә'bækәu","",0
+"flashlight","n. 手电","'flæʃlait","",0
+"spoonful","n. 一匙（的量）","'spu:nful","",0
+"aeroplane","n. (英)飞机","'єәrәplein","",0
+"chant","v&n.反复呼喊","tʃænt. tʃɑ:nt","",0
+"roast","v. 烤（肉）","rәust","",0
+"female","adj. 女的；女性的；雌性的","'fi:meil","",0
+"abundant","a.大量,丰盛的,充裕的","ә'bʌndәnt","",0
+"world-famous","adj. 世界闻名的","","",0
+"non-violent","adj. 非暴力的","ˌnɔnˈvaɪələnt","",0
+"juicy","adj. 多汁的；水分多的","'dʒusi","",0
+"dentist","n. 牙科医生","'dentist","",0
+"enthusiastic","a.热情的，热心的","in.θju:zi'æstik","",0
+"volcano","n. 火山","vɒl'keinәu","",0
+"wrinkle","n. 皱纹","'riŋkl","",0
+"honey","n. 蜂蜜","'hʌni","",0
+"warm-hearted","adj. 热心的","","",0
+"adventure","n. 冒险；奇遇","әd'ventʃә","",0
+"armchair","n. 扶手椅",".ɑ:m'tʃєә","",0
+"cowboy","n.（美国）牛仔;牧场骑士","'kaubɒi","",0
+"alcohol","n. 含酒精饮料，酒","'ælkәhɒl","",0
+"republic","n. 共和国","ri'pʌblik","",0
+"whistle","n. 口哨，口哨声","'hwisl","",0
+"italian","adj. 意大利(人)的；意大利语的 n. 意大利人；意大利语","i'tæljәn","",0
+"circuit","n. 环形路线，巡回赛","'sә:kit","",0
+"bishop","n. 主教","'biʃәp","",0
+"unfortunate","adj. 不幸的",".ʌn'fɒ:tʃәnit","",0
+"eggplant","n. 茄子","'egplɑ:nt","",0
+"soccer","n.英式足球","'sɒkә","",0
+"darkness","n. 黑暗，阴暗","'dɑ:knis","",0
+"salute","v.& n. 敬礼","sә'lu:t","",0
+"wayside","adj. 路边的","'weisaid","",0
+"waitress","n. 女服务员","'weitris","",0
+"acquaintance","n. 熟人，（与某人）认识","ә'kweintәns","",0
+"crossroads","n. 交叉路口","'krɒsrәud","",0
+"greedy","adj. 贪婪的","'gri:di","",0
+"kindergarten","n. 幼儿园","'kindә.gɑ:tn","",0
+"snack","n. 小吃","snæk","",0
+"chairman","(pl. chairmen) n. 主席，会长；议长","'tʃєәmәn","",0
+"bookshelf","n. 书架","'bukʃelf","",0
+"moslem","n. 伊斯兰教徒,回教徒","'mɒzlәm","",0
+"lavatory","n. 便所，厕所","'lævәtәri","",0
+"courtyard","n. 庭院，院子","'kɒ:tjɑ:d","",0
+"saucer","n. 茶碟，茶托，小圆盘","'sɒ:sә","",0
+"percent","n. 百分之……","pә'sent","",0
+"woo","l n. 羊毛，羊绒","wu:","",0
+"digest","v.消化, 领会","di'dʒest","",0
+"drill","n. 钻头；（反复的）训练 vt. 钻(孔)， 在…上钻孔；重复训练","dril","",0
+"muddy","adj. 泥泞的","'mʌdi","",0
+"communist","n. 共产主义者 a. 共产党的；共产主义的","'kɒmjunist","",0
+"minority","n. 少数；少数民族","mai'nɒriti","",0
+"tibet","n. 西藏","ti'bet","",0
+"rainfall","n. 一场雨； 降雨量","'reinfɒ:l","",0
+"non-stop","a.& ad.不停的,不断地","","",0
+"ambulance","n. 救护车","'æmbjulәns","",0
+"handkerchief","n. 手帕","'hæŋkәtʃif","",0
+"burglar","n. 入室窃贼","'bә:glә","",0
+"beancurd","n. 豆腐","'bi:nkə:d","",0
+"organise","vt. 组织","'ɒ:gәnaiz","",0
+"stopwatch","n. 记秒表；跑表","'stɒpwɒtʃ","",0
+"between","prep. 在（两者）之间；在…中间","bi'twi:n","",0
+"scholarship","n. 奖学金","'skɒlәʃip","",0
+"windbreaker","n.风衣,防风(皮)夹克","'wind.breikә","",0
+"reception","n. 接待","ri'sepʃәn","",0
+"greengrocer","n.（英）蔬菜水果商","'gri:ngrәusә","",0
+"centigrade","adj. 摄氏的","'sentigreid","",0
+"founding","n. 成立，建立","'faundiŋ","",0
+"fried","adj. 油煎的","fraid","",0
+"scottish","adj. 苏格兰（人）的 n. 苏格兰人","'skɒtiʃ","",0
+"sausage","n. 香肠，腊肠","'sɒsidʒ","",0
+"sympathy","n. 同情","'simpәθi","",0
+"jeans","n. 牛仔裤","dʒi:nz","",0
+"eastern","adj. 东方的；东部的","'i:stәn","",0
+"brunch","n. 早午饭（晚早饭）","brʌntʃ","",0
+"photographer","n. 摄影师","fә'tɔ^rәfә","",0
+"pump","t. 用泵抽水","pʌmp","",0
+"salty","adj. 盐的，咸的，含盐的","'sɒ:lti","",0
+"virus","n.病毒","'vaiәrәs","",0
+"catastrophe","n. 灾难，灾祸，不幸事件","kә'tæstrәfi","",0
+"barbershop","n. 理发店","","",0
+"belt","n. （皮）带","belt","",0
+"broadcast（broadcast,","vt. 广播","","",0
+"bachelor","n. 未婚男子，单身汉","'bætʃәlә","",0
+"laughter","n. 笑； 笑声","'lɑ:ftә","",0
+"heel","n. 脚后跟","hi:l","",0
+"microscope","n. 显微镜","'maikrәuskәup","",0
+"underwear","n. 内衣","'ʌndәwєә","",0
+"skyscraper","n. 摩天楼","'skaiskreipә","",0
+"bravery","n. 勇气","'breivәri","",0
+"grocer","n. 零售商人；食品店","'grәusә","",0
+"videophone","n. 可视电话","'vidiәu'fәun","",0
+"honour","n. 荣誉，光荣 vt. 尊敬，给予荣誉","'ɒnә","",0
+"coast","n. 海岸；海滨","kәust","",0
+"brave","adj. 勇敢的","breiv","",0
+"fragrant","adj. 香的，芳香的","'freigrәnt","",0
+"cd-rom","信息储存光盘(compact disk read-only memory的缩写)","si:di:'rɔm","",0
+"salary","n. 薪金，薪水","'sælәri","",0
+"willingness","n. 意愿； 愿望","","",0
+"bandage","n. 绷带","'bændidʒ","",0
+"clumsy","adj. 笨拙的，不灵巧的","'klʌmzi","",0
+"step-mother","n. 继母","'step'mʌðə","",0
+"gymnastics","n. 体操","dʒim'næstiks","",0
+"sniff","v. 抽鼻子（哭,患感冒时）","snif","",0
+"italy","* n. 意大利","'itәli","",0
+"butcher","n. vt. 肉店；屠夫 屠宰（动物）；残杀（人）","'butʃә","",0
+"beehive","n. 蜂箱","'bi:haiv","",0
+"millionaire","n. 百万富翁",".miljә'nєә","",0
+"gruel","n. 粥","'gru:әl","",0
+"coincidence","n. 巧合，巧事","kәu'insidәns","",0
+"pub","n. 酒店，酒吧","pʌb","",0
+"devote","vt. 把…奉献, 把…专用（于）","di'vәut","",0
+"bunch","n. 串,束,扎,大量,大批","bʌntʃ","",0
+"bacterium","(复bacteria) n. 细菌","bæk'tiәriәm","",0
+"willing","adj. 乐意的； 愿意的","'wiliŋ","",0
+"refreshments","n. 点心，便餐；(会议后的)简单茶点招待","ri'freʃmәnt","",0
+"get-together","n. 聚会","\"'^ettә","",0
+"spoken","adj. 口语的","'spәukәn","",0
+"carrier","n. 搬运者；媒介;（自行车等的）置物架；（车的）货架","'kæriә","",0
+"discount","n. 折扣","'diskaunt","",0
+"illegal","adj. 非法的","i'li:gәl","",0
+"rewind","v. 回转（磁带等）","ri:'waind","",0
+"lecture","n. 讲课，演讲","'lektʃә","",0
+"cigar","n. 雪茄烟","si'gɑ:","",0
+"beast","n. 野兽；牲畜","bi:st","",0
+"rainbow","n. 虹，彩虹","'reinbәu","",0
+"cafeteria","n. 自助餐厅",".kæfi'tiәriә","",0
+"trolley-bus","n. 无轨电车","","",0
+"actress","n. 女演员","'æktris","",0
+"federa","l a.中央的（政府）联邦的","","",0
+"mexican","adj. 墨西哥的","'meksikәn","",0
+"timetable","n. （火车、公共汽车等）时间表；（学校）课表","'taimteibl","",0
+"walkman","n. 随身听","","",0
+"victory","n. 胜利","'viktәri","",0
+"eagle","n. 鹰","'i:gl","",0
+"disturbing","adj. 令人不安的，引起恐慌的","dis'tә:biŋ","",0
+"undivided","adj. 没分开的；专一的； 专心的",".ʌndi'vaidid","",0
+"co-worker","n. 合作者；同事","'kәu'wә:kә","",0
+"handtruck","n.手推运货车","'hændtrʌk","",0
+"lemonade","n. 柠檬水",".lemә'neid","",0
+"glasshouse","n. 温室，暖房","'glɑ:shaus","",0
+"chorus","n. 合唱曲，歌咏队","'kɒ:rәs","",0
+"nursing","n.(职业性的）保育,护理","'nә:siŋ","",0
+"mailbox","n. 邮筒；邮箱","'meilbɒks","",0
+"popcorn","n. 爆米花","'pɒpkɒ:n","",0
+"overweight","adj. 太胖的,超重的","'әuvә'weit","",0
+"mourn","vt. 哀痛； 哀悼","mɒ:n","",0
+"phone-booth","n. 公用电话间","","",0
+"liquid","n. & a. 液体；液体的","'likwid","",0
+"dislike","vt. 不喜爱；厌恶","dis'laik","",0
+"typist","n. 打字员","'taipist","",0
+"labour","n. 劳动","'leibә","",0
+"laundry","n. 洗衣店;要洗的衣服","'lɒ:ndri","",0
+"athletic","adj. 健壮的,体育运动的","æθ'letik","",0
+"abrupt","adj. 突然的，意外的，粗鲁","ә'brʌpt","",0
+"compulsory","adj. 强制的,必须做的","kәm'pʌlsәri","",0
+"unfit","adj. 不合宜的，不相宜的",".ʌn'fit","",0
+"pollution","n. 污染","pә'lu:ʃәn","",0
+"oral","adj. 口述的，口头上的","'ɒ:rәl","",0
+"sightseeing","n. 游览，观光","'saitsi:iŋ","",0
+"aboard","prep. 上（船，飞机，火车，汽车等）","ә'bɒ:d","",0
+"cattle","n. 牛（总称），家畜","kætl","",0
+"aggression","n. 侵略","ә'greʃәn","",0
+"fibre","(美fiber) n. 纤维质","'faibә","",0
+"cubic","a.立方体的，立方形的","'kju:bik","",0
+"unhappy","adj. 不高兴的,伤心的",".ʌn'hæpi","",0
+"scold","vt. 责骂","skәuld","",0
+"admirable","a.值得赞赏的,可钦佩的","'ædmәrәbl","",0
+"anybody","pron. 任何人，无论谁","'enibɒdi","",0
+"outing","n. 郊游，远足","'autiŋ","",0
+"athlete","n. 运动员","'æθli:t","",0
+"sneeze","v. 打喷嚏","sni:z","",0
+"punctual","adj. 准时的","'pәŋktʃuәl","",0
+"bureaucratic","adj. 官僚的","bjuәrәu'krætik","",0
+"offshore","adj. 近海的","ɒ:f'ʃɒ:","",0
+"ash","n. 灰； 灰末","æʃ","",0
+"more（much或many","a&ad.另外的；附加的；较多的再；另外；而且；更 n. 更多的量；另外的一些","","",0
+"garment","n. （一件）衣服","'gɑ:mәnt","",0
+"england*","n. 英格兰","","",0
+"easter","n. 复活节","'i:stә","",0
+"sorrow","n. 悲伤，悲痛","'sɒrәu","",0
+"scotland","* n. 苏格兰","'skɒtlәnd","",0
+"dignity","n. 庄重，庄严，尊严。尊贵，高尚","'digniti","",0
+"hibernation","n. 冬眠",".haibә'neiʃәn","",0
+"carpenter","n. 木工，木匠","'kɑ:pintә","",0
+"interview","n.& vt.采访,会见,面试","'intәvju:","",0
+"disagreement","n. 意见不一致；相违；争论",".disә'gri:mәnt","",0
+"shuttle","v&n. 合拢 （往返与两个定点之间的）（火车汽车飞机）班车","'ʃʌtl","",0
+"waiting-room","n.候诊室,候车室","","",0
+"anywa","y ad. 不管怎样","","",0
+"b","iochemistry n. 生物化学","bi:","",0
+"clothing","n. (总称) 衣服","'klәuðiŋ","",0
+"medal","n. 奖牌","'medl","",0
+"egypt*","n. 埃及","","",0
+"apartment","n. （美）楼中单元房，一套房间；房间","ә'pɑ:tmәnt","",0
+"workday","n. 工作日","","",0
+"typhoon","n. 台风","tai'fu:n","",0
+"attractive","adj. 迷人的，有吸引力的","ә'træktiv","",0
+"treasure","n. 金银财宝, 财富","'treʒә","",0
+"skillfully","adv. 精湛地,巧妙地","","",0
+"iceland","* n. 冰岛","'aislәnd","",0
+"courage","n. 勇气； 胆略","'kʌridʒ","",0
+"ring-road","n. 环形公路","","",0
+"cottage","n. (郊外)小屋,村舍,别墅","'kɒtidʒ","",0
+"cassettle","n. 磁带","","",0
+"anniversary","n. 周年纪念日","æni'vә:sәri","",0
+"altitude","n. 海拔高度","'æltitju:d","",0
+"flaming","adj. 火红的；火焰般的","'fleimiŋ","",0
+"wedding","n. 婚礼,结婚","'wediŋ","",0
+"starvation","n. 饥饿； 饿死","stɑ:'veiʃәn","",0
+"left-handed","adj. 惯用左手的","'left'hændid","",0
+"oilfield","n.油田 OK/əʊˈkeɪ/ ad. （口语）好,对,不错","ˈɔɪlfi:ld","",0
+"airmail","n. 航空邮件","'єәmeil","",0
+"harbour","n. 港口","'hɑ:bә","",0
+"radioactive","adj. 放射性的",".reidiәu'æktiv","",0
+"spain*","n. 西班牙","","",0
+"ballpoint","圆珠笔","","",0
+"betray","v.出卖,泄露（机密）,辜负","bi'trei","",0
+"passer-by","n. 过客，过路人","'pɑ:sə baɪ","",0
+"mineral","n. 矿物质，矿物","'minәrәl","",0

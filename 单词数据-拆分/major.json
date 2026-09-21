@@ -1,0 +1,4825 @@
+[
+  {
+    "word": "ai",
+    "meaning": "人工智能（Artificial Intelligence）",
+    "phonetic": "ai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "llm",
+    "meaning": "大语言模型（Large Language Model）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "api",
+    "meaning": "应用程序接口（Application Programming Interface）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mcp",
+    "meaning": "模型上下文协议（Model Context Protocol，AI Agent 工具协议）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prompt",
+    "meaning": "提示词（给 AI 的指令/输入）",
+    "phonetic": "prɒmpt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "agentic",
+    "meaning": "智能体的；自主代理的（Agentic AI）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "workflow",
+    "meaning": "工作流；流程编排",
+    "phonetic": "'wɜ:kfləʊ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "langchain",
+    "meaning": "LangChain（AI 应用开发框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "langgraph",
+    "meaning": "LangGraph（智能体/Agent 编排框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dify",
+    "meaning": "Dify（开源 AI 应用开发平台）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "python",
+    "meaning": "Python（编程语言）",
+    "phonetic": "'paiθɒn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "github",
+    "meaning": "GitHub（代码托管平台）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "openai",
+    "meaning": "OpenAI（人工智能研究公司）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "claude",
+    "meaning": "Claude（Anthropic 的 AI 模型）",
+    "phonetic": "klɔ:d",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gemini",
+    "meaning": "Gemini（Google 的 AI 模型）",
+    "phonetic": "'dʒeminai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ultralytics",
+    "meaning": "Ultralytics（YOLO 目标检测框架/公司）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adk",
+    "meaning": "ADK（Agent Development Kit，智能体开发套件）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "codebuddy",
+    "meaning": "CodeBuddy（AI 编程助手）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "server",
+    "meaning": "服务器；服务端",
+    "phonetic": "'sә:vә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "query",
+    "meaning": "查询；提问",
+    "phonetic": "'kwiәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dataset",
+    "meaning": "数据集",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "embedding",
+    "meaning": "嵌入；向量化表示",
+    "phonetic": "em'bediŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "token",
+    "meaning": "词元；令牌（LLM 文本最小单位）",
+    "phonetic": "'tәukәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pipeline",
+    "meaning": "处理管线；流水线",
+    "phonetic": "'paiplain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inference",
+    "meaning": "推理（模型预测过程）",
+    "phonetic": "'infәrәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quantization",
+    "meaning": "量化（模型压缩技术）",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "multimodal",
+    "meaning": "多模态的（文本/图像/音频/视频）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deployment",
+    "meaning": "部署",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "benchmark",
+    "meaning": "基准测试；评估指标",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vector",
+    "meaning": "向量",
+    "phonetic": "'vektә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retrieval",
+    "meaning": "检索",
+    "phonetic": "ri'tri:vl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interface",
+    "meaning": "接口；界面",
+    "phonetic": "'intәfeis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "implementation",
+    "meaning": "实现",
+    "phonetic": ".implimen'teiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "configuration",
+    "meaning": "配置",
+    "phonetic": "kәn.figju'reiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optimization",
+    "meaning": "优化",
+    "phonetic": ".ɒptimai'zeiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "algorithm",
+    "meaning": "算法",
+    "phonetic": "'ælgәriðm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parameter",
+    "meaning": "参数",
+    "phonetic": "pә'ræmitә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "automation",
+    "meaning": "自动化",
+    "phonetic": ".ɒ:tә'meiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chatbot",
+    "meaning": "聊天机器人",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transformer",
+    "meaning": "Transformer（注意力机制模型架构）",
+    "phonetic": "træns'fɒ:mә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tokenizer",
+    "meaning": "分词器",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vision",
+    "meaning": "视觉；视觉识别",
+    "phonetic": "'viʒәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generative",
+    "meaning": "生成式的（生成式 AI）",
+    "phonetic": "'dʒenәrәtiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "structure",
+    "meaning": "结构；构造",
+    "phonetic": "'strʌktʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "response",
+    "meaning": "响应；回答（模型输出）",
+    "phonetic": "ri'spɒns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generate",
+    "meaning": "生成",
+    "phonetic": "'dʒenәreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ensure",
+    "meaning": "确保",
+    "phonetic": "in'ʃuә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "capability",
+    "meaning": "能力；功能特性",
+    "phonetic": ".keipә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "source",
+    "meaning": "来源；源码",
+    "phonetic": "sɒ:s",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enable",
+    "meaning": "启用；使能够",
+    "phonetic": "i'neibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "external",
+    "meaning": "外部的",
+    "phonetic": "ik'stә:nl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "core",
+    "meaning": "核心的",
+    "phonetic": "kɒ:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "multiple",
+    "meaning": "多个的",
+    "phonetic": "'mʌltipl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "input",
+    "meaning": "输入",
+    "phonetic": "'input",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "execution",
+    "meaning": "执行；运行",
+    "phonetic": ".eksi'kju:ʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "execute",
+    "meaning": "执行；运行",
+    "phonetic": "'eksikju:t",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "involve",
+    "meaning": "涉及；包含",
+    "phonetic": "in'vɒlv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "detail",
+    "meaning": "细节；详述",
+    "phonetic": "'di:teil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "provider",
+    "meaning": "提供者（服务/模型供应商）",
+    "phonetic": "prә'vaidә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interaction",
+    "meaning": "交互；互动",
+    "phonetic": ".intәr'ækʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resource",
+    "meaning": "资源",
+    "phonetic": "ri'sɒ:s",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "effective",
+    "meaning": "有效的",
+    "phonetic": "i'fektiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "implement",
+    "meaning": "实现；落地",
+    "phonetic": "'implimәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "evaluation",
+    "meaning": "评估；评测",
+    "phonetic": "i.vælju'eiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "integration",
+    "meaning": "集成；整合",
+    "phonetic": ".inti'greiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "asset",
+    "meaning": "资产；资源文件",
+    "phonetic": "'æset",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "critical",
+    "meaning": "关键的；危急的",
+    "phonetic": "'kritikәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "identify",
+    "meaning": "识别；确定",
+    "phonetic": "ai'dentifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "define",
+    "meaning": "定义",
+    "phonetic": "di'fain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "management",
+    "meaning": "管理",
+    "phonetic": "'mænidʒmәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "feedback",
+    "meaning": "反馈",
+    "phonetic": "'fi:dbæk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "update",
+    "meaning": "更新",
+    "phonetic": "ʌp'deit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "installation",
+    "meaning": "安装",
+    "phonetic": ".instә'leiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "integrate",
+    "meaning": "集成；整合",
+    "phonetic": "'intigreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "protocol",
+    "meaning": "协议",
+    "phonetic": "'prәutәkɒl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intelligent",
+    "meaning": "智能的",
+    "phonetic": "in'telidʒәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "feature",
+    "meaning": "功能；特性",
+    "phonetic": "'fi:tʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "essential",
+    "meaning": "必不可少的",
+    "phonetic": "i'senʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "script",
+    "meaning": "脚本",
+    "phonetic": "skript",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "documentation",
+    "meaning": "文档",
+    "phonetic": ".dɒkjumen'teiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mechanism",
+    "meaning": "机制",
+    "phonetic": "'mekәnizm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reflection",
+    "meaning": "反思；反射（编程）",
+    "phonetic": "ri'flekʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strategy",
+    "meaning": "策略",
+    "phonetic": "'strætidʒi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "label",
+    "meaning": "标签",
+    "phonetic": "'leibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "default",
+    "meaning": "默认（值/行为）",
+    "phonetic": "di'fɒ:lt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refine",
+    "meaning": "细化；精炼",
+    "phonetic": "ri'fain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solution",
+    "meaning": "解决方案",
+    "phonetic": "sә'lu:ʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enhance",
+    "meaning": "增强；提升",
+    "phonetic": "in'hæns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "internal",
+    "meaning": "内部的",
+    "phonetic": "in'tә:nәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extract",
+    "meaning": "提取；抽取",
+    "phonetic": "ik'strækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "client",
+    "meaning": "客户端",
+    "phonetic": "'klaiәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "release",
+    "meaning": "发布（版本）",
+    "phonetic": "ri'li:s",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "instance",
+    "meaning": "实例",
+    "phonetic": "'instәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relevant",
+    "meaning": "相关的",
+    "phonetic": "'relivәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "behavior",
+    "meaning": "行为",
+    "phonetic": "bi'heivjә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retrieve",
+    "meaning": "检索；取回",
+    "phonetic": "ri'tri:v",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interact",
+    "meaning": "交互",
+    "phonetic": ".intәr'ækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parallel",
+    "meaning": "并行的",
+    "phonetic": "'pærәlel",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "current",
+    "meaning": "当前的",
+    "phonetic": "'kʌrәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "template",
+    "meaning": "模板",
+    "phonetic": "'templit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "significant",
+    "meaning": "显著的",
+    "phonetic": "sig'nifikәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "developer",
+    "meaning": "开发者",
+    "phonetic": "di'velәpә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "automate",
+    "meaning": "自动化",
+    "phonetic": "'ɔ:tәmeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "logic",
+    "meaning": "逻辑",
+    "phonetic": "'lɒdʒik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "loop",
+    "meaning": "循环",
+    "phonetic": "lu:p",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "maintain",
+    "meaning": "维护；保持",
+    "phonetic": "mein'tein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optimize",
+    "meaning": "优化",
+    "phonetic": "'ɒptimaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "operational",
+    "meaning": "运营的；可运行的",
+    "phonetic": ".ɒpә'reiʃәnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sequence",
+    "meaning": "序列",
+    "phonetic": "'si:kwәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "computational",
+    "meaning": "计算的",
+    "phonetic": ".kɒmpju'teiʃәnәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robust",
+    "meaning": "健壮的；鲁棒的",
+    "phonetic": "rәu'bʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plugin",
+    "meaning": "插件",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "utilize",
+    "meaning": "利用；使用",
+    "phonetic": "'ju:tilaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "credential",
+    "meaning": "凭据；凭证",
+    "phonetic": "kri'denʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "static",
+    "meaning": "静态的",
+    "phonetic": "'stætik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sequential",
+    "meaning": "顺序的",
+    "phonetic": "si'kwenʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "embed",
+    "meaning": "嵌入",
+    "phonetic": "im'bed",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "node",
+    "meaning": "节点",
+    "phonetic": "nәud",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "backend",
+    "meaning": "后端",
+    "phonetic": "'bækend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complexity",
+    "meaning": "复杂度",
+    "phonetic": "kәm'pleksiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sophisticated",
+    "meaning": "复杂精细的；高级的",
+    "phonetic": "sә'fistikeitid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "option",
+    "meaning": "选项",
+    "phonetic": "'ɒpʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "objective",
+    "meaning": "目标；客观的",
+    "phonetic": "әb'dʒektiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exception",
+    "meaning": "异常（程序报错）",
+    "phonetic": "ik'sepʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "duration",
+    "meaning": "时长",
+    "phonetic": "dju'reiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "email",
+    "meaning": "电子邮件",
+    "phonetic": "'i:'meil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "artifact",
+    "meaning": "产物；构建物",
+    "phonetic": "'ɑ:tifækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "config",
+    "meaning": "配置",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subsequent",
+    "meaning": "随后的",
+    "phonetic": "'sʌbsikwәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "env",
+    "meaning": "环境（变量）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "handler",
+    "meaning": "处理器",
+    "phonetic": "'hændlә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "markdown",
+    "meaning": "Markdown（轻量标记语言）",
+    "phonetic": "'mɑ:kdaun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "program",
+    "meaning": "程序；编程",
+    "phonetic": "'prәugræm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "setup",
+    "meaning": "设置；安装",
+    "phonetic": "'setʌp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exploration",
+    "meaning": "探索",
+    "phonetic": ".eksplә'reiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "schema",
+    "meaning": "模式；结构定义（数据）",
+    "phonetic": "'ski:mә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "validation",
+    "meaning": "验证",
+    "phonetic": ".væli'deiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "philosophy",
+    "meaning": "哲学；理念",
+    "phonetic": "fi'lɒsәfi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "iterative",
+    "meaning": "迭代的",
+    "phonetic": "'itәrәtiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "facilitate",
+    "meaning": "促进；使便利",
+    "phonetic": "fә'siliteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "efficient",
+    "meaning": "高效的",
+    "phonetic": "i'fiʃәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "financial",
+    "meaning": "金融的",
+    "phonetic": "fai'nænʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collaboration",
+    "meaning": "协作",
+    "phonetic": "kә.læbә'ræʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "additional",
+    "meaning": "额外的",
+    "phonetic": "ә'diʃәnәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intent",
+    "meaning": "意图",
+    "phonetic": "in'tent",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "establish",
+    "meaning": "建立",
+    "phonetic": "i'stæbliʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "logical",
+    "meaning": "逻辑的",
+    "phonetic": "'lɒdʒikәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recovery",
+    "meaning": "恢复；故障恢复",
+    "phonetic": "ri'kʌvәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "metric",
+    "meaning": "指标",
+    "phonetic": "'metrik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "augmentation",
+    "meaning": "增强（数据增强）",
+    "phonetic": ".ɒ:gmen'teiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "individual",
+    "meaning": "个体；单独的",
+    "phonetic": ".indi'vidʒuәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "domain",
+    "meaning": "领域；域名",
+    "phonetic": "dәu'mein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dependency",
+    "meaning": "依赖",
+    "phonetic": "di'pendәnsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "constraint",
+    "meaning": "约束",
+    "phonetic": "kәn'streint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manual",
+    "meaning": "手册；手动的",
+    "phonetic": "'mænjuәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "layer",
+    "meaning": "层",
+    "phonetic": "'leiә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distinct",
+    "meaning": "不同的；清晰的",
+    "phonetic": "dis'tiŋkt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "efficiency",
+    "meaning": "效率",
+    "phonetic": "i'fiʃәnsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scenario",
+    "meaning": "场景",
+    "phonetic": "si'nɑ:riәu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "original",
+    "meaning": "原始的",
+    "phonetic": "ә'ridʒәnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ultimate",
+    "meaning": "最终的",
+    "phonetic": "'ʌltimit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "phase",
+    "meaning": "阶段",
+    "phonetic": "feiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refinement",
+    "meaning": "精化；改良",
+    "phonetic": "ri'fainmәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compose",
+    "meaning": "组合；编写",
+    "phonetic": "kәm'pәuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collaborative",
+    "meaning": "协作的",
+    "phonetic": "kә'læbәreitiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mode",
+    "meaning": "模式",
+    "phonetic": "mәud",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "summarize",
+    "meaning": "总结",
+    "phonetic": "'sʌmәraiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "variable",
+    "meaning": "变量",
+    "phonetic": "'vєәriәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "semantic",
+    "meaning": "语义的",
+    "phonetic": "si'mæntik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reliability",
+    "meaning": "可靠性",
+    "phonetic": "ri.laiә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "leverage",
+    "meaning": "利用；借助",
+    "phonetic": "'levәridʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "modify",
+    "meaning": "修改",
+    "phonetic": "'mɒdifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "community",
+    "meaning": "社区",
+    "phonetic": "kә'mju:niti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extend",
+    "meaning": "扩展",
+    "phonetic": "ik'stend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deploy",
+    "meaning": "部署",
+    "phonetic": "di'plɒi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sample",
+    "meaning": "样本；示例",
+    "phonetic": "'sæmpl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "creation",
+    "meaning": "创建",
+    "phonetic": "kri:'eiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "profile",
+    "meaning": "配置文件；画像",
+    "phonetic": "'prәufail",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overview",
+    "meaning": "概览",
+    "phonetic": "'әuvәvju:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "usage",
+    "meaning": "用法；使用量",
+    "phonetic": "'ju:sidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "continuous",
+    "meaning": "持续的",
+    "phonetic": "kәn'tinjuәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "entity",
+    "meaning": "实体",
+    "phonetic": "'entiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "concurrent",
+    "meaning": "并发的",
+    "phonetic": "kәn'kʌrәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "simulate",
+    "meaning": "模拟",
+    "phonetic": "'simjuleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solve",
+    "meaning": "解决",
+    "phonetic": "sɒlv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overall",
+    "meaning": "总体的",
+    "phonetic": "'әuvәrɒ:l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "element",
+    "meaning": "元素",
+    "phonetic": "'elimәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fallback",
+    "meaning": "兜底方案；降级备用",
+    "phonetic": "'fɒ:lbæk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repository",
+    "meaning": "仓库（代码库）",
+    "phonetic": "ri'pɔzitәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "convert",
+    "meaning": "转换",
+    "phonetic": "kәn'vә:t",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proactive",
+    "meaning": "主动的",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tutorial",
+    "meaning": "教程",
+    "phonetic": "tju:'tɒ:riәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "location",
+    "meaning": "位置",
+    "phonetic": "lәu'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contract",
+    "meaning": "合同；（编程）契约",
+    "phonetic": "'kɒntrækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "criteria",
+    "meaning": "标准（复数）",
+    "phonetic": "krai'tiәriә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "validate",
+    "meaning": "校验",
+    "phonetic": "'vælideit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "limitation",
+    "meaning": "局限性",
+    "phonetic": ".limi'teiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "device",
+    "meaning": "设备",
+    "phonetic": "di'vais",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contributor",
+    "meaning": "贡献者",
+    "phonetic": "kәn'tribjutә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "combination",
+    "meaning": "组合",
+    "phonetic": ".kɒmbi'neiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generator",
+    "meaning": "生成器",
+    "phonetic": "'dʒenәreitә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gateway",
+    "meaning": "网关",
+    "phonetic": "'geitwei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frontend",
+    "meaning": "前端",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "module",
+    "meaning": "模块",
+    "phonetic": "'mɒdju:l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "functionality",
+    "meaning": "功能性",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "takeaway",
+    "meaning": "要点；收获",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parallelization",
+    "meaning": "并行化",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "selection",
+    "meaning": "选择",
+    "phonetic": "si'lekʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verify",
+    "meaning": "验证",
+    "phonetic": "'verifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scope",
+    "meaning": "范围",
+    "phonetic": "skәup",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "similarity",
+    "meaning": "相似度",
+    "phonetic": ".simi'læriti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "illustrate",
+    "meaning": "举例说明；图示",
+    "phonetic": "'ilәstreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "previous",
+    "meaning": "先前的",
+    "phonetic": "'pri:viәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cannot",
+    "meaning": "不能",
+    "phonetic": "'kænɒt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "improvement",
+    "meaning": "改进",
+    "phonetic": "im'pru:vmәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orchestrate",
+    "meaning": "编排",
+    "phonetic": "'ɒ:kistreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "column",
+    "meaning": "列（表格）",
+    "phonetic": "'kɒlәm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "effectiveness",
+    "meaning": "有效性",
+    "phonetic": "i'fektivnis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sdk",
+    "meaning": "软件开发工具包（SDK）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "creative",
+    "meaning": "创造性的",
+    "phonetic": "kri:'eitiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "layout",
+    "meaning": "布局",
+    "phonetic": "'leiaut",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "foundational",
+    "meaning": "基础性的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "persistent",
+    "meaning": "持久的",
+    "phonetic": "pә'sistәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "debug",
+    "meaning": "调试",
+    "phonetic": "di:'bʌg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "runtime",
+    "meaning": "运行时",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chunk",
+    "meaning": "文本块；分块",
+    "phonetic": "tʃʌŋk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "localhost",
+    "meaning": "本地主机（127.0.0.1）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "practice",
+    "meaning": "实践；练习",
+    "phonetic": "'præktis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "latency",
+    "meaning": "延迟",
+    "phonetic": "'leitnsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "guideline",
+    "meaning": "指南；准则",
+    "phonetic": "'gaidlain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specify",
+    "meaning": "指定",
+    "phonetic": "'spesifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gap",
+    "meaning": "差距；缺口",
+    "phonetic": "gæp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "header",
+    "meaning": "头部；请求头",
+    "phonetic": "'hedә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strategic",
+    "meaning": "战略的",
+    "phonetic": "strә'ti:dʒik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "console",
+    "meaning": "控制台",
+    "phonetic": "kәn'sәul",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extraction",
+    "meaning": "提取",
+    "phonetic": "ik'strækʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invoke",
+    "meaning": "调用",
+    "phonetic": "in'vәuk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "evolve",
+    "meaning": "演进；演化",
+    "phonetic": "i'vɒlv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "initialization",
+    "meaning": "初始化",
+    "phonetic": "\"i",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "desktop",
+    "meaning": "桌面",
+    "phonetic": "'desktɔp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "merge",
+    "meaning": "合并",
+    "phonetic": "mә:dʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "formula",
+    "meaning": "公式",
+    "phonetic": "'fɒ:mjulә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kit",
+    "meaning": "工具包",
+    "phonetic": "kit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specification",
+    "meaning": "规格说明",
+    "phonetic": ".spesifi'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "metadata",
+    "meaning": "元数据",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "utility",
+    "meaning": "实用工具",
+    "phonetic": "ju:'tiliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "asynchronous",
+    "meaning": "异步的",
+    "phonetic": "ei'siŋkrәnәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resolve",
+    "meaning": "解决；解析",
+    "phonetic": "ri'zɒlv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "index",
+    "meaning": "索引",
+    "phonetic": "'indeks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "array",
+    "meaning": "数组",
+    "phonetic": "ә'rei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "webhook",
+    "meaning": "网络钩子（事件回调）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retry",
+    "meaning": "重试",
+    "phonetic": ".ri:'trai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interactive",
+    "meaning": "交互式的",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contextual",
+    "meaning": "上下文的",
+    "phonetic": "kɒn'tekstjuәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verifiable",
+    "meaning": "可验证的",
+    "phonetic": "'verifaiәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "computation",
+    "meaning": "计算",
+    "phonetic": ".kɒmpju'teiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trigger",
+    "meaning": "触发",
+    "phonetic": "'trigә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prioritize",
+    "meaning": "排优先级",
+    "phonetic": "'praiәritaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conversational",
+    "meaning": "对话式的",
+    "phonetic": ".kɒnvә'seiʃәnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grant",
+    "meaning": "授予；授权",
+    "phonetic": "grænt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shift",
+    "meaning": "转变；轮班",
+    "phonetic": "ʃift",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verification",
+    "meaning": "核验",
+    "phonetic": ".verifi'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "graceful",
+    "meaning": "优雅的（优雅降级/退出）",
+    "phonetic": "'greisful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "keyword",
+    "meaning": "关键词",
+    "phonetic": "'ki:wәd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hypothesis",
+    "meaning": "假设",
+    "phonetic": "hai'pɒθәsis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "synthesis",
+    "meaning": "综合；合成",
+    "phonetic": "'sinθisis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "completion",
+    "meaning": "补全；完成",
+    "phonetic": "kәm'pli:ʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ideal",
+    "meaning": "理想的",
+    "phonetic": "ai'diәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "item",
+    "meaning": "条目",
+    "phonetic": "'aitәm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assign",
+    "meaning": "分配；指派",
+    "phonetic": "ә'sain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "escalation",
+    "meaning": "升级（事件升级处理）",
+    "phonetic": ".eskә'leiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "csv",
+    "meaning": "CSV（逗号分隔值文件）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cpu",
+    "meaning": "中央处理器",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unexpected",
+    "meaning": "意外的",
+    "phonetic": ".ʌnik'spektid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "global",
+    "meaning": "全局的",
+    "phonetic": "'glәubl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "detection",
+    "meaning": "检测",
+    "phonetic": "di'tekʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seamless",
+    "meaning": "无缝的",
+    "phonetic": "'si:mlis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invocation",
+    "meaning": "调用",
+    "phonetic": ".invәu'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "topology",
+    "meaning": "拓扑结构",
+    "phonetic": "tәu'pɒlәdʒi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reader",
+    "meaning": "读者",
+    "phonetic": "'ri:dә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inquiry",
+    "meaning": "查询；询问",
+    "phonetic": "in'kwaiәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paradigm",
+    "meaning": "范式",
+    "phonetic": "'pærәdaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coherent",
+    "meaning": "连贯的",
+    "phonetic": "kәu'hiәrәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "organize",
+    "meaning": "组织",
+    "phonetic": "'ɒ:gәnaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "concise",
+    "meaning": "简洁的",
+    "phonetic": "kәn'sais",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "endpoint",
+    "meaning": "端点（API 地址）",
+    "phonetic": "'end.pɔint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "palette",
+    "meaning": "调色板",
+    "phonetic": "'pælit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "simultaneous",
+    "meaning": "同时的",
+    "phonetic": ".simәl'teinjәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "insight",
+    "meaning": "洞察",
+    "phonetic": "'insait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intervention",
+    "meaning": "干预",
+    "phonetic": ".intә'venʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "escalate",
+    "meaning": "升级；上报",
+    "phonetic": "'eskәleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "formulate",
+    "meaning": "制定；表述",
+    "phonetic": "'fɒ:mjuleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comparison",
+    "meaning": "比较",
+    "phonetic": "kәm'pærisn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "delegate",
+    "meaning": "委派；委托",
+    "phonetic": "'deligeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "methodology",
+    "meaning": "方法论",
+    "phonetic": ".meθә'dɒlәdʒi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optimal",
+    "meaning": "最优的",
+    "phonetic": "'ɒptimәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "encounter",
+    "meaning": "遇到",
+    "phonetic": "in'kauntә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "toolset",
+    "meaning": "工具集",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trajectory",
+    "meaning": "轨迹",
+    "phonetic": "trә'dʒektri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "authentication",
+    "meaning": "身份认证",
+    "phonetic": "ɒ:θenti'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "modification",
+    "meaning": "修改",
+    "phonetic": ".mɒdifi'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nuance",
+    "meaning": "细微差别",
+    "phonetic": "nju:'ɑ:ns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "analyst",
+    "meaning": "分析师",
+    "phonetic": "'ænәlist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unpredictable",
+    "meaning": "不可预测的",
+    "phonetic": ".ʌnpri'diktәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "algorithmic",
+    "meaning": "算法的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conversion",
+    "meaning": "转换",
+    "phonetic": "kәn'vә:ʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "applicable",
+    "meaning": "适用的",
+    "phonetic": "'æplikәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "priority",
+    "meaning": "优先级",
+    "phonetic": "prai'ɒriti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tone",
+    "meaning": "语气；音调",
+    "phonetic": "tәun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hierarchical",
+    "meaning": "分层的",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faq",
+    "meaning": "常见问题",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "filter",
+    "meaning": "过滤器；筛选",
+    "phonetic": "'filtә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marketplace",
+    "meaning": "市场（插件/应用）",
+    "phonetic": "'mɑ:kit'pleis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "identifier",
+    "meaning": "标识符",
+    "phonetic": "ai'dentifaiә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "iteration",
+    "meaning": "迭代",
+    "phonetic": ".itә'reiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "factual",
+    "meaning": "事实性的",
+    "phonetic": "'fæktʃuәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incorporate",
+    "meaning": "纳入；吸收",
+    "phonetic": "in'kɒ:pәreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collaborate",
+    "meaning": "协作",
+    "phonetic": "kә'læbәreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emphasize",
+    "meaning": "强调",
+    "phonetic": "'emfәsaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "navigate",
+    "meaning": "导航；浏览",
+    "phonetic": "'nævigeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retain",
+    "meaning": "保留",
+    "phonetic": "ri'tein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conditional",
+    "meaning": "有条件的",
+    "phonetic": "kәn'diʃәnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scalable",
+    "meaning": "可扩展的",
+    "phonetic": "'skeilәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "factor",
+    "meaning": "因素",
+    "phonetic": "'fæktә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "render",
+    "meaning": "渲染",
+    "phonetic": "'rendә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "privacy",
+    "meaning": "隐私",
+    "phonetic": "'praivәsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aesthetic",
+    "meaning": "美学的",
+    "phonetic": "i:s'θetik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deterministic",
+    "meaning": "确定性的",
+    "phonetic": "di.tә:mi'nistik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notification",
+    "meaning": "通知",
+    "phonetic": ".nәutifi'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chosen",
+    "meaning": "选定的",
+    "phonetic": "'tʃouzn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "append",
+    "meaning": "追加",
+    "phonetic": "ә'pend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proprietary",
+    "meaning": "专有的",
+    "phonetic": "prә'praiәtәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invalid",
+    "meaning": "无效的",
+    "phonetic": "in'vælid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faster",
+    "meaning": "更快的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "furthermore",
+    "meaning": "此外",
+    "phonetic": "'fә:ðә'mɒ:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conceptual",
+    "meaning": "概念性的",
+    "phonetic": "kәn'septʃuәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "planner",
+    "meaning": "规划器",
+    "phonetic": "'plænә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "meticulous",
+    "meaning": "一丝不苟的",
+    "phonetic": "mә'tikjulәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scalability",
+    "meaning": "可扩展性",
+    "phonetic": "\"",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recall",
+    "meaning": "召回（率）；回忆",
+    "phonetic": "ri'kɒ:l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "precision",
+    "meaning": "精确（率）",
+    "phonetic": "pri'siʒәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mere",
+    "meaning": "仅仅的",
+    "phonetic": "miә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "property",
+    "meaning": "属性",
+    "phonetic": "'prɒpәti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "login",
+    "meaning": "登录",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "linear",
+    "meaning": "线性的",
+    "phonetic": "'liniә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "async",
+    "meaning": "异步的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "availability",
+    "meaning": "可用性",
+    "phonetic": "ә.veilә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reactive",
+    "meaning": "反应式的",
+    "phonetic": "ri'æktiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "allocation",
+    "meaning": "分配",
+    "phonetic": ".ælәu'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manageable",
+    "meaning": "可管理的",
+    "phonetic": "'mænidʒәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intricate",
+    "meaning": "错综复杂的",
+    "phonetic": "'intrikit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intermediate",
+    "meaning": "中间的",
+    "phonetic": ".intә'mi:diәt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glossary",
+    "meaning": "术语表",
+    "phonetic": "'glɒsәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dashboard",
+    "meaning": "仪表盘",
+    "phonetic": "'dæʃbɒ:d",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impact",
+    "meaning": "影响",
+    "phonetic": "'impækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "judgment",
+    "meaning": "判断",
+    "phonetic": "'dʒʌdʒmәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expertise",
+    "meaning": "专业知识",
+    "phonetic": ".ekspә:'ti:z",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "survey",
+    "meaning": "调查；综述",
+    "phonetic": "sә'vei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oversight",
+    "meaning": "监督",
+    "phonetic": "'әuvәsait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unavailable",
+    "meaning": "不可用的",
+    "phonetic": ".ʌnә'veilәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robustness",
+    "meaning": "健壮性；鲁棒性",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cognitive",
+    "meaning": "认知的",
+    "phonetic": "'kɒgnitiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "supervisor",
+    "meaning": "监督者；主管",
+    "phonetic": ".sju:pә'vaizә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relevance",
+    "meaning": "相关性",
+    "phonetic": "'relivәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "snippet",
+    "meaning": "代码片段",
+    "phonetic": "'snipit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "craft",
+    "meaning": "精心制作；手艺",
+    "phonetic": "kræft",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clarity",
+    "meaning": "清晰度",
+    "phonetic": "'klærәti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sandbox",
+    "meaning": "沙盒（隔离环境）",
+    "phonetic": "'sændbɒks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "researcher",
+    "meaning": "研究者",
+    "phonetic": "ri:'sә:tʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "modular",
+    "meaning": "模块化的",
+    "phonetic": "'mɒdjulә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ethical",
+    "meaning": "伦理的",
+    "phonetic": "'eθikәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inherent",
+    "meaning": "固有的",
+    "phonetic": "in'hiәrәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mock",
+    "meaning": "模拟的（测试桩）",
+    "phonetic": "mɒk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "highlight",
+    "meaning": "突出；强调",
+    "phonetic": "'hailait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "responsible",
+    "meaning": "负责的",
+    "phonetic": "ri'spɒnsәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reusable",
+    "meaning": "可复用的",
+    "phonetic": "ri:'ju:zәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oauth",
+    "meaning": "OAuth（开放授权协议）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "screenshot",
+    "meaning": "截图",
+    "phonetic": "ˈskri:nʃɒt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reproduce",
+    "meaning": "复现",
+    "phonetic": ".ri:prә'dju:s",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "calculation",
+    "meaning": "计算",
+    "phonetic": ".kælkju'leiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sqlite",
+    "meaning": "SQLite（轻量数据库）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prefix",
+    "meaning": "前缀",
+    "phonetic": "'pri:fiks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "approval",
+    "meaning": "批准",
+    "phonetic": "ә'pru:vl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "substantial",
+    "meaning": "大量的",
+    "phonetic": "sәb'stænʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patch",
+    "meaning": "补丁",
+    "phonetic": "pætʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quote",
+    "meaning": "引用",
+    "phonetic": "kwәut",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interpret",
+    "meaning": "解读；口译",
+    "phonetic": "in'tә:prit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "folder",
+    "meaning": "文件夹",
+    "phonetic": "'fәuldә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adapter",
+    "meaning": "适配器",
+    "phonetic": "ә'dæptә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compliance",
+    "meaning": "合规",
+    "phonetic": "kәm'plaiәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "minimal",
+    "meaning": "极简的",
+    "phonetic": "'miniml",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reinforcement",
+    "meaning": "强化（学习）",
+    "phonetic": ".ri:in'fɒ:smәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decomposition",
+    "meaning": "分解",
+    "phonetic": ".di:kɒmpә'ziʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "definition",
+    "meaning": "定义",
+    "phonetic": ".defi'niʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "professional",
+    "meaning": "专业的",
+    "phonetic": "prә'feʃәnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "batch",
+    "meaning": "批次；批量",
+    "phonetic": "bætʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "isolation",
+    "meaning": "隔离",
+    "phonetic": ".aisә'leiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "launch",
+    "meaning": "启动",
+    "phonetic": "lɒ:ntʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "checklist",
+    "meaning": "清单",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "degradation",
+    "meaning": "降级；劣化",
+    "phonetic": ".degrә'deiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ambiguity",
+    "meaning": "歧义",
+    "phonetic": ".æmbi'gju:iti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thereby",
+    "meaning": "从而",
+    "phonetic": "'ðєәbai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "essence",
+    "meaning": "本质",
+    "phonetic": "'esns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "initiate",
+    "meaning": "发起",
+    "phonetic": "i'niʃieit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prior",
+    "meaning": "先前的；优先",
+    "phonetic": "'praiә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "formal",
+    "meaning": "正式的",
+    "phonetic": "'fɒ:mәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "variation",
+    "meaning": "变体",
+    "phonetic": ".vєәri'eiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "capture",
+    "meaning": "捕获",
+    "phonetic": "'kæptʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "writer",
+    "meaning": "写作者",
+    "phonetic": "'raitә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manifest",
+    "meaning": "清单文件",
+    "phonetic": "'mænifest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transition",
+    "meaning": "过渡；转型",
+    "phonetic": "træn'ziʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infrastructure",
+    "meaning": "基础设施",
+    "phonetic": "'infrәstrʌktʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "audit",
+    "meaning": "审计",
+    "phonetic": "'ɒ:dit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "delegation",
+    "meaning": "委托",
+    "phonetic": ".deli'geiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tackle",
+    "meaning": "处理（难题）",
+    "phonetic": "'tækl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orchestration",
+    "meaning": "编排",
+    "phonetic": ".ɒ:kes'treiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "foster",
+    "meaning": "培养；促进",
+    "phonetic": "'fɒstә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "autonomy",
+    "meaning": "自主性",
+    "phonetic": "ɒ:'tɒnәmi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adaptive",
+    "meaning": "自适应的",
+    "phonetic": "ә'dæptiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hyperparameter",
+    "meaning": "超参数",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anchor",
+    "meaning": "锚点",
+    "phonetic": "'æŋkә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vary",
+    "meaning": "变化",
+    "phonetic": "'vєәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mathematical",
+    "meaning": "数学的",
+    "phonetic": ".mæθә'mætikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proposal",
+    "meaning": "提议；提案",
+    "phonetic": "prә'pәuzl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resilient",
+    "meaning": "有韧性的",
+    "phonetic": "ri'ziliәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robotic",
+    "meaning": "机器人的",
+    "phonetic": "rәu'bɔtik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "synchronous",
+    "meaning": "同步的",
+    "phonetic": "'siŋkrәnәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "placeholder",
+    "meaning": "占位符",
+    "phonetic": "'pleishәuldә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inherit",
+    "meaning": "继承",
+    "phonetic": "in'herit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "completeness",
+    "meaning": "完整性",
+    "phonetic": "kәm'pli:tnis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flexibility",
+    "meaning": "灵活性",
+    "phonetic": ".fleksi'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "empower",
+    "meaning": "赋能",
+    "phonetic": "im'pauә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adherence",
+    "meaning": "遵循",
+    "phonetic": "әd'hiәrәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transaction",
+    "meaning": "事务；交易",
+    "phonetic": "træn'sækʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "volume",
+    "meaning": "体量；卷",
+    "phonetic": "'vɒljum",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dependent",
+    "meaning": "依赖的",
+    "phonetic": "di'pendәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "binary",
+    "meaning": "二进制的",
+    "phonetic": "'bainәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "startup",
+    "meaning": "初创公司；启动",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alert",
+    "meaning": "告警",
+    "phonetic": "ә'lә:t",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drift",
+    "meaning": "漂移；偏移",
+    "phonetic": "drift",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pagination",
+    "meaning": "分页",
+    "phonetic": ".pædʒi'neiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vendor",
+    "meaning": "供应商",
+    "phonetic": "'vendә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "helper",
+    "meaning": "辅助工具",
+    "phonetic": "'helpә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "legacy",
+    "meaning": "遗留的（旧系统）",
+    "phonetic": "'legәsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lifecycle",
+    "meaning": "生命周期",
+    "phonetic": "'laifsaikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "insufficient",
+    "meaning": "不足的",
+    "phonetic": ".insә'fiʃәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recommendation",
+    "meaning": "推荐",
+    "phonetic": ".rekәmen'deiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "functional",
+    "meaning": "功能性的",
+    "phonetic": "'fʌŋkʃәnәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "connector",
+    "meaning": "连接器；连接件",
+    "phonetic": "kә'nektә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slash",
+    "meaning": "斜杠（/）",
+    "phonetic": "slæʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "upload",
+    "meaning": "上传",
+    "phonetic": "\"'ʌp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "authorization",
+    "meaning": "授权",
+    "phonetic": ".ɒ:θәrai'zeiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "classification",
+    "meaning": "分类",
+    "phonetic": ".klæsifi'keiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "numerical",
+    "meaning": "数值的",
+    "phonetic": "nju:'merikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interoperability",
+    "meaning": "互操作性",
+    "phonetic": "\"'intәr",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "silicon",
+    "meaning": "硅；芯片",
+    "phonetic": "'silikәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discipline",
+    "meaning": "纪律；学科",
+    "phonetic": "'disiplin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "observation",
+    "meaning": "观察",
+    "phonetic": ".ɒbzә:'veiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "margin",
+    "meaning": "边距；余量",
+    "phonetic": "'mɑ:dʒin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "convention",
+    "meaning": "惯例；约定",
+    "phonetic": "kәn'venʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coherence",
+    "meaning": "连贯性",
+    "phonetic": "kәu'hiәrәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "catalog",
+    "meaning": "目录",
+    "phonetic": "'kætәlɒg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "registry",
+    "meaning": "注册表；镜像仓库",
+    "phonetic": "'redʒistri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "troubleshoot",
+    "meaning": "排查故障",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "runnable",
+    "meaning": "可运行的",
+    "phonetic": "'rʌnәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diagnosis",
+    "meaning": "诊断",
+    "phonetic": ".daiәg'nәusis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "streamable",
+    "meaning": "可流式传输的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "necessitate",
+    "meaning": "使成为必需",
+    "phonetic": "ni'sesiteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "realistic",
+    "meaning": "现实的",
+    "phonetic": "riә'listik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collective",
+    "meaning": "集体的",
+    "phonetic": "kә'leiktiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "integrity",
+    "meaning": "完整性；诚信",
+    "phonetic": "in'tegriti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "workspace",
+    "meaning": "工作区",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spawn",
+    "meaning": "生成（进程）",
+    "phonetic": "spɒ:n",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subagent",
+    "meaning": "子智能体",
+    "phonetic": ".sʌb'eidʒәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "equivalent",
+    "meaning": "等价的",
+    "phonetic": "i'kwivәlәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resolution",
+    "meaning": "分辨率；解决",
+    "phonetic": ".rezә'lu:ʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "standalone",
+    "meaning": "独立的",
+    "phonetic": "'stændəˌləʊn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wrap",
+    "meaning": "包装；包裹",
+    "phonetic": "ræp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "actionable",
+    "meaning": "可执行的",
+    "phonetic": "'ækʃәnәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "javascript",
+    "meaning": "JavaScript（编程语言）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intuitive",
+    "meaning": "直观的",
+    "phonetic": "in'tju:itiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prediction",
+    "meaning": "预测",
+    "phonetic": "pri'dikʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hybrid",
+    "meaning": "混合的",
+    "phonetic": "'haibrid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ecosystem",
+    "meaning": "生态系统",
+    "phonetic": "'i:kәu.sistәm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recipient",
+    "meaning": "接收者",
+    "phonetic": "ri'sipiәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "innovation",
+    "meaning": "创新",
+    "phonetic": ".inәu'veiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "negative",
+    "meaning": "负面的；否定的",
+    "phonetic": "'negәtiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transfer",
+    "meaning": "转移；迁移",
+    "phonetic": "træns'fә:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consequent",
+    "meaning": "随之而来的",
+    "phonetic": "'kɒnsikwәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "premium",
+    "meaning": "高级的；付费的",
+    "phonetic": "'pri:miәm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "epoch",
+    "meaning": "训练轮次；时代",
+    "phonetic": "'i:pɒk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "yield",
+    "meaning": "产出；让步",
+    "phonetic": "ji:ld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "delivery",
+    "meaning": "交付",
+    "phonetic": "di'livәri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "leadership",
+    "meaning": "领导力",
+    "phonetic": "'li:dәʃip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extensive",
+    "meaning": "广泛的",
+    "phonetic": "ik'stensiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "online",
+    "meaning": "在线的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generic",
+    "meaning": "通用的",
+    "phonetic": "dʒi'nerik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vulnerability",
+    "meaning": "漏洞",
+    "phonetic": ".vʌlnәrә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "footprint",
+    "meaning": "足迹（内存/碳）",
+    "phonetic": "'futprint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coverage",
+    "meaning": "覆盖率",
+    "phonetic": "'kʌvәridʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inline",
+    "meaning": "内联的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "architectural",
+    "meaning": "架构上的",
+    "phonetic": ".ɑ:ki'tektʃәrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "typography",
+    "meaning": "排版",
+    "phonetic": "tai'pɒgrәfi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deliverable",
+    "meaning": "可交付成果",
+    "phonetic": "di'livәrәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hierarchy",
+    "meaning": "层级",
+    "phonetic": "'haiәrɑ:ki",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "executable",
+    "meaning": "可执行文件",
+    "phonetic": "'eksikju:tәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "descriptive",
+    "meaning": "描述性的",
+    "phonetic": "di'skriptiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rerank",
+    "meaning": "重排序",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moderation",
+    "meaning": "内容审核",
+    "phonetic": ".mɒdә'reiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "neural",
+    "meaning": "神经的（神经网络）",
+    "phonetic": "'njuәrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inefficient",
+    "meaning": "低效的",
+    "phonetic": ".ini'fiʃәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unreliable",
+    "meaning": "不可靠的",
+    "phonetic": ".ʌnri'laiәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prime",
+    "meaning": "首要的；质数",
+    "phonetic": "praim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liability",
+    "meaning": "责任；负债",
+    "phonetic": "laiә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subtle",
+    "meaning": "微妙的",
+    "phonetic": "'sʌtl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hint",
+    "meaning": "提示",
+    "phonetic": "hint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "employee",
+    "meaning": "员工",
+    "phonetic": ".emplɒi'i:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "progressive",
+    "meaning": "渐进的",
+    "phonetic": "prә'gresiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "demo",
+    "meaning": "演示",
+    "phonetic": "'demәu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "persist",
+    "meaning": "持久化",
+    "phonetic": "pә'sist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "continuity",
+    "meaning": "连续性",
+    "phonetic": ".kɒnti'nju:iti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inject",
+    "meaning": "注入",
+    "phonetic": "in'dʒekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "duplicate",
+    "meaning": "重复（的）",
+    "phonetic": "'dju:plikeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "timestamp",
+    "meaning": "时间戳",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "structural",
+    "meaning": "结构性的",
+    "phonetic": "'strʌktʃәrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "landscape",
+    "meaning": "格局；景观",
+    "phonetic": "'lændskeip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verbose",
+    "meaning": "冗长的；详细模式",
+    "phonetic": "vә'bәus",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inaccurate",
+    "meaning": "不准确的",
+    "phonetic": "in'ækjurit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pillar",
+    "meaning": "支柱",
+    "phonetic": "'pilә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "demonstration",
+    "meaning": "演示",
+    "phonetic": ".demәn'streiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "graphic",
+    "meaning": "图形的",
+    "phonetic": "'græfik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perspective",
+    "meaning": "视角",
+    "phonetic": "pә'spektiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "organic",
+    "meaning": "有机的；自然的",
+    "phonetic": "ɒ:'gænik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "breakdown",
+    "meaning": "分解；细分",
+    "phonetic": "'breikdaun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emergence",
+    "meaning": "涌现",
+    "phonetic": "i'mә:dʒәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "opportunity",
+    "meaning": "机会",
+    "phonetic": ".ɒpә'tju:niti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "energy",
+    "meaning": "能量；能源",
+    "phonetic": "'enәdʒi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "iterate",
+    "meaning": "迭代",
+    "phonetic": "'itәreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "backup",
+    "meaning": "备份",
+    "phonetic": "'bækʌp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "persistence",
+    "meaning": "持久性",
+    "phonetic": "pә'sistәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "threshold",
+    "meaning": "阈值",
+    "phonetic": "'θreʃәuld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "replacement",
+    "meaning": "替代品",
+    "phonetic": "ri'pleismәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "checkpoint",
+    "meaning": "检查点",
+    "phonetic": "'tʃekpɒint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "matrix",
+    "meaning": "矩阵",
+    "phonetic": "'meitriks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "visualization",
+    "meaning": "可视化",
+    "phonetic": ".viʒuәlai'zeiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disclaimer",
+    "meaning": "免责声明",
+    "phonetic": "dis'kleimә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consistency",
+    "meaning": "一致性",
+    "phonetic": "kәn'sistәnsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emergent",
+    "meaning": "涌现的",
+    "phonetic": "i'mә:dʒәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lookup",
+    "meaning": "查找",
+    "phonetic": "'ljkʌp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exhibit",
+    "meaning": "表现出",
+    "phonetic": "ig'zibit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trustworthiness",
+    "meaning": "可信度",
+    "phonetic": "'trʌst.wә:ðinis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cohesive",
+    "meaning": "有凝聚力的",
+    "phonetic": "kәu'hi:siv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "minimize",
+    "meaning": "最小化",
+    "phonetic": "'minimaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bottleneck",
+    "meaning": "瓶颈",
+    "phonetic": "'bɒtlnek",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consumption",
+    "meaning": "消耗",
+    "phonetic": "kәn'sʌmpʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indispensable",
+    "meaning": "不可或缺的",
+    "phonetic": ".indis'pensәbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tolerance",
+    "meaning": "容忍度",
+    "phonetic": "'tɒlәrәns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perceive",
+    "meaning": "感知",
+    "phonetic": "pә'si:v",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prominent",
+    "meaning": "突出的",
+    "phonetic": "'prɒminәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "investment",
+    "meaning": "投资",
+    "phonetic": "in'vestmәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disruption",
+    "meaning": "颠覆",
+    "phonetic": "dis'rʌpʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dispatch",
+    "meaning": "调度；分发",
+    "phonetic": "dis'pætʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subprocess",
+    "meaning": "子进程",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compatibility",
+    "meaning": "兼容性",
+    "phonetic": "kәm.pætә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stale",
+    "meaning": "过期的；陈旧的",
+    "phonetic": "steil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wrapper",
+    "meaning": "包装器",
+    "phonetic": "'ræpә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "encode",
+    "meaning": "编码",
+    "phonetic": "in'kәud",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spec",
+    "meaning": "规格；说明书",
+    "phonetic": "spek",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elevate",
+    "meaning": "提升",
+    "phonetic": "'eliveit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "environmental",
+    "meaning": "环境的",
+    "phonetic": "in.vaiәrәn'mentәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incremental",
+    "meaning": "增量的",
+    "phonetic": ".inkri'mentl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "creativity",
+    "meaning": "创造力",
+    "phonetic": ".kri:ei'tiviti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dictate",
+    "meaning": "口述；决定",
+    "phonetic": "'dikteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stateful",
+    "meaning": "有状态的",
+    "phonetic": "'steitful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gradient",
+    "meaning": "梯度",
+    "phonetic": "'greidiәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "literal",
+    "meaning": "字面的",
+    "phonetic": "'litәrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complement",
+    "meaning": "补充",
+    "phonetic": "'kɒmplimәnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "temporal",
+    "meaning": "时间的",
+    "phonetic": "'tempәrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "panel",
+    "meaning": "面板",
+    "phonetic": "'pænl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "partial",
+    "meaning": "部分的",
+    "phonetic": "'pɑ:ʃәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "restore",
+    "meaning": "恢复",
+    "phonetic": "ri'stɒ:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pitfall",
+    "meaning": "坑；陷阱",
+    "phonetic": "'pitfɒ:l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unpack",
+    "meaning": "解包",
+    "phonetic": ".ʌn'pæk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "timeout",
+    "meaning": "超时",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rationale",
+    "meaning": "理由；依据",
+    "phonetic": ".ræʃә'nɑ:li",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prerequisite",
+    "meaning": "前置条件",
+    "phonetic": "pri:'rekwizit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "customize",
+    "meaning": "定制",
+    "phonetic": "kʌstәmaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "posture",
+    "meaning": "姿态",
+    "phonetic": "'pɒstʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dispatcher",
+    "meaning": "调度器",
+    "phonetic": "dis'pætʃә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "abstraction",
+    "meaning": "抽象",
+    "phonetic": "æb'strækʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "registration",
+    "meaning": "注册",
+    "phonetic": ".redʒi'streiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "readability",
+    "meaning": "可读性",
+    "phonetic": ".ri:dә'biliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "executor",
+    "meaning": "执行器",
+    "phonetic": "ig'zekjutә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "affordable",
+    "meaning": "负担得起的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "uncover",
+    "meaning": "揭示",
+    "phonetic": ".ʌn'kʌvә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "correctness",
+    "meaning": "正确性",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "encompass",
+    "meaning": "涵盖",
+    "phonetic": "in'kʌmpәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contradiction",
+    "meaning": "矛盾",
+    "phonetic": ".kɒntrә'dikʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "urgency",
+    "meaning": "紧迫性",
+    "phonetic": "'ә:dʒәnsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interconnect",
+    "meaning": "互连",
+    "phonetic": ".intәkә'nekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corpus",
+    "meaning": "语料库",
+    "phonetic": "'kɒ:pәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "programmer",
+    "meaning": "程序员",
+    "phonetic": "'prәugræmә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rigorous",
+    "meaning": "严谨的",
+    "phonetic": "'rigәrәs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inspection",
+    "meaning": "检查",
+    "phonetic": "in'spekʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transformation",
+    "meaning": "变换",
+    "phonetic": ".trænsfә'meiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "broader",
+    "meaning": "更宽泛的",
+    "phonetic": "brɔːdə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "negotiation",
+    "meaning": "谈判",
+    "phonetic": "ni.gәuʃi'eiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anomaly",
+    "meaning": "异常（值）",
+    "phonetic": "ә'nɒmәli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "investigation",
+    "meaning": "调查",
+    "phonetic": "in.vesti'geiʃәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kickoff",
+    "meaning": "启动（会议）",
+    "phonetic": "'kikɒf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "calculator",
+    "meaning": "计算器",
+    "phonetic": "'kælkjuleitә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generalist",
+    "meaning": "通才",
+    "phonetic": "'dʒenәrәlist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "image",
+    "meaning": "图像",
+    "phonetic": "'imidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "audio",
+    "meaning": "音频",
+    "phonetic": "'ɒ:diou",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "readme",
+    "meaning": "自述文件（README）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "issue",
+    "meaning": "议题（GitHub issue）",
+    "phonetic": "'isju",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blob",
+    "meaning": "二进制大对象",
+    "phonetic": "blɒb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "font",
+    "meaning": "字体",
+    "phonetic": "fɒnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "etc",
+    "meaning": "等等",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tag",
+    "meaning": "标签",
+    "phonetic": "tæg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "google",
+    "meaning": "谷歌（Google）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "docker",
+    "meaning": "Docker（容器引擎）",
+    "phonetic": "'dɒkә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discord",
+    "meaning": "Discord（社区聊天平台）",
+    "phonetic": "'diskɒ:d",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "colab",
+    "meaning": "Colab（Google 在线笔记本）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anthropic",
+    "meaning": "Anthropic（Claude 母公司）",
+    "phonetic": "æn'θrɔpik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "azure",
+    "meaning": "Azure（微软云）",
+    "phonetic": "'æʒә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "amazon",
+    "meaning": "亚马逊",
+    "phonetic": "'æmәzɒn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "microsoft",
+    "meaning": "微软",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chatgpt",
+    "meaning": "ChatGPT（OpenAI 对话模型）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deepseek",
+    "meaning": "DeepSeek（深度求索）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ollama",
+    "meaning": "Ollama（本地模型运行器）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "llama",
+    "meaning": "LLaMA（Meta 开源模型）",
+    "phonetic": "'lɑ:mә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "qwen",
+    "meaning": "Qwen（通义千问）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mistral",
+    "meaning": "Mistral（法国 AI 公司）",
+    "phonetic": "'mistrәl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gemma",
+    "meaning": "Gemma（Google 开源小模型）",
+    "phonetic": "'dʒemә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "minimax",
+    "meaning": "MiniMax（稀宇科技）",
+    "phonetic": "'minimæks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kimi",
+    "meaning": "Kimi（月之暗面）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grok",
+    "meaning": "Grok（xAI 模型）",
+    "phonetic": "^rɔk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "opencode",
+    "meaning": "OpenCode（开源 AI 编程工具）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "codex",
+    "meaning": "Codex（OpenAI 编程智能体）",
+    "phonetic": "'kәudeks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cursor",
+    "meaning": "Cursor（AI 编辑器）",
+    "phonetic": "'kә:sә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trae",
+    "meaning": "Trae（字节 AI 编辑器）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aider",
+    "meaning": "Aider（终端 AI 编程工具）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kiro",
+    "meaning": "Kiro（AWS AI IDE）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pytorch",
+    "meaning": "PyTorch（深度学习框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tensorflow",
+    "meaning": "TensorFlow（谷歌深度学习框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "terraform",
+    "meaning": "Terraform（基础设施即代码）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vertex",
+    "meaning": "Vertex AI（谷歌云 AI 平台）",
+    "phonetic": "'vә:teks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alibaba",
+    "meaning": "阿里巴巴",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aliyun",
+    "meaning": "阿里云",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tencent",
+    "meaning": "腾讯",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bilibili",
+    "meaning": "哔哩哔哩",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "youtube",
+    "meaning": "YouTube（视频平台）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "twitter",
+    "meaning": "Twitter/X",
+    "phonetic": "'twitә",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "linkedin",
+    "meaning": "LinkedIn（职场社交）",
+    "phonetic": "'lɪŋktɪn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reddit",
+    "meaning": "Reddit（论坛社区）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arxiv",
+    "meaning": "arXiv（论文预印本库）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wikipedia",
+    "meaning": "维基百科",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obsidian",
+    "meaning": "Obsidian（笔记软件）",
+    "phonetic": "ɒb'sidiәn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "playwright",
+    "meaning": "Playwright（浏览器自动化）",
+    "phonetic": "'pleirait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pytest",
+    "meaning": "Pytest（Python 测试框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nvidia",
+    "meaning": "NVIDIA（英伟达）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intel",
+    "meaning": "Intel（英特尔）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mlx",
+    "meaning": "MLX（苹果机器学习框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "onnx",
+    "meaning": "ONNX（模型交换格式）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "apache",
+    "meaning": "Apache（开源基金会）",
+    "phonetic": "ә'pætʃi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gnu",
+    "meaning": "GNU（自由软件计划）",
+    "phonetic": "nju:",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bash",
+    "meaning": "Bash（Shell 命令行）",
+    "phonetic": "bæʃ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "linux",
+    "meaning": "Linux（操作系统）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "typescript",
+    "meaning": "TypeScript（JS 超集语言）",
+    "phonetic": "'taipskript",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chrome",
+    "meaning": "Chrome（谷歌浏览器）",
+    "phonetic": "krәum",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "electron",
+    "meaning": "Electron（桌面应用框架）",
+    "phonetic": "i'lektrɒn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "macos",
+    "meaning": "macOS（苹果操作系统）",
+    "phonetic": "'mɑ:kәu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "windows",
+    "meaning": "Windows（微软操作系统）",
+    "phonetic": "'windәjz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ubuntu",
+    "meaning": "Ubuntu（Linux 发行版）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kaggle",
+    "meaning": "Kaggle（数据竞赛平台）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notebooklm",
+    "meaning": "NotebookLM（谷歌笔记 AI）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "openrouter",
+    "meaning": "OpenRouter（模型聚合路由）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "litellm",
+    "meaning": "LiteLLM（模型统一接口）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flowise",
+    "meaning": "Flowise（可视化 AI 流程）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anythingllm",
+    "meaning": "AnythingLLM（本地知识库应用）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fastmcp",
+    "meaning": "FastMCP（Python MCP 框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crewai",
+    "meaning": "CrewAI（多智能体框架）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clearml",
+    "meaning": "ClearML（ML 实验管理）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comet",
+    "meaning": "Comet（ML 实验跟踪）",
+    "phonetic": "'kɒmit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "yolo",
+    "meaning": "YOLO（目标检测模型）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hermes",
+    "meaning": "Hermes（Nous Research 模型）",
+    "phonetic": "'h\\\\\\\\:mi:z",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "workbuddy",
+    "meaning": "WorkBuddy（AI 工作台）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "iam",
+    "meaning": "IMA（腾讯知识库）",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  }
+]

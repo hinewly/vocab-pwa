@@ -1,0 +1,30 @@
+# 依赖
+node_modules/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 日志
+*.log
+
+# 环境
+.env
+.env.local
+
+# 临时文件
+tmp/
+temp/
+
+# 部署相关
+.vercel/
+.netlify/
+.wrangler/
+
+# PWA 缓存调试
+*.map

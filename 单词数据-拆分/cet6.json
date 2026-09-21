@@ -1,0 +1,6358 @@
+[
+  {
+    "word": "abundance",
+    "phonetic": "əˈbʌndəns",
+    "meaning": "n. 丰富，充裕，大量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "acquaint",
+    "phonetic": "əˈkweɪnt",
+    "meaning": "v. 使认识，使了解",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "activate",
+    "phonetic": "ˈæktɪveɪt",
+    "meaning": "v. 1. 使活动，使活跃，使积极 2. 刺激，激化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "addict",
+    "phonetic": "ˈædɪkt; əˈdɪkt",
+    "meaning": "n. 1. 有瘾的人 2. 对某事有强烈兴趣的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adhere",
+    "phonetic": "ədˈhɪə",
+    "meaning": "v. 1. 粘附， 粘着 2. 坚持，遵循",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adjacent",
+    "phonetic": "əˈdʒeɪsənt",
+    "meaning": "adj. 邻近的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adjoin",
+    "phonetic": "əˈdʒɔɪn",
+    "meaning": "v. 贴近，相接",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adverse",
+    "phonetic": "ˈædvɜːs",
+    "meaning": "adj. 不利的，相反的，敌对的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aerial",
+    "phonetic": "ˈeərɪəl",
+    "meaning": "adj. 1. 空气的，大气的 2. 航空的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "affiliate",
+    "phonetic": "əˈfɪlɪeɪt",
+    "meaning": "v. (指团体)加入(联合),使隶属，附属于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "affirm",
+    "phonetic": "əˈfɜːm",
+    "meaning": "v. 坚称，断言，肯定地说",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "afflict",
+    "phonetic": "əˈflɪkt",
+    "meaning": "v. 使身体(精神)痛苦，折磨",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aggregate",
+    "phonetic": "ˈæɡrɪɡeɪt",
+    "meaning": "n. 总数，合计",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "agreeable",
+    "phonetic": "əˈɡriːəbl",
+    "meaning": "adj. 1. 惬意的，爽快的 2. 易相处的  3. 适宜的，适合的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "air-condition",
+    "phonetic": "ˈeәkәnˌdiʃən",
+    "meaning": "v. 设以空调设备，用空调调节",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aisle",
+    "phonetic": "aɪl",
+    "meaning": "n. (教堂、戏院等的)通道，走廊",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alien",
+    "phonetic": "ˈeɪlɪən",
+    "meaning": "n. 外侨，外国人 adj. 1. 外国的，异邦的 2. 敌对的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alienate",
+    "phonetic": "ˈeɪlɪəneɪt",
+    "meaning": "v. 使疏远，离间",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "allege",
+    "phonetic": "əˈledʒ",
+    "meaning": "v. (在提不出证明的情况下)断言，声称",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alleviate",
+    "phonetic": "əˈliːvɪeɪt",
+    "meaning": "v. 缓和，减轻(痛苦等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alliance",
+    "phonetic": "əˈlaɪəns",
+    "meaning": "n. 同盟，联盟",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alternate",
+    "phonetic": "ɔːlˈtɜːnət",
+    "meaning": "adj. 交替的，轮流的，交错的  [ˈɔːltəneɪt] v. (使)交替，(使)轮流",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ambitious",
+    "phonetic": "æmˈbɪʃəs",
+    "meaning": "adj. 1. 有雄心的，野心勃勃的 2. 劲头十足的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "amend",
+    "phonetic": "əˈmend",
+    "meaning": "v. 修改，修正，改进",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ammunition",
+    "phonetic": "ˌæmjʊˈnɪʃən",
+    "meaning": "n. 弹药",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "analogy",
+    "phonetic": "əˈnælədʒɪ",
+    "meaning": "n. 1. 相似，类似 2. 类推，类比，比拟",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anonymous",
+    "phonetic": "əˈnɒnɪməs",
+    "meaning": "adj. 无名的，不具名的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "appease",
+    "phonetic": "əˈpiːz",
+    "meaning": "v. 使满足，平息，抚慰",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "appraisal",
+    "phonetic": "əˈpreɪzəl",
+    "meaning": "n. 评定，鉴定，评价",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "apt",
+    "phonetic": "æpt",
+    "meaning": "adj. 1. 恰当的，贴切的 2. 易于…的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arc",
+    "phonetic": "ɑːk",
+    "meaning": "n. 弧线，弧形",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arena",
+    "phonetic": "əˈriːnə",
+    "meaning": "n. 1. (古罗马圆形剧场中央的)竞技场地，竞技场 2. 活动场所，竞争场所",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "armor",
+    "phonetic": "ˈɑːmә",
+    "meaning": "n. 盔甲，潜水服，装甲 v. 为……装甲",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arrogant",
+    "phonetic": "ˈærəɡənt",
+    "meaning": "adj·傲慢无礼的，骄傲自大的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "artery",
+    "phonetic": "ˈɑːtərɪ",
+    "meaning": "n. 1. 动脉 2. 干线，要道(道路、铁路等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "articulate",
+    "phonetic": "ɑːˈtɪkjʊlɪt",
+    "meaning": "v. 1. 清楚明白地表 2. 用关节连接",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "artillery",
+    "phonetic": "ɑːˈtɪlərɪ",
+    "meaning": "n. 大炮，炮兵部队",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ascend",
+    "phonetic": "əˈsend",
+    "meaning": "v. 登高，上升，升高",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ascertain",
+    "phonetic": "ˌæsəˈteɪn",
+    "meaning": "v. 发现，查明，确定",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ascribe",
+    "phonetic": "əˈskraɪb",
+    "meaning": "v. 把…归因于，认为…是某人所做",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aspiration",
+    "phonetic": "ˌæspɪˈreɪʃən",
+    "meaning": "n. 渴望，志向，抱负",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assassination",
+    "phonetic": "әˌsæsiˈneiʃәn",
+    "meaning": "n. 暗杀，行刺",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assault",
+    "phonetic": "əˈsɔːlt",
+    "meaning": "n. 猛烈地攻击，突击，突袭 v. 1. 突击，袭击 2. 殴打 3. 强奸",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assert",
+    "phonetic": "əˈsɜːt",
+    "meaning": "v. 1. 宣称，断言 2. 维护，坚持(权利等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assimilate",
+    "phonetic": "əˈsɪməleɪt",
+    "meaning": "v. 1. 消化，吸收(食物、思想等)  2. 使…同化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assurance",
+    "phonetic": "əˈʃʊərəns",
+    "meaning": "n. 1. 担保，保证 2. 肯定，确信 3. 自信",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "atlas",
+    "phonetic": "ˈætləs",
+    "meaning": "n. 地图册",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "attendant",
+    "phonetic": "əˈtendənt",
+    "meaning": "n. 1. 侍者，服务员 2. 护理员",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "auction",
+    "phonetic": "ˈɔːkʃən",
+    "meaning": "n. 拍卖  v. 以拍卖方式出售，拍卖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "authoritative",
+    "phonetic": "ɔːˈθɒrətətɪv",
+    "meaning": "adj. 具权威性的，可信赖的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "authorize",
+    "phonetic": "ˈɒːθәraiz",
+    "meaning": "v. 授权，批准，委托",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "avail",
+    "phonetic": "əˈveɪl",
+    "meaning": "v. 利用",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "avert",
+    "phonetic": "əˈvɜːt",
+    "meaning": "v. 1. 防止，避免 2. 移开(目光)，避开不看",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "banquet",
+    "phonetic": "ˈbæŋkwɪt",
+    "meaning": "n. 宴会 v. 宴请，参加宴会",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "barren",
+    "phonetic": "ˈbærən",
+    "meaning": "adj. 1. (土地)贫瘠的 2. 不孕的，不育的，不结果实的 3. 无用的，无效果的，无实际内容的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "barricade",
+    "phonetic": "ˌbærɪˈkeɪd",
+    "meaning": "n. 路障，街垒 v. 设路障，封闭，拦阻",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "batter",
+    "phonetic": "ˈbætə",
+    "meaning": "v. 1. 连续猛击，炮击 2. 打烂，用旧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "beforehand",
+    "phonetic": "bɪˈfɔːhænd",
+    "meaning": "adv. 预先，事先",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bewilder",
+    "phonetic": "bɪˈwɪldə",
+    "meaning": "v. 迷惑，把…弄糊涂",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bibliography",
+    "phonetic": "ˌbɪblɪˈɒɡrəfɪ",
+    "meaning": "n. 书目，目录，参考书目",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bizarre",
+    "phonetic": "bɪˈzɑː",
+    "meaning": "adj. 古怪的，怪诞的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blink",
+    "phonetic": "blɪŋk",
+    "meaning": "v. 1. (星星)闪烁 2. (眼睛)眨眼",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blunder",
+    "phonetic": "ˈblʌndə",
+    "meaning": "n. 错误 v. 弄错，犯大错",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blunt",
+    "phonetic": "blʌnt",
+    "meaning": "adj. 1. 钝的，不锋利的 2. (举止言谈等)生硬的，直率的，不拐弯抹角的 3. (感觉、理解方面)迟钝的 v. 把…弄钝，把…弄迟钝",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blur",
+    "phonetic": "blɜː",
+    "meaning": "n. 模糊不清的事物 v. 使模糊，使看不清楚",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blush",
+    "phonetic": "blʌʃ",
+    "meaning": "n. 脸红 v. 感到羞愧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "booklet",
+    "phonetic": "ˈbʊklɪt",
+    "meaning": "n. 小册子",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bowel",
+    "phonetic": "ˈbauәl",
+    "meaning": "n. 1. 肠，内脏 2. 内部，深处 v. 挖……的内脏",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brace",
+    "phonetic": "breɪs",
+    "meaning": "n. 1. 支柱，支架 2. 一双，一对 3. 大括号{}的前半或后 4. (pl BrE)(裤子)背带=(AmE) suspenders v. 1. 拉紧，系紧 2. 支住，撑牢  3. 激励，振奋  4. 打起精神，下定决心",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bracket",
+    "phonetic": "ˈbrækɪt",
+    "meaning": "n. 1. 架子  2. (pl)括号",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "breach",
+    "phonetic": "briːtʃ",
+    "meaning": "n. 1. 违反， 不履行 2. 绝交， 不和 3. 破洞，裂缝 v. 冲破，攻破",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brew",
+    "phonetic": "bruː",
+    "meaning": "v. 1. 酿造(啤酒) 2. 泡(茶)，煮(咖啡) 3. 酝酿 n. 1. 酿造物 2. (酿造饮料的)质量，品味",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bribe",
+    "phonetic": "braɪb",
+    "meaning": "n. 贿赂 v. 贿赂，收买",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brink",
+    "phonetic": "brɪŋk",
+    "meaning": "n. 1. (峭壁顶上的)边缘，(河流等的)边沿，边 2. 边缘 || on the brink of …濒临，正要…之际",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brutal",
+    "phonetic": "ˈbruːtəl",
+    "meaning": "adj. 残忍的，兽性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "buck",
+    "phonetic": "bʌk",
+    "meaning": "n. 雄鹿，雄兔  adj. 雄的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bug",
+    "phonetic": "bʌɡ",
+    "meaning": "n. 1. 小虫 2. 病菌 3. 窃听器 4. (电脑等的)故障 v. 1. 装窃听器 2. 不断地烦扰，纠缠",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bulletin",
+    "phonetic": "ˈbʊlətɪn",
+    "meaning": "n. 公报，公告",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bully",
+    "phonetic": "ˈbʊlɪ",
+    "meaning": "v. 欺侮，强迫… (做某事) n. 恃强凌弱的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bump",
+    "phonetic": "bʌmp",
+    "meaning": "v. 1. 碰撞 2. 撞击 3. 颠簸地行驶 n. 1. 碰撞 2. 肿块",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bureaucracy",
+    "phonetic": "bjʊəˈrɒkrəsɪ",
+    "meaning": "n. 1. 官僚制度，官僚体制 2. 官僚作风",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "buzz",
+    "phonetic": "bʌz",
+    "meaning": "n. 1. 嗡嗡声 2. 嘈杂声 v. 1. 发出嗡嗡声 2. 发出嘈杂声",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bypass",
+    "phonetic": "ˈbaɪpɑːs",
+    "meaning": "n. (绕过市镇的)旁道，迂回道  v. 绕过，回避",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "calcium",
+    "phonetic": "ˈkælsɪəm",
+    "meaning": "n. 钙",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "calorie",
+    "phonetic": "ˈkælərɪ",
+    "meaning": "n. (热量单位)卡路里",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cane",
+    "phonetic": "keɪn",
+    "meaning": "n. 1. 细长而有节的茎 2. 手杖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "canon",
+    "phonetic": "ˈkænən",
+    "meaning": "n. 1. 教会法规 2. (行为或思想的)规范; 准则 3. (任职大教堂的)教士",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "casualty",
+    "phonetic": "ˈkæʒjʊəltɪ",
+    "meaning": "n. 意外或战争中的伤亡者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cavity",
+    "phonetic": "ˈkævətɪ",
+    "meaning": "n. 洞，穴",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cemetery",
+    "phonetic": "ˈsemɪtrɪ",
+    "meaning": "n. 墓地，公墓",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "census",
+    "phonetic": "ˈsensəs",
+    "meaning": "n. 人口调查，人口普查",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ceramic",
+    "phonetic": "sɪˈræmɪk",
+    "meaning": "n. 制陶业，陶器，陶瓷工艺",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cereal",
+    "phonetic": "ˈsɪərɪəl",
+    "meaning": "n. 谷类食物，谷物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "certify",
+    "phonetic": "ˈsɜːtɪfaɪ",
+    "meaning": "v. 证明，证实",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "champagne",
+    "phonetic": "ʃæmˈpeɪn",
+    "meaning": "n. 香槟酒",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chapel",
+    "phonetic": "ˈtʃæpəl",
+    "meaning": "n. (基督教)小教堂",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "characterize",
+    "phonetic": "ˈkærәktәraiz",
+    "meaning": "v. 描绘……的特性，刻划……的性格",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cherish",
+    "phonetic": "ˈtʃerɪʃ",
+    "meaning": "v. 1. 珍爱 2. 抱有(希望)，怀有(感情)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chip",
+    "phonetic": "tʃɪp",
+    "meaning": "n. 碎片，薄片",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cholesterol",
+    "phonetic": "kəˈlestərɒl",
+    "meaning": "n. 胆固醇",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chord",
+    "phonetic": "kɔːd",
+    "meaning": "n. 1. 和弦，和音 2. (几何的)弦",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chronic",
+    "phonetic": "ˈkrɒnɪk",
+    "meaning": "adj. 1. (病症)长期未愈的，慢性的 2. 极坏的，极差的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "circulation",
+    "phonetic": "ˌsɜːkjʊˈleɪʃən",
+    "meaning": "n. 1. 循环 2. 流通，流传 3. (报纸、书刊的)销售量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clamp",
+    "phonetic": "klæmp",
+    "meaning": "n. 钳，夹子 v. 钳紧，夹住",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clan",
+    "phonetic": "klæn",
+    "meaning": "n. 氏族，家族，宗派",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clash",
+    "phonetic": "klæʃ",
+    "meaning": "v. 1. 冲突，交锋，产生矛盾 2. 发出金属的撞击声  n. 冲突，不一致",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clearance",
+    "phonetic": "ˈklɪərəns",
+    "meaning": "n. 1. 清除，清理 2. 许可(证)，批准 || a clearance sale (商店)清仓大贱卖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "climax",
+    "phonetic": "ˈklaimæks",
+    "meaning": "n. 1. 顶点，极点 2. (小说、戏剧等的)高潮 3. 性交的高潮 v. (使)达到顶点，达到高潮",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cling",
+    "phonetic": "klɪŋ",
+    "meaning": "v. 1. 粘住，缠住  2. 依附，依靠 3. 紧紧握住，紧紧抱住",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clockwise",
+    "phonetic": "ˈklɒkwaɪz",
+    "meaning": "adv. 顺时针方向地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "closet",
+    "phonetic": "ˈklɒzɪt",
+    "meaning": "n. 1. 橱柜  2. 私室，小房间 3. 盥洗室，厕所",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cluster",
+    "phonetic": "ˈklʌstə",
+    "meaning": "n. 一串，一束，一簇，一群，一组  v. 使成群，把…集成一束(一组)，群集，丛生",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clutch",
+    "phonetic": "klʌtʃ",
+    "meaning": "v. 抓住，攫住  n. 1. (pl)爪子，毒手，控制 2. (一把)抓住，攫住",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coalition",
+    "phonetic": "ˌkəʊəˈlɪʃən",
+    "meaning": "n. 政党的联盟，联合",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cocaine",
+    "phonetic": "kəʊˈkeɪn",
+    "meaning": "n. 可卡因",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cocktail",
+    "phonetic": "ˈkɒkteɪl",
+    "meaning": "n. 1. 鸡尾酒 2. 开胃食品 adj. 鸡尾酒的 || cocktail party鸡尾酒会",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coincide",
+    "phonetic": "ˌkəʊɪnˈsaɪd",
+    "meaning": "v. 1. 同时发生 2. 一致，不谋而合",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collide",
+    "phonetic": "kəˈlaɪd",
+    "meaning": "v. 1. (车、船等)猛撞 2. 冲突",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "colonial",
+    "phonetic": "kəˈləʊnɪəl",
+    "meaning": "adj. 1. 殖民地的，关于殖民地的 2. (cap)(美国独立前)十三州时代的，美国初期的 3. 拥有殖民地的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "combat",
+    "phonetic": "ˈkɒmbæt",
+    "meaning": "n. 1. 战斗，格斗，反对 2. 竞争 v. 跟…战斗，反对",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comic",
+    "phonetic": "ˈkɒmɪk",
+    "meaning": "adj. 滑稽的，喜剧化的  || comic strip连环漫画",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commemorate",
+    "phonetic": "kəˈmeməreɪt",
+    "meaning": "v. 庆祝，纪念",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commence",
+    "phonetic": "kəˈmens",
+    "meaning": "v. 开始",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commend",
+    "phonetic": "kəˈmend",
+    "meaning": "v. 1称赞，赞扬 2. 委托，托付",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commentary",
+    "phonetic": "ˈkɒməntrɪ",
+    "meaning": "n. 1. (对书籍等的)评语，评注，评论 2. 实况报道",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commodity",
+    "phonetic": "kəˈmɒdətɪ",
+    "meaning": "n. 商品，日用品",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commonplace",
+    "phonetic": "ˈkɒmənpleɪs",
+    "meaning": "adj. 平凡的，常见的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commonwealth",
+    "phonetic": "ˈkɒmənwelθ",
+    "meaning": "n. 1. 全体国民 2. 国家，共和国 3. 联邦",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commute",
+    "phonetic": "kəˈmjuːt",
+    "meaning": "v. 1. 定时往返两地 2. 减轻(刑罚) 3. 用…交换，改变(付款)方式",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compact",
+    "phonetic": "kəmˈpækt",
+    "meaning": "adj. 1. 紧密的，结实的 2. (文体)简洁的，紧凑的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comparable",
+    "phonetic": "ˈkɒmpərəbl",
+    "meaning": "adj. 类似的，可相比的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compartment",
+    "phonetic": "kəmˈpɑːtmənt",
+    "meaning": "n. 间隔(如火车车厢里的小房间)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compatible",
+    "phonetic": "kəmˈpætəbl",
+    "meaning": "adj. 可和谐共处的，相容的，兼容的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "competitive",
+    "phonetic": "kəmˈpetətɪv",
+    "meaning": "adj. 1. 竞争性的，  竞争的，有竞争力的 2. 比赛的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complexion",
+    "phonetic": "kəmˈplekʃən",
+    "meaning": "n. 1. 肤色，气色，面色 2. 外观，形势",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complication",
+    "phonetic": "ˌkɒmpliˈkeiʃәn",
+    "meaning": "n. 1. 复杂情况 2. 并发症",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compliment",
+    "phonetic": "ˈkɒmplɪmənt",
+    "meaning": "n. 恭维，称赞 v. 称赞",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comply",
+    "phonetic": "kəmˈplaɪ",
+    "meaning": "v. 同意，遵从，依从，应允",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "composite",
+    "phonetic": "ˈkɒmpəzɪt",
+    "meaning": "adj. 混合成的，综合成的 n. 合成物，复合材料",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "concede",
+    "phonetic": "kənˈsiːd",
+    "meaning": "v. 1. (常指勉强地)承认 2. 容许，让与",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conceive",
+    "phonetic": "kənˈsiːv",
+    "meaning": "v. 1. 设想，想出，想象 2. 怀(胎)，怀孕",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conception",
+    "phonetic": "kənˈsepʃən",
+    "meaning": "n. 1. 概念，观念，理解 2. 构想，看法 3. 受孕，妊娠",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "confer",
+    "phonetic": "kənˈfɜː",
+    "meaning": "v. 1. 商讨 2. 授予，颁赠(勋衔、学位等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conform",
+    "phonetic": "kənˈfɔːm",
+    "meaning": "v. (使)一致，(使)符合，(使)遵照，(使)适应",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conscientious",
+    "phonetic": "ˌkɒnʃɪˈenʃəs",
+    "meaning": "adj. 审慎正直的，认真的，本着良心的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consecutive",
+    "phonetic": "kənˈsekjʊtɪv",
+    "meaning": "adj. 连续的，接续的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conserve",
+    "phonetic": "kənˈsɜːv",
+    "meaning": "v. 节约使用，保存",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consolidate",
+    "phonetic": "kənˈsɒlɪdeɪt",
+    "meaning": "v. 1. 巩固，加强 2. 综合，统一，合并",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conspicuous",
+    "phonetic": "kənˈspɪkjʊəs",
+    "meaning": "adj. 显著的，引人注目的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "constituent",
+    "phonetic": "kənˈstɪtjʊənt",
+    "meaning": "n. 1. 选民，选举人 2. 成分，要素 adj. 组成的，形成的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "constrain",
+    "phonetic": "kənˈstreɪn",
+    "meaning": "v. 强迫，强制",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consumer",
+    "phonetic": "kənˈsjuːmə",
+    "meaning": "n. 消费者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contaminate",
+    "phonetic": "kənˈtæmɪneɪt",
+    "meaning": "v. 污染，玷污，弄脏",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contemplate",
+    "phonetic": "ˈkɒntempleɪt",
+    "meaning": "v. 1. 沉思，仔细考虑，意欲 2. 注视，凝视",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contend",
+    "phonetic": "kənˈtend",
+    "meaning": "v. 1. 搏斗，争斗 2. 争，竞争 3. 声称，主张",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contention",
+    "phonetic": "kənˈtenʃən",
+    "meaning": "n. 1. 争论，争辩，论战 2. 论点，主张",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contrive",
+    "phonetic": "kənˈtraɪv",
+    "meaning": "v. 发明， 设计，设法做到",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "controversy",
+    "phonetic": "ˈkɒntrəvɜːsɪ, kənˈtrɒvəsɪ",
+    "meaning": "n. 争论，辩论",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "convene",
+    "phonetic": "kənˈviːn",
+    "meaning": "v. 召集会议",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "converge",
+    "phonetic": "kənˈvɜːdʒ",
+    "meaning": "v. 聚集， 集中一点，汇合",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "convict",
+    "phonetic": "kənˈvɪkt",
+    "meaning": "v. 证明、宣判…有罪，定罪 n. 被判入狱的罪犯",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cooperative",
+    "phonetic": "kəʊˈɒpərətɪv",
+    "meaning": "n. 合作社，合作商店(企业等) adj. 1. 合作的，协作的 2. 有合作意向的，乐意合作的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cork",
+    "phonetic": "kɔːk",
+    "meaning": "n. 软木，软木塞",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corporate",
+    "phonetic": "ˈkɔːpərət",
+    "meaning": "adj. 1. 团体的，全体的 2. 公司的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corps",
+    "phonetic": "kɔː",
+    "meaning": "n. 1. 特种部队，军团 2. 共同工作、活动的一群人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corpse",
+    "phonetic": "kɔːps",
+    "meaning": "n. 尸体",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "correlate",
+    "phonetic": "ˈkɒrəleɪt",
+    "meaning": "n. 有相互关系的东西，相关物 v. 使有相互关系，互相有关系",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corrode",
+    "phonetic": "kəˈrəʊd",
+    "meaning": "v. (使)腐蚀，侵蚀",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "costume",
+    "phonetic": "ˈkɒstjuːm",
+    "meaning": "n. 服装，剧装，戏服",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "counsel",
+    "phonetic": "ˈkaʊnsəl",
+    "meaning": "n. 1. 辩护律师 2. (专业)意见，忠告，劝告 v. 劝告，提供意见",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "counterpart",
+    "phonetic": "ˈkaʊntəpɑːt",
+    "meaning": "n. 相对应的人(物)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coupon",
+    "phonetic": "ˈkuːpɒn",
+    "meaning": "n. 优惠券，赠券，票证",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cozy",
+    "phonetic": "ˈkәuzi",
+    "meaning": "a. 舒适的，安逸的，惬意的 v. 取悦，献殷勤",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cradle",
+    "phonetic": "ˈkreɪdl",
+    "meaning": "n. 1. 摇篮  2. 策源地，发源地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "credible",
+    "phonetic": "ˈkredəbl",
+    "meaning": "adj. 可信的，可靠的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crisp",
+    "phonetic": "krɪsp",
+    "meaning": "adj. 1. 脆的，硬而易碎的 2. 清新的，爽快的 3. 干脆明确的(态度等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crumble",
+    "phonetic": "ˈkrʌmbl",
+    "meaning": "v. 1. 弄碎，粉碎 2. 崩溃，瓦解",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "culminate",
+    "phonetic": "ˈkʌlmɪneɪt",
+    "meaning": "v. 达到顶点(高潮)，以…告终 || culminate in达到…高峰，终于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cumulative",
+    "phonetic": "ˈkjuːmjʊlətɪv",
+    "meaning": "adj. 累积的，渐增的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "curb",
+    "phonetic": "kɜːb",
+    "meaning": "n. 1. 勒马的链条(皮带) 2. 控制，约束，抑制  v. 1. 给(马)装上勒马链，勒住(马) 2. 控制，约束，抑制",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "customary",
+    "phonetic": "ˈkʌstəmərɪ",
+    "meaning": "adj. 习惯的，惯例的，通常的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cylinder",
+    "phonetic": "ˈsɪlɪndə",
+    "meaning": "n. 1. 圆筒，圆柱体 2. 汽缸 3. (印刷机)滚筒 4. (左轮手枪的)旋转枪膛 5. 圆柱体体积",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cynical",
+    "phonetic": "ˈsɪnɪkəl",
+    "meaning": "adj. 愤世嫉俗的，(对人性或动机)怀疑的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dart",
+    "phonetic": "dɑːt",
+    "meaning": "n. 飞镖 v. 猛冲，投掷，发射",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dazzle",
+    "phonetic": "ˈdæzl",
+    "meaning": "v. 1. 使眼花，耀眼 2. 使惊奇，使倾倒 n. 闪耀，耀眼",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dean",
+    "phonetic": "diːn",
+    "meaning": "n. 1. 教务长 2. (大学的)学院院长，系主任 v. 担任教务长(院长、系主任等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decimal",
+    "phonetic": "ˈdesɪml",
+    "meaning": "n. 小数，十进小数 adj. 小数的，十进位的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decisive",
+    "phonetic": "dɪˈsaɪsɪv",
+    "meaning": "adj. 1. 坚决的，果断的，有决定作用的 2. 确定的，明确的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decree",
+    "phonetic": "dɪˈkriː",
+    "meaning": "n. 命令，法令，判决 v. 命令，颁布命令，判定",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deduct",
+    "phonetic": "dɪˈdʌkt",
+    "meaning": "v. 扣除，减去",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deem",
+    "phonetic": "diːm",
+    "meaning": "v. 认为，相信，视为",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "defendant",
+    "phonetic": "dɪˈfendənt",
+    "meaning": "n. 被告",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "defiance",
+    "phonetic": "dɪˈfaɪəns",
+    "meaning": "n. 违抗，蔑视，挑战",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deficiency",
+    "phonetic": "dɪˈfɪʃənsɪ",
+    "meaning": "n. 1. 缺乏，短缺 2. 缺点，毛病",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deficit",
+    "phonetic": "ˈdefɪsɪt",
+    "meaning": "n. 赤字，亏损",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "definitive",
+    "phonetic": "dɪˈfɪnətɪv",
+    "meaning": "adj. 1. 确定的，有权威的，不能(不必)改变的 2. 决定性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "defy",
+    "phonetic": "dɪˈfaɪ",
+    "meaning": "v. 1. 违抗，蔑视 2. 激(某人)做",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "degenerate",
+    "phonetic": "dɪˈdʒenərət",
+    "meaning": "adj. 退步的，退化的，堕落的 n. 堕落者，腐化者 [dɪˈdʒenəreɪt] v. 退化，衰败，堕落",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "degrade",
+    "phonetic": "dɪˈɡreɪd",
+    "meaning": "v. 1. 使降级，降低，2. 有辱…的人格，使丢脸",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "denial",
+    "phonetic": "dɪˈnaɪəl",
+    "meaning": "n. 否认，拒绝，抛弃",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "denote",
+    "phonetic": "dɪˈnəʊt",
+    "meaning": "v. 指示，表示，意思是",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "denounce",
+    "phonetic": "dɪˈnaʊns",
+    "meaning": "v. 指责，痛斥，告发",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "depict",
+    "phonetic": "dɪˈpɪkt",
+    "meaning": "v. (用图画、文字)表示，描述，描绘",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deport",
+    "phonetic": "dɪˈpɔːt",
+    "meaning": "v. 把(外国人)驱逐出境",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "depression",
+    "phonetic": "dɪˈpreʃən",
+    "meaning": "n. 1. 沮丧，抑郁，萧条(期)  2. 凹地，洼地，低压(地区)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deprive",
+    "phonetic": "dɪˈpraɪv",
+    "meaning": "v. 剥夺，使丧失，使不能做 deprivation",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "descendant",
+    "phonetic": "dɪˈsendənt",
+    "meaning": "n. 后裔，子孙 adj. 下降的，派生的，(从祖先)传下的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "descent",
+    "phonetic": "dɪˈsent",
+    "meaning": "n. 1. 下降，下来 2. 下倾，斜坡 3. 血统，世袭，遗传 4. 袭击，突然的访问",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "designate",
+    "phonetic": "ˈdezɪɡneɪt",
+    "meaning": "v. 1·标出，指明，称呼 2. 指派，任命  adj. 已受委派(当选)而尚未就职的，候任的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "destined",
+    "phonetic": "ˈdestɪnd",
+    "meaning": "adj. 命中注定的，预定的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "destiny",
+    "phonetic": "ˈdestɪnɪ",
+    "meaning": "n. 命运，天命",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "destructive",
+    "phonetic": "dɪˈstrʌktɪv",
+    "meaning": "adj. 破坏(性)的，毁灭(性)的，非建设性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "detach",
+    "phonetic": "dɪˈtætʃ",
+    "meaning": "v. 拆卸，使分离，派遣",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "detain",
+    "phonetic": "dɪˈteɪn",
+    "meaning": "v. 拘留，扣押，耽搁",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deteriorate",
+    "phonetic": "dɪˈtɪərɪəreɪt",
+    "meaning": "v. 恶化，(使)变坏，退化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deviate",
+    "phonetic": "ˈdiːvɪeɪt",
+    "meaning": "v. 背离，偏离，越(轨)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diagnose",
+    "phonetic": "ˈdaɪəɡnəʊz",
+    "meaning": "v. 诊断(疾病)，判断，调查分析(问题等的)原因(性质)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "differentiate",
+    "phonetic": "ˌdɪfəˈrenʃɪeɪt",
+    "meaning": "v. 区分，(使)不同，构成…间的差别",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diffuse",
+    "phonetic": "dɪˈfjuːz",
+    "meaning": "v. 1. 扩散，(使)四散，弥漫 2. 传播，散步 adj. 1. 弥漫的，四散的 2. (文章等)冗长的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dilute",
+    "phonetic": "daɪˈljuːt",
+    "meaning": "v. 1. 稀释，冲淡 2. 削弱，减轻 adj. 经稀释的，淡的，减弱了的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diminish",
+    "phonetic": "dɪˈmɪnɪʃ",
+    "meaning": "v. 1. 减少，(使)减小，降低 2. 贬低，使降级，削弱",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diplomat",
+    "phonetic": "ˈdɪpləmæt",
+    "meaning": "n. 外交家，外交官",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disastrous",
+    "phonetic": "dɪˈzɑːstrəs",
+    "meaning": "adj. 灾难性的，极不幸的，极坏的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discern",
+    "phonetic": "dɪˈsɜːn",
+    "meaning": "v. 看出，了解，识别",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discreet",
+    "phonetic": "dɪˈskriːt",
+    "meaning": "adj. (言行)谨慎的，慎重的，不显眼的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discrepancy",
+    "phonetic": "dɪˈskrepənsɪ",
+    "meaning": "n. 差异，不符合",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discrete",
+    "phonetic": "dɪˈskriːt",
+    "meaning": "adj. 个别的，分离的，不连续的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discriminate",
+    "phonetic": "dɪˈskrɪmɪneɪt",
+    "meaning": "v. 区别，辨别，有差别的对待  adj. 有区别的，有差别的，有识别力的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dismay",
+    "phonetic": "dɪsˈmeɪ",
+    "meaning": "v. (使)惊恐，使沮丧，使绝望",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disperse",
+    "phonetic": "dɪˈspɜːs",
+    "meaning": "v. (使)分散，驱散，疏散",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "displace",
+    "phonetic": "dɪsˈpleɪs",
+    "meaning": "v. 1. 移置，使脱离正常位置 2. 替代",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disposition",
+    "phonetic": "ˌdɪspəˈzɪʃən",
+    "meaning": "n. 性格，性情",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disregard",
+    "phonetic": "ˌdɪsrɪˈɡɑːd",
+    "meaning": "v. &n. 不理会，不顾，忽视",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disrupt",
+    "phonetic": "dɪsˈrʌpt",
+    "meaning": "v. 扰乱，破坏",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dissipate",
+    "phonetic": "ˈdisipeit",
+    "meaning": "v. 1. 散失，驱散 2. 浪费 3. 放荡",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distill",
+    "phonetic": "disˈtil",
+    "meaning": "v. 1. 蒸馏 2. 提炼",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distort",
+    "phonetic": "dɪˈstɔːt",
+    "meaning": "v. 1. 扭曲，使变形 2. 歪曲，曲解 3. 使(声音、信号等)失真",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distract",
+    "phonetic": "dɪˈstrækt",
+    "meaning": "v. 1. 转移(注意力)，使分心 2. 使转变，使转向 3. 使困惑，使混乱",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disturbance",
+    "phonetic": "dɪˈstɜːbəns",
+    "meaning": "n. 1. 打扰，妨碍 2. 心神不安，烦恼 3. 混乱，骚乱",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diversion",
+    "phonetic": "daɪˈvɜːʃən",
+    "meaning": "n. 1. 转移，转向，偏离 2. 消遣，娱乐",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "divert",
+    "phonetic": "daɪˈvɜːt",
+    "meaning": "v. 1. 使转向，使(河流等)改道，转移…的注意力 2. 使得到消遣，给…娱乐 3. 盗用，贪污",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "divine",
+    "phonetic": "dɪˈvaɪn",
+    "meaning": "adj. 1. 神的，上帝的，神圣的 2. 非凡的，极好的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "doctrine",
+    "phonetic": "ˈdɒktrɪn",
+    "meaning": "n. 1. 信条，教条，主义 2. 学说，原理，教诲",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dodge",
+    "phonetic": "dɒdʒ",
+    "meaning": "v. 1. 躲开，闪开 2. 躲避，施计逃避义务(责任等) n. 1. 躲闪，躲避 2. 妙计，伎俩",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dolphin",
+    "phonetic": "ˈdɒlfɪn",
+    "meaning": "n. 海豚",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dome",
+    "phonetic": "dəʊm",
+    "meaning": "n. 圆屋顶，苍弯，半球形物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dominant",
+    "phonetic": "ˈdɒmɪnənt",
+    "meaning": "adj. 1. 占优势的，支配的，显著的 2. 占首位的，主要的 3. 居高临下的，高耸的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "donate",
+    "phonetic": "dəʊˈneɪt",
+    "meaning": "v. 捐赠，赠送",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "donation",
+    "phonetic": "dəʊˈneɪʃən",
+    "meaning": "n. 捐赠，赠品，捐款",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "doom",
+    "phonetic": "duːm",
+    "meaning": "n. 1. 命运，厄运，毁灭 2. 判决，定罪 v. 1. 注定，命定，使…的失败(毁灭等)成为必然 2. 判定，判决",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drainage",
+    "phonetic": "ˈdreɪnɪdʒ",
+    "meaning": "n. 排水系统",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drastic",
+    "phonetic": "ˈdræstɪk",
+    "meaning": "adj. 激烈的，猛烈的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dreadful",
+    "phonetic": "ˈdredfʊl",
+    "meaning": "adj. 1. 可怕的，令人敬畏的 2. 厉害的，讨厌的，极端的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dual",
+    "phonetic": "ˈdjuːəl",
+    "meaning": "adj. 双的，双重的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dub",
+    "phonetic": "dʌb",
+    "meaning": "v. 1. 起绰号 2. (为影片)配音",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dubious",
+    "phonetic": "ˈdjuːbɪəs",
+    "meaning": "adj. 怀疑的，可疑的，令人怀疑的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dwarf",
+    "phonetic": "dwɔːf",
+    "meaning": "n. 矮子，矮小的人(动物、植物) v. 使矮小(显得渺小)，使相形见续出",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dwell",
+    "phonetic": "dwel",
+    "meaning": "v. 居住，生活于，栖息 || dwell on ①老想着，详述，长谈②凝视，持续",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eccentric",
+    "phonetic": "ɪkˈsentrɪk",
+    "meaning": "adj. 古怪的，异常的 n. 古怪的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eclipse",
+    "phonetic": "ɪˈklɪps",
+    "meaning": "n. 日蚀，月蚀 v. 1. 遮住(天体)的光 2. 使黯然失色，使相形见绌",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "edible",
+    "phonetic": "ˈedɪbl",
+    "meaning": "adj. 可以吃的，适合吃的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ego",
+    "phonetic": "ˈiːɡəʊ",
+    "meaning": "n. 自我，自负",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eject",
+    "phonetic": "ɪˈdʒekt",
+    "meaning": "v. 1. 驱逐，逐出 2. 喷出，投出，弹出",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elapse",
+    "phonetic": "ɪˈlæps",
+    "meaning": "n. & v. (时间)过去，消逝",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "electrician",
+    "phonetic": "ɪˌlekˈtrɪʃən",
+    "meaning": "n. 电器技师，电工，电气专家",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elicit",
+    "phonetic": "ɪˈlɪsɪt",
+    "meaning": "v. 诱出，探出(事实、反应等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eligible",
+    "phonetic": "ˈelɪdʒəbl",
+    "meaning": "adj. 有资格的，合适的，合格的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elite",
+    "phonetic": "eɪˈliːt",
+    "meaning": "n. 精华，精英，中坚",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eloquent",
+    "phonetic": "ˈeləkwənt",
+    "meaning": "adj. 1. 雄辩的，有说服力的，口才好的 2. 意味深长的，明白显示出的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "embark",
+    "phonetic": "ɪmˈbɑːk",
+    "meaning": "v. 1. (使)上船(飞机等) 2. 从事，着手，发动",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "embody",
+    "phonetic": "ɪmˈbɒdɪ",
+    "meaning": "v. 体现，使具体化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "empirical",
+    "phonetic": "ɪmˈpɪrɪkəl",
+    "meaning": "adj. 以实验为根据的，非理论的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enclosure",
+    "phonetic": "ɪnˈkləʊʒə",
+    "meaning": "n. 1. 围栏，围墙，圈占地 2. (信函内的)附件，装入物 3. 包围，围住",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "endeavor",
+    "phonetic": "inˈdevә",
+    "meaning": "n. 努力，尝试 v. 努力，尽力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "endow",
+    "phonetic": "ɪnˈdaʊ",
+    "meaning": "v. 1. 赋予，授予 2. 资助，捐赠  || be endowed with天生具有…，有…的天赋",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "endurance",
+    "phonetic": "ɪnˈdjʊərəns",
+    "meaning": "n. 忍耐，耐力，持久力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "engagement",
+    "phonetic": "ɪnˈɡeɪdʒmənt",
+    "meaning": "n. 1. 约会，约定 2. 订婚，婚约",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enlighten",
+    "phonetic": "ɪnˈlaɪtən",
+    "meaning": "v. 1. 启发，开导，使摆脱偏见(迷信) 2. 指导，教育",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enrich",
+    "phonetic": "ɪnˈrɪtʃ",
+    "meaning": "v. 使富足，使丰富，充实",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enroll",
+    "phonetic": "inˈrәul",
+    "meaning": "v. 登记，使加入，注册",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ensue",
+    "phonetic": "ɪnˈsjuː",
+    "meaning": "v. 接着发生，随之而来",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "entail",
+    "phonetic": "ɪnˈteɪl",
+    "meaning": "v. 使成为必要，需要",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "entrepreneur",
+    "phonetic": "ˌɒntrəprəˈnɜː",
+    "meaning": "n. 企业家，创业者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "envisage",
+    "phonetic": "ɪnˈvɪzɪdʒ",
+    "meaning": "v. 1. 想象，设想 2. 正视，面对",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "equator",
+    "phonetic": "ɪˈkweɪtə",
+    "meaning": "n. 赤道  equatorial",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "erosion",
+    "phonetic": "ɪˈrəʊʒən",
+    "meaning": "n. 侵蚀，腐蚀",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "erroneous",
+    "phonetic": "ɪˈrəʊnɪəs",
+    "meaning": "adj. 错误的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "escort",
+    "phonetic": "ˈeskɔːt",
+    "meaning": "n. 护卫队，护送者，陪伴 v. 护送，护卫，护航",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "esthetic",
+    "phonetic": "esˈθetik",
+    "meaning": "a. 审美的，感觉的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eternal",
+    "phonetic": "ɪˈtɜːnəl",
+    "meaning": "adj. 永远(不变)的，永恒的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ethnic",
+    "phonetic": "ˈeθnɪk",
+    "meaning": "adj. 种族的，部族的，少数民族的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "evoke",
+    "phonetic": "ɪˈvəʊk",
+    "meaning": "v. 引起，唤起，引发",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exceptional",
+    "phonetic": "ɪkˈsepʃənəl",
+    "meaning": "adj. 1. 异常的，独特的，例外的 2. 优越的，杰出的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exclusive",
+    "phonetic": "ɪkˈskluːsɪv",
+    "meaning": "adj. 1. 除外的，排外的 2. 专有的，独占的，惟一的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exemplify",
+    "phonetic": "ɪɡˈzemplɪfaɪ",
+    "meaning": "v. 是…的榜样，举例说明",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exempt",
+    "phonetic": "ɪɡˈzempt",
+    "meaning": "adj. 被免除义务(责任)的，被赦免的  v. 免除，赦免",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exile",
+    "phonetic": "ˈeksaɪl, ˈeɡzaɪl",
+    "meaning": "v. 流放，放逐，流亡 n. 1. 流放，放逐 2. 亡命者，流放者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exotic",
+    "phonetic": "ɪɡˈzɒtɪk",
+    "meaning": "adj. 珍奇的，奇异的，外国产的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expedition",
+    "phonetic": "ˌekspɪˈdɪʃən",
+    "meaning": "n. 1. 探险，远征 2. 远征军，探险队",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expel",
+    "phonetic": "ɪkˈspel",
+    "meaning": "v. 驱逐，开除，排出(气等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expend",
+    "phonetic": "ɪkˈspend",
+    "meaning": "v. 花费，用光",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expenditure",
+    "phonetic": "ɪkˈspendɪtʃə",
+    "meaning": "n. 1. 经费，费用 2. 支出，消耗，花费",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expire",
+    "phonetic": "ɪkˈspaɪə",
+    "meaning": "v. 1. 期满，终止 2. 死亡 3. 呼出，吐气",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exposition",
+    "phonetic": "ˌekspəˈzɪʃən",
+    "meaning": "n. 1. 解释，讲解，说明 2. 展出，展览会",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exquisite",
+    "phonetic": "ˈekskwɪzɪt",
+    "meaning": "adj. 精美的，精致的，精湛的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extinct",
+    "phonetic": "ɪkˈstɪŋkt",
+    "meaning": "adj. 1. 灭绝的，绝种的 2. (火山)死的，熄灭的 3. 消亡的，破灭的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extinguish",
+    "phonetic": "ɪkˈstɪŋɡwɪʃ",
+    "meaning": "v. 1. 熄灭，扑灭 2. 破灭，幻灭，使消亡 3. 压制，压抑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extravagant",
+    "phonetic": "ɪkˈstrævəɡənt",
+    "meaning": "adj. 1. 浪费的，奢侈的 2. 过度的，放肆的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fabricate",
+    "phonetic": "ˈfæbrɪkeɪt",
+    "meaning": "v. 捏造，编造，虚构",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "facet",
+    "phonetic": "ˈfæsɪt",
+    "meaning": "n. 1. (宝石等的)琢面 2. (事物等的)一面，方面",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fake",
+    "phonetic": "feɪk",
+    "meaning": "n. 假货，赝品，骗人诡计 adj. 假的，冒充的 v. 伪造，假装，捏造",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fantastic",
+    "phonetic": "fænˈtæstɪk",
+    "meaning": "adj. 1. 极好的，美妙的 2. 不切实际的，异想天开的，古怪的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fascinate",
+    "phonetic": "ˈfæsɪneɪt",
+    "meaning": "v. 迷住，使神魂颠倒，强烈地吸引",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "federation",
+    "phonetic": "ˌfedəˈreɪʃən",
+    "meaning": "n. 联盟，联邦，同盟",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fellowship",
+    "phonetic": "ˈfeləʊʃɪp",
+    "meaning": "n. 1. 团体，协会 2. 友谊，交情 3. 学院董事(研究员)的职位",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "feminine",
+    "phonetic": "ˈfemənɪn",
+    "meaning": "adj. 女性的，适于女子的，阴性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "finite",
+    "phonetic": "ˈfaɪnaɪt",
+    "meaning": "adj. 1. 限定的，有限的 2. (动词)限定式的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fixture",
+    "phonetic": "ˈfɪkstʃə",
+    "meaning": "n. 1. 固定装置 2. 预定举行的体育比赛",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flank",
+    "phonetic": "flæŋk",
+    "meaning": "n. 腰窝，侧翼 v. 位于…的侧面",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flap",
+    "phonetic": "flæp",
+    "meaning": "v. 1. 拍打，拍动，摆动 2. (鸟)振(翅) 3. 平卧，垂下 n. 1. 拍打，拍动，(鸟的)振翅 2. 下垂物，覆盖物 3. (袋)盖，(帽)边，信封口盖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flask",
+    "phonetic": "flɑːsk",
+    "meaning": "n. (实验用的)烧瓶，长颈瓶，冷(热)水瓶，保温瓶",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flatter",
+    "phonetic": "ˈflætə",
+    "meaning": "v. 1. 奉承，恭维 2. 使高兴，使满意",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flaw",
+    "phonetic": "flɔː",
+    "meaning": "n. 缺点，缺陷，瑕疵 v. 使有缺陷，损害",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fling",
+    "phonetic": "flɪŋ",
+    "meaning": "v. 投，抛，摔  n. 悠情放纵，尽情欢乐， 一时的(常为放纵的)行乐",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flip",
+    "phonetic": "flɪp",
+    "meaning": "v. 1. 把…抛向空中，捻，快速地翻转(猛然移动) 2. 大怒，强烈地反应 n. 轻弹(打、抛)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fluctuate",
+    "phonetic": "ˈflʌktʃʊeɪt",
+    "meaning": "v. 波动，变动，涨落",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flutter",
+    "phonetic": "ˈflʌtə",
+    "meaning": "v. &n. 1. 振翅，拍翼 2. 飘动，摆动 3. 激动，紧张，兴奋",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "foam",
+    "phonetic": "fəʊm",
+    "meaning": "n. 1. 泡沫，(马等的)涎沫(大汗)，白沫 2. 泡沫材料 v. 1. 起泡沫，冒汗 2. 吐白沫，唾沫四溅",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "formidable",
+    "phonetic": "ˈfɔːmɪdəbl",
+    "meaning": "adj. 1. 大而可怕的，令人畏惧的 2. 难以应付的，难以战胜的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fort",
+    "phonetic": "fɔːt",
+    "meaning": "n. 要塞，堡垒",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "forthcoming",
+    "phonetic": "ˌfɔːθˈkʌmɪŋ",
+    "meaning": "adj. 1. 即将发生的，即将来到的 2. 现成的，随要随有的 3. 乐于助人的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "forum",
+    "phonetic": "ˈfɔːrəm",
+    "meaning": "n. 讲坛，讨论会场，论坛",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fossil",
+    "phonetic": "ˈfɒsəl",
+    "meaning": "n. 化石",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fracture",
+    "phonetic": "ˈfræktʃə",
+    "meaning": "n. 骨折，折断，破裂 v. (使)破裂，(使)折断，破碎",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fragrance",
+    "phonetic": "ˈfreɪɡrəns",
+    "meaning": "n. 1. 芳香，香味 2. 香料，香水",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frantic",
+    "phonetic": "ˈfræntɪk",
+    "meaning": "adj. 1. (因恐惧、焦急、喜悦等)发狂(似)的，发疯的 2. 狂乱的，令人绝望的，不顾一切的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fraud",
+    "phonetic": "frɔːd",
+    "meaning": "n. 1. 欺骗(行为)，诈骗(罪) 2. 骗子，冒名顶替者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fringe",
+    "phonetic": "frɪndʒ",
+    "meaning": "n. 1. 刘海，额前短发 2. 饰边，流苏，穗子 3. 边缘，外围 v. 饰…的边，以…为界，围绕",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fulfill",
+    "phonetic": "fulˈfil",
+    "meaning": "v. 1. 实行，完成 2. 实践，履行",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fury",
+    "phonetic": "ˈfjʊərɪ",
+    "meaning": "n. 1. 愤怒，狂怒 2. 狂暴，猛烈",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fusion",
+    "phonetic": "ˈfjuːʒən",
+    "meaning": "n. 融合，熔合，聚变",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "galaxy",
+    "phonetic": "ˈɡæləksɪ",
+    "meaning": "n. 1. 星系  2. (cap)银河系 3. 一群(杰出或著名的人物)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gamble",
+    "phonetic": "ˈɡæmbl",
+    "meaning": "v. 赌博，打赌 n. 赌博，投机，冒险",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gear",
+    "phonetic": "ɡɪə",
+    "meaning": "n. 1. 齿轮 2. 一套用具",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generalize",
+    "phonetic": "ˈdʒenәrәlaiz",
+    "meaning": "v. 1. 一般化，概括，推广 2. 形成概念，笼统讲",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "genetic",
+    "phonetic": "dʒɪˈnetɪk",
+    "meaning": "adj. 遗传(学)的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "geology",
+    "phonetic": "dʒɪˈɒlədʒɪ",
+    "meaning": "n. 地质学",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gigantic",
+    "phonetic": "dʒaɪˈɡæntɪk",
+    "meaning": "adj. 巨大的，似巨人的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "giggle",
+    "phonetic": "ˈɡɪɡl",
+    "meaning": "v. 吃吃地笑，咯咯地笑，傻笑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "given",
+    "phonetic": "ˈɡɪvən",
+    "meaning": "prep. 考虑到 adj. 特定的，规定的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glamour",
+    "phonetic": "ˈglæmә",
+    "meaning": "n. 魅力，迷人的美，魔法 v. 迷惑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gland",
+    "phonetic": "ɡlænd",
+    "meaning": "n. 腺",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gleam",
+    "phonetic": "ɡliːm",
+    "meaning": "n. 1. 微光，闪光，一线光明 2. (希望、机智等的)闪现 v. 闪烁，隐约闪光",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gloom",
+    "phonetic": "ɡluːm",
+    "meaning": "n. 1. 黑暗，幽暗 2. 忧郁，阴沉",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gorgeous",
+    "phonetic": "ˈɡɔːdʒəs",
+    "meaning": "adj. 1. 异常漂亮的，壮丽的 2. 令人愉快的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gossip",
+    "phonetic": "ˈɡɒsɪp",
+    "meaning": "v. 闲聊 n. 1. 闲谈，聊天，流言蜚语 2. 喜欢拨弄是非的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "graze",
+    "phonetic": "ɡreɪz",
+    "meaning": "v. (动物)吃草，放牧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grease",
+    "phonetic": "ɡriːs",
+    "meaning": "n. 动物脂，脂肪，润滑脂 v. 涂油脂于，用油脂润滑，使润滑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grief",
+    "phonetic": "ɡriːf",
+    "meaning": "n. 1. 悲痛，悲伤 2. 不幸，灾难，伤心事",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grim",
+    "phonetic": "ɡrɪm",
+    "meaning": "adj. 1. 严肃的，严厉的，可怕的 2. 严峻的，严酷的，冷酷的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grin",
+    "phonetic": "ɡrɪn",
+    "meaning": "v. &n. 露齿笑，咧着嘴笑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "groove",
+    "phonetic": "ɡruːv",
+    "meaning": "n. 沟，槽",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grope",
+    "phonetic": "ɡrəʊp",
+    "meaning": "v. 1. (暗中) 摸索 2. 探索 n. 摸索",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "guardian",
+    "phonetic": "ˈɡɑːdɪən",
+    "meaning": "n. 1. 保护人，监护人 2. 守卫者，保护者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hamper",
+    "phonetic": "ˈhæmpə",
+    "meaning": "v. 阻碍，妨碍",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "handbook",
+    "phonetic": "ˈhændbʊk",
+    "meaning": "n. 手册，指南",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "handicap",
+    "phonetic": "ˈhændɪkæp",
+    "meaning": "n. 1. 不利因素，障碍 2. 缺陷，残疾 v. . 1. 给…设置不利条件，妨碍 2. 使身心残障而不能正常活动(生活)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hardy",
+    "phonetic": "ˈhɑːdɪ",
+    "meaning": "adj. 能吃苦耐劳的，强壮的，耐寒的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "haul",
+    "phonetic": "hɔːl",
+    "meaning": "v. 用力拖(拉) n. 1. 一网渔获量，一次得到的数量 2. 拖运的距离(路程)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "haunt",
+    "phonetic": "hɔːnt",
+    "meaning": "v. 出没，常去，萦绕 n. (usu pl)常去之处",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heave",
+    "phonetic": "hiːv",
+    "meaning": "v. 1. 举起，拉，拖 2. 投掷 3. (有节奏地)起伏",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heighten",
+    "phonetic": "ˈhaɪtən",
+    "meaning": "v. 1. 加高，提高 2. 增加，增大",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hemisphere",
+    "phonetic": "ˈhemɪˌsfɪə",
+    "meaning": "n. 1. (地球、天体的)半球，半球上所有的国家(居民) 2. (活动、知识等的)范围(领域)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "henceforth",
+    "phonetic": "ˌhensˈfɔːθ",
+    "meaning": "adv. 从今以后，今后",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heritage",
+    "phonetic": "ˈherɪtɪdʒ",
+    "meaning": "n. 文化遗产，继承物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hike",
+    "phonetic": "haɪk",
+    "meaning": "n. & v. 1. 远足，(作)徒步旅行 2. 提高，增加",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hinder",
+    "phonetic": "ˈhɪndə",
+    "meaning": "v. 阻止，阻碍",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hinge",
+    "phonetic": "hɪndʒ",
+    "meaning": "n. 1. 铰链，枢纽 2. 关键，转折点 v. 装上铰链，用铰链接合 || hinge on; hinge upon①靠铰链转动，附于②随…而定，取决于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "historian",
+    "phonetic": "hiˈstɒːriәn",
+    "meaning": "n. 历史学家，记事者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hitherto",
+    "phonetic": "hɪðəˈtuː",
+    "meaning": "adv. 迄今，至此时",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hoist",
+    "phonetic": "hɔɪst",
+    "meaning": "v. &n. 提升，举起",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "homogeneous",
+    "phonetic": "ˌhɒməˈdʒiːnɪəs",
+    "meaning": "adj. 同种类的，同性质的，相似的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hop",
+    "phonetic": "hɒp",
+    "meaning": "v. (人)单脚跳，(鸟、蛙等)跳跃，跳上 n. 1. 跳(跃) 2. (飞机)一次的航程",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hose",
+    "phonetic": "həʊz",
+    "meaning": "n. 1. 软管，水龙带 2. 长筒袜，短筒袜，绑腿",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hospitality",
+    "phonetic": "ˌhɒspɪˈtælətɪ",
+    "meaning": "n. 好客，殷勤的款待",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hostage",
+    "phonetic": "ˈhɒstɪdʒ",
+    "meaning": "n. 人质，抵押品",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hound",
+    "phonetic": "haʊnd",
+    "meaning": "n. 猎犬，猎狐狗 v. 烦扰，纠缠，追逼",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hover",
+    "phonetic": "ˈhɒvə",
+    "meaning": "v. 飞翔，盘旋，徘徊",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "huddle",
+    "phonetic": "ˈhʌdl",
+    "meaning": "v. 聚在一起，挤作一团 n. 杂乱的一群",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hum",
+    "phonetic": "hʌm",
+    "meaning": "v. 发嗡嗡声，发哼哼声，哼(曲子) n. 嗡嗡声，哼哼声，嘈杂声",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "humidity",
+    "phonetic": "hjuːˈmɪdətɪ",
+    "meaning": "n. 湿度，湿气",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hurl",
+    "phonetic": "hɜːl",
+    "meaning": "v. 1. 丢，投，猛掷 2. 发射 3. 推翻，压倒 4. 叫嚷",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hysterical",
+    "phonetic": "hɪˈsterɪkəl",
+    "meaning": "adj. 歇斯底里的，有癔病的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ideology",
+    "phonetic": "ˌaɪdɪˈɒlədʒɪ",
+    "meaning": "n. 意识形态，思想意识",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "idiot",
+    "phonetic": "ˈɪdɪət",
+    "meaning": "n. 傻子，白痴，低能的人 idiotic",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ignite",
+    "phonetic": "ɪɡˈnaɪt",
+    "meaning": "v. (使)燃烧，点燃",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "illuminate",
+    "phonetic": "ɪˈljuːmɪneɪt",
+    "meaning": "v. 1. 照明，照射 2. 用灯装饰 3. 阐明，启发",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "illusion",
+    "phonetic": "ɪˈluːʒən",
+    "meaning": "n. 错觉，幻觉，幻想 illusive",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imaginative",
+    "phonetic": "ɪˈmædʒɪnətɪv",
+    "meaning": "adj. 富于想像力的，想像的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imitation",
+    "phonetic": "ˌɪmɪˈteɪʃən",
+    "meaning": "n. 1. 模仿，仿效，仿造 2. 仿制品，赝品",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "immerse",
+    "phonetic": "ɪˈmɜːs",
+    "meaning": "v. 浸入，沉浸于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "immune",
+    "phonetic": "ɪˈmjuːn",
+    "meaning": "adj. 有免疫力的，不受影响的，获豁免的  immunity",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impair",
+    "phonetic": "ɪmˈpeə",
+    "meaning": "v. 损害，削弱",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impart",
+    "phonetic": "ɪmˈpɑːt",
+    "meaning": "v. 1. 传授，灌输，给予 2. 告知，通知",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imperative",
+    "phonetic": "ɪmˈperətɪv",
+    "meaning": "adj. 1. 急需的，绝对必要的 2. 命令(式)的，祈使的，强制的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imperial",
+    "phonetic": "ɪmˈpɪərɪəl",
+    "meaning": "adj. 王室的，帝国的，帝皇的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impetus",
+    "phonetic": "ˈɪmpɪtəs",
+    "meaning": "n. 推动(力)，刺激，促进",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "implicit",
+    "phonetic": "ɪmˈplɪsɪt",
+    "meaning": "adj. 1. 含蓄的，不明确的，不直接表明的 2. 绝对的，无疑问的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impulse",
+    "phonetic": "ˈɪmpʌls",
+    "meaning": "n. 1. 推动(力),驱使 2. 冲动，心血来潮",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inaugurate",
+    "phonetic": "ɪˈnɔːɡjʊreɪt",
+    "meaning": "v. 1. 为…举行就职典礼，使正式就任，为…举行开幕式(落成典礼) 2. 开创，开展",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incentive",
+    "phonetic": "ɪnˈsentɪv",
+    "meaning": "n. 刺激，鼓励，推动力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incidence",
+    "phonetic": "ˈɪnsɪdəns",
+    "meaning": "n. 发生率，影响范围",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incidentally",
+    "phonetic": "ˌɪnsɪˈdentəlɪ",
+    "meaning": "adv. 1. 顺便提一句 2. 偶然地，不经意地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inclusive",
+    "phonetic": "ɪnˈkluːsɪv",
+    "meaning": "adj. 一切包括在内的，包含的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incredible",
+    "phonetic": "ɪnˈkredəbl",
+    "meaning": "adj. 1. 难以置信的，不可思议的，精彩的 2. 不能相信的，不可信的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incur",
+    "phonetic": "ɪnˈkɜː",
+    "meaning": "v. 遭受，蒙受，招致",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indicative",
+    "phonetic": "ɪnˈdɪkətɪv",
+    "meaning": "adj. 标示的，指示的，陈述的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indignation",
+    "phonetic": "ˌɪndɪɡˈneɪʃən",
+    "meaning": "n. 愤怒，愤慨，义愤",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "induce",
+    "phonetic": "ɪnˈdjuːs",
+    "meaning": "v. 1. 引诱，诱导，劝 2. 引起，导致",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indulge",
+    "phonetic": "ɪnˈdʌldʒ",
+    "meaning": "v. 1. 纵容，放任 2. 沉迷，沉溺于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inertia",
+    "phonetic": "ɪˈnɜːʃə",
+    "meaning": "n. 1. 无活力，迟钝，懒惰 2. 惰性，保守，惯性",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infectious",
+    "phonetic": "ɪnˈfekʃəs",
+    "meaning": "adj. 传染性的，有感染力的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inflict",
+    "phonetic": "ɪnˈflɪkt",
+    "meaning": "v. 1. 予以(打击)，使遭受，强加于 2. 施(刑)，处(罚)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ingenious",
+    "phonetic": "ɪnˈdʒiːnɪəs",
+    "meaning": "adj.  1. 心灵手巧的，精巧的 2. 有创造性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ingredient",
+    "phonetic": "ɪnˈɡriːdɪənt",
+    "meaning": "n. 1. (混合物的)组成成分，(烹调的)原料，配料 2. 要素",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inhibit",
+    "phonetic": "ɪnˈhɪbɪt",
+    "meaning": "v. 抑制，阻碍，约束",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "initiative",
+    "phonetic": "ɪˈnɪʃətɪv",
+    "meaning": "adj. 起始的，初步的，创始的 n. 1. 进取心，首创精神，倡议 2. 主动性，主动权 || on one’s own initiative主动地 /take the initiative采取主动，首先采取行动",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inlet",
+    "phonetic": "ˈɪnlet",
+    "meaning": "n. 1. 湾，水湾 2. 入口，进口",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "innumerable",
+    "phonetic": "ɪˈnjuːmərəbl",
+    "meaning": "adj. 无数的，数不清的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "insane",
+    "phonetic": "ɪnˈseɪn",
+    "meaning": "adj. 疯狂的，精神失常的，荒唐的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inspiration",
+    "phonetic": "ˌɪnspəˈreɪʃən",
+    "meaning": "n. 1. 鼓舞人心的人(物)，激发 2. 灵感，启示，妙计",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "installment",
+    "phonetic": "inˈstɒːlmәnt",
+    "meaning": "n. 1. 就职，装设 2. 分期付款",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "instantaneous",
+    "phonetic": "ˌɪnstənˈteɪnɪəs",
+    "meaning": "adj. 瞬间发生的，立即的，即时的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "instrumental",
+    "phonetic": "ˌɪnstrʊˈmentəl",
+    "meaning": "adj. 1. 有助的，起作用的 2. 仪器的，用乐器演奏的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "insulate",
+    "phonetic": "ˈɪnsjʊleɪt",
+    "meaning": "v. 1. 隔离，使孤立 2. 使绝缘，使隔绝(热、声音等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intact",
+    "phonetic": "ɪnˈtækt",
+    "meaning": "adj. 无损伤的，完整的，完好无缺的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "integral",
+    "phonetic": "ˈɪntɪɡrəl",
+    "meaning": "adj. 不可或缺的，构成整体所必需的，完整的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intellect",
+    "phonetic": "ˈɪntəlekt",
+    "meaning": "n. 智力，思考能力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intelligible",
+    "phonetic": "ɪnˈtelɪdʒəbl",
+    "meaning": "adj. 可理解的，易于明白的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intensify",
+    "phonetic": "ɪnˈtensɪfaɪ",
+    "meaning": "v. 加强，增强，加剧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intercourse",
+    "phonetic": "ˈɪntəkɔːs",
+    "meaning": "n. 交往，交际，交流",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interim",
+    "phonetic": "ˈɪntərɪm",
+    "meaning": "adj. 暂时的，临时的，中期的，过渡时期的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intermittent",
+    "phonetic": "ˌɪntəˈmɪtənt",
+    "meaning": "adj. 断续的，间歇的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intersection",
+    "phonetic": "ˌɪntəˈsekʃən",
+    "meaning": "n. 1. 横断，交叉，相交 2. 交叉路口，十字路口 3. 交点",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intervene",
+    "phonetic": "ˌɪntəˈviːn",
+    "meaning": "v. 1. 进入，介入，在其间 2. 干涉，干预",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intimidate",
+    "phonetic": "ɪnˈtɪmɪdeɪt",
+    "meaning": "v. 恫吓，恐吓，威胁",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intrigue",
+    "phonetic": "ɪnˈtriːɡ",
+    "meaning": "v. 1. 耍阴谋诡计，密谋 2. 激起…的兴趣(好奇心)  n. 密谋，诡计",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intrinsic",
+    "phonetic": "ɪnˈtrɪnsɪk",
+    "meaning": "adj. 固有的，内在的，本质的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intuition",
+    "phonetic": "ˌɪntjuːˈɪʃən",
+    "meaning": "h·直觉，直观",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invaluable",
+    "phonetic": "ɪnˈvæljʊəbl",
+    "meaning": "adj. 无价的，非常宝贵的，极贵重的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invariably",
+    "phonetic": "inˈvєәriәbli",
+    "meaning": "adv. 不变化地，恒定地，始终如一地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inventory",
+    "phonetic": "ˈɪnvəntərɪ",
+    "meaning": "n. (商品的)目录，清单，盘存",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invert",
+    "phonetic": "ɪnˈvɜːt",
+    "meaning": "v. 倒置，颠倒",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "irony",
+    "phonetic": "ˈaɪərənɪ",
+    "meaning": "n. 1. 反语(法)，冷嘲，讥讽 2. 有讽刺意味的情况、事情等",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "irrespective",
+    "phonetic": "ˌɪrɪˈspektɪv",
+    "meaning": "adv. 不考虑，不顾及  || irrespective of不顾，不论",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "irritate",
+    "phonetic": "ˈɪrɪteɪt",
+    "meaning": "v. 1. 激怒，使烦躁 2. 使不舒服，刺激",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "isle",
+    "phonetic": "aɪl",
+    "meaning": "n. 岛",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ivory",
+    "phonetic": "ˈaɪvərɪ",
+    "meaning": "n. 1. 象牙，牙质 2. 象牙色，乳白色 adj. 象牙制的，象牙色的，乳白色的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jeopardize",
+    "phonetic": "ˈdʒepәdaiz",
+    "meaning": "v. 危害，使受危困，使陷危地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jerk",
+    "phonetic": "dʒɜːk",
+    "meaning": "n. & v. 猛地摇晃，急拉，急抽",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "junction",
+    "phonetic": "ˈdʒʌŋkʃən",
+    "meaning": "n. 交汇处，回合点",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kidnap",
+    "phonetic": "ˈkɪdnæp",
+    "meaning": "v. 诱拐(小孩等)，绑架",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kidney",
+    "phonetic": "ˈkɪdnɪ",
+    "meaning": "n. 1. 肾脏  2. 性格，脾气",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lash",
+    "phonetic": "læʃ",
+    "meaning": "v. 1. 鞭打 2. 急速挥动，急速扭动 n. 1. 鞭打 2. 眼睫毛",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "latent",
+    "phonetic": "ˈleɪtənt",
+    "meaning": "adj. 潜伏的，隐藏的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "latitude",
+    "phonetic": "ˈlætɪtjuːd",
+    "meaning": "n. 纬度，纬线",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "layman",
+    "phonetic": "ˈleɪmən",
+    "meaning": "n. 门外汉",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "leaflet",
+    "phonetic": "ˈliːflɪt",
+    "meaning": "n. 1. 小册子 2. 散页印刷品，传单",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lease",
+    "phonetic": "liːs",
+    "meaning": "n. 租赁，租约 v. 出租，租得",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "legislation",
+    "phonetic": "ˌledʒɪsˈleɪʃən",
+    "meaning": "n. 立法，制定法律",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "legitimate",
+    "phonetic": "lɪˈdʒɪtɪmɪt",
+    "meaning": "adj. 1. 合法的，法律认可的 2. 合乎逻辑的  v. 使合法",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "levy",
+    "phonetic": "ˈlevɪ",
+    "meaning": "v. 征收(税等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "likelihood",
+    "phonetic": "'laɪklɪhʊd",
+    "meaning": "n. 可能，可能性",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "linger",
+    "phonetic": "ˈlɪŋɡə",
+    "meaning": "v. 逗留，徘徊",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "literacy",
+    "phonetic": "ˈlɪtərəsɪ",
+    "meaning": "n. 识字，会读会写，有学识",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "locality",
+    "phonetic": "ləʊˈkælətɪ",
+    "meaning": "n. 位置，地点，现场",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lofty",
+    "phonetic": "ˈlɒftɪ",
+    "meaning": "adj. 1. (思想等)崇高的 2. 高耸的 3. 高傲的 loftily，loftiness",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "longevity",
+    "phonetic": "lɒnˈdʒevətɪ",
+    "meaning": "n. 长寿，长命",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lubricate",
+    "phonetic": "ˈluːbrɪkeɪt",
+    "meaning": "v. 1. 使润滑，给…上油 2. 起润滑作用",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "luminous",
+    "phonetic": "ˈluːmɪnəs",
+    "meaning": "adj. 发光的，光亮的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lunar",
+    "phonetic": "ˈluːnə",
+    "meaning": "adj. 月的，月球的，阴历的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lure",
+    "phonetic": "ljʊə",
+    "meaning": "n. 引诱物，诱惑力 v. 引诱，诱惑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "machinery",
+    "phonetic": "məˈʃiːnərɪ",
+    "meaning": "n. 1. (总称)机器，机械 2. (政府、政党等)机构",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magistrate",
+    "phonetic": "ˈmædʒistreit",
+    "meaning": "n. 地方法官，治安法庭法官",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magnify",
+    "phonetic": "ˈmæɡnɪfaɪ",
+    "meaning": "v. 1. 放大，扩大 2. 夸大",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magnitude",
+    "phonetic": "ˈmæɡnɪtjuːd",
+    "meaning": "n. 1. 巨大，庞大 2. 重要性，重大 3. 大小，量，亮度",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "majesty",
+    "phonetic": "ˈmædʒəstɪ",
+    "meaning": "n. 1. (cap)陛下(对国王或王后的称呼) 2. 宏伟，庄严",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mall",
+    "phonetic": "mɔːl",
+    "meaning": "n. 购物中心",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "maneuver",
+    "phonetic": "mәˈnuːvә",
+    "meaning": "n. 演习，调遣，策略 v. 调遣，演习，用计",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manipulate",
+    "phonetic": "məˈnɪpjʊleɪt",
+    "meaning": "v. 1. 熟练地使用，巧妙地处理 2. 操纵，摆布",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mansion",
+    "phonetic": "ˈmænʃən",
+    "meaning": "n. 1. 大厦 2. 宅第，公馆",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manuscript",
+    "phonetic": "ˈmænjʊskrɪpt",
+    "meaning": "n. 手稿，原稿",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marginal",
+    "phonetic": "ˈmɑːdʒɪnəl",
+    "meaning": "adj. 1. 空白边缘的，栏外的 2. 微小的，少量的，微不足道的 3. 边缘的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marsh",
+    "phonetic": "mɑːʃ",
+    "meaning": "n. 沼泽，沼泽地区",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marshal",
+    "phonetic": "ˈmɑːʃəl",
+    "meaning": "n. 元帅  v. 整理，排列",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "masculine",
+    "phonetic": "ˈmæskjʊlɪn",
+    "meaning": "adj. 1. 男性的，有男子气的 2. 阳性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "massacre",
+    "phonetic": "ˈmæsəkə",
+    "meaning": "n. & v. 大屠杀",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "massive",
+    "phonetic": "ˈmæsɪv",
+    "meaning": "adj. 1. 巨大的，大而结实的 2. 大量的，大规模的，强大的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mediate",
+    "phonetic": "ˈmiːdɪeɪt",
+    "meaning": "v. 调停，斡旋",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "medieval",
+    "phonetic": "ˌmedɪˈiːvəl",
+    "meaning": "adj. 中世纪的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "melody",
+    "phonetic": "ˈmelədɪ",
+    "meaning": "n. 旋律，曲调，美妙的音乐",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "menace",
+    "phonetic": "ˈmenəs",
+    "meaning": "n. 1. 威胁，危险 2. 讨厌的人(或物)  v. 威胁",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "metallic",
+    "phonetic": "mɪˈtælɪk",
+    "meaning": "adj. 金属(性)的，金属制的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "metropolitan",
+    "phonetic": "ˌmetrəˈpɒlɪtən",
+    "meaning": "adj. 大都市的，首都的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "migrant",
+    "phonetic": "ˈmaɪɡrənt",
+    "meaning": "n. 移民，候鸟",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "migrate",
+    "phonetic": "maɪˈɡreɪt",
+    "meaning": "v. (鸟等)定期迁徙，移居，迁移",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "militant",
+    "phonetic": "ˈmɪlɪtənt",
+    "meaning": "adj. 好斗的，富有战斗精神的 n. 好斗的人，富有战斗精神的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mingle",
+    "phonetic": "ˈmɪŋɡl",
+    "meaning": "v. 使混合，混入",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "miniature",
+    "phonetic": "ˈmɪnətʃə",
+    "meaning": "n. 缩样，缩影 adj. 小型的，微小的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "misery",
+    "phonetic": "ˈmɪzərɪ",
+    "meaning": "n. 痛苦，悲惨",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "misfortune",
+    "phonetic": "ˌmɪsˈfɔːtʃən",
+    "meaning": "n. 厄运，不幸",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "missionary",
+    "phonetic": "ˈmɪʃənrɪ",
+    "meaning": "n. 传教士",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mob",
+    "phonetic": "mɒb",
+    "meaning": "n. 1. 喧嚷的群众 2. 暴民，暴徒",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mobilize",
+    "phonetic": "ˈmәubilaiz",
+    "meaning": "v. 动员，调动，使流通",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "momentum",
+    "phonetic": "məʊˈmentəm",
+    "meaning": "n. 1. 动力，冲力，势头 2. 动量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "monetary",
+    "phonetic": "ˈmʌnɪtərɪ",
+    "meaning": "adj. 货币的，金钱的，金融的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "monopoly",
+    "phonetic": "məˈnɒpəlɪ",
+    "meaning": "n. 垄断，独占，专卖(权)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "monster",
+    "phonetic": "ˈmɒnstə",
+    "meaning": "n. 1. 怪物，怪兽，庞然大物 2. 凶残的人  adj. 巨大的，像怪物的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "morality",
+    "phonetic": "məˈrælətɪ",
+    "meaning": "n. 道德，教训，寓意",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mortgage",
+    "phonetic": "ˈmɔːɡɪdʒ",
+    "meaning": "n. 1. 抵押，抵押借款 2. 抵押契据，按揭",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "motel",
+    "phonetic": "məʊˈtel",
+    "meaning": "n. 汽车旅馆",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "multitude",
+    "phonetic": "ˈmʌltɪtjuːd",
+    "meaning": "n. 1. 众多，量 2. 大群(人)，大众",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "municipal",
+    "phonetic": "mjuːˈnɪsɪpl",
+    "meaning": "adj. 都市的，市政的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "murmur",
+    "phonetic": "ˈmɜːmə",
+    "meaning": "n. 1. 沙沙声，潺潺声 2. 怨言，咕哝 3. 低语声  v. 1. 低声说 2. 发低沉连续的声音 3. 咕哝，抱怨",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "muscular",
+    "phonetic": "ˈmʌskjʊlə",
+    "meaning": "adj. 1. 肌肉的 2. 肌肉发达的，强而有力的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "myth",
+    "phonetic": "mɪθ",
+    "meaning": "n. 1. 神话 2. 神话式的人(或物) 3. 虚构的故事，荒诞的说法",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "naive",
+    "phonetic": "nɑːˈiːv",
+    "meaning": "adj. 幼稚的，无知的，天真的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "napkin",
+    "phonetic": "ˈnæpkɪn",
+    "meaning": "n. 餐巾",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "narrative",
+    "phonetic": "ˈnærətɪv",
+    "meaning": "adj. 叙述的，叙事体的 n. 1. 叙述， 记事 2. 叙述手法",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "negligible",
+    "phonetic": "ˈneɡlɪdʒəbl",
+    "meaning": "adj. 微不足道的，可以忽略的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nickel",
+    "phonetic": "ˈnɪkəl",
+    "meaning": "n. 1. 镍 2. (AmE)五分硬币",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nickname",
+    "phonetic": "ˈnɪkneɪm",
+    "meaning": "n. 绰号，爱称",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nil",
+    "phonetic": "nil",
+    "meaning": "n. 无，全无，零",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nominal",
+    "phonetic": "ˈnɒmɪnəl",
+    "meaning": "adj. 1. 名义上的 2. 极小的，微薄的  3. 名词(性)的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nominate",
+    "phonetic": "ˈnɒmɪneɪt",
+    "meaning": "v. 1. 提名 2. 任命 3. 命名",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nonetheless",
+    "phonetic": "ˌnʌnðəˈles",
+    "meaning": "adv. 尽管如此，然而",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "norm",
+    "phonetic": "nɔːm",
+    "meaning": "n. 1. 标准，规范，准则 2. (工作量)定额",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notable",
+    "phonetic": "ˈnəʊtəbl",
+    "meaning": "adj. 值得注意的，显著的 notably",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notation",
+    "phonetic": "nəʊˈteɪʃən",
+    "meaning": "n. 1. 记号，标记法 2. 记录",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notify",
+    "phonetic": "ˈnəʊtɪfaɪ",
+    "meaning": "v. (正式)通知(某人)，告知",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notion",
+    "phonetic": "ˈnəʊʃən",
+    "meaning": "n. 1. 概念，观念 2. 想法，见解 3. 打算，意图",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notorious",
+    "phonetic": "nəʊˈtɔːrɪəs",
+    "meaning": "adj. 臭名昭著的，声名狼藉的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "notwithstanding",
+    "phonetic": "ˌnɒtwɪθˈstændɪŋ",
+    "meaning": "adv. &prep. 尽管，还是",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nourish",
+    "phonetic": "ˈnʌrɪʃ",
+    "meaning": "v. 1. 滋养，养育 2. 怀有(希望，怨恨等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "novelty",
+    "phonetic": "ˈnɒvəltɪ",
+    "meaning": "n. 1. 新颖 2. 新颖的事物  3. 新颖而价廉的小物件",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nurture",
+    "phonetic": "ˈnɜːtʃə",
+    "meaning": "v. 1. 养育，教育 2. 培育，扶植",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oath",
+    "phonetic": "əʊθ",
+    "meaning": "n. 1. 誓言 2. 辱骂 || on oath; under oath发誓说真话",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obedient",
+    "phonetic": "əˈbiːdɪənt",
+    "meaning": "adj. 顺从的，顺从的，听话的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obligation",
+    "phonetic": "ˌɒblɪˈɡeɪʃən",
+    "meaning": "n. 责任，义务",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obscene",
+    "phonetic": "əbˈsiːn",
+    "meaning": "adj. 猥亵的，淫乱的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obscure",
+    "phonetic": "əbˈskjʊə",
+    "meaning": "adj. 1. 模糊的，不清楚的 2. 费解的 3. 不出名 v. 使朦胧，遮掩，使难理解",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "odor",
+    "phonetic": "ˈәudә",
+    "meaning": "n. 1. 气味，香味 2. 名声 3. 意味",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "offense",
+    "phonetic": "әˈfens",
+    "meaning": "n. 1. 犯罪 2 冒犯，伤感情 3. 攻击",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "offensive",
+    "phonetic": "əˈfensɪv",
+    "meaning": "adj. 1. 冒犯的 2. 进攻性的 3. 极讨厌的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "offset",
+    "phonetic": "ˈɒfset",
+    "meaning": "v. 补偿，抵消 n. 1. 分支，旁支 2. 补偿，抵消",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "offspring",
+    "phonetic": "ˈɒfsprɪŋ",
+    "meaning": "n. 1. 子孙，后代 2. 结果，产物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "olive",
+    "phonetic": "ˈɒlɪv",
+    "meaning": "n. 1. 橄榄 2. 橄榄绿",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "opaque",
+    "phonetic": "əʊˈpeɪk",
+    "meaning": "adj. 不透明的，意义不明确，晦涩的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optimism",
+    "phonetic": "ˈɒptɪmɪzəm",
+    "meaning": "n. 乐观，乐观主义",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optimum",
+    "phonetic": "ˈɒptɪməm",
+    "meaning": "adj. 最适宜的，最佳的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orient",
+    "phonetic": "ˈɔːrɪent",
+    "meaning": "v. 1. 使适应 2. 确定位置",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orientation",
+    "phonetic": "ˌɔːriənˈteɪʃən",
+    "meaning": "n. 1. 倾向性 2. 确定方位(方向)，熟悉，适应",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "originate",
+    "phonetic": "əˈrɪdʒɪneɪt",
+    "meaning": "v. 发源，创始，开始",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orthodox",
+    "phonetic": "ˈɔːθədɒks",
+    "meaning": "adj. 正统的，传统的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outbreak",
+    "phonetic": "ˈaʊtbreɪk",
+    "meaning": "n. (指坏事)突然发生，爆发",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outfit",
+    "phonetic": "ˈaʊtfɪt",
+    "meaning": "n. 1. 全套设 备或用具 2. 全套衣装 v. 为…提供设备",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outrage",
+    "phonetic": "ˈaʊtreɪdʒ",
+    "meaning": "n. 1. 暴行，残暴 2. (暴行激起的)义愤  v. 1. 激起…的义愤 2. 违背",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overflow",
+    "phonetic": "ˌəʊvəˈfləʊ",
+    "meaning": "v. (使)溢出，(使)泛滥，涌出",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overhear",
+    "phonetic": "ˌəʊvəˈhɪə",
+    "meaning": "v. 1. 无意中听到，偶然听到 2. 偷听，窃听",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overlap",
+    "phonetic": "ˌəʊvəˈlæp",
+    "meaning": "v. 部分重叠，交搭  n. 重叠(部分)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overpass",
+    "phonetic": "ˈәuvәpɑːs",
+    "meaning": "n. 天桥，立交桥 v. 超越，胜过",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overt",
+    "phonetic": "ˈəʊvɜːt",
+    "meaning": "adj. 公开的，明显的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overthrow",
+    "phonetic": "ˌəʊvəˈθrəʊ",
+    "meaning": "v. &n. 推倒，颠覆",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overturn",
+    "phonetic": "ˌəʊvəˈtɜːn",
+    "meaning": "v. 1. 翻倒，打翻 2. 推翻，颠覆",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overwhelm",
+    "phonetic": "ˌəʊvəˈwelm",
+    "meaning": "v. 1. 战胜，压倒，克服 2. (指感情)压倒，控制",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overwhelming",
+    "phonetic": "ˌəʊvəˈwelmɪŋ",
+    "meaning": "adj. 压倒一切的，无法抗拒的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oxide",
+    "phonetic": "ˈɒksaɪd",
+    "meaning": "n. 氧化物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ozone",
+    "phonetic": "ˈəʊzəʊn",
+    "meaning": "n. 臭氧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pact",
+    "phonetic": "pækt",
+    "meaning": "n. 契约，公约，条约",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pamphlet",
+    "phonetic": "ˌpænəˈsɪə",
+    "meaning": "n. 小册子",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paperback",
+    "phonetic": "ˈpeipәbæk",
+    "meaning": "n. 平装本，纸面本",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paradox",
+    "phonetic": "ˈpærədɒks",
+    "meaning": "n. 自相矛盾的事物(思想、言论等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paralyze",
+    "phonetic": "ˈpærәlaiz",
+    "meaning": "vt. 瘫痪，使麻痹",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parasite",
+    "phonetic": "ˈpærəsaɪt",
+    "meaning": "n. 1. 寄生虫，寄生植物 2. 食客，靠他人供养的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "participant",
+    "phonetic": "pɑːˈtɪsɪpənt",
+    "meaning": "n. 参与者，参加者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "partition",
+    "phonetic": "pɑːˈtɪʃən",
+    "meaning": "v. 1. 分裂，分割 2. 分隔，隔开 n. 1. 分割，隔开",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pastry",
+    "phonetic": "ˈpeɪstrɪ",
+    "meaning": "n. 糕点，酥皮点心",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pasture",
+    "phonetic": "ˈpɑːstʃə",
+    "meaning": "n. 牧场，牧草，放牧",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pathetic",
+    "phonetic": "pəˈθetɪk",
+    "meaning": "adj. 1. 招人怜悯的，悲惨的 2. 感伤的，感情(上)的 3. 令人生厌的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patriot",
+    "phonetic": "ˈpætrɪət",
+    "meaning": "n. 爱国者，爱国主义者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patriotic",
+    "phonetic": "ˌpætrɪˈɒtɪk",
+    "meaning": "adj. 爱国的，有爱国热忱的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patrol",
+    "phonetic": "pəˈtrəʊl",
+    "meaning": "n. 1. 巡逻 2. 巡逻队，巡逻兵 v. 巡逻，巡查",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patron",
+    "phonetic": "ˈpeɪtrən",
+    "meaning": "n. 1. 赞助人，资助人 2. 老顾客，主顾",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pedal",
+    "phonetic": "ˈpedəl",
+    "meaning": "n. 踏板  v. 踩踏板，骑(车)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peg",
+    "phonetic": "peɡ",
+    "meaning": "n. 木栓，楔子，桩钉",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "penalty",
+    "phonetic": "ˈpenəltɪ",
+    "meaning": "n. 惩罚，刑罚，罚款",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pendulum",
+    "phonetic": "ˈpendjʊləm",
+    "meaning": "n. 1. 摆，钟摆 2. 摇摆不定的事态",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "penguin",
+    "phonetic": "ˈpeŋɡwɪn",
+    "meaning": "n. 企鹅",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perception",
+    "phonetic": "pəˈsepʃən",
+    "meaning": "n. 1. 感觉，知觉 2. 观念，看法 3. 洞察力，理解力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perfection",
+    "phonetic": "pəˈfekʃən",
+    "meaning": "n. 1. 尽善尽美 2. 完美的典型",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "periodic",
+    "phonetic": "ˌpɪərɪˈɒdɪk",
+    "meaning": "adj. 周期的，定期的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "periodical",
+    "phonetic": "ˌpɪərɪˈɒdɪkəl",
+    "meaning": "adj. 定期的，周期的 n. 期刊，杂志",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perish",
+    "phonetic": "ˈperɪʃ",
+    "meaning": "v. (使)枯萎，(使)腐烂，夭折",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "permeate",
+    "phonetic": "ˈpɜːmɪeɪt",
+    "meaning": "v. 1. 渗入，透过 2. 弥漫，充满",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "permissible",
+    "phonetic": "pəˈmɪsəbl",
+    "meaning": "adj. 容许的，可准许的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perpetual",
+    "phonetic": "pəˈpetʃʊəl",
+    "meaning": "adj. 1. 永远的，永恒的，不断的 2. 四季开花的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perplex",
+    "phonetic": "pəˈpleks",
+    "meaning": "v. 1. 使困惑，难住 2. 使复杂化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "persuasion",
+    "phonetic": "pəˈsweɪʒən",
+    "meaning": "n. 1. 说服，劝服，说服力 2. 信念，信仰",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "petition",
+    "phonetic": "pəˈtɪʃən",
+    "meaning": "n. 1. 请愿 2. 请愿书，. 向…请愿(祈求)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "petty",
+    "phonetic": "ˈpetɪ",
+    "meaning": "adj. 1. 不重要的，次要的 2. 偏狭的，气量小的 3. 微小的，小规模的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "physiological",
+    "phonetic": "‚fɪzɪə'lɒdʒɪkl",
+    "meaning": "adj. 生理学的，生理的，生理机能的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pilgrim",
+    "phonetic": "ˈpɪlɡrɪm",
+    "meaning": "n. 朝圣者，香客",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pirate",
+    "phonetic": "ˈpaɪərət",
+    "meaning": "n. 1. 海盗，海盗船 2. 盗版者，非法复制者 3. 无执照广播者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plague",
+    "phonetic": "pleɪɡ",
+    "meaning": "n. 瘟疫，祸患",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plausible",
+    "phonetic": "ˈplɔːzəbl",
+    "meaning": "adj. 1. (声明、争论等)似乎正确的 2. 能说会道的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plea",
+    "phonetic": "pliː",
+    "meaning": "n. 1. 恳求，请求  2. (法庭上)辩解",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plead",
+    "phonetic": "pliːd",
+    "meaning": "v. 1. 恳求，祈求 2. (法庭上)辩护 3. 以…为理由(或借口)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pledge",
+    "phonetic": "pledʒ",
+    "meaning": "n. 1. 誓言，誓约 2. 保证物，信物 v. 1. 保证 2. 抵押",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "poke",
+    "phonetic": "pəʊk",
+    "meaning": "v. 1. 伸出 2. 刺，戳，捅，触 n. 刺，触",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "polar",
+    "phonetic": "ˈpəʊlə",
+    "meaning": "adj. 1. 南极的，北极的，近极地的 2. 正好相反的 || polar bear北极熊",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ponder",
+    "phonetic": "ˈpɒndə",
+    "meaning": "v. 仔细考虑，沉思",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pope",
+    "phonetic": "pəʊp",
+    "meaning": "n. 教皇",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "portray",
+    "phonetic": "pɔːˈtreɪ",
+    "meaning": "v. 1. 描绘，描写 2. 扮演",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pose",
+    "phonetic": "pəʊz",
+    "meaning": "v. 1. 摆姿势 2. 装腔作势 3. 提出(问题) || pose as假装，摆出…的样子",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "practicable",
+    "phonetic": "ˈpræktɪkəbl",
+    "meaning": "adj. 1. 行得通的，可以实施的  2. 可通行的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preach",
+    "phonetic": "priːtʃ",
+    "meaning": "v. 1. 讲道，布道 2. 说教，宣扬",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "precede",
+    "phonetic": "prɪˈsiːd",
+    "meaning": "v. 先于…，位于…之前",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "precedent",
+    "phonetic": "ˈpresɪdənt",
+    "meaning": "n. 1. (过去的)惯例 2. 先例，前例",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preclude",
+    "phonetic": "prɪˈkluːd",
+    "meaning": "v. 阻止，排除",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "predecessor",
+    "phonetic": "ˈpriːdɪsesə",
+    "meaning": "n. 1. 前任者 2. 被取代的事物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "predominant",
+    "phonetic": "prɪˈdɒmɪnənt",
+    "meaning": "adj. 占优势的，占主导地位的，最显著的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "premature",
+    "phonetic": "ˈpremətjʊə",
+    "meaning": "adj. 1. 过早的，提前的 2. 不成熟的，早熟的 3. 仓促的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "premise",
+    "phonetic": "ˈpremɪs",
+    "meaning": "n. 1. 前提 2. (pl)房屋(及其附属建筑、基地等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preside",
+    "phonetic": "prɪˈzaɪd",
+    "meaning": "v. 主持(会议等)，负责指挥",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prestige",
+    "phonetic": "preˈstiːʒ",
+    "meaning": "n. 威望，威信",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "presumably",
+    "phonetic": "prɪˈzjuːməblɪ",
+    "meaning": "adv. 假定，可能，大概",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "presume",
+    "phonetic": "prɪˈzjuːm",
+    "meaning": "v. 1. (没有根据地)相信，假设 2. 擅自，敢于",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pretext",
+    "phonetic": "ˈpriːtekst",
+    "meaning": "n. 借口，托词",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prevalent",
+    "phonetic": "ˈprevələnt",
+    "meaning": "adj. 普遍的，流行的，盛行的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prey",
+    "phonetic": "preɪ",
+    "meaning": "n. 1. 猎物，牺牲品 2. 捕食 v. 1. 捕食 2. (疾病等)折磨，困扰",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "probe",
+    "phonetic": "prəʊb",
+    "meaning": "n. 1. 探针 2 探测飞船 3. 探查，彻底调查 v. 探查，查究",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proceedings",
+    "phonetic": "prəˈsiːdɪŋz",
+    "meaning": "n. 1. 事项，行径，事件 2. 诉讼 3. 会议录，记录汇编",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "productivity",
+    "phonetic": "ˌprɒdʌkˈtɪvətɪ",
+    "meaning": "n. 生产能力，生产率",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "profess",
+    "phonetic": "prəˈfes",
+    "meaning": "v. 1. 公开表示，声称 2. 自称 3. 表明信仰",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proficiency",
+    "phonetic": "prəˈfɪʃənsɪ",
+    "meaning": "n. 精通，熟练",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "profitable",
+    "phonetic": "ˈprɒfitәbl",
+    "meaning": "a. 有利润的，赚钱的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "profound",
+    "phonetic": "prəˈfaʊnd",
+    "meaning": "adj. 1. 深厚的，深刻的，深奥的 2. 知识渊博的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prolong",
+    "phonetic": "prəˈlɒŋ",
+    "meaning": "v. 延长，拖延",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prone",
+    "phonetic": "prəʊn",
+    "meaning": "adj. 1. 易于…的，有…倾向的 2. 俯卧的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "propaganda",
+    "phonetic": "ˌprɒpəˈɡændə",
+    "meaning": "n. 宣传",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "propagate",
+    "phonetic": "ˈprɒpəɡeɪt",
+    "meaning": "v. 1. 传播，宣传 2. (使)繁殖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "propel",
+    "phonetic": "prəˈpel",
+    "meaning": "v. 推进",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prophet",
+    "phonetic": "ˈprɒfɪt",
+    "meaning": "n. 预言家，先知",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proposition",
+    "phonetic": "ˌprɒpəˈzɪʃən",
+    "meaning": "n. 1. 提议，建议 2. 主张 3. 命题",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prose",
+    "phonetic": "prəʊz",
+    "meaning": "n. 散文",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prosecute",
+    "phonetic": "ˈprɒsɪkjuːt",
+    "meaning": "v. 1. 对…起诉，告发 2. 彻底进行，执行",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prospective",
+    "phonetic": "prəˈspektɪv",
+    "meaning": "adj. 预期的，可能的，未来的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prototype",
+    "phonetic": "ˈprəʊtətaɪp",
+    "meaning": "n. 原型，典型",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "provocative",
+    "phonetic": "prəˈvɒkətɪv",
+    "meaning": "adj. 1. 刺激的，挑衅的 2. 挑逗的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "provoke",
+    "phonetic": "prəˈvəʊk",
+    "meaning": "v. 激怒，煽动，挑起",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proximity",
+    "phonetic": "prɒkˈsɪmətɪ",
+    "meaning": "n. 接近，邻近",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prune",
+    "phonetic": "pruːn",
+    "meaning": "n. 梅干，李脯 v. 修剪，删除",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "psychiatrist",
+    "phonetic": "saɪˈkaɪətrɪst",
+    "meaning": "n. 精神病医生，精神病学者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pumpkin",
+    "phonetic": "ˈpʌmpkɪn",
+    "meaning": "n. 南瓜",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "qualitative",
+    "phonetic": "ˈkwɒlɪtətɪv",
+    "meaning": "adj. 质量上的，性质上的，(化学)定性的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quantify",
+    "phonetic": "ˈkwɒntɪfaɪ",
+    "meaning": "v. 量度，确定数量，量化",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quantitative",
+    "phonetic": "ˈkwɒntɪtətɪv",
+    "meaning": "adj. 量的，数量的，定量的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quartz",
+    "phonetic": "kwɔːts",
+    "meaning": "n. 石英",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quench",
+    "phonetic": "kwentʃ",
+    "meaning": "v. 扑灭，解(渴)，终止",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quest",
+    "phonetic": "kwest",
+    "meaning": "n. (长时间的)搜寻，探求",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quiver",
+    "phonetic": "ˈkwɪvə",
+    "meaning": "v. &n. 颤抖，抖动",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quota",
+    "phonetic": "ˈkwəʊtə",
+    "meaning": "n. 定量，限额，配额",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radiant",
+    "phonetic": "ˈreɪdɪənt",
+    "meaning": "adj. 1. 光芒四射的，光辉灿烂的 2. 容光焕发的，喜形于色的 3. 发出辐射热或能的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radical",
+    "phonetic": "ˈrædɪkəl",
+    "meaning": "adj. 1. 根本的，基本的 2. 彻底的，完全的 3. (对政治)激进的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rap",
+    "phonetic": "ræp",
+    "meaning": "n. 1. (轻快的)敲击声 2. 唠叨 || beat the rap 责备某人 /take the rap受罚，背黑锅 v. 1. (轻而快地)敲击(某物) 2. 责备或训斥(某人) 3. 唠叨",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rape",
+    "phonetic": "reɪp",
+    "meaning": "v. 强奸 n. 1. 强奸 2. 蹂躏",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rash",
+    "phonetic": "ræʃ",
+    "meaning": "adj. 鲁莽的，轻率的，匆忙的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rating",
+    "phonetic": "ˈreɪtɪŋ",
+    "meaning": "n. 1. 等级，级别，评定结果 2. (pl) (电视节目、广播节目的)收视率，收听率",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reassure",
+    "phonetic": "ˌriːəˈʃɔː",
+    "meaning": "v. 使放心，使消除疑虑",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recede",
+    "phonetic": "rɪˈsiːd",
+    "meaning": "v. 后退，退去",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recession",
+    "phonetic": "rɪˈseʃən",
+    "meaning": "n. 1. (经济)衰退，不景气 2. 后退，撤退",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reciprocal",
+    "phonetic": "rɪˈsɪprəkəl",
+    "meaning": "adj. 互惠的，相互的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reckless",
+    "phonetic": "ˈreklɪs",
+    "meaning": "adj. 轻率的，鲁莽的，不计后果的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reckon",
+    "phonetic": "ˈrekən",
+    "meaning": "v. 1. 计算，算出 2. 考虑，认为 3. 料想，估计 || reckon on期待，指望",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reclaim",
+    "phonetic": "rɪˈkleɪm",
+    "meaning": "v. 1. 要回，回收 2. 开垦(荒地) 3. 改造，感化(罪犯等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reconcile",
+    "phonetic": "ˈrekənsaɪl",
+    "meaning": "v. 1. 使和解，使和好 2. 调和，使一致",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reconciliation",
+    "phonetic": "ˌrekənˌsɪlɪˈeɪʃən",
+    "meaning": "n. 1. 和解，调和 2. (争吵等的)止息，复交",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recruit",
+    "phonetic": "rɪˈkruːt",
+    "meaning": "n. 新兵，新成员，新手 v. 征募(新兵)，吸收(新成员)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rectangular",
+    "phonetic": "rekˈtæŋɡjʊlə",
+    "meaning": "adj. 长方形的，矩形的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rectify",
+    "phonetic": "ˈrektɪfaɪ",
+    "meaning": "v. 改正，纠正，核正",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recur",
+    "phonetic": "rɪˈkɜː",
+    "meaning": "v. 1. 再发生，复发 2. 重现，回想",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "redundant",
+    "phonetic": "rɪˈdʌndənt",
+    "meaning": "adj. 1. (通常指语言或艺术)冗赘的，多余的 2. (因人员过剩)被解雇的，失业的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refrain",
+    "phonetic": "rɪˈfreɪn",
+    "meaning": "v. 抑制，克制，避免",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refund",
+    "phonetic": "ˈriːfʌnd",
+    "meaning": "n. 退款，偿还 v. 付还，偿还借款",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "regime",
+    "phonetic": "reɪˈʒiːm",
+    "meaning": "n. 政权，政府，政治制度",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "regiment",
+    "phonetic": "ˈredʒɪmənt",
+    "meaning": "n. 1. (军队的)团 2. 一大群",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relish",
+    "phonetic": "ˈrelɪʃ",
+    "meaning": "n. 1. 风味，美味，开胃小菜，佐餐品 2. 喜好，兴趣",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "remainder",
+    "phonetic": "rɪˈmeɪndə",
+    "meaning": "n. 剩余物，剩下的人或物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "remnant",
+    "phonetic": "ˈremnənt",
+    "meaning": "n. 1. 剩余，残余 2. 零头布",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "renaissance",
+    "phonetic": "rɪˈneɪsəns",
+    "meaning": "n. 1. (cap)(欧洲 14至 16世纪的)文艺复兴，文艺复兴时期 2. 任何类似的复兴，再生",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repay",
+    "phonetic": "rɪˈpeɪ",
+    "meaning": "v. 1. 付还，偿还 2. 报答，回报",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repel",
+    "phonetic": "rɪˈpel",
+    "meaning": "v. 1. 逐退，驱逐 2. 使厌恶，使反感",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repertoire",
+    "phonetic": "ˈrepətwɑː",
+    "meaning": "n. (某一艺术团体、演员、音乐家等可随时演出的)全部节目，剧目",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repression",
+    "phonetic": "rɪˈpreʃən",
+    "meaning": "n. 1. 约束，抑制 2. 压抑，被压抑的欲望或冲动",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resemblance",
+    "phonetic": "rɪˈzembləns",
+    "meaning": "n. 1. 相似，类似 2. 相似程度，相似点",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resent",
+    "phonetic": "rɪˈzent",
+    "meaning": "v. 怨恨，憎恶",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reside",
+    "phonetic": "rɪˈzaɪd",
+    "meaning": "v. 居住，定居 || reside in(指权利等)归属于某人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "residential",
+    "phonetic": "ˌrezɪˈdenʃəl",
+    "meaning": "adj. 1. 住宅的，适于作住宅的  2. 与居住有关的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resultant",
+    "phonetic": "rɪˈzʌltənt",
+    "meaning": "adj. 因而发生的，必然发生的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retention",
+    "phonetic": "rɪˈtenʃən",
+    "meaning": "n. 1. 具有，享用 2. 记忆力，记性 3. 挡住，保留，容纳",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retort",
+    "phonetic": "rɪˈtɔːt",
+    "meaning": "n. & v. 反 驳，反唇相讥",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retrospect",
+    "phonetic": "ˈretrəspekt",
+    "meaning": "n. 回顾，追溯",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reunion",
+    "phonetic": "ˌriːˈjuːnɪən",
+    "meaning": "n. 1. 聚会，联欢会 2. 重聚，团圆",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revelation",
+    "phonetic": "ˌrevəˈleɪʃən",
+    "meaning": "n. 1. 揭露，透露 2. 揭露出来(而始料未及)的事物",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revenue",
+    "phonetic": "ˈrevənjuː",
+    "meaning": "n. 1. 国家的税收，岁入 2. (pl)收入总额 3. (个人或国家的)税务所，税务局",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revive",
+    "phonetic": "rɪˈvaɪv",
+    "meaning": "v. 1. (使)苏 醒，(使)恢复知觉 2. (使)复用，(使)复兴",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revolve",
+    "phonetic": "rɪˈvɒlv",
+    "meaning": "v. 1. (使)旋转，(使)绕转 2. 考虑，深思",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rim",
+    "phonetic": "rɪm",
+    "meaning": "n. (圆形物的)外 缘，边缘",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rip",
+    "phonetic": "rɪp",
+    "meaning": "v. 撕，扯，撕开 n. 长裂痕，裂口",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ritual",
+    "phonetic": "ˈrɪtʃʊəl",
+    "meaning": "adj. 仪式的，祭典的 n. 1. 仪式，祭典 2. 惯例",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rivalry",
+    "phonetic": "ˈraɪvəlrɪ",
+    "meaning": "n. 竞赛，较量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "romance",
+    "phonetic": "rəʊˈmæns",
+    "meaning": "n. 1. 恋情，浪漫史 2. 冒险故事，爱情故事 3. 传奇性，浪漫情调",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "royalty",
+    "phonetic": "ˈrɔɪəltɪ",
+    "meaning": "n. 1. 皇室，王族 2. 版税",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rupture",
+    "phonetic": "ˈrʌptʃə",
+    "meaning": "n. 1. 破裂，断裂 2. (友好关系的)决裂，绝交 3. 疝 v. 1. (使身体组织、器官等)破裂，裂开 2. 发生疝 3. (使关系等)破裂，断绝",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "safeguard",
+    "phonetic": "ˈseɪfɡɑːd",
+    "meaning": "n. 安全措施，保护性措施 v. 保护或保卫某人(某事物)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "salvation",
+    "phonetic": "sælˈveɪʃən",
+    "meaning": "n. 1. (对人的灵魂的)拯救，超度 2. 拯救，解困",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sanction",
+    "phonetic": "ˈsæŋkʃən",
+    "meaning": "n. 1. 批准，认可 2. 制裁 3. 约束力 v. 1. 同意，认可 2. 承认，接纳",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "saturate",
+    "phonetic": "ˈsætʃəreɪt",
+    "meaning": "v. 1. 浸透，浸湿 2. 使饱和",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scandal",
+    "phonetic": "ˈskændl",
+    "meaning": "n. 1. 丑事，丑闻 2. 流言蜚语，诽谤",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scramble",
+    "phonetic": "ˈskræmbl",
+    "meaning": "v. 1. 爬行，攀爬 2. 杂乱蔓延 3. 争夺，抢夺 n. 1. 攀缘，爬行 2. 争夺，抢夺",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scrap",
+    "phonetic": "skræp",
+    "meaning": "n. 1. 小片，碎屑 2. 废料，废物 3. (从刊物等剪下以供收集的)图片，文章，残篇",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scrutiny",
+    "phonetic": "ˈskruːtɪnɪ",
+    "meaning": "n. 细察，详审",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seam",
+    "phonetic": "siːm",
+    "meaning": "n. 缝，接缝",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seemingly",
+    "phonetic": "ˈsiːmɪŋlɪ",
+    "meaning": "adv. 看上去，表面上",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "segment",
+    "phonetic": "ˈseɡmənt",
+    "meaning": "n. 部分，片，片段 v. 分割",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "segregate",
+    "phonetic": "ˈseɡrɪɡeɪt",
+    "meaning": "v. 1. 将…隔离、分开 2. 歧视，不公平对待",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "senator",
+    "phonetic": "ˈsenətə",
+    "meaning": "n. 参议员",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sensation",
+    "phonetic": "senˈseɪʃən",
+    "meaning": "n. 1. 感觉，知觉 2. 轰动，激动",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sentiment",
+    "phonetic": "ˈsentɪmənt",
+    "meaning": "n. 1. 柔情，伤感，多愁善感 2. 思想感情，情绪，情操",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sergeant",
+    "phonetic": "ˈsɑːdʒənt",
+    "meaning": "n. 1. 士官，中士 2. 警官，巡佐",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "serial",
+    "phonetic": "ˈsɪərɪəl",
+    "meaning": "adj. 1. 连续的 2. (指故事等)连续刊登或播出的 n. 连续剧，连载故事",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "setback",
+    "phonetic": "ˈsetbæk",
+    "meaning": "n. 挫折，挫败",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shaft",
+    "phonetic": "ʃɑːft",
+    "meaning": "n. 1. 杆状物 2. 竖井，坑道 3. 车辕，车杠",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shatter",
+    "phonetic": "ˈʃætə",
+    "meaning": "v. 粉碎，损毁",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sheer",
+    "phonetic": "ʃiːə",
+    "meaning": "adj. 1. 纯粹的，全然的，地道的 2. 陡峭的，峻峭的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shipment",
+    "phonetic": "ˈʃɪpmənt",
+    "meaning": "n. 1. 装船，装运 2. 装运的货物量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shove",
+    "phonetic": "ʃʌv",
+    "meaning": "v. & n. 推挤，推撞",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shrewd",
+    "phonetic": "ʃruːd",
+    "meaning": "adj. 1. 明智的，精明的 2. 狡狯的，明辨的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shrub",
+    "phonetic": "ʃrʌb",
+    "meaning": "n. 灌木",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shrug",
+    "phonetic": "ʃrʌɡ",
+    "meaning": "v. (表示冷淡·怀疑等)耸(肩)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shutter",
+    "phonetic": "ˈʃʌtə",
+    "meaning": "n. 1. (照相机的)快门 2. 百叶窗，窗板",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "siege",
+    "phonetic": "siːdʒ",
+    "meaning": "n. 围困，围攻",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sieve",
+    "phonetic": "sɪv",
+    "meaning": "n. 漏勺，筛子 v. 筛，筛分",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "signify",
+    "phonetic": "ˈsɪɡnɪfaɪ",
+    "meaning": "v. 1. 意味，表明，表示 2. (以动作)表示",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sip",
+    "phonetic": "sɪp",
+    "meaning": "v. 小口喝，抿 n. 小口喝，一小口的量",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "situated",
+    "phonetic": "ˈsitjueitid",
+    "meaning": "a. 位于……的，坐落在……的，处于某种境地的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "skeleton",
+    "phonetic": "ˈskelɪtən",
+    "meaning": "n. 1. 骨骼，骨架 2. 纲要，轮廓，基干",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "skeptical",
+    "phonetic": "ˈskeptɪkəl",
+    "meaning": "adj. 怀疑的，多疑的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "skull",
+    "phonetic": "skʌl",
+    "meaning": "n. 脑壳，头盖骨",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slack",
+    "phonetic": "slæk",
+    "meaning": "adj. 1. 松弛的，没拉紧的 2. 萧条的，清淡的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slap",
+    "phonetic": "slæp",
+    "meaning": "n. 掴，拍，掌声 v. 掴，拍打，掌击",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slaughter",
+    "phonetic": "ˈslɔːtə",
+    "meaning": "n. & v. 屠宰，屠杀",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slick",
+    "phonetic": "slɪk",
+    "meaning": "adj. 1. 顺利而有效的，不费力的 2. (指人)圆滑的，油滑的 3. 光滑的 n. 海面浮油",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slot",
+    "phonetic": "slɒt",
+    "meaning": "n. 1. (可投入东西的)孔 2. 沟，槽，滑道 3. 在名单、系统、组织等中的位置、空位 v. 1. 在(某物)中开缺口、狭缝、沟槽等 2. 把…安插在空位中，安置",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slump",
+    "phonetic": "slʌmp",
+    "meaning": "v. 1. 沉重地倒下或落下 2. 暴跌，剧降",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "smash",
+    "phonetic": "smæʃ",
+    "meaning": "v. 1. (使)破碎，粉碎，打碎 2. 猛撞，猛冲，猛击 3. 痛击，打败，打破(记录等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "smuggle",
+    "phonetic": "ˈsmʌɡl",
+    "meaning": "v. 走私，偷运",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sneak",
+    "phonetic": "sniːk",
+    "meaning": "v. 潜行，溜走 n. 怯懦鬼祟的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "soar",
+    "phonetic": "sɔː",
+    "meaning": "v. 1. 高飞，翱翔 2. 骤升，腾越",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sociology",
+    "phonetic": "ˌsəʊsɪˈɒlədʒɪ",
+    "meaning": "n. 社会学",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solicitor",
+    "phonetic": "səˈlɪsɪtə",
+    "meaning": "n. (BrE)律师",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solidarity",
+    "phonetic": "ˌsɒlɪˈdærətɪ",
+    "meaning": "n. 团结，一致",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solitary",
+    "phonetic": "ˈsɒlɪtərɪ",
+    "meaning": "adj. 1. 独居的，孤独的 2. 单个的，惟一的 3. 偏僻的，人迹罕至的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solo",
+    "phonetic": "ˈsəʊləʊ",
+    "meaning": "n. 1. 独奏(曲)，独唱(曲) 2. 单独表演 adj. 1. 独奏(曲)的，独唱(曲)的 2. 单独的，单独表演的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sovereign",
+    "phonetic": "ˈsɒvrɪn",
+    "meaning": "adj. 1. 最高的，无上的 2. 独立的，有主权的  n. 君主，统治者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spacious",
+    "phonetic": "ˈspeɪʃəs",
+    "meaning": "adj. 广大的，宽敞的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specialty",
+    "phonetic": "ˈspeʃәlti",
+    "meaning": "n. 1. 专业，专长 2. 特产，特制品 a. 专门的，独立的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "species",
+    "phonetic": "ˈspiːʃiːz",
+    "meaning": "n. (sing &pl) 1. (生物)种 2. 种类",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spectator",
+    "phonetic": "spekˈteɪtə",
+    "meaning": "n. 观众，旁观者",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spectrum",
+    "phonetic": "ˈspektrəm",
+    "meaning": "n. 1. 光谱 2. 波长，范围",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "speculate",
+    "phonetic": "ˈspekjʊleɪt",
+    "meaning": "v. 1. 思索，推测 2. 投机，做投机生意",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spice",
+    "phonetic": "spaɪs",
+    "meaning": "n. 1. 香料，调味品 2. 意味，风味 v. 1. 加香料于 2. 为…增添趣味",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spine",
+    "phonetic": "spaɪn",
+    "meaning": "n. 1. 脊柱，脊椎 2. (动植物体上的)刺，棘刺 3. 书脊",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spiral",
+    "phonetic": "ˈspaɪərəl",
+    "meaning": "n. 1. 螺线，螺旋状的物体 2. 不断加强的上升或下降 adj. 螺旋形的，盘旋的 v. 1. 螺旋形移动，盘旋移动 2. 连续增长或减少",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spite",
+    "phonetic": "spaɪt",
+    "meaning": "n. 怨恨，恶意 || in spite of不管，不顾 v. 刁难，使恼怒",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spouse",
+    "phonetic": "spaʊz",
+    "meaning": "n. 配偶",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "squad",
+    "phonetic": "skwɒd",
+    "meaning": "n. 班，小组，小队",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stabilize",
+    "phonetic": "ˈsteɪbɪlaɪz",
+    "meaning": "v. 使稳定，使沉稳",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stagger",
+    "phonetic": "ˈstæɡə",
+    "meaning": "v. 1. (使)摇晃，蹒跚而行 2. 使摇摆，使震惊 3. 间隔，错开",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stationary",
+    "phonetic": "ˈsteɪʃənərɪ",
+    "meaning": "adj. 不动的，静止的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stereo",
+    "phonetic": "ˈsterɪəʊ",
+    "meaning": "n. 立体声，立体声系统 adj. 立体声的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stereotype",
+    "phonetic": "ˈsterɪətaɪp",
+    "meaning": "n. 1. 模式化的形象、思想、人物等，老一套 2. 铅版 v. 使定型，使固定",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stimulus",
+    "phonetic": "ˈstɪmjʊləs",
+    "meaning": "(pl stimuli) n. 刺激(物)，激励",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strand",
+    "phonetic": "strænd",
+    "meaning": "n. (绳索、缆线等的)一股，一缕",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stray",
+    "phonetic": "streɪ",
+    "meaning": "v. 走失，迷路，离题 adj. 1. 流浪的，迷路的 2. 孤零的，离群的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "streak",
+    "phonetic": "striːk",
+    "meaning": "n. 1. 条纹，纹理 2. (性格上不太好的)特质，性情，癖性 v. 在…上加条纹",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "streamline",
+    "phonetic": "ˈstriːmlaɪn",
+    "meaning": "v. 1. 把…设计或制成流线型 2. 使精简",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stride",
+    "phonetic": "straɪd",
+    "meaning": "v. 1. 大步行走 2. 跨过，跨越 n. 大步，阔步，跨幅",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strive",
+    "phonetic": "straɪv",
+    "meaning": "v. 1. 抗争，搏斗 2. 奋勉，努力",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stroll",
+    "phonetic": "strəʊl",
+    "meaning": "n. & v. 漫步，闲逛，遨游",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stump",
+    "phonetic": "stʌmp",
+    "meaning": "n. 1. 树桩，残株 2. 残余部分",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stun",
+    "phonetic": "stʌn",
+    "meaning": "v. 1. 将(人或动物)打昏(尤指击打头部) 2. 使目瞪口呆，使吃惊 3. 令人喜悦",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sturdy",
+    "phonetic": "ˈstɜːdɪ",
+    "meaning": "adj. 1. 强健的，结实的 2. 坚定的，不屈不挠的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subordinate",
+    "phonetic": "səˈbɔːdɪnət",
+    "meaning": "adj. 下级的，次要的，附属的 n. 属下，部属，属僚 [səˈbɔːdɪneɪt] v. 使居次要地位，使隶属",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subsidiary",
+    "phonetic": "səbˈsɪdɪərɪ",
+    "meaning": "adj. 1. 附属的，次要的 2. (指业务机构)附属的，附设的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subsidy",
+    "phonetic": "ˈsʌbsɪdɪ",
+    "meaning": "n. 补助金，津贴",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "successor",
+    "phonetic": "səkˈsesə",
+    "meaning": "n. 继承人，继任者，接班人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sue",
+    "phonetic": "sjuː",
+    "meaning": "v. 1. 控告(某人) 2. 请求(常于法庭上)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suffice",
+    "phonetic": "səˈfaɪs",
+    "meaning": "v. 1. 足够 2. 足够…之需，使满足",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sulfur",
+    "phonetic": "ˈsʌlfә",
+    "meaning": "n. 硫，硫磺 v. 用硫磺处理",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "summit",
+    "phonetic": "ˈsʌmɪt",
+    "meaning": "n. 1. 顶点，极点 2. (山的)尖峰，巅峰，高峰 3. 政府首脑会议，高峰会议",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "summon",
+    "phonetic": "ˈsʌmən",
+    "meaning": "v. 1. 召唤，传唤，召集 2. 鼓起(勇气、力量等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "superintendent",
+    "phonetic": "ˌsjuːpərɪnˈtendənt",
+    "meaning": "n. 1. 督导，总监，总管 2. 英国警察局长",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "superiority",
+    "phonetic": "sjuːˌpɪərɪˈɒrətɪ",
+    "meaning": "n. 优秀，优越，优胜",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "supersonic",
+    "phonetic": "ˌsjuːpəˈsɒnɪk",
+    "meaning": "adj. 超声(频)的，超音速的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "supervise",
+    "phonetic": "ˈsjuːpəvaɪz",
+    "meaning": "v. 监督，管理，指导",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "supplementary",
+    "phonetic": "ˌsʌplɪˈmentərɪ",
+    "meaning": "adj. 1. 补充的，附加的 2. (指角)补角的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suppress",
+    "phonetic": "səˈpres",
+    "meaning": "v. 1. 镇压，平定，制止 2. 抑制，隐瞒，扣留",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surge",
+    "phonetic": "sɜːdʒ",
+    "meaning": "v. 1. 在浪涛中或如同波浪般前进 2. 急剧上升 n. 1. 向前或向上的运动 2. 突然发生，激增",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surpass",
+    "phonetic": "səˈpɑːs",
+    "meaning": "v. 超越，凌驾，胜过",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "susceptible",
+    "phonetic": "səˈseptəbl",
+    "meaning": "adj. 1. 易受影响的 2. 易受…之苦的，易得…病的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suspicious",
+    "phonetic": "səˈspɪʃəs",
+    "meaning": "adj. 1. 怀疑的，疑心的，多疑的 2. 可疑的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "symmetry",
+    "phonetic": "ˈsɪmətrɪ",
+    "meaning": "n. 对称，匀称",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "symposium",
+    "phonetic": "sɪmˈpəʊzɪəm",
+    "meaning": "n. (专题)研讨会，讨论会",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "syndrome",
+    "phonetic": "ˈsɪndrəʊm",
+    "meaning": "n. 综合征",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tack",
+    "phonetic": "tæk",
+    "meaning": "n. 1. 平头钉，大头钉 2. 思路，行动方针 v. 1. 以大头针钉住 2. 附加",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tangle",
+    "phonetic": "ˈtæŋɡl",
+    "meaning": "v. 1. (使某物)乱作一团 2. (使)纠缠，(使)混乱  n. 1. 乱七八糟的一堆 2. 混乱",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tariff",
+    "phonetic": "ˈtærɪf",
+    "meaning": "n. 1. 关税 2. (酒店、餐馆等的)价目表",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "telecommunication",
+    "phonetic": "ˈtelikәmjuːniˈkeiʃәn",
+    "meaning": "n. 电讯，远距离通讯，无线电通讯",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "temperament",
+    "phonetic": "ˈtemprəmənt",
+    "meaning": "n. 气质，性情，禀性",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tempo",
+    "phonetic": "ˈtempəʊ",
+    "meaning": "n. 1. (乐曲的)速度节拍 2. (运动或活动的)速度，进度",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "terminate",
+    "phonetic": "ˈtɜːmɪneɪt",
+    "meaning": "v. (使)终止，结束",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "terrace",
+    "phonetic": "ˈterəs",
+    "meaning": "n. 1. 梯田，台地 2. (梯级宽且矮的)台阶(如看台) 3. 排房(设计相同的一排房屋)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "terrain",
+    "phonetic": "təˈreɪn",
+    "meaning": "n. 地形，地势",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "testify",
+    "phonetic": "ˈtestɪfaɪ",
+    "meaning": "v. 1. 作证，证实 2. 表明，证明",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "testimony",
+    "phonetic": "ˈtestɪmənɪ",
+    "meaning": "n. 1. (书面或口头的)证词(尤指发誓后作出的) 2. (对事物的)见证或证明",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "texture",
+    "phonetic": "ˈtekstʃə",
+    "meaning": "n. 质地，纹理，织法",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thanksgiving",
+    "phonetic": "ˈθæŋksˌgiviŋ",
+    "meaning": "n. 感谢，感恩",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thereafter",
+    "phonetic": "ðeərˈɑːftə",
+    "meaning": "adv. 此后，其后",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thermal",
+    "phonetic": "ˈθɜːməl",
+    "meaning": "adj. 1. 热的，热量的 2. 温暖的，热的 3. (指衣物)保暖的，防寒的 n. 热气流",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thesis",
+    "phonetic": "ˈθiːsɪs",
+    "meaning": "n. 1. 学位论文，论文 2. 论点，论题",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thigh",
+    "phonetic": "θaɪ",
+    "meaning": "n. 股，大腿",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tickle",
+    "phonetic": "ˈtɪkl",
+    "meaning": "v. 1. 胳肢，呵痒 2. 使愉悦，满足",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tile",
+    "phonetic": "taɪl",
+    "meaning": "n. 瓦，瓷砖",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tilt",
+    "phonetic": "tɪlt",
+    "meaning": "v. (使)倾斜，(使) 翘起 n. 倾斜，斜坡 || at full tilt全速地",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "timely",
+    "phonetic": "ˈtaɪmlɪ",
+    "meaning": "adj. 及时的，适时的，合时宜的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tolerant",
+    "phonetic": "ˈtɒlərənt",
+    "meaning": "adj. 容忍的，宽容的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tow",
+    "phonetic": "təʊ",
+    "meaning": "v. & n. 拖，拉，牵引",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "toxic",
+    "phonetic": "ˈtɒksɪk",
+    "meaning": "adj. 有毒(性)的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tract",
+    "phonetic": "trækt",
+    "meaning": "n. 1. 一大片土地，地带 2. (人体、动物的)系统，道，束",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trademark",
+    "phonetic": "ˈtreɪdmɑːk",
+    "meaning": "n. 商标",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tragic",
+    "phonetic": "ˈtrædʒɪk",
+    "meaning": "adj. 1. 悲 J渗的，不幸的 2. 悲剧的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trait",
+    "phonetic": "treɪt",
+    "meaning": "n. (人的)个性，显著的特点",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transcend",
+    "phonetic": "trænˈsend",
+    "meaning": "v. 1. 超出(超越) …的范围 2. 优于(胜过)某人(事物)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transient",
+    "phonetic": "ˈtrænzɪənt",
+    "meaning": "adj. 短暂的，转瞬即逝的 n. 仅短暂在某地停留或工作的人",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transit",
+    "phonetic": "ˈtrænsɪt",
+    "meaning": "n. 1. 通过，经过 2. 运输，运送，载运",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transplant",
+    "phonetic": "trænsˈplɑːnt",
+    "meaning": "v. 1. 移植(植物) 2. 移植(器官、皮肤、头发等)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "traverse",
+    "phonetic": "trəˈvɜːs",
+    "meaning": "v. 横越，穿过 n. 1. 横越，贯穿 2. 横断物，横杆，横线",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trench",
+    "phonetic": "trentʃ",
+    "meaning": "n. 1. 沟渠，壕沟 2. 战壕",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tribute",
+    "phonetic": "ˈtrɪbjuːt",
+    "meaning": "n. 1. 表示敬意或称赞的行动(言语或礼物) 2. 贡品，贡金",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "triple",
+    "phonetic": "ˈtrɪpl",
+    "meaning": "adj. 三倍的，三重的 v. 增至三倍",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trivial",
+    "phonetic": "ˈtrɪvɪəl",
+    "meaning": "adj. 不重要的，琐屑的，无价值的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tug",
+    "phonetic": "tʌɡ",
+    "meaning": "v. 用力拖，使劲拉 n. 1. 猛拉，拖 2. 拖船(=tugboat)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "turnover",
+    "phonetic": "ˈtɜːnˌəʊvə",
+    "meaning": "n. 1. (一定时期的)营业额 2. (商店的)货物周转率 3. 人事变动率",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ultraviolet",
+    "phonetic": "ˌʌltrəˈvaɪələt",
+    "meaning": "adj. 1. 紫外的 2. 紫外线的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unanimous",
+    "phonetic": "juːˈnænɪməs",
+    "meaning": "adj. 一致同意的，一致通过的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "underestimate",
+    "phonetic": "ˌʌndərˈestɪmeɪt",
+    "meaning": "v. 低估，看轻",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "underlying",
+    "phonetic": "ˌʌndәˈlaiiŋ",
+    "meaning": "a. 1. 在下面的 2. 优先的，基础的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "undermine",
+    "phonetic": "ˌʌndəˈmaɪn",
+    "meaning": "v. 1. 损毁…的地基 2. 削弱 3. 逐渐摧毁",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "upgrade",
+    "phonetic": "ˌʌpˈɡreɪd",
+    "meaning": "v. 提高某人(某事物)的级别或等级，提高…档次 || upgrade sb (sth) to sb (sth)提升",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "uphold",
+    "phonetic": "ˌʌpˈhəʊd",
+    "meaning": "v. 1. 举起 2. 支持",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "valve",
+    "phonetic": "vælv",
+    "meaning": "n. 1. 活门，阀 2. (心脏或血管的)瓣膜",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vegetation",
+    "phonetic": "ˌvedʒɪˈteɪʃən",
+    "meaning": "n. 植物，草木",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vein",
+    "phonetic": "veɪn",
+    "meaning": "n. 1. 静脉 2. 叶脉，矿脉，纹理，纹路 3. 气质，风格",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vent",
+    "phonetic": "vent",
+    "meaning": "n. 1. 通风孔，排气管 2. 排放，发泄 || give vent to sth发泄  v. 发泄(情感)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ventilate",
+    "phonetic": "ˈventɪleɪt",
+    "meaning": "v. 使通风",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verbal",
+    "phonetic": "ˈvɜːbl",
+    "meaning": "adj. 1. 口头的 2. 词语的，用词的 3. 动词的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verdict",
+    "phonetic": "ˈvɜːdɪkt",
+    "meaning": "n. 1. (陪审团的)裁决，裁定 2. 判断，意见",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verge",
+    "phonetic": "vɜːdʒ",
+    "meaning": "n. 边缘，边际 || be on the verge of濒于，濒临  v. 接近，濒临",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "versatile",
+    "phonetic": "ˈvɜːsətaɪl",
+    "meaning": "adj. 1. 多才多艺的 2. 用途广泛的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verse",
+    "phonetic": "vɜːs",
+    "meaning": "n. 1. 韵文 2. 诗歌，诗",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "versus",
+    "phonetic": "ˈvɜːsəs",
+    "meaning": "prep. (比赛等中)对，与…相对",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "veto",
+    "phonetic": "ˈviːtəʊ",
+    "meaning": "n. 1. (pl)否决权 2. 否决或禁止某事物的声明 v. 否决或禁止(某事物)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vicinity",
+    "phonetic": "vɪˈsɪnətɪ",
+    "meaning": "n. 1. 附近，邻近 2. 附近地区",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vicious",
+    "phonetic": "ˈvɪʃəs",
+    "meaning": "adj. 1. 恶毒的，残忍的 2. 邪恶的，罪恶的 3. 危险的，险恶的 4. 谬误的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "virgin",
+    "phonetic": "ˈvɜːdʒɪn",
+    "meaning": "n. 处女 adj. 1. 处女的 2. 未开发的 3. 首次的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "virtual",
+    "phonetic": "ˈvәːtʃuәl",
+    "meaning": "a. 1. 实质上的；事实上的 2. (计算机)虚拟的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "visualize",
+    "phonetic": "ˈvɪʒʊəlaɪz",
+    "meaning": "v. 想象，设想",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vocal",
+    "phonetic": "ˈvəʊkəl",
+    "meaning": "adj. 1. 声音的，发声的，口头的 2. 畅所欲言的，直言的 n. (爵士乐或流行音乐的)歌唱部分",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vocational",
+    "phonetic": "vәuˈkeiʃәnl",
+    "meaning": "a. 职业的，行业的，业务的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "void",
+    "phonetic": "vɔɪd",
+    "meaning": "n. 空间，真空 adj. 1. 空的，空虚的 2. 无效的，作废的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vulgar",
+    "phonetic": "ˈvʌlɡə",
+    "meaning": "adj. 1. 粗鲁的，卑下的 2. 庸俗的，低级的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "ˈvʌlnərəbl",
+    "meaning": "adj. 1. 易受攻击的，有弱点的 2. (指人)易受伤害的，脆弱的，敏感的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wardrobe",
+    "phonetic": "ˈwɔːdrəʊb",
+    "meaning": "n. 衣橱，衣柜",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "warfare",
+    "phonetic": "ˈwɔːfeə",
+    "meaning": "n. 战争，交战",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "warrant",
+    "phonetic": "ˈwɒrənt",
+    "meaning": "n. 1. 授权(证)，许可证，逮捕状，搜查令 2. (正当)理由，证明，保证 v. 使有正当理由，向…保证",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "watertight",
+    "phonetic": "ˈwɔːtətaɪt",
+    "meaning": "adj. 1. 水密的 2. 无懈可击的，严密的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "watt",
+    "phonetic": "wɒt",
+    "meaning": "n. 瓦(电力单位)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wedge",
+    "phonetic": "wedʒ",
+    "meaning": "n. 楔子 v. 用楔子把…固定住",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weird",
+    "phonetic": "wɪəd",
+    "meaning": "adj. 古怪的，奇异的，荒谬的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whereas",
+    "phonetic": "hweərˈæz",
+    "meaning": "conj. 而，却，反之",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whereby",
+    "phonetic": "hweəˈbaɪ",
+    "meaning": "adv. 借以，凭那个",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "withhold",
+    "phonetic": "wɪðˈhəʊld",
+    "meaning": "v. 不给，拒绝",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wrench",
+    "phonetic": "rentʃ",
+    "meaning": "n. & v. 猛拧，一扭",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wretched",
+    "phonetic": "ˈretʃɪd",
+    "meaning": "adj. 1. 可怜的，悲惨的 2. 恶劣的，令人讨厌的",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "yacht",
+    "phonetic": "jɒt",
+    "meaning": "n. 快艇，游艇",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "yoke",
+    "phonetic": "jәuk",
+    "meaning": "n. 1. 轭，牛轭 2. 束缚 v. 1. 给……上轭 2. 连接，结合，使匹配",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "zinc",
+    "phonetic": "zɪŋk",
+    "meaning": "n. 锌",
+    "example": "",
+    "hit": true
+  }
+]

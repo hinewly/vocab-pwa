@@ -1,0 +1,8871 @@
+[
+  {
+    "word": "absolutely",
+    "meaning": "ad.完全地；绝对地",
+    "phonetic": "ˈæbsəluːtli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "acceleration",
+    "meaning": "n.加速(度)",
+    "phonetic": "ækˌseləˈrei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "acceptable",
+    "meaning": "a.可接受/合意的",
+    "phonetic": "əkˈseptəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "acceptance",
+    "meaning": "n.接受，验收；承认",
+    "phonetic": "əkˈseptəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accessory",
+    "meaning": "n.同谋，从犯；附件",
+    "phonetic": "ækˈsesəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accidental",
+    "meaning": "a.偶然的；非本质的",
+    "phonetic": "ˌæksiˈdentl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accommodate",
+    "meaning": "vt.容纳;供应,供给",
+    "phonetic": "əˈkɔmədeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accord",
+    "meaning": "vt.使一致；给予",
+    "phonetic": "əˈkɔːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accordance",
+    "meaning": "n.一致；和谐；授予",
+    "phonetic": "əˈkɔːdəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accordingly",
+    "meaning": "ad.因此，所以；照着",
+    "phonetic": "əˈkɔːdiŋli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "accustom",
+    "meaning": "vt.使习惯",
+    "phonetic": "əˈkʌstəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "actually",
+    "meaning": "ad.实际上；竟然",
+    "phonetic": "ˈækt∫uəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "acute",
+    "meaning": "a.尖的，锐的；敏锐的",
+    "phonetic": "əˈkjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adjective",
+    "meaning": "n.形容词 a.形容词的",
+    "phonetic": "ˈædʒiktiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "advanced",
+    "meaning": "a.先进的；高级的",
+    "phonetic": "ədˈvɑːnst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "adverb",
+    "meaning": "n.副词",
+    "phonetic": "ˈædvəːb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "advisable",
+    "meaning": "n.明智的；可取的",
+    "phonetic": "ədˈvaizəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "agony",
+    "meaning": "n.极度痛苦",
+    "phonetic": "ˈægəni",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alloy",
+    "meaning": "n.合金；(金属的)成色",
+    "phonetic": "ˈælɔi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "alter",
+    "meaning": "vt.改变，变更；改做",
+    "phonetic": "ˈɔːltə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "amongst",
+    "meaning": "prep 在…之中(=among)",
+    "phonetic": "əˈmʌŋst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ampere",
+    "meaning": "n.安培",
+    "phonetic": "ˈæmpiər",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "amplify",
+    "meaning": "vt.放大，增强；扩大",
+    "phonetic": "ˈæmplifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "analyse",
+    "meaning": "vt.分析，分解，解析",
+    "phonetic": "ˈænəlaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "announcer",
+    "meaning": "n.宣告者；播音员",
+    "phonetic": "əˈnaunsə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "anyway",
+    "meaning": "ad.无论如何",
+    "phonetic": "ˈeniwei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "apparatus",
+    "meaning": "n.器械，仪器；器官",
+    "phonetic": "ˌæpəˈreitəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "appliance",
+    "meaning": "n.用具，器具，器械",
+    "phonetic": "əˈplaiəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "approximate",
+    "meaning": "a.近似的 vt.近似",
+    "phonetic": "əˈprɔksimeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arabian",
+    "meaning": "a.阿拉伯的",
+    "phonetic": "əˈreibjən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "arouse",
+    "meaning": "vt.引起，唤起；唤醒",
+    "phonetic": "əˈrauz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "artistic",
+    "meaning": "a.艺术的；艺术家的",
+    "phonetic": "ɑːˈtistik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assemble",
+    "meaning": "vt.集合，召集；装配",
+    "phonetic": "əˈsembl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assembly",
+    "meaning": "n.集合；集会；装配",
+    "phonetic": "əˈsembli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "assignment",
+    "meaning": "n.任务，指定的作业",
+    "phonetic": "əˈsainmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "atmospheric",
+    "meaning": "a.大气的;大气层的",
+    "phonetic": "ˌætməsˈferik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "atomic",
+    "meaning": "a.原子的；原子能的",
+    "phonetic": "əˈtɔmik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "attentive",
+    "meaning": "a.注意的；有礼貌的",
+    "phonetic": "əˈtentiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aural",
+    "meaning": "a.耳的，听觉的",
+    "phonetic": "ˈɔːrəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "auto",
+    "meaning": "n.(口语)汽车",
+    "phonetic": "ˈɔːtəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "automobile",
+    "meaning": "n.汽车，机动车",
+    "phonetic": "ˌɔːtəˈməubil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "auxiliary",
+    "meaning": "a.辅助的；附属的",
+    "phonetic": "ɔːgˈziljəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "aviation",
+    "meaning": "n.航空，航空学",
+    "phonetic": "ˌeiviˈei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "await",
+    "meaning": "vt.等候，期待",
+    "phonetic": "əˈweit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "awfully",
+    "meaning": "ad.令人畏惧的；很",
+    "phonetic": "ˈɔːfuli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ax",
+    "meaning": "n.斧子",
+    "phonetic": "æks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "axis",
+    "meaning": "n.轴，轴线；中心线",
+    "phonetic": "ˈæksis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bacteria",
+    "meaning": "n.细菌",
+    "phonetic": "bækˈtiəriə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "banner",
+    "meaning": "n.旗，旗帜，横幅",
+    "phonetic": "ˈbænə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "barn",
+    "meaning": "n.谷仓；牲口棚",
+    "phonetic": "bɑːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "barrel",
+    "meaning": "n.桶；圆筒；枪管",
+    "phonetic": "ˈbærəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "basically",
+    "meaning": "ad.基本上",
+    "phonetic": "ˈbeisikəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "beggar",
+    "meaning": "n.乞丐，穷人",
+    "phonetic": "ˈbegə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "beginner",
+    "meaning": "n.初学者，生手",
+    "phonetic": "biˈginə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "beloved",
+    "meaning": "a.为…的爱的 n.爱人",
+    "phonetic": "biˈlʌvid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "berry",
+    "meaning": "n.浆果(如草莓等)",
+    "phonetic": "ˈberi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "best",
+    "meaning": "a.最好的；最大的",
+    "phonetic": "best",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bet",
+    "meaning": "vt.&vi.&n.打赌",
+    "phonetic": "bet",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Bible",
+    "meaning": "n.基督教《圣经》",
+    "phonetic": "ˈbaibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bind",
+    "meaning": "vt.捆绑；包扎；装钉",
+    "phonetic": "baind",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bitterly",
+    "meaning": "ad.苦苦地；悲痛地",
+    "phonetic": "ˈbitəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blade",
+    "meaning": "n.刀刃，刀片；叶片",
+    "phonetic": "bleid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blast",
+    "meaning": "n.爆炸，冲击波 vt.炸",
+    "phonetic": "blɑːst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blaze",
+    "meaning": "n.火；闪光 vi.燃烧",
+    "phonetic": "bleiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blend",
+    "meaning": "vt.&vi.&n.混和",
+    "phonetic": "blend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "blossom",
+    "meaning": "n.花，开花 vi.开花",
+    "phonetic": "ˈblɔsəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "boast",
+    "meaning": "vi.自夸 vt.吹嘘",
+    "phonetic": "bəust",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bold",
+    "meaning": "a.大胆的；冒失的",
+    "phonetic": "bəuld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bolt",
+    "meaning": "n.螺栓；插销 vt.闩门",
+    "phonetic": "bəult",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bore",
+    "meaning": "vt.使厌烦；钻，挖",
+    "phonetic": "bɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bosom",
+    "meaning": "n.胸，胸部；内心",
+    "phonetic": "ˈbuzəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bother",
+    "meaning": "vt.烦扰，迷惑 n.麻烦",
+    "phonetic": "ˈbɔðə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bough",
+    "meaning": "n.树枝",
+    "phonetic": "bau",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brandy",
+    "meaning": "n.白兰地酒",
+    "phonetic": "ˈbrændi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brass",
+    "meaning": "n.黄铜；黄铜器",
+    "phonetic": "brɑːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "breadth",
+    "meaning": "n.宽度，幅度；幅面",
+    "phonetic": "bredθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "breed",
+    "meaning": "n.品种 vt.使繁殖",
+    "phonetic": "briːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "breeze",
+    "meaning": "n.微风，和风",
+    "phonetic": "briːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brighten",
+    "meaning": "vt.使发光；使快活",
+    "phonetic": "ˈbraitn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brim",
+    "meaning": "n.边，边缘；帽沿",
+    "phonetic": "brim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brisk",
+    "meaning": "a.活泼的；清新的",
+    "phonetic": "brisk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bristle",
+    "meaning": "n.短而硬的毛；鬃毛",
+    "phonetic": "ˈbrisl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brittle",
+    "meaning": "a.脆的；易损坏的",
+    "phonetic": "ˈbritl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bronze",
+    "meaning": "n.青铜；青铜制品",
+    "phonetic": "brɔnz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brood",
+    "meaning": "n.同窝幼鸟 vt.孵(蛋)",
+    "phonetic": "bruːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brook",
+    "meaning": "n.小河，溪流",
+    "phonetic": "bruk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brow",
+    "meaning": "n.额；眉，眉毛",
+    "phonetic": "brau",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bruise",
+    "meaning": "n.青肿，伤痕；擦伤",
+    "phonetic": "bruːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "brute",
+    "meaning": "n.禽兽，畜生",
+    "phonetic": "bruːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bubble",
+    "meaning": "n.泡 vi.冒泡，沸腾",
+    "phonetic": "ˈbʌbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bud",
+    "meaning": "n.芽，萌芽；蓓蕾",
+    "phonetic": "bʌd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bulb",
+    "meaning": "n.电灯泡；球状物",
+    "phonetic": "bʌlb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bulk",
+    "meaning": "n.物体，容积，大批",
+    "phonetic": "bʌlk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bull",
+    "meaning": "n.公牛；雄的象",
+    "phonetic": "bul",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bullet",
+    "meaning": "n.枪弹，子弹，弹丸",
+    "phonetic": "ˈbulit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bundle",
+    "meaning": "n.捆，包，束；包袱",
+    "phonetic": "ˈbʌndl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "bureau",
+    "meaning": "n.局，司，处；社，所",
+    "phonetic": "bjuəˈrəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cabin",
+    "meaning": "n.小屋；船舱，机舱",
+    "phonetic": "ˈkæbin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cabinet",
+    "meaning": "n.橱，柜；内阁",
+    "phonetic": "ˈkæbinit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cable",
+    "meaning": "n.缆，索；电缆；电报",
+    "phonetic": "ˈkeibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cafe",
+    "meaning": "n.咖啡馆；小餐厅",
+    "phonetic": "ˈkæfei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "calendar",
+    "meaning": "n.日历，历书；历法",
+    "phonetic": "ˈkælində",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "campus",
+    "meaning": "n.校园，学校场地",
+    "phonetic": "ˈkæmpəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "canvas",
+    "meaning": "n.粗帆布；一块油画布",
+    "phonetic": "ˈkænvəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "captive",
+    "meaning": "n.俘虏，被监禁的人",
+    "phonetic": "ˈkæptiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "career",
+    "meaning": "n.生涯，职业，经历",
+    "phonetic": "kəˈriə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cargo",
+    "meaning": "n.船货，货物",
+    "phonetic": "ˈkɑːgəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cart",
+    "meaning": "n.二轮运货马车",
+    "phonetic": "kɑːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cassette",
+    "meaning": "n.盒式录音带；盒子",
+    "phonetic": "kɑːˈset",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cement",
+    "meaning": "n.水泥；胶泥 vt.粘结",
+    "phonetic": "siˈment",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "certainty",
+    "meaning": "n.必然；肯定",
+    "phonetic": "ˈsəːtənti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chamber",
+    "meaning": "n.会议室；房间；腔",
+    "phonetic": "ˈt∫eimbə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "charity",
+    "meaning": "n.施舍；慈善事业",
+    "phonetic": "ˈt∫æriti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "charming",
+    "meaning": "a.迷人的，可爱的",
+    "phonetic": "ˈt∫ɑːmiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chase",
+    "meaning": "n.追逐，追赶，追求",
+    "phonetic": "t∫eis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cherry",
+    "meaning": "n.樱桃；樱桃树",
+    "phonetic": "ˈt∫eri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "childish",
+    "meaning": "a.孩子的；幼稚的",
+    "phonetic": "ˈt∫aildi∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chill",
+    "meaning": "vt.使变冷 n.寒冷",
+    "phonetic": "t∫il",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chin",
+    "meaning": "n.颏，下巴",
+    "phonetic": "t∫in",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "chop",
+    "meaning": "vt.砍，劈；切细 vi.砍",
+    "phonetic": "t∫ɔp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "circular",
+    "meaning": "a.圆的；循环的",
+    "phonetic": "ˈsəːkjulə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "circumference",
+    "meaning": "n.圆周，周长，圆周线",
+    "phonetic": "səˈkʌmfərəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "civilize",
+    "meaning": "vt.使文明；教育",
+    "phonetic": "ˈsivilaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clasp",
+    "meaning": "n.扣子，钩子；别针",
+    "phonetic": "klɑːsp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cliff",
+    "meaning": "n.悬崖，峭壁",
+    "phonetic": "klif",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cloak",
+    "meaning": "n.斗篷；覆盖(物)",
+    "phonetic": "kləuk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "closely",
+    "meaning": "ad.紧密地，接近地",
+    "phonetic": "ˈkləuzli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clothe",
+    "meaning": "vt.给…穿衣服",
+    "phonetic": "kləuð",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "clue",
+    "meaning": "n.线索，暗示，提示",
+    "phonetic": "kluː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coarse",
+    "meaning": "a.粗的，粗糙的",
+    "phonetic": "kɔːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coil",
+    "meaning": "n.(一)卷；线圈 vt.卷",
+    "phonetic": "kɔil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "collapse",
+    "meaning": "vi.倒坍；崩溃，瓦解",
+    "phonetic": "kəˈlæps",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "colonel",
+    "meaning": "n.陆军上校；中校",
+    "phonetic": "ˈkəːnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "colony",
+    "meaning": "n.殖民地；侨居地",
+    "phonetic": "ˈkɔləni",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commander",
+    "meaning": "n.司令官，指挥员",
+    "phonetic": "kəˈmɑːndə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commerce",
+    "meaning": "n.商业，贸易；社交",
+    "phonetic": "ˈkɔmə(ː)s",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commercial",
+    "meaning": "a.商业的；商品化的",
+    "phonetic": "kəˈməː∫əl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commission",
+    "meaning": "n.委任状；委员会",
+    "phonetic": "kəˈmi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "commonly",
+    "meaning": "ad.普通地，一般地",
+    "phonetic": "ˈkɔmənli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "comparative",
+    "meaning": "a.比较的，相对的",
+    "phonetic": "kəmˈpærətiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "competent",
+    "meaning": "a.有能力的；应该做的",
+    "phonetic": "ˈkɔmpitənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compile",
+    "meaning": "vt.编辑，编制，搜集",
+    "phonetic": "kəmˈpail",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complaint",
+    "meaning": "n.抱怨；怨言；控告",
+    "phonetic": "kəmˈpleint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "completely",
+    "meaning": "ad.十分，完全地",
+    "phonetic": "kəmˈpliːtli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complicate",
+    "meaning": "vt.使复杂；使陷入",
+    "phonetic": "ˈkɔmplikeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "complicated",
+    "meaning": "a.复杂的，难懂的",
+    "phonetic": "ˈkɔmplikeitid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compound",
+    "meaning": "n.化合物；复合词",
+    "phonetic": "ˈkɔmpaund",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compress",
+    "meaning": "vt.压紧，压缩",
+    "phonetic": "kəmˈpres",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "compute",
+    "meaning": "vt.计算，估计，估算",
+    "phonetic": "kəmˈpjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conceal",
+    "meaning": "vt.把…隐藏起来",
+    "phonetic": "kənˈsiːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "concentration",
+    "meaning": "n.集中;专注;浓缩",
+    "phonetic": "ˌkɔnsenˈtrei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "concerning",
+    "meaning": "prep.关于",
+    "phonetic": "kənˈsəːniŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "condense",
+    "meaning": "vt.压缩，使缩短",
+    "phonetic": "kənˈdens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "confess",
+    "meaning": "vt.供认，承认；坦白",
+    "phonetic": "kənˈfes",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "confidence",
+    "meaning": "n.信任；信赖；信心",
+    "phonetic": "ˈkɔnfidəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "confine",
+    "meaning": "vt.限制；禁闭",
+    "phonetic": "ˈkɔnfain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "confusion",
+    "meaning": "n.混乱；骚乱；混淆",
+    "phonetic": "kənˈfjuːʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "congress",
+    "meaning": "n.大会；国会，议会",
+    "phonetic": "ˈkɔŋgres",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conjunction",
+    "meaning": "n.接合,连接(词)",
+    "phonetic": "kənˈdʒʌŋk∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conquer",
+    "meaning": "vt.征服，战胜；破除",
+    "phonetic": "ˈkɔŋkə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conquest",
+    "meaning": "n.攻取，征服；克服",
+    "phonetic": "ˈkɔŋkwest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consciousness",
+    "meaning": "n.意识,觉悟;知觉",
+    "phonetic": "ˈkɔn∫əsnis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consent",
+    "meaning": "n.同意，赞成 vi.同意",
+    "phonetic": "kənˈsent",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "consequently",
+    "meaning": "ad.因此/而,所以",
+    "phonetic": "ˈkɔnsikwəntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contempt",
+    "meaning": "n.轻蔑；藐视；受辱",
+    "phonetic": "kənˈtempt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "contest",
+    "meaning": "vt.争夺，争取；辩驳",
+    "phonetic": "ˈkɔntest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "continual",
+    "meaning": "a.不断的；连续的",
+    "phonetic": "kənˈtinjuəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "conversely",
+    "meaning": "ad.相反地",
+    "phonetic": "ˈkɔnvəːsli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cooperate",
+    "meaning": "vi.合作，协作；配合",
+    "phonetic": "kəuˈɔpəreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cope",
+    "meaning": "vi.对付，应付",
+    "phonetic": "kəup",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "copper",
+    "meaning": "n.铜；铜币，铜制器",
+    "phonetic": "ˈkɔpə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cord",
+    "meaning": "n.细绳，粗线，索",
+    "phonetic": "kɔːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cordial",
+    "meaning": "a.真诚的，诚恳的",
+    "phonetic": "ˈkɔːrdʒəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "correspondent",
+    "meaning": "n.通信者;通讯员",
+    "phonetic": "ˌkɔrisˈpɔndənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corresponding",
+    "meaning": "a.相应的;符合的",
+    "phonetic": "ˌkɔrisˈpɔndiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "corridor",
+    "meaning": "n.走廊，回廊，通路",
+    "phonetic": "ˈkɔridɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "costly",
+    "meaning": "a.昂贵的；价值高的",
+    "phonetic": "ˈkɔstli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "council",
+    "meaning": "n.理事会，委员会",
+    "phonetic": "ˈkaunsil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "county",
+    "meaning": "n.英国的郡，美国的县",
+    "phonetic": "ˈkaunti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "coward",
+    "meaning": "n.懦夫；胆怯者",
+    "phonetic": "ˈkauəd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crack",
+    "meaning": "n.裂缝，裂纹 vi.爆裂",
+    "phonetic": "kræk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crane",
+    "meaning": "n.起重机，摄影升降机",
+    "phonetic": "krein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crawl",
+    "meaning": "vi.爬，爬行",
+    "phonetic": "krɔːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "creep",
+    "meaning": "vi.爬行；缓慢地行进",
+    "phonetic": "kriːp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cricket",
+    "meaning": "n.板球；蟋蟀",
+    "phonetic": "ˈkrikit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cripple",
+    "meaning": "n.跛子；残废的人",
+    "phonetic": "ˈkripl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crisis",
+    "meaning": "n.危机；存亡之际",
+    "phonetic": "ˈkraisis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "critic",
+    "meaning": "n.批评家，爱挑剔的人",
+    "phonetic": "ˈkritik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "criticism",
+    "meaning": "n.批评；批判；评论",
+    "phonetic": "ˈkritisiz(ə)m",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "criticize",
+    "meaning": "vt.批评；评论；非难",
+    "phonetic": "ˈkritisaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crow",
+    "meaning": "n.鸦，乌鸦 vi.啼",
+    "phonetic": "krəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crown",
+    "meaning": "n.王冠，冕；花冠",
+    "phonetic": "kraun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crude",
+    "meaning": "a.简陋的；天然的",
+    "phonetic": "kruːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crush",
+    "meaning": "vt.压碎，碾碎；镇压",
+    "phonetic": "krʌ∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crust",
+    "meaning": "n.面包皮；硬外皮",
+    "phonetic": "krʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "crystal",
+    "meaning": "n.水晶，结晶体；晶粒",
+    "phonetic": "ˈkristl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cucumber",
+    "meaning": "n.黄瓜",
+    "phonetic": "ˈkjuːkʌmbə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "cunning",
+    "meaning": "a.狡猾的，狡诈的",
+    "phonetic": "ˈkʌniŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "curiosity",
+    "meaning": "n.好奇，好奇心；珍品",
+    "phonetic": "ˌkjuəriˈɔsiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "curl",
+    "meaning": "n.卷毛；螺旋 vi.卷曲",
+    "phonetic": "kəːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "curse",
+    "meaning": "n.诅咒，咒骂；天谴",
+    "phonetic": "kəːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "curve",
+    "meaning": "n.曲线；弯 vt.弄弯",
+    "phonetic": "kəːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dairy",
+    "meaning": "n.牛奶场；乳制品",
+    "phonetic": "ˈdeəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "daring",
+    "meaning": "a.大胆的，勇敢的",
+    "phonetic": "ˈdeəriŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "darling",
+    "meaning": "n.亲爱的人；宠儿",
+    "phonetic": "ˈdɑːliŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deadly",
+    "meaning": "a.致命的，死一般的",
+    "phonetic": "ˈdedli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decay",
+    "meaning": "vi.腐烂；衰败 n.腐烂",
+    "phonetic": "diˈkei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deceit",
+    "meaning": "n.欺骗，欺诈",
+    "phonetic": "diˈsiːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deceive",
+    "meaning": "vt.欺骗，蒙蔽，行骗",
+    "phonetic": "diˈsiːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "decent",
+    "meaning": "a.正派的；体面的",
+    "phonetic": "ˈdiːsnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deck",
+    "meaning": "n.甲板；舱面；层面",
+    "phonetic": "dek",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deduce",
+    "meaning": "vt.演绎，推论，推断",
+    "phonetic": "diˈdjuːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deepen",
+    "meaning": "vt.加深 vi.深化",
+    "phonetic": "ˈdiːpən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "defect",
+    "meaning": "n.缺点，缺陷，欠缺",
+    "phonetic": "diˈfekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "defence",
+    "meaning": "n.防御；防务；辩护",
+    "phonetic": "diˈfens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "definitely",
+    "meaning": "ad.一定地，明确地",
+    "phonetic": "ˈdefinitli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "democracy",
+    "meaning": "n.民主，民主制",
+    "phonetic": "diˈmɔkrəsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "democratic",
+    "meaning": "a.民主的，民主政体的",
+    "phonetic": "ˌdeməˈkrætik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dense",
+    "meaning": "a.密集的；浓厚的",
+    "phonetic": "dens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "density",
+    "meaning": "n.密集，稠密；密度",
+    "phonetic": "ˈdensiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "deny",
+    "meaning": "vt.否定；拒绝相信",
+    "phonetic": "diˈnai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "depress",
+    "meaning": "vt.使沮丧；按下",
+    "phonetic": "diˈpres",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "descend",
+    "meaning": "vi.下来，下降；下倾",
+    "phonetic": "diˈsend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "desirable",
+    "meaning": "a.值得相望的；可取的",
+    "phonetic": "diˈzaiərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "despair",
+    "meaning": "n.绝望 vi.绝望",
+    "phonetic": "disˈpeə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "despise",
+    "meaning": "vt.鄙视，蔑视",
+    "phonetic": "disˈpaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "destruction",
+    "meaning": "n.破坏，毁灭，消灭",
+    "phonetic": "disˈtrʌk∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "detect",
+    "meaning": "vt.察觉，发觉；侦察",
+    "phonetic": "diˈtekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "devil",
+    "meaning": "n.魔鬼，恶魔",
+    "phonetic": "ˈdevl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "devise",
+    "meaning": "vt.设计，发明",
+    "phonetic": "diˈvaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dew",
+    "meaning": "n.露，露水",
+    "phonetic": "djuː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dialect",
+    "meaning": "n.方言，土语，地方话",
+    "phonetic": "ˈdaiəlekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dialog",
+    "meaning": "n.对话，对白",
+    "phonetic": "ˈdaiəlɔg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diameter",
+    "meaning": "n.直径",
+    "phonetic": "daiˈæmitə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "diligent",
+    "meaning": "a.勤勉的，勤奋的",
+    "phonetic": "ˈdilidʒənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "directly",
+    "meaning": "ad.直接地；立即",
+    "phonetic": "diˈrektli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disable",
+    "meaning": "vt.使无能，使伤残",
+    "phonetic": "disˈeibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discard",
+    "meaning": "vt.丢弃，抛弃，遗弃",
+    "phonetic": "disˈkɑːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "discharge",
+    "meaning": "vt.释放；排出 n.释放",
+    "phonetic": "disˈt∫ɑːdʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disclose",
+    "meaning": "vt.揭开，揭发；透露",
+    "phonetic": "disˈkləuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disguise",
+    "meaning": "vi.隐瞒，掩埋 n.假装",
+    "phonetic": "disˈgaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disgust",
+    "meaning": "n.厌恶，憎恶",
+    "phonetic": "disˈgʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dishonor",
+    "meaning": "n.不光彩；丢脸的人",
+    "phonetic": "disˈɔnə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disorder",
+    "meaning": "n.混乱，杂乱；骚乱",
+    "phonetic": "disˈɔːdə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "disposal",
+    "meaning": "n.丢掉，处理，销毁",
+    "phonetic": "disˈpəuzəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dispose",
+    "meaning": "vi.去掉，丢掉；销毁",
+    "phonetic": "disˈpəuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "displease",
+    "meaning": "vt.使不愉快，使生气",
+    "phonetic": "disˈpliːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dispute",
+    "meaning": "vi.争论，争执 n.争论",
+    "phonetic": "disˈpjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dissatisfy",
+    "meaning": "vi.使不满，使不平",
+    "phonetic": "ˈdisˈsætisfai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dissolve",
+    "meaning": "vt.使溶解；解散",
+    "phonetic": "diˈzɔlv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distress",
+    "meaning": "n.忧虑，悲伤；不幸",
+    "phonetic": "disˈtres",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "distribution",
+    "meaning": "n.分发/配；分布",
+    "phonetic": "ˌdistriˈbjuː∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ditch",
+    "meaning": "n.沟，沟渠，渠道",
+    "phonetic": "dit∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dock",
+    "meaning": "n.船坞；码头；船厂",
+    "phonetic": "dɔk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "domestic",
+    "meaning": "a.本国的；家庭的",
+    "phonetic": "dəˈmestik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "donkey",
+    "meaning": "n.驴；笨蛋",
+    "phonetic": "ˈdɔŋki",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dorm",
+    "meaning": "n.宿舍",
+    "phonetic": "dɔːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dose",
+    "meaning": "n.剂量，用量；一剂",
+    "phonetic": "dəus",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "doubtful",
+    "meaning": "a.难以预测的；怀疑的",
+    "phonetic": "ˈdautful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "doubtless",
+    "meaning": "ad.无疑地；很可能",
+    "phonetic": "ˈdautlis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drain",
+    "meaning": "vt.排去；放水 n.耗竭",
+    "phonetic": "drein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drama",
+    "meaning": "n.一出戏剧，剧本",
+    "phonetic": "ˈdrɑːmə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dread",
+    "meaning": "n.畏惧；恐怖 vt.惧怕",
+    "phonetic": "dred",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "drip",
+    "meaning": "vi.滴下；漏水 n.水滴",
+    "phonetic": "drip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dumb",
+    "meaning": "a.哑的；无言的",
+    "phonetic": "dʌm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dump",
+    "meaning": "vt.倾卸，倾倒；倾销",
+    "phonetic": "dʌmp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "durable",
+    "meaning": "a.耐久的，耐用的",
+    "phonetic": "ˈdjuərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dwelling",
+    "meaning": "n.住处，寓所",
+    "phonetic": "ˈdweliŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dye",
+    "meaning": "vt.染 n.染料；染色",
+    "phonetic": "dai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "dying",
+    "meaning": "a.垂死的；临终的",
+    "phonetic": "ˈdaiiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "earnest",
+    "meaning": "a.认真的，诚恳的",
+    "phonetic": "ˈəːnist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "echo",
+    "meaning": "n.回声，反响 vi.重复",
+    "phonetic": "ˈekəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "economic",
+    "meaning": "a.经济的，经济学的",
+    "phonetic": "ˌiːkəˈnɔmik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "economical",
+    "meaning": "a.节约的;经济学的",
+    "phonetic": "ˌiːkəˈnɔmikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "economy",
+    "meaning": "n.经济；节约，节省",
+    "phonetic": "i(ː)ˈkɔnəmi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elaborate",
+    "meaning": "a.复杂的；精心制作的",
+    "phonetic": "iˈlæbərət",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elastic",
+    "meaning": "n.松紧带 a.有弹性的",
+    "phonetic": "iˈlæstik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elbow",
+    "meaning": "n.肘，肘部；弯管",
+    "phonetic": "ˈelbəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "election",
+    "meaning": "n.选举，选择权；当选",
+    "phonetic": "iˈlek∫(ə)n",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "electronics",
+    "meaning": "n.电子学",
+    "phonetic": "ilekˈtrɔniks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elementary",
+    "meaning": "a.基本的；初级的",
+    "phonetic": "ˌeliˈmentəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eleventh",
+    "meaning": "num.第十一(个)",
+    "phonetic": "iˈlevnθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "eliminate",
+    "meaning": "vt.消灭，消除，排除",
+    "phonetic": "iˈlimineit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elimination",
+    "meaning": "n.消灭，排除，消除",
+    "phonetic": "iˌlimiˈnei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "elsewhere",
+    "meaning": "ad.在别处，向别处",
+    "phonetic": "ˈelsˈweə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "embrace",
+    "meaning": "vt.拥抱；包括；包围",
+    "phonetic": "imˈbreis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emerge",
+    "meaning": "vi.出现，涌现；冒出",
+    "phonetic": "iˈməːdʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emit",
+    "meaning": "vt.散发；发射；发表",
+    "phonetic": "iˈmit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emotion",
+    "meaning": "n.情感，感情；激动",
+    "phonetic": "iˈməu∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emotional",
+    "meaning": "a.感情的，情绪的",
+    "phonetic": "iˈməu∫ənl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "emphasis",
+    "meaning": "n.强调，重点，重要性",
+    "phonetic": "ˈemfəsis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "employer",
+    "meaning": "n.雇佣者，雇主",
+    "phonetic": "imˈplɔiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "employment",
+    "meaning": "n.工业；雇/使用",
+    "phonetic": "imˈplɔimənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enclose",
+    "meaning": "vt.围住，圈起；附上",
+    "phonetic": "inˈkləuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "endure",
+    "meaning": "vt.忍受；容忍",
+    "phonetic": "inˈdjuə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enforce",
+    "meaning": "vt.实施，执行；强制",
+    "phonetic": "inˈfɔːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "engage",
+    "meaning": "vt.使从事于；聘用",
+    "phonetic": "inˈgeidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "engineering",
+    "meaning": "n.工程，工程学",
+    "phonetic": "ˌendʒiˈniəriŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Englishman",
+    "meaning": "n.英国男子",
+    "phonetic": "ˈiŋgli∫mən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enormous",
+    "meaning": "a.巨大的，庞大的",
+    "phonetic": "iˈnɔːməs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "entertain",
+    "meaning": "vt.使欢乐；招待",
+    "phonetic": "ˌentəˈtein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "enthusiasm",
+    "meaning": "n.热情/心，热忱",
+    "phonetic": "inˈθjuːziæzəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "entitle",
+    "meaning": "vt.给…权利(或资格)",
+    "phonetic": "inˈtaitl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "equation",
+    "meaning": "n.方程(式)；等式",
+    "phonetic": "iˈkwei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "era",
+    "meaning": "n.时代，年代；纪元",
+    "phonetic": "ˈiərə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "erect",
+    "meaning": "vt.建造；使竖立",
+    "phonetic": "iˈrekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "establishment",
+    "meaning": "n.建立,设/确立",
+    "phonetic": "isˈtæbli∫mənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "estimate",
+    "meaning": "vt.估计，评价 n.估计",
+    "phonetic": "ˈestimeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "evaporate",
+    "meaning": "vt.使蒸发 vi.蒸发",
+    "phonetic": "iˈvæpəreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "evil",
+    "meaning": "n.邪恶；祸害 a.坏的",
+    "phonetic": "ˈiːvl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exaggerate",
+    "meaning": "vt.&vi.夸大，夸张",
+    "phonetic": "igˈzædʒəreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "examination",
+    "meaning": "n.考试；检/细查",
+    "phonetic": "igˌzæmiˈnei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exceed",
+    "meaning": "vt.超过，胜过；超出",
+    "phonetic": "ikˈsiːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exceedingly",
+    "meaning": "ad.极端地，非常",
+    "phonetic": "ikˈsiːdiŋli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "excess",
+    "meaning": "n.超越；过量；过度",
+    "phonetic": "ˈekses",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "excessive",
+    "meaning": "a.过多的，极度的",
+    "phonetic": "ikˈsesiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exciting",
+    "meaning": "a.令人兴奋的",
+    "phonetic": "ikˈsaitiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exclaim",
+    "meaning": "vi.呼喊；惊叫",
+    "phonetic": "iksˈkleim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exclude",
+    "meaning": "vt.把…排除在外",
+    "phonetic": "iksˈkluːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exclusively",
+    "meaning": "ad.专门地",
+    "phonetic": "ikˈskluːsivli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "excursion",
+    "meaning": "n.远足；短途旅行",
+    "phonetic": "iksˈkəː∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "executive",
+    "meaning": "a.执行的 n.执行者",
+    "phonetic": "igˈzekjutiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exert",
+    "meaning": "vt.尽(力)，运用",
+    "phonetic": "igˈzəːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exhaust",
+    "meaning": "vt.使筋疲力尽；用尽",
+    "phonetic": "igˈzɔːst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "expansion",
+    "meaning": "n.扩大，扩充；扩张",
+    "phonetic": "iksˈpæn∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "experimental",
+    "meaning": "a.实/试验的",
+    "phonetic": "ikˈsperiment(ə)l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exploit",
+    "meaning": "vt.剥削；利用；开拓",
+    "phonetic": "iksˈplɔit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "explosion",
+    "meaning": "n.爆炸，爆发，炸裂",
+    "phonetic": "iksˈpləuʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "explosive",
+    "meaning": "n.炸药 a.爆炸的",
+    "phonetic": "iksˈpləusiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exposure",
+    "meaning": "n.暴露；揭露；曝光",
+    "phonetic": "iksˈpəuʒə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "extent",
+    "meaning": "n.广度；范围；程度",
+    "phonetic": "iksˈtent",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "exterior",
+    "meaning": "a.外部的；对外的",
+    "phonetic": "eksˈtiəriə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fable",
+    "meaning": "n.寓言；虚构的故事",
+    "phonetic": "ˈfeibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fabric",
+    "meaning": "n.织物，纺织品；结构",
+    "phonetic": "ˈfæbrik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "facility",
+    "meaning": "n.设备；容易；便利",
+    "phonetic": "fəˈsiliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faculty",
+    "meaning": "n.才能，能力；系，科",
+    "phonetic": "ˈfækəlti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Fahrenheit",
+    "meaning": "n.华氏温度计",
+    "phonetic": "ˈfærənhait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faint",
+    "meaning": "a.微弱的；虚弱的",
+    "phonetic": "feint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faithful",
+    "meaning": "a.忠诚的；如实的",
+    "phonetic": "ˈfeiθful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "famine",
+    "meaning": "n.饥荒；严重的缺乏",
+    "phonetic": "ˈfæmin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "farewell",
+    "meaning": "int.再会 n.告别",
+    "phonetic": "ˈfeəˈwel",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fashion",
+    "meaning": "n.样子，方式；风尚",
+    "phonetic": "ˈfæ∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fashionable",
+    "meaning": "a.流行的，时髦的",
+    "phonetic": "ˈfæ∫ənəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fatal",
+    "meaning": "a.致命的；命运的",
+    "phonetic": "ˈfeitl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fate",
+    "meaning": "n.命运，天数",
+    "phonetic": "feit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "father-in-law",
+    "meaning": "n.岳父；公公",
+    "phonetic": "ˈfɑːðərinlɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fatigue",
+    "meaning": "n.疲劳，劳累",
+    "phonetic": "fəˈtiːg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "faulty",
+    "meaning": "a.有错误的，有缺点的",
+    "phonetic": "ˈfɔːlti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "favourable",
+    "meaning": "a.有利的；赞成的",
+    "phonetic": "ˈfeiərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fearful",
+    "meaning": "a.害怕的，可怕的",
+    "phonetic": "ˈfiəful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "feasible",
+    "meaning": "a.可行的；可能的",
+    "phonetic": "ˈfiːzəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "feeble",
+    "meaning": "a.虚弱的；微弱的",
+    "phonetic": "ˈfiːbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fertile",
+    "meaning": "a.肥沃的；多产的",
+    "phonetic": "ˈfəːtail",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fertilizer",
+    "meaning": "n.肥料",
+    "phonetic": "ˈfəːtiˌlaizə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "finally",
+    "meaning": "ad.最后；不可更改的",
+    "phonetic": "ˈfainəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "finding",
+    "meaning": "n.发现；调查的结果",
+    "phonetic": "ˈfaindiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fireman",
+    "meaning": "n.消防队员；司炉工",
+    "phonetic": "ˈfaiəmən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flare",
+    "meaning": "vi.闪耀 vt.使闪亮",
+    "phonetic": "fleə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flavour",
+    "meaning": "n.味，味道；风味",
+    "phonetic": "ˈfleivə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fleet",
+    "meaning": "n.舰队；船队，机群",
+    "phonetic": "fliːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flock",
+    "meaning": "n.羊群，群；大量",
+    "phonetic": "flɔk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flourish",
+    "meaning": "vi.繁荣，茂盛，兴旺",
+    "phonetic": "ˈflʌri∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fluid",
+    "meaning": "n.流体，液体",
+    "phonetic": "ˈflu(ː)id",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "flush",
+    "meaning": "vi.奔流；(脸)发红",
+    "phonetic": "flʌ∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "footstep",
+    "meaning": "n.脚步；脚步声；足迹",
+    "phonetic": "ˈfutstep",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "foremost",
+    "meaning": "a.最初的；第一流的",
+    "phonetic": "ˈfɔːməust",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "formation",
+    "meaning": "n.形成；构成；形成物",
+    "phonetic": "fɔːˈmei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fortunately",
+    "meaning": "ad.幸运地，幸亏",
+    "phonetic": "ˈfɔːt∫ənətli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fraction",
+    "meaning": "n.小部分；片断；分数",
+    "phonetic": "ˈfræk∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fragment",
+    "meaning": "n.碎片，破片，碎块",
+    "phonetic": "ˈfrægmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frame",
+    "meaning": "n.框架，框子；构架",
+    "phonetic": "freim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frank",
+    "meaning": "a.坦白的，直率的",
+    "phonetic": "fræŋk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "freely",
+    "meaning": "ad.自由地；直率地",
+    "phonetic": "ˈfriːli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "freight",
+    "meaning": "n.货运；货物；运费",
+    "phonetic": "freit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frequency",
+    "meaning": "n.屡次；次数；频率",
+    "phonetic": "ˈfriːkwənsi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frequently",
+    "meaning": "ad.时常，常常",
+    "phonetic": "ˈfriːkwənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "frown",
+    "meaning": "vi.皱眉，蹙额",
+    "phonetic": "fraun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fruitful",
+    "meaning": "a.多产的；肥沃的",
+    "phonetic": "ˈfruːtful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fulfil",
+    "meaning": "vt.履行；满足；完成",
+    "phonetic": "fulˈfil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "fund",
+    "meaning": "n.资金；基金；存款",
+    "phonetic": "fʌnd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "furious",
+    "meaning": "a.狂怒的；狂暴的",
+    "phonetic": "ˈfjuəriəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "furnace",
+    "meaning": "n.炉子，熔炉；鼓风炉",
+    "phonetic": "ˈfəːnis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "furnish",
+    "meaning": "vt.供应，提供；装备",
+    "phonetic": "ˈfəːni∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gang",
+    "meaning": "n.一帮，一伙",
+    "phonetic": "gæŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gardener",
+    "meaning": "n.园丁，花匠",
+    "phonetic": "ˈgɑːdnə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gaseous",
+    "meaning": "a.气体的，气态的",
+    "phonetic": "ˈgæsiəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gasoline",
+    "meaning": "n.(美)汽油",
+    "phonetic": "ˈgæsəliːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gasp",
+    "meaning": "vi.气喘，喘息",
+    "phonetic": "gɑːsp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gauge",
+    "meaning": "vt.量，测量 n.量器",
+    "phonetic": "gedʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gaze",
+    "meaning": "vi.凝视，盯，注视",
+    "phonetic": "geiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "generally",
+    "meaning": "ad.一般地；通常地",
+    "phonetic": "ˈdʒenərəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "genius",
+    "meaning": "n.天才，天赋，天资",
+    "phonetic": "ˈdʒiːnjəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gently",
+    "meaning": "ad.有礼貌地；柔和地",
+    "phonetic": "ˈdʒentli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "genuine",
+    "meaning": "a.真的；真正的",
+    "phonetic": "ˈdʒenjuin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "germ",
+    "meaning": "n.微生物，细菌，幼芽",
+    "phonetic": "dʒəːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ghost",
+    "meaning": "n.鬼，灵魂；鬼魂",
+    "phonetic": "gəust",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "giant",
+    "meaning": "n.巨人；巨物",
+    "phonetic": "ˈdʒaiənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glide",
+    "meaning": "vi.滑动；消逝 n.滑行",
+    "phonetic": "glaid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glimpse",
+    "meaning": "vt.瞥见 n.一瞥，一看",
+    "phonetic": "glimps",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glitter",
+    "meaning": "vi.闪闪发光 n.闪光",
+    "phonetic": "ˈglitə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gloomy",
+    "meaning": "a.黑暗的；令人沮丧的",
+    "phonetic": "ˈgluːmi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glorious",
+    "meaning": "a.光荣的；壮丽的",
+    "phonetic": "ˈglɔːriəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "glow",
+    "meaning": "n.白热光 vi.发白热光",
+    "phonetic": "gləu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "goodbye",
+    "meaning": "int.再见，再会",
+    "phonetic": "ˌgudˈbai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "governor",
+    "meaning": "n.州长；主管人员",
+    "phonetic": "ˈgʌvənə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grace",
+    "meaning": "n.优美，文雅；雅致",
+    "phonetic": "greis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gracious",
+    "meaning": "a.有礼貌的；仁慈的",
+    "phonetic": "ˈgrei∫əs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gradual",
+    "meaning": "a.逐渐的；渐进的",
+    "phonetic": "ˈgrædjuəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gramme",
+    "meaning": "n.克(重量单位)",
+    "phonetic": "græm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grammatical",
+    "meaning": "a.语法上的",
+    "phonetic": "grəˈmætikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grandfather",
+    "meaning": "n.祖父；外祖父",
+    "phonetic": "ˈgrændˌfɑːðə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grandmother",
+    "meaning": "n.祖母，外祖母",
+    "phonetic": "ˈgrændˌmʌðə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gratitude",
+    "meaning": "a.感激，感谢，感恩",
+    "phonetic": "ˈgrætitjuːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grave",
+    "meaning": "n.坟墓 a.严重的",
+    "phonetic": "greiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gray",
+    "meaning": "a.灰色的 n.灰色",
+    "phonetic": "grei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "greatly",
+    "meaning": "ad.大大地，非常",
+    "phonetic": "ˈgreitli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "greenhouse",
+    "meaning": "n.温室，玻璃暖房",
+    "phonetic": "ˈgriːnhaus",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grieve",
+    "meaning": "vt.使悲痛 vi.悲痛",
+    "phonetic": "griːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grind",
+    "meaning": "vt.磨(碎)；磨快",
+    "phonetic": "graind",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grip",
+    "meaning": "vt.握紧，抓牢 n.紧握",
+    "phonetic": "grip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "groan",
+    "meaning": "vi.哼，呻吟 n.呻吟",
+    "phonetic": "grəun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "grocery",
+    "meaning": "n.食品杂货店",
+    "phonetic": "ˈgrəusəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gross",
+    "meaning": "a.总的；严重的",
+    "phonetic": "grəus",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gulf",
+    "meaning": "n.海湾",
+    "phonetic": "gʌlf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gum",
+    "meaning": "n.口香糖；树胶",
+    "phonetic": "gʌm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gunpowder",
+    "meaning": "n.黑色火药；有烟火药",
+    "phonetic": "ˈgʌnpaudə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "gymnasium",
+    "meaning": "n.体育馆，健身房",
+    "phonetic": "dʒimˈneiziəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "habitual",
+    "meaning": "a.习惯性的，惯常的",
+    "phonetic": "həˈbitjuəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "halt",
+    "meaning": "vi.停止；立定 n.停住",
+    "phonetic": "hɔːlt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "harden",
+    "meaning": "vt.使变硬 vi.变硬",
+    "phonetic": "ˈhɑːdn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hardware",
+    "meaning": "n.五金器具；硬件",
+    "phonetic": "ˈhɑːdweə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hare",
+    "meaning": "n.野兔",
+    "phonetic": "heə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "harness",
+    "meaning": "vt.治理 n.马具，挽具",
+    "phonetic": "ˈhɑːnis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "harsh",
+    "meaning": "a.严厉的；刺耳的",
+    "phonetic": "hɑː∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "haste",
+    "meaning": "n.急速，急忙；草率",
+    "phonetic": "heist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hasten",
+    "meaning": "vt.催促 vi.赶紧",
+    "phonetic": "ˈheisn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hasty",
+    "meaning": "a.急速的；仓促的",
+    "phonetic": "ˈheisti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hateful",
+    "meaning": "a.可恨的，可恶的",
+    "phonetic": "ˈheitful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hatred",
+    "meaning": "n.憎恶，憎恨，仇恨",
+    "phonetic": "ˈheitrid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hazard",
+    "meaning": "n.危险；公害",
+    "phonetic": "ˈhæzəd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heading",
+    "meaning": "n.标题，题词，题名",
+    "phonetic": "ˈhediŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "headquarters",
+    "meaning": "n.司令部；总部",
+    "phonetic": "ˈhedˌkwɔːtəz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heal",
+    "meaning": "vt.治愈；使和解",
+    "phonetic": "hiːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heating",
+    "meaning": "n.加热，供暖",
+    "phonetic": "ˈhiːtiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hedge",
+    "meaning": "n.篱笆，树篱；障碍物",
+    "phonetic": "hedʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heir",
+    "meaning": "n.后嗣，继承人",
+    "phonetic": "eə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hell",
+    "meaning": "n.地狱；极大的痛苦",
+    "phonetic": "hel",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "helpless",
+    "meaning": "a.无助的；无能的",
+    "phonetic": "ˈhelplis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hence",
+    "meaning": "ad.因此，所以；今后",
+    "phonetic": "hens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "herd",
+    "meaning": "n.兽群，牧群 vt.放牧",
+    "phonetic": "həːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "heroic",
+    "meaning": "a.英雄的；英勇的",
+    "phonetic": "hiˈrəuik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hesitate",
+    "meaning": "vi.犹豫，踌躇；含糊",
+    "phonetic": "ˈheziteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "highly",
+    "meaning": "ad.高度地，很，非常",
+    "phonetic": "ˈhaili",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "historical",
+    "meaning": "a.历史的，有关历史的",
+    "phonetic": "hisˈtɔrikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hollow",
+    "meaning": "a.空的；空洞的",
+    "phonetic": "ˈhɔləu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "honesty",
+    "meaning": "n.诚实，正直",
+    "phonetic": "ˈɔnisti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "honeymoon",
+    "meaning": "n.蜜月",
+    "phonetic": "ˈhʌnimuːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "honourable",
+    "meaning": "a.诚实的；光荣的",
+    "phonetic": "ˈɔnərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "horizon",
+    "meaning": "n.地平线；眼界，见识",
+    "phonetic": "həˈraizn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "horizontal",
+    "meaning": "a.地平的；水平的",
+    "phonetic": "ˌhɔriˈzɔntl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "horn",
+    "meaning": "n.号角；警报器；角",
+    "phonetic": "hɔːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "horror",
+    "meaning": "n.恐怖；战栗；憎恶",
+    "phonetic": "ˈhɔrə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "horsepower",
+    "meaning": "n.马力",
+    "phonetic": "ˈhɔːsˌpauə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hostile",
+    "meaning": "a.敌方的；不友善的",
+    "phonetic": "ˈhɔstail",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "household",
+    "meaning": "n.家庭，户；家务",
+    "phonetic": "ˈhaushəuld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "humble",
+    "meaning": "a.谦逊的；地位低下的",
+    "phonetic": "ˈhʌmbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "humid",
+    "meaning": "a.湿的，湿气重的",
+    "phonetic": "ˈhjuːmid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "hut",
+    "meaning": "n.小屋，棚屋",
+    "phonetic": "hʌt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "identical",
+    "meaning": "a.完全相同的；同一的",
+    "phonetic": "aiˈdentikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "idle",
+    "meaning": "a.空闲的；懒散的",
+    "phonetic": "ˈaidl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ignorant",
+    "meaning": "a.不知道的；无知的",
+    "phonetic": "ˈignərənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "illustration",
+    "meaning": "n.说明，图解；例证",
+    "phonetic": "ˌiləsˈtrei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imaginary",
+    "meaning": "a.想象中的，假想的",
+    "phonetic": "iˈmædʒinəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imagination",
+    "meaning": "n.想象(力)；空想",
+    "phonetic": "iˌmædʒiˈnei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imitate",
+    "meaning": "vt.模仿，仿效；仿制",
+    "phonetic": "ˈimiteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "immense",
+    "meaning": "a.巨大的；极好的",
+    "phonetic": "iˈmens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "immigrant",
+    "meaning": "n.移民 a.移民的",
+    "phonetic": "ˈimigrənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impatient",
+    "meaning": "a.不耐烦的，急躁的",
+    "phonetic": "imˈpei∫ənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "implication",
+    "meaning": "n.含义，暗示，暗指",
+    "phonetic": "ˌimpliˈkei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imply",
+    "meaning": "vt.暗示，意指",
+    "phonetic": "imˈplai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impose",
+    "meaning": "vt.把…强加；征(税)",
+    "phonetic": "imˈpəuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "impressive",
+    "meaning": "a.给人印象深刻的",
+    "phonetic": "imˈpresiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "imprison",
+    "meaning": "vt.关押，监禁；限制",
+    "phonetic": "imˈprizn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "incline",
+    "meaning": "n.斜坡 vt.使倾斜",
+    "phonetic": "inˈklain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "increasingly",
+    "meaning": "ad.日益，越来越多地",
+    "phonetic": "inˈkriːsiŋli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indefinite",
+    "meaning": "a.不明确的；不定的",
+    "phonetic": "inˈdefinit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indication",
+    "meaning": "n.指示;表示；表明",
+    "phonetic": "ˌindiˈkei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indifferent",
+    "meaning": "a.冷漠的；不积极的",
+    "phonetic": "inˈdifərənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indignant",
+    "meaning": "a.愤慨的，义愤的",
+    "phonetic": "inˈdignənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indirect",
+    "meaning": "a.间接的；不坦率的",
+    "phonetic": "ˌindiˈrekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "indoors",
+    "meaning": "ad.在室内，在屋里",
+    "phonetic": "ˈinˈdɔːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "industrial",
+    "meaning": "a.工业的；产业的",
+    "phonetic": "inˈdʌstriəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "industrialize",
+    "meaning": "vt.使工业化",
+    "phonetic": "inˈdʌstriəlaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inevitable",
+    "meaning": "a.不可避免的，必然的",
+    "phonetic": "inˈevitəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inexpensive",
+    "meaning": "a.花费不多的,廉价的",
+    "phonetic": "ˌiniksˈpensiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infant",
+    "meaning": "n.婴儿 a.婴儿的",
+    "phonetic": "ˈinfənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infect",
+    "meaning": "vt.传染；感染",
+    "phonetic": "inˈfekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infer",
+    "meaning": "vt.推论，推断；猜想",
+    "phonetic": "inˈfəː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inferior",
+    "meaning": "a.下等的；劣等的",
+    "phonetic": "inˈfiəriə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "infinite",
+    "meaning": "a.无限的；无数的",
+    "phonetic": "ˈinfinit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "influential",
+    "meaning": "a.有影响的；有权势的",
+    "phonetic": "ˌinfluˈen∫əl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inhabit",
+    "meaning": "vt.居住于，栖息于",
+    "phonetic": "inˈhæbit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inhabitant",
+    "meaning": "n.居民，住户",
+    "phonetic": "inˈhæbitənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "injection",
+    "meaning": "n.注射，注入；充满",
+    "phonetic": "inˈdʒek∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inner",
+    "meaning": "a.内部的；内心的",
+    "phonetic": "ˈinə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inquire",
+    "meaning": "vt.打听，询问；调查",
+    "phonetic": "inˈkwaiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "install",
+    "meaning": "vt.安装，设置",
+    "phonetic": "inˈstɔːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "instantly",
+    "meaning": "ad.立即，即刻",
+    "phonetic": "ˈinstəntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "instinct",
+    "meaning": "n.本能；直觉；生性",
+    "phonetic": "ˈinstiŋkt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "insult",
+    "meaning": "vt.&n.侮辱，凌辱",
+    "phonetic": "ˈinsʌlt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intellectual",
+    "meaning": "n.知识分子 a.智力的",
+    "phonetic": "ˌintiˈlektjuəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intense",
+    "meaning": "a.强烈的；紧张的",
+    "phonetic": "inˈtens",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intensity",
+    "meaning": "n.强烈，剧烈；强度",
+    "phonetic": "inˈtensiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intensive",
+    "meaning": "a.加强的；精耕细作的",
+    "phonetic": "inˈtensiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intentional",
+    "meaning": "a.故意的，有意识的",
+    "phonetic": "inˈten∫ənəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interfere",
+    "meaning": "vi.干涉，干预；妨碍",
+    "phonetic": "ˌintəˈfiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interference",
+    "meaning": "n.干涉,干预;阻碍",
+    "phonetic": "ˌintəˈfiərəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interior",
+    "meaning": "a.内的；内地的 n.内部",
+    "phonetic": "inˈtiəriə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interpretation",
+    "meaning": "n.解释；口译",
+    "phonetic": "inˌtəːpriˈtei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "interruption",
+    "meaning": "n.中断，打断；障碍物",
+    "phonetic": "ˌintəˈrʌp∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "intimate",
+    "meaning": "a.亲密的；个人的",
+    "phonetic": "ˈintimit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invade",
+    "meaning": "vt.入侵，侵略；侵袭",
+    "phonetic": "inˈveid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invasion",
+    "meaning": "n.入侵，侵略；侵犯",
+    "phonetic": "inˈveiʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invest",
+    "meaning": "vt.投资；投入",
+    "phonetic": "inˈvest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "investigate",
+    "meaning": "vt.&vi.调查",
+    "phonetic": "inˈvestigeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "invisible",
+    "meaning": "a.看不见的，无形的",
+    "phonetic": "inˈvizəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "inward",
+    "meaning": "a.里面的 ad.向内",
+    "phonetic": "ˈinwəd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "irregular",
+    "meaning": "a.不规则的；不整齐的",
+    "phonetic": "iˈregjulə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "isolate",
+    "meaning": "vt.使隔离，使孤立",
+    "phonetic": "ˈaisəleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jail",
+    "meaning": "n.监狱 vi.监禁",
+    "phonetic": "dʒeil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jealous",
+    "meaning": "a.妒忌的；猜疑的",
+    "phonetic": "ˈdʒeləs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jewish",
+    "meaning": "a.犹太人的",
+    "phonetic": "ˈdʒu(ː)i∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "joint",
+    "meaning": "n.接头，接缝；关节",
+    "phonetic": "dʒɔint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jolly",
+    "meaning": "a.快活的；令人高兴的",
+    "phonetic": "ˈdʒɔli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "journal",
+    "meaning": "n.日报，杂志；日志",
+    "phonetic": "ˈdʒəːnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "joyful",
+    "meaning": "a.十分喜悦的，快乐的",
+    "phonetic": "ˈdʒɔiful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "jury",
+    "meaning": "n.陪审团；评奖团",
+    "phonetic": "ˈdʒuəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "justify",
+    "meaning": "vt.证明…是正当的",
+    "phonetic": "ˈdʒʌstifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "keen",
+    "meaning": "a.热心的；激烈的",
+    "phonetic": "kiːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kilometer",
+    "meaning": "n.千米，公里",
+    "phonetic": "ˈkiləmiːtə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "kneel",
+    "meaning": "vi.跪，跪下，跪着",
+    "phonetic": "niːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "knit",
+    "meaning": "vt.把…编结 vi.编织",
+    "phonetic": "nit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "knob",
+    "meaning": "n.门把，拉手；旋纽",
+    "phonetic": "nɔb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "knot",
+    "meaning": "n.(绳的)结，(树的)节",
+    "phonetic": "nɔt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "laboratory",
+    "meaning": "n.实验室，研究室",
+    "phonetic": "ˈlæbərətəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lace",
+    "meaning": "n.鞋带，系带；花边",
+    "phonetic": "leis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lag",
+    "meaning": "vi.走得慢 n.落后",
+    "phonetic": "læg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "landing",
+    "meaning": "n.上岸，登陆，着陆",
+    "phonetic": "ˈlændiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "landlady",
+    "meaning": "n.女房东；女地主",
+    "phonetic": "ˈlændleidi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "landlord",
+    "meaning": "n.地主；房东，店主",
+    "phonetic": "ˈlændlɔːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lane",
+    "meaning": "n.(乡间)小路；跑道",
+    "phonetic": "lein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "largely",
+    "meaning": "ad.大部分；大量地",
+    "phonetic": "ˈlɑːdʒli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Latin",
+    "meaning": "a.拉丁的 n.拉丁语",
+    "phonetic": "ˈlætin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lawn",
+    "meaning": "n.草地，草坪，草场",
+    "phonetic": "lɔːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lean",
+    "meaning": "vi.倾斜，屈身；靠",
+    "phonetic": "liːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "leap",
+    "meaning": "vi.跳，跃 n.跳跃",
+    "phonetic": "liːp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "learning",
+    "meaning": "n.学习；学问，知识",
+    "phonetic": "ˈləːniŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "legend",
+    "meaning": "n.传说，传奇",
+    "phonetic": "ˈledʒənd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "leisure",
+    "meaning": "n.空闲时间；悠闲",
+    "phonetic": "ˈliːʒə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lens",
+    "meaning": "n.透镜，镜片；镜头",
+    "phonetic": "lenz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "less",
+    "meaning": "a.更少的 ad.更少地",
+    "phonetic": "les",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lessen",
+    "meaning": "vt.减少，减轻；缩小",
+    "phonetic": "ˈlesn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lest",
+    "meaning": "conj.惟恐，以免",
+    "phonetic": "lest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lever",
+    "meaning": "n.杆，杠杆；控制杆",
+    "phonetic": "ˈliːvə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liable",
+    "meaning": "a.易于…的；可能的",
+    "phonetic": "ˈlaiəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liar",
+    "meaning": "n.说谎的人",
+    "phonetic": "ˈlaiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liberal",
+    "meaning": "a.心胸宽大的；慷慨的",
+    "phonetic": "ˈlibərəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lick",
+    "meaning": "vt.舔；舔吃",
+    "phonetic": "lik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lieutenant",
+    "meaning": "n.陆军中尉；副职官员",
+    "phonetic": "ljuːˈtenənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lighten",
+    "meaning": "vt.照亮，使明亮",
+    "phonetic": "ˈlaitn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lightly",
+    "meaning": "ad.轻轻地，轻松地",
+    "phonetic": "ˈlaitli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "likewise",
+    "meaning": "ad.同样地；也，又",
+    "phonetic": "ˈlaikˌwaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "limb",
+    "meaning": "n.肢，臂，翼；树枝",
+    "phonetic": "lim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lime",
+    "meaning": "n.石灰",
+    "phonetic": "laim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "limited",
+    "meaning": "a.有限的",
+    "phonetic": "ˈlimitid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "linen",
+    "meaning": "n.亚麻布；亚麻织物",
+    "phonetic": "ˈlinin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liner",
+    "meaning": "n.班船，班机",
+    "phonetic": "ˈlainə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liquor",
+    "meaning": "n.酒；溶液，液剂",
+    "phonetic": "ˈlikə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "listener",
+    "meaning": "n.听者，听众之一",
+    "phonetic": "ˈlisnə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liter",
+    "meaning": "n.升(容量单位)",
+    "phonetic": "ˈliːtə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "liver",
+    "meaning": "n.肝；肝脏",
+    "phonetic": "ˈlivə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "living-room",
+    "meaning": "n.起居室",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "loan",
+    "meaning": "n.贷款；暂借 vt.借出",
+    "phonetic": "ləun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "locate",
+    "meaning": "vt.探明，找出，查出",
+    "phonetic": "ləuˈkeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "locomotive",
+    "meaning": "n.火车头，机车",
+    "phonetic": "ˌləukəˈməutiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lodge",
+    "meaning": "vi.暂住，借宿，投宿",
+    "phonetic": "lɔdʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "log",
+    "meaning": "n.原木，木料",
+    "phonetic": "lɔg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "loosen",
+    "meaning": "vt.解开；使松驰",
+    "phonetic": "ˈluːsn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lord",
+    "meaning": "n.贵族；上帝，基督",
+    "phonetic": "lɔːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lover",
+    "meaning": "n.爱好者；情人；情侣",
+    "phonetic": "ˈlʌvə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lower",
+    "meaning": "a.较低的 vt.放下",
+    "phonetic": "ˈləuə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "loyal",
+    "meaning": "a.忠诚的，忠心的",
+    "phonetic": "ˈlɔiəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "loyalty",
+    "meaning": "n.忠诚，忠心",
+    "phonetic": "ˈlɔiəlti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lumber",
+    "meaning": "n.木材；木料；制材",
+    "phonetic": "ˈlʌmbə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "lump",
+    "meaning": "n.团，块；肿块",
+    "phonetic": "lʌmp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "luxury",
+    "meaning": "n.奢侈，奢华；奢侈品",
+    "phonetic": "ˈlʌk∫əri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mad",
+    "meaning": "a.发疯的；恼火的",
+    "phonetic": "mæd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magnet",
+    "meaning": "n.磁铁，磁石，磁体",
+    "phonetic": "ˈmægnit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magnetic",
+    "meaning": "a.磁的，有吸引力的",
+    "phonetic": "mægˈnetik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "magnificent",
+    "meaning": "n.壮丽的；华丽的",
+    "phonetic": "mægˈnifisnt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mainly",
+    "meaning": "ad.主要地，大体上",
+    "phonetic": "ˈmeinli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "maintenance",
+    "meaning": "n.维持，保持；维修",
+    "phonetic": "ˈmeintinəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manly",
+    "meaning": "a.男子气概的，果断的",
+    "phonetic": "ˈmænli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manufacture",
+    "meaning": "vt.制造 n.制造；产品",
+    "phonetic": "ˌmænjuˈfækt∫ə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "manufacturer",
+    "meaning": "n.制造商/厂",
+    "phonetic": "ˌmænjuˈfækt∫ərə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marine",
+    "meaning": "a.海的；海上的",
+    "phonetic": "məˈriːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "marvelous",
+    "meaning": "a.奇迹般的；了不起的",
+    "phonetic": "ˈmɑːvəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Marxism",
+    "meaning": "n.马克思主义",
+    "phonetic": "ˈmɑːksiz(ə)m",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Marxist",
+    "meaning": "a.马克思主义的",
+    "phonetic": "ˈmɑːksist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "masterpiece",
+    "meaning": "n.杰作，名著",
+    "phonetic": "ˈmɑːstəpiːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mate",
+    "meaning": "n.伙伴，同事；配偶",
+    "phonetic": "meit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "materialism",
+    "meaning": "n.唯物主义",
+    "phonetic": "məˈtiəriəlizəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "maths",
+    "meaning": "n.(英)数学",
+    "phonetic": "mæθs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mayor",
+    "meaning": "n.市长",
+    "phonetic": "meə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "meadow",
+    "meaning": "n.草地，牧草地",
+    "phonetic": "ˈmedəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "meantime",
+    "meaning": "n.其时/间 ad.当时",
+    "phonetic": "ˈmiːnˈtaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "measurable",
+    "meaning": "a.可测量的",
+    "phonetic": "ˈmeʒərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "measurement",
+    "meaning": "n.衡量,测量；尺寸",
+    "phonetic": "ˈmeʒəmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mechanic",
+    "meaning": "n.技工，机械，机修工",
+    "phonetic": "miˈkænik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mechanical",
+    "meaning": "a.机械的；力学的",
+    "phonetic": "miˈkænikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mechanically",
+    "meaning": "ad.机械地",
+    "phonetic": "miˈkænikəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mechanics",
+    "meaning": "n.力学；技术性细节",
+    "phonetic": "miˈkæniks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Mediterranean",
+    "meaning": "n.地中海 a.地中海的",
+    "phonetic": "meditəˈreiniən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "melt",
+    "meaning": "vi.融化 vt.使融化",
+    "phonetic": "melt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mercury",
+    "meaning": "n.水银，汞",
+    "phonetic": "ˈməːkjuri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "merit",
+    "meaning": "n.长处，优点；功过",
+    "phonetic": "ˈmerit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "messenger",
+    "meaning": "n.送信者，信使",
+    "phonetic": "ˈmesindʒə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "meter",
+    "meaning": "n.计量器，计，表",
+    "phonetic": "ˈmiːtə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "microphone",
+    "meaning": "n.话筒，麦克风",
+    "phonetic": "ˈmaikrəfəun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "midst",
+    "meaning": "n.中部，中间，当中",
+    "phonetic": "ˈmidst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "military",
+    "meaning": "a.军事的；军人的",
+    "phonetic": "ˈmilitəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mill",
+    "meaning": "n.磨坊；制造厂",
+    "phonetic": "mil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "millimetre",
+    "meaning": "n.毫米",
+    "phonetic": "ˈmiliˌmiːtə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "miner",
+    "meaning": "n.矿工",
+    "phonetic": "ˈmainə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "minor",
+    "meaning": "a.较小的；较次要的",
+    "phonetic": "ˈmainə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "miracle",
+    "meaning": "n.奇迹，令人惊奇的人",
+    "phonetic": "ˈmirəkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "miserable",
+    "meaning": "a.痛苦的，悲惨的",
+    "phonetic": "ˈmizərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mislead",
+    "meaning": "vt.使误入岐途",
+    "phonetic": "misˈliːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "missing",
+    "meaning": "a.缺掉的，失去的",
+    "phonetic": "ˈmisiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mission",
+    "meaning": "n.使命，任务；使团",
+    "phonetic": "ˈmi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Mister",
+    "meaning": "n.先生",
+    "phonetic": "ˈmistə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mistress",
+    "meaning": "n.女主人；夫人",
+    "phonetic": "ˈmistris",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moan",
+    "meaning": "n.呻吟声 vi.呻吟",
+    "phonetic": "məun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moderate",
+    "meaning": "a.温和的；有节制的",
+    "phonetic": "ˈmɔdərit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moist",
+    "meaning": "a.湿润的；多雨的",
+    "phonetic": "mɔist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moisture",
+    "meaning": "n.潮湿，湿气；温度",
+    "phonetic": "ˈmɔist∫ə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "molecule",
+    "meaning": "n.分子，克分子",
+    "phonetic": "ˈmɔlikjuːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "monthly",
+    "meaning": "a.每月的 ad.每月",
+    "phonetic": "ˈmʌnθli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mood",
+    "meaning": "n.心情，情绪；语气",
+    "phonetic": "muːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "more",
+    "meaning": "a.更多的 ad.更",
+    "phonetic": "mɔː(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "moreover",
+    "meaning": "ad.再者，加之，此外",
+    "phonetic": "mɔːˈrəuvə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mortal",
+    "meaning": "a.终有一死的；致死的",
+    "phonetic": "ˈmɔːtl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mostly",
+    "meaning": "ad.主要的，大部分",
+    "phonetic": "ˈməustli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "motion",
+    "meaning": "n.运动；手势；提议",
+    "phonetic": "ˈməu∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "motivate",
+    "meaning": "vt.促动；激励，激发",
+    "phonetic": "ˈməutiveit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "motive",
+    "meaning": "n.动机，目的",
+    "phonetic": "ˈməutiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mould",
+    "meaning": "n.模子，模型 vt.浇铸",
+    "phonetic": "məuld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mount",
+    "meaning": "vt.登上，爬上 n.…山",
+    "phonetic": "maunt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mug",
+    "meaning": "n.大杯",
+    "phonetic": "mʌg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "murderer",
+    "meaning": "n.杀人犯，凶手",
+    "phonetic": "ˈməːdərə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "muscle",
+    "meaning": "n.肌肉，肌；体力",
+    "phonetic": "ˈmʌsl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mute",
+    "meaning": "a.缄默的 n.哑巴",
+    "phonetic": "mjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mutter",
+    "meaning": "vi.轻声低语；抱怨",
+    "phonetic": "ˈmʌtə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mutual",
+    "meaning": "a.相互的；共同的",
+    "phonetic": "ˈmjuːtjuəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mysterious",
+    "meaning": "a.神秘的；难以理解的",
+    "phonetic": "misˈtiəriəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "mystery",
+    "meaning": "n.神秘；神秘的事物",
+    "phonetic": "ˈmistəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "naked",
+    "meaning": "a.裸体的；无遮敝的",
+    "phonetic": "ˈneikid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "namely",
+    "meaning": "ad.即，也就是",
+    "phonetic": "ˈneimli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nap",
+    "meaning": "n.小睡，打盹，瞌睡",
+    "phonetic": "næp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nasty",
+    "meaning": "a.龌龊的；淫猥的",
+    "phonetic": "ˈnæsti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "naturally",
+    "meaning": "ad.自然地；天然地",
+    "phonetic": "ˈnæt∫ərəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "naughty",
+    "meaning": "a.顽皮的，淘气的",
+    "phonetic": "ˈnɔːti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "naval",
+    "meaning": "n.海军的，军舰的",
+    "phonetic": "ˈneivəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "navigation",
+    "meaning": "n.航行;航海术;导航",
+    "phonetic": "ˌnæviˈgei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "necessarily",
+    "meaning": "ad.必然，必定",
+    "phonetic": "nesiˈserili",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "necessity",
+    "meaning": "n.必要性；必然性",
+    "phonetic": "niˈsesiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "needless",
+    "meaning": "a.不需要的",
+    "phonetic": "ˈniːdlis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "neglect",
+    "meaning": "vt.忽视，忽略；疏忽",
+    "phonetic": "niˈglekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Negro",
+    "meaning": "n.黑人",
+    "phonetic": "ˈniːgrəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nerve",
+    "meaning": "n.神经；勇敢，胆量",
+    "phonetic": "nəːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "neutral",
+    "meaning": "a.中立的；中性的",
+    "phonetic": "ˈnjuːtrəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nevertheless",
+    "meaning": "conj.然而 ad.仍然",
+    "phonetic": "ˌnevəðəˈles",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "newly",
+    "meaning": "ad.新近，最近",
+    "phonetic": "ˈnjuːli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nitrogen",
+    "meaning": "n.氮",
+    "phonetic": "ˈnaitrədʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nonsense",
+    "meaning": "n.胡说，废话",
+    "phonetic": "ˈnɔnsəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "normally",
+    "meaning": "ad.通常，正常地",
+    "phonetic": "ˈnɔːməli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "noticeable",
+    "meaning": "a.显而易见/重要的",
+    "phonetic": "ˈnəutisəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "noun",
+    "meaning": "n.名词",
+    "phonetic": "naun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nucleus",
+    "meaning": "n.核，核心；(原子)核",
+    "phonetic": "ˈnjuːkliəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "nuisance",
+    "meaning": "n.讨厌的东西",
+    "phonetic": "ˈnjuːsns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "numerous",
+    "meaning": "a.为数众多的；许多",
+    "phonetic": "ˈnjuːmərəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oak",
+    "meaning": "n.栎属植物；栎木",
+    "phonetic": "əuk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oar",
+    "meaning": "n.浆，橹",
+    "phonetic": "ɔə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "objection",
+    "meaning": "n.反对,异议;不喜欢",
+    "phonetic": "əbˈdʒek∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oblige",
+    "meaning": "vt.迫使；施恩惠于",
+    "phonetic": "əˈblaidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "observer",
+    "meaning": "n.观察员，观测者",
+    "phonetic": "əbˈzəːvə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obstacle",
+    "meaning": "n.障碍，障碍物，妨害",
+    "phonetic": "ˈɔbstəkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "obviously",
+    "meaning": "ad.明显地，显然地",
+    "phonetic": "ˈɔbviəsli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "occasion",
+    "meaning": "n.场合，时刻；时机",
+    "phonetic": "əˈkeiʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "occasional",
+    "meaning": "a.偶然的；临时的",
+    "phonetic": "əˈkeiʒənəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "occasionally",
+    "meaning": "ad.偶然;非经常地",
+    "phonetic": "əˈkeiʒənəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "occupy",
+    "meaning": "vt.占领；占，占有",
+    "phonetic": "ˈɔkjupai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "occurrence",
+    "meaning": "n.发生，出现；事件",
+    "phonetic": "əˈkʌrəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "odd",
+    "meaning": "a.奇数的；单只的",
+    "phonetic": "ɔd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "odour",
+    "meaning": "n.气味，香气；味道",
+    "phonetic": "ˈəudə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "offend",
+    "meaning": "vt.冒犯 vi.犯过错",
+    "phonetic": "əˈfend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "okay",
+    "meaning": "(缩作 OK)a.&ad.对，好",
+    "phonetic": "əuˈkei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "omit",
+    "meaning": "vt.省略，省去；遗漏",
+    "phonetic": "əuˈmit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "opponent",
+    "meaning": "n.对手,敌手;对抗者",
+    "phonetic": "əˈpəunənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oppress",
+    "meaning": "vt.压迫，压制；压抑",
+    "phonetic": "əˈpres",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "optical",
+    "meaning": "a.眼的；光学的",
+    "phonetic": "ˈɔptikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orchestra",
+    "meaning": "n.管弦乐队",
+    "phonetic": "ˈɔːkistrə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orderly",
+    "meaning": "a.整洁的；有秩序的",
+    "phonetic": "ˈɔːdəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ore",
+    "meaning": "n.矿，矿石，矿砂",
+    "phonetic": "ɔː(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "organism",
+    "meaning": "n.生物体；有机体",
+    "phonetic": "ˈɔːgənizəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oriental",
+    "meaning": "a.东方的；东方国家的",
+    "phonetic": "ˌɔ(ː)riˈentl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ornament",
+    "meaning": "n.装饰物；装饰",
+    "phonetic": "ˈɔːnəmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "orphan",
+    "meaning": "n.孤儿",
+    "phonetic": "ˈɔːfən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ounce",
+    "meaning": "n.盎司，英两",
+    "phonetic": "auns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outdoor",
+    "meaning": "a.户外的，室外的",
+    "phonetic": "ˈautdɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outlet",
+    "meaning": "n.出口，出路；排遣",
+    "phonetic": "ˈautlet",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outlook",
+    "meaning": "n.观点，看法；展望",
+    "phonetic": "ˈautluk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outset",
+    "meaning": "n.开始，开端",
+    "phonetic": "ˈautset",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outskirt",
+    "meaning": "n.外边，郊区",
+    "phonetic": "ˈautskəːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "outwards",
+    "meaning": "ad.向外，往海外",
+    "phonetic": "ˈautwədz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "oven",
+    "meaning": "n.炉，灶；烘箱",
+    "phonetic": "ˈʌvən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overnight",
+    "meaning": "ad.一夜；突然",
+    "phonetic": "ˈəuvəˈnait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overseas",
+    "meaning": "ad.海外 a.在海外的",
+    "phonetic": "ˈəuvəˈsiːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overtake",
+    "meaning": "vt.追上，赶上；压倒",
+    "phonetic": "ˈəuvəˈteik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "overtime",
+    "meaning": "a.超时的，加班的",
+    "phonetic": "ˈəuvətaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "owl",
+    "meaning": "n.猫头鹰，枭",
+    "phonetic": "aul",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pad",
+    "meaning": "n.垫；本子 vt.填塞",
+    "phonetic": "pæd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pail",
+    "meaning": "n.桶，提桶",
+    "phonetic": "peil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "palm",
+    "meaning": "n.手掌，手心；掌状物",
+    "phonetic": "pɑːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pane",
+    "meaning": "n.窗格玻璃",
+    "phonetic": "pein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pant",
+    "meaning": "n.气喘；心跳",
+    "phonetic": "pænt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parade",
+    "meaning": "n.游行；检阅 vi.游行",
+    "phonetic": "pəˈreid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paradise",
+    "meaning": "n.伊甸乐园；天堂",
+    "phonetic": "ˈpærədaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "parliament",
+    "meaning": "n.议会，国会",
+    "phonetic": "ˈpɑːləmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "partially",
+    "meaning": "ad.部分地",
+    "phonetic": "ˈpɑː∫əli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "particle",
+    "meaning": "n.粒子，微粒",
+    "phonetic": "ˈpɑːtikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "particularly",
+    "meaning": "ad.特别,尤其,格外",
+    "phonetic": "pəˈtikjuləli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "passion",
+    "meaning": "n.激情，热情；爱好",
+    "phonetic": "ˈpæ∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paste",
+    "meaning": "n.糊，酱；浆湖",
+    "phonetic": "peist",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pastime",
+    "meaning": "n.消遣，娱乐",
+    "phonetic": "ˈpɑːstaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pat",
+    "meaning": "n.&vt.&n.轻拍",
+    "phonetic": "pæt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "patience",
+    "meaning": "n.忍耐，容忍，耐心",
+    "phonetic": "ˈpei∫əns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pave",
+    "meaning": "vt.铺，筑(路等)",
+    "phonetic": "peiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pavement",
+    "meaning": "n.(英)人行道",
+    "phonetic": "ˈpeivmənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "paw",
+    "meaning": "n.脚爪，爪子",
+    "phonetic": "pɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "payment",
+    "meaning": "n.支付，支付的款项",
+    "phonetic": "ˈpeimənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peak",
+    "meaning": "n.山顶，巅 a.最高的",
+    "phonetic": "piːk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pearl",
+    "meaning": "n.珍珠；珍珠母",
+    "phonetic": "pəːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pebble",
+    "meaning": "n.卵石，细砾",
+    "phonetic": "ˈpebl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peculiar",
+    "meaning": "a.特有的；特别的",
+    "phonetic": "piˈkjuːljə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peel",
+    "meaning": "vt.剥(皮)，削(皮)",
+    "phonetic": "piːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peep",
+    "meaning": "vi.(从缝隙中)偷看",
+    "phonetic": "piːp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "penetrate",
+    "meaning": "vt.穿过 vi.穿入",
+    "phonetic": "ˈpenitreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "peninsula",
+    "meaning": "n.半岛",
+    "phonetic": "piˈninsjulə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "perfectly",
+    "meaning": "ad.很，完全",
+    "phonetic": "ˈpəːfiktli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "permanently",
+    "meaning": "ad.永久/持久地",
+    "phonetic": "ˈpəːməntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pessimistic",
+    "meaning": "a.悲观的；厌世的",
+    "phonetic": "ˌpesiˈmistik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "petroleum",
+    "meaning": "n.石油",
+    "phonetic": "piˈtrəuliəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "philosopher",
+    "meaning": "n.哲学家",
+    "phonetic": "fiˈlɔsəfə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "photographic",
+    "meaning": "a.摄影的，摄影用的",
+    "phonetic": "fəutəˈgræfik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pierce",
+    "meaning": "vt.剌穿 vi.穿入",
+    "phonetic": "piəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pigeon",
+    "meaning": "n.鸽子",
+    "phonetic": "ˈpidʒin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pinch",
+    "meaning": "vt.捏，拧，掐掉",
+    "phonetic": "pint∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pistol",
+    "meaning": "n.手枪",
+    "phonetic": "ˈpistl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pit",
+    "meaning": "n.坑，地坑；煤矿",
+    "phonetic": "pit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pitch",
+    "meaning": "n.沥青",
+    "phonetic": "pit∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plantation",
+    "meaning": "n.种植园；栽植",
+    "phonetic": "plænˈtei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plaster",
+    "meaning": "n.灰泥；硬膏；熟石膏",
+    "phonetic": "ˈplɑːstə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plentiful",
+    "meaning": "a.丰富的，富裕的",
+    "phonetic": "ˈplentiful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plough",
+    "meaning": "n.犁 vt.&vi.犁，耕",
+    "phonetic": "plau",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pluck",
+    "meaning": "vt.采，摘；拉下 n.拉",
+    "phonetic": "plʌk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plunge",
+    "meaning": "vt.使投入；使陷入",
+    "phonetic": "plʌndʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "plural",
+    "meaning": "a.复数的 n.复数",
+    "phonetic": "ˈpluərəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "poetry",
+    "meaning": "n.诗，诗歌，诗作",
+    "phonetic": "ˈpəuitri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "porch",
+    "meaning": "n.门廊，入口处",
+    "phonetic": "pɔːt∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "portion",
+    "meaning": "n.一部分；一分",
+    "phonetic": "ˈpɔː∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "portrait",
+    "meaning": "n.消像，画像",
+    "phonetic": "ˈpɔːtrit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Portuguese",
+    "meaning": "n.葡萄牙人/语",
+    "phonetic": "ˌpɔːtjuˈgiːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "positive",
+    "meaning": "a.确定的；积极的",
+    "phonetic": "ˈpɔzətiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "possibly",
+    "meaning": "ad.可能地；也许",
+    "phonetic": "ˈpɔsəbli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "poverty",
+    "meaning": "n.贫穷，贫困",
+    "phonetic": "ˈpɔvəti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "practically",
+    "meaning": "ad.实际上；几乎",
+    "phonetic": "ˈpræktikəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "practise",
+    "meaning": "vt.练习，实习，训练",
+    "phonetic": "ˈpræktis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "precaution",
+    "meaning": "n.预防；警惕",
+    "phonetic": "priˈkɔː∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preceding",
+    "meaning": "a.在前的；在先的",
+    "phonetic": "pri(ː)ˈsiːdiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preface",
+    "meaning": "n.序言，前言，引语",
+    "phonetic": "ˈprefis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preferable",
+    "meaning": "a.更可取的，更好的",
+    "phonetic": "ˈprefərəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preliminary",
+    "meaning": "a.预备的，初步的",
+    "phonetic": "priˈliminəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "preposition",
+    "meaning": "n.前置词，介词",
+    "phonetic": "ˌprepəˈzi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prescribe",
+    "meaning": "vt.命令；处(方)",
+    "phonetic": "prisˈkraib",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "presence",
+    "meaning": "n.出席，到场；在",
+    "phonetic": "ˈprezns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "presently",
+    "meaning": "ad.一会儿；目前",
+    "phonetic": "ˈprezəntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prevail",
+    "meaning": "vi.胜，优胜；流行",
+    "phonetic": "priˈveil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "previously",
+    "meaning": "ad.先前，预先",
+    "phonetic": "ˈpriːvjuːsli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "priest",
+    "meaning": "n.教士，牧师，神父",
+    "phonetic": "priːst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "primarily",
+    "meaning": "ad.首先；主要地",
+    "phonetic": "ˈpraimərili",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prince",
+    "meaning": "n.王子，亲王",
+    "phonetic": "prins",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "princess",
+    "meaning": "n.公主，王妃",
+    "phonetic": "prinˈses",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "principal",
+    "meaning": "a.主要的 n.负责人",
+    "phonetic": "ˈprinsip(ə)l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "probability",
+    "meaning": "n.可能性；概率",
+    "phonetic": "ˌprɔbəˈbiliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proceed",
+    "meaning": "vi.进行；继续进行",
+    "phonetic": "prəˈsiːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "procession",
+    "meaning": "n.队伍，行列",
+    "phonetic": "prəˈse∫(ə)n",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proclaim",
+    "meaning": "vt.宣告，宣布；表明",
+    "phonetic": "prəˈkleim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "productive",
+    "meaning": "a.生产的；丰饶的",
+    "phonetic": "prəˈdʌktiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "promising",
+    "meaning": "a.有希望的；有前途的",
+    "phonetic": "ˈprɔmisiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pronoun",
+    "meaning": "n.代名词",
+    "phonetic": "ˈprəunaun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proof",
+    "meaning": "n.证据；证明；校样",
+    "phonetic": "pruːf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proportion",
+    "meaning": "n.比，比率，部分",
+    "phonetic": "prəˈpɔː∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "proportional",
+    "meaning": "a.比例/相称的",
+    "phonetic": "prəˈpɔː∫ənl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "propose",
+    "meaning": "vt.提议 vi.求婚",
+    "phonetic": "prəˈpəuz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prospect",
+    "meaning": "n.展望；前景，前程",
+    "phonetic": "ˈprɔspekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prosperity",
+    "meaning": "n.繁荣；昌盛，兴旺",
+    "phonetic": "prɔsˈperiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "prosperous",
+    "meaning": "a.繁荣的，昌盛的",
+    "phonetic": "ˈprɔspərəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "protective",
+    "meaning": "a.保护的，防护的",
+    "phonetic": "prəˈtektiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "protein",
+    "meaning": "n.蛋白质，朊",
+    "phonetic": "ˈprəutiːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "protest",
+    "meaning": "vt.&vi.&n.抗议",
+    "phonetic": "prəˈtest",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "provided",
+    "meaning": "conj.以…为条件",
+    "phonetic": "prəːˈvaidid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "provision",
+    "meaning": "n.供应；预备；存粮",
+    "phonetic": "prəˈviʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "psychological",
+    "meaning": "a.心理(学)的",
+    "phonetic": "ˌsaikəˈlɔdʒikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "publication",
+    "meaning": "n.公布；出版(物)",
+    "phonetic": "ˌpʌbliˈkei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pudding",
+    "meaning": "n.布丁",
+    "phonetic": "ˈpudiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "puff",
+    "meaning": "n.(一)喷，(一)吹",
+    "phonetic": "pʌf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "punch",
+    "meaning": "vt.冲出 n.冲压机",
+    "phonetic": "pʌnt∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "puppet",
+    "meaning": "n.木偶，玩偶；傀儡",
+    "phonetic": "ˈpʌpit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "purely",
+    "meaning": "ad.纯粹地，完全地",
+    "phonetic": "ˈpjuəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "purify",
+    "meaning": "vt.使纯净，使洁净",
+    "phonetic": "ˈpjuərifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "purity",
+    "meaning": "n.纯净；纯洁；纯度",
+    "phonetic": "ˈpjuəriti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pursue",
+    "meaning": "vt.追赶，追踪；进行",
+    "phonetic": "pəˈsjuː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "pursuit",
+    "meaning": "n.追赶；追求；事务",
+    "phonetic": "pəˈsjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "qualify",
+    "meaning": "vt.使具有资格",
+    "phonetic": "ˈkwɔlifai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quart",
+    "meaning": "n.夸脱(=2 品脱)",
+    "phonetic": "kɔːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quarterly",
+    "meaning": "a.季度的 ad.季度地",
+    "phonetic": "ˈkwɔːtəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "queer",
+    "meaning": "a.奇怪的，古怪的",
+    "phonetic": "kwiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quicken",
+    "meaning": "vt.加快 vi.加快",
+    "phonetic": "ˈkwikən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quickly",
+    "meaning": "ad.快，迅速",
+    "phonetic": "ˈkwikli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "quotation",
+    "meaning": "n.引用；引文；报价单",
+    "phonetic": "kwəuˈtei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rack",
+    "meaning": "n.搁物架；行李架",
+    "phonetic": "ræk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "racket",
+    "meaning": "n.球拍",
+    "phonetic": "ˈrækit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radar",
+    "meaning": "n.雷达，无线电探测器",
+    "phonetic": "ˈreidə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radiate",
+    "meaning": "vi.发射光线；辐射",
+    "phonetic": "ˈreidieit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radioactivity",
+    "meaning": "n.放射性，放射(现象)",
+    "phonetic": "ˈreidiəuækˈtiviti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radish",
+    "meaning": "n.小萝卜",
+    "phonetic": "ˈrædi∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "radius",
+    "meaning": "n.半径",
+    "phonetic": "ˈreidjəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rage",
+    "meaning": "n.(一阵)狂怒，盛怒",
+    "phonetic": "reidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "raid",
+    "meaning": "n.袭击；突然搜查",
+    "phonetic": "reid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "railroad",
+    "meaning": "n.铁路 vi.由铁路运输",
+    "phonetic": "ˈreilrəud",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rake",
+    "meaning": "n.耙子 vi.耙；搜索",
+    "phonetic": "reik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rapidly",
+    "meaning": "ad.迅速地",
+    "phonetic": "ˈræpidli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rarely",
+    "meaning": "ad.很少，难得",
+    "phonetic": "ˈreəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ratio",
+    "meaning": "n.比，比率",
+    "phonetic": "ˈrei∫iəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rational",
+    "meaning": "a.理性的；出于理性的",
+    "phonetic": "ˈræ∫ənl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reaction",
+    "meaning": "n.反应；反作用",
+    "phonetic": "ri(ː)ˈæk∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "readily",
+    "meaning": "ad.乐意地；无困难地",
+    "phonetic": "ˈredili",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "realize",
+    "meaning": "vt.实现；认识到",
+    "phonetic": "ˈriəlaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "realm",
+    "meaning": "n.王国，国土；领域",
+    "phonetic": "relm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reap",
+    "meaning": "vt.&vi.收割，收获",
+    "phonetic": "riːp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rear",
+    "meaning": "n.后部，后面；背面",
+    "phonetic": "riə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rebel",
+    "meaning": "vi.造反 n.造反者",
+    "phonetic": "ˈrebəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rebellion",
+    "meaning": "n.造反；叛乱；反抗",
+    "phonetic": "riˈbeljən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recently",
+    "meaning": "ad.最近，新近",
+    "phonetic": "ˈriːsəntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recognition",
+    "meaning": "n.认出，识别；承认",
+    "phonetic": "ˌrekəgˈni∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "recollect",
+    "meaning": "vt.回忆，追忆，想起",
+    "phonetic": "ˌrekəˈlekt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reduction",
+    "meaning": "n.减少，减小，缩减",
+    "phonetic": "riˈdʌk∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reed",
+    "meaning": "n.芦苇，芦杆，芦丛",
+    "phonetic": "riːd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reel",
+    "meaning": "n.卷轴，卷筒",
+    "phonetic": "riːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reflexion",
+    "meaning": "n.反射；映象；反映",
+    "phonetic": "riˈflek∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refreshment",
+    "meaning": "n.茶点，点心，便餐",
+    "phonetic": "riˈfre∫mənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refuge",
+    "meaning": "n.避难，庇护；庇护者",
+    "phonetic": "ˈrefjuːdʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "refute",
+    "meaning": "vt.驳斥，反驳，驳倒",
+    "phonetic": "riˈfjuːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "regarding",
+    "meaning": "prep.关于",
+    "phonetic": "riˈgɑːdiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "region",
+    "meaning": "n.地区，地带；领域",
+    "phonetic": "ˈriːdʒən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "regularly",
+    "meaning": "ad.有规律地",
+    "phonetic": "ˈregjuləli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "regulate",
+    "meaning": "vt.管理，控制；调整",
+    "phonetic": "ˈregjuleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rehearsal",
+    "meaning": "n.排练，排演；练习",
+    "phonetic": "riˈhəːsəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reign",
+    "meaning": "n.君主统治；支配",
+    "phonetic": "rein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rein",
+    "meaning": "n.缰绳 vi.驾驭，控制",
+    "phonetic": "rein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reinforce",
+    "meaning": "vt.增援，支援；加强",
+    "phonetic": "ˌriːinˈfɔːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rejoice",
+    "meaning": "vi.欣喜，高兴",
+    "phonetic": "riˈdʒɔis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relatively",
+    "meaning": "ad.相对地，比较地",
+    "phonetic": "ˈrelətivli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relativity",
+    "meaning": "n.相关性；相对性",
+    "phonetic": "ˌreləˈtiviti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reliance",
+    "meaning": "n.信任，信赖，信心",
+    "phonetic": "riˈlaiəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "relieve",
+    "meaning": "vt.减轻，解除；救济",
+    "phonetic": "riˈliːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reluctant",
+    "meaning": "a.不愿的，勉强的",
+    "phonetic": "riˈlʌktənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "remains",
+    "meaning": "n.残余，余额；废墟",
+    "phonetic": "riˈmeins",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "remarkable",
+    "meaning": "a.异常的，非凡的",
+    "phonetic": "riˈmɑːkəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "remedy",
+    "meaning": "n.&vt.治疗；补救",
+    "phonetic": "ˈremidi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "removal",
+    "meaning": "n.移动；迁移；除掉",
+    "phonetic": "riˈmuːvəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "renew",
+    "meaning": "vt.使更新 vi.更新",
+    "phonetic": "riˈnjuː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repeatedly",
+    "meaning": "ad.重复地；一再",
+    "phonetic": "riˈpiːtidli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repent",
+    "meaning": "vi.悔悟，悔改 vt.后悔",
+    "phonetic": "riˈpent",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "repetition",
+    "meaning": "n.重复，反复",
+    "phonetic": "ˌrepiˈti∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reproach",
+    "meaning": "vt.&n.责备，指责",
+    "phonetic": "riˈprəut∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "republican",
+    "meaning": "a.共和国的",
+    "phonetic": "riˈpʌblikən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reservoir",
+    "meaning": "n.水库；蓄水池",
+    "phonetic": "ˈrezəvwɑː(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "residence",
+    "meaning": "n.居住；驻扎；住处",
+    "phonetic": "ˈrezidəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resident",
+    "meaning": "a.居住的 n.居民",
+    "phonetic": "ˈrezidənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resignation",
+    "meaning": "n.放弃，辞职，反抗",
+    "phonetic": "ˌrezigˈnei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resistance",
+    "meaning": "n.抵抗/制；抵抗力",
+    "phonetic": "riˈzistəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resistant",
+    "meaning": "a.抵抗的，反抗的",
+    "phonetic": "riˈzistənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resort",
+    "meaning": "vi.&n.求助，凭借",
+    "phonetic": "riˈzɔːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "respectful",
+    "meaning": "a.恭敬的，尊重的",
+    "phonetic": "risˈpektful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "respective",
+    "meaning": "ad. 各自的，各个的",
+    "phonetic": "risˈpektiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "respectively",
+    "meaning": "ad.各自/分别地",
+    "phonetic": "riˈspektivli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "restless",
+    "meaning": "a.不安定的，焦虑的",
+    "phonetic": "ˈrestlis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "restrain",
+    "meaning": "vt.抑制，遏制；限制",
+    "phonetic": "risˈtrein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "restraint",
+    "meaning": "n.抑制；遏制；克制",
+    "phonetic": "risˈtreint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "resume",
+    "meaning": "vt.恢复；重新开始",
+    "phonetic": "riˈzjuːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "retreat",
+    "meaning": "vi.(被迫)退却，后退",
+    "phonetic": "riˈtriːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reveal",
+    "meaning": "vt.展现；揭示，揭露",
+    "phonetic": "riˈviːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revenge",
+    "meaning": "vt.替…报仇 n.报仇",
+    "phonetic": "riˈvendʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "reverse",
+    "meaning": "vt.颠倒，翻转 n.背面",
+    "phonetic": "riˈvəːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revise",
+    "meaning": "vt.修订，校订；修改",
+    "phonetic": "riˈvaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revolt",
+    "meaning": "vi.&n.反抗，造反",
+    "phonetic": "riˈvəult",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "revolutionary",
+    "meaning": "a.革命的 n.革命者",
+    "phonetic": "ˈrevəˈluː∫ənəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rhythm",
+    "meaning": "n.韵律，格律；节奏",
+    "phonetic": "ˈrið(ə)m",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rib",
+    "meaning": "n.肋，肋骨",
+    "phonetic": "rib",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ribbon",
+    "meaning": "n.缎带，丝带；带",
+    "phonetic": "ˈribən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rider",
+    "meaning": "n.骑马的人；乘车的人",
+    "phonetic": "ˈraidə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ridge",
+    "meaning": "n.脊；岭，山脉；垄",
+    "phonetic": "ridʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rifle",
+    "meaning": "n.步枪，来复枪",
+    "phonetic": "ˈraifl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rival",
+    "meaning": "n.竞争者 a.竞争的",
+    "phonetic": "ˈraivəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "roar",
+    "meaning": "vi.吼叫；呼喊 n.吼",
+    "phonetic": "rɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robber",
+    "meaning": "n.强盗，盗贼",
+    "phonetic": "ˈrɔbə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robbery",
+    "meaning": "n.抢劫，劫掠，盗取",
+    "phonetic": "ˈrɔbəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "robe",
+    "meaning": "n.长袍，长衣，浴衣",
+    "phonetic": "rəub",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rocket",
+    "meaning": "n.火箭，火箭发动机",
+    "phonetic": "ˈrɔkit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rod",
+    "meaning": "n.杆，竿，棒",
+    "phonetic": "rɔd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Roman",
+    "meaning": "n.古罗马人 a.罗马的",
+    "phonetic": "ˈrəumən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "romantic",
+    "meaning": "a.浪漫的；传奇的",
+    "phonetic": "rəˈmæntik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rotary",
+    "meaning": "a.旋转的，转动的",
+    "phonetic": "ˈrəutəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rotate",
+    "meaning": "vi.旋转 vt.使旋转",
+    "phonetic": "rəuˈteit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rotation",
+    "meaning": "n.旋转，转动；循环",
+    "phonetic": "rəuˈtei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rotten",
+    "meaning": "a.腐烂的，发臭的",
+    "phonetic": "ˈrɔtn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "roughly",
+    "meaning": "ad.粗糙地，粗略地",
+    "phonetic": "ˈrʌfli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rouse",
+    "meaning": "vt.唤醒，唤起；惊起",
+    "phonetic": "rauz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "route",
+    "meaning": "n.路，路线，路程",
+    "phonetic": "ruːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rub",
+    "meaning": "vt.摩擦，擦 vi.摩擦",
+    "phonetic": "rʌb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rug",
+    "meaning": "n.小地毯；毛毯",
+    "phonetic": "rʌg",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rumour",
+    "meaning": "n.谣言，谣传，传闻",
+    "phonetic": "ˈruːmə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rural",
+    "meaning": "a.农村的，田园的",
+    "phonetic": "ˈruər(ə)l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rust",
+    "meaning": "n.锈 vi.生锈，氧化",
+    "phonetic": "rʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "rusty",
+    "meaning": "a.生锈的；变迟钝的",
+    "phonetic": "ˈrʌsti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sack",
+    "meaning": "n.袋，麻袋；开除",
+    "phonetic": "sæk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "saddle",
+    "meaning": "n.鞍子，马鞍",
+    "phonetic": "ˈsædl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sadly",
+    "meaning": "ad.悲痛地，悲哀地",
+    "phonetic": "ˈsædli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "safely",
+    "meaning": "ad.安全地；可靠地",
+    "phonetic": "ˈseifli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "saint",
+    "meaning": "n.圣徒；基督教徒",
+    "phonetic": "seint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sake",
+    "meaning": "n.缘故，理由",
+    "phonetic": "seik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sandy",
+    "meaning": "n.沙的，含沙的",
+    "phonetic": "ˈsændi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "satisfactory",
+    "meaning": "a.令人满意的,良好的",
+    "phonetic": "ˌsætisˈfæktəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "saving",
+    "meaning": "n.搭救；节约；存款",
+    "phonetic": "ˈseiviŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "saw",
+    "meaning": "n.锯子 vt.锯，锯开",
+    "phonetic": "sɔː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scale",
+    "meaning": "n.天平，磅秤，秤",
+    "phonetic": "skeil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scarce",
+    "meaning": "a.缺乏的；希有的",
+    "phonetic": "skeəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scarcely",
+    "meaning": "ad.仅仅；几乎不",
+    "phonetic": "ˈskeəsli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scatter",
+    "meaning": "vt.使消散；撒；散播",
+    "phonetic": "ˈskætə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scent",
+    "meaning": "n.气味，香味；香水",
+    "phonetic": "sent",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scheme",
+    "meaning": "n.计划，规划；诡计",
+    "phonetic": "skiːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scorn",
+    "meaning": "n.轻蔑；嘲笑 vt.轻蔑",
+    "phonetic": "skɔːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scout",
+    "meaning": "n.侦察员，侦察机",
+    "phonetic": "skaut",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "scrape",
+    "meaning": "vt.&vi.&n.刮，擦",
+    "phonetic": "skreip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "screw",
+    "meaning": "n.螺旋，螺丝 vt.拧紧",
+    "phonetic": "skruː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seaport",
+    "meaning": "n.海港，港市",
+    "phonetic": "ˈsiːpɔːt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "secondary",
+    "meaning": "a.第二的；次要的",
+    "phonetic": "ˈsekəndəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "secondly",
+    "meaning": "ad.第二(点)；其次",
+    "phonetic": "'sekәndli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seller",
+    "meaning": "n.卖者；行销货",
+    "phonetic": "ˈselə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "semester",
+    "meaning": "n.半年；学期，半学年",
+    "phonetic": "siˈmestə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "semiconductor",
+    "meaning": "n.半导体",
+    "phonetic": "ˈsemikənˈdʌktə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "senate",
+    "meaning": "n.参议院，上院",
+    "phonetic": "ˈsenit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sensible",
+    "meaning": "a.感觉得到的；明智的",
+    "phonetic": "ˈsensəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "series",
+    "meaning": "n.连续，系列；丛书",
+    "phonetic": "ˈsiəriːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "seriously",
+    "meaning": "ad.严肃地，认真地",
+    "phonetic": "ˈsiəriəsli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "setting",
+    "meaning": "n.安装，调整；环境",
+    "phonetic": "ˈsetiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "severely",
+    "meaning": "ad.严厉地，严格地",
+    "phonetic": "siˈviəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shady",
+    "meaning": "a.成荫的，阴凉的",
+    "phonetic": "ˈ∫eidi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shampoo",
+    "meaning": "vt.用洗发剂洗 n.洗头",
+    "phonetic": "∫æmˈpuː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sharply",
+    "meaning": "ad.锐利地，敏锐地",
+    "phonetic": "ˈ∫ɑːpli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shear",
+    "meaning": "vt.剪；剥夺 vi.剪",
+    "phonetic": "∫iə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shed",
+    "meaning": "vt.流出；散发；脱落",
+    "phonetic": "∫ed",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shell",
+    "meaning": "n.壳；贝壳；炮弹",
+    "phonetic": "∫el",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shepherd",
+    "meaning": "n.牧羊人，羊倌",
+    "phonetic": "ˈ∫epəd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shield",
+    "meaning": "n.盾；防护物 vt.保护",
+    "phonetic": "∫iːld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shilling",
+    "meaning": "n.先令",
+    "phonetic": "ˈ∫iliŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shiver",
+    "meaning": "vi.颤抖，哆嗦 n.冷颤",
+    "phonetic": "ˈ∫ivə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shortage",
+    "meaning": "n.不足，缺少，不足额",
+    "phonetic": "ˈ∫ɔːtidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "shriek",
+    "meaning": "vi.尖声喊叫 n.尖叫声",
+    "phonetic": "∫riːk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "similarly",
+    "meaning": "ad.类似地，相似地",
+    "phonetic": "ˈsimiləli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "simplicity",
+    "meaning": "n.简单，简易；朴素",
+    "phonetic": "simˈplisiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sin",
+    "meaning": "n.罪，罪孽 vi.犯罪",
+    "phonetic": "sin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sincere",
+    "meaning": "a.真诚的；真挚的",
+    "phonetic": "sinˈsiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "singular",
+    "meaning": "a.单一的；非凡的",
+    "phonetic": "ˈsiŋgjulə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "site",
+    "meaning": "n.地点，地基；场所",
+    "phonetic": "sait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sketch",
+    "meaning": "n.略图；速写；概略",
+    "phonetic": "sket∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "skim",
+    "meaning": "vt.掠过，擦过；略读",
+    "phonetic": "skim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slam",
+    "meaning": "vt.使劲关，砰地放下",
+    "phonetic": "slæm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slender",
+    "meaning": "a.细长的；微薄的",
+    "phonetic": "ˈslendə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slightly",
+    "meaning": "ad.稍微，有点",
+    "phonetic": "ˈslaitli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slipper",
+    "meaning": "n.拖鞋，便鞋",
+    "phonetic": "ˈslipə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slippery",
+    "meaning": "a.滑的，使人滑跤的",
+    "phonetic": "ˈslipəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slit",
+    "meaning": "n.裂缝 vt.切开，撕开",
+    "phonetic": "slit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slogan",
+    "meaning": "n.标语，口号",
+    "phonetic": "ˈsləugən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slope",
+    "meaning": "n.倾斜；斜面 vi.倾斜",
+    "phonetic": "sləup",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slowly",
+    "meaning": "ad.慢慢地",
+    "phonetic": "ˈsləuli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "slum",
+    "meaning": "n.贫民窟，贫民区",
+    "phonetic": "slʌm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sly",
+    "meaning": "a.狡猾的；躲躲闪闪的",
+    "phonetic": "slai",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "smoothly",
+    "meaning": "ad.光滑地；平稳地",
+    "phonetic": "ˈsmuːðli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "snowstorm",
+    "meaning": "n.雪暴，暴风雪",
+    "phonetic": "ˈsnəustɔːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "soak",
+    "meaning": "vt.浸，泡 vi.浸泡",
+    "phonetic": "səuk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sober",
+    "meaning": "a.清醒的；适度的",
+    "phonetic": "ˈsəubə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "so-called",
+    "meaning": "a.所谓的，号称的",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "soda",
+    "meaning": "n.碳酸钠，纯碱；汽水",
+    "phonetic": "ˈsəudə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "softly",
+    "meaning": "ad.柔软地；温柔地",
+    "phonetic": "ˈsɔftli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sole",
+    "meaning": "n.脚底，鞋底，袜底",
+    "phonetic": "səul",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solely",
+    "meaning": "ad.单独地，唯一地",
+    "phonetic": "ˈsəu(l)li",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "solemn",
+    "meaning": "a.庄严的；隆重的",
+    "phonetic": "ˈsɔləm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "soluble",
+    "meaning": "[ˈsɔljubl]a.可溶的；可以解决的",
+    "phonetic": "'sɒljubl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "somehow",
+    "meaning": "ad.由于某种原因",
+    "phonetic": "ˈsʌmhau",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sometime",
+    "meaning": "ad.在某一时候；从前",
+    "phonetic": "ˈsʌmtaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "somewhat",
+    "meaning": "pron.一点儿 ad.有点",
+    "phonetic": "ˈsʌm(h)wɔt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sore",
+    "meaning": "a.痛的；恼火的 n.疮",
+    "phonetic": "sɔ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "Soviet",
+    "meaning": "n.苏维埃 a.苏维埃的",
+    "phonetic": "ˈsəuviet",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spacecraft",
+    "meaning": "n.航天器，宇宙飞船",
+    "phonetic": "ˈspeiskrɑːft",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "span",
+    "meaning": "n.跨距；一段时间",
+    "phonetic": "spæn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spark",
+    "meaning": "n.火花，火星",
+    "phonetic": "spɑːk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sparkle",
+    "meaning": "vi.发火花 vt.使闪耀",
+    "phonetic": "ˈspɑːkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "speciality",
+    "meaning": "n.专业，特长；特产",
+    "phonetic": "ˌspe∫iˈæliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specialize",
+    "meaning": "vi.成为…专家；专攻",
+    "phonetic": "ˈspe∫əlaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specially",
+    "meaning": "ad.专门地，特别地",
+    "phonetic": "ˈspe∫əli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "specimen",
+    "meaning": "n.样本，标本，样品",
+    "phonetic": "ˈspesimin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spectacle",
+    "meaning": "n.光景，景象；眼镜",
+    "phonetic": "ˈspektəkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sphere",
+    "meaning": "n.球，圆体；范围",
+    "phonetic": "sfiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spider",
+    "meaning": "n.蜘蛛",
+    "phonetic": "ˈspaidə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spill",
+    "meaning": "vt.使溢出 vi.溢出",
+    "phonetic": "spil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "splash",
+    "meaning": "vt.&n.溅，泼，飞溅",
+    "phonetic": "splæ∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spoil",
+    "meaning": "vt.损坏，糟蹋；宠坏",
+    "phonetic": "spɔil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sponge",
+    "meaning": "n.海绵",
+    "phonetic": "spʌndʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spontaneous",
+    "meaning": "a.自发/本能的",
+    "phonetic": "spɔnˈteiniəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sportsman",
+    "meaning": "n.运动员",
+    "phonetic": "ˈspɔːtsmən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "springtime",
+    "meaning": "n.春季，春天",
+    "phonetic": "ˈspriŋtaim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sprinkle",
+    "meaning": "n.洒，撒；小雨",
+    "phonetic": "ˈspriŋkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "spur",
+    "meaning": "n.刺激物 vt.刺激",
+    "phonetic": "spəː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "squeeze",
+    "meaning": "vt.&vi.榨，挤；压榨",
+    "phonetic": "skwiːz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stab",
+    "meaning": "vt.&vi.&n.刺，戳",
+    "phonetic": "stæb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stability",
+    "meaning": "n.稳定，稳定性，巩固",
+    "phonetic": "stəˈbiliti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stack",
+    "meaning": "n.堆，垛 vt.堆积",
+    "phonetic": "stæk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "staircase",
+    "meaning": "n.楼梯，楼梯间",
+    "phonetic": "ˈsteəkeis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stake",
+    "meaning": "n.桩；赌金；奖品",
+    "phonetic": "steik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "standpoint",
+    "meaning": "n.立场，观点",
+    "phonetic": "ˈstændpɔint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stare",
+    "meaning": "vi.盯，凝视",
+    "phonetic": "steə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "startle",
+    "meaning": "vt.使大吃一惊 n.吃惊",
+    "phonetic": "ˈstɑːtl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "statistical",
+    "meaning": "a.统计的，统计学的",
+    "phonetic": "stəˈtistikəl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "steadily",
+    "meaning": "ad.稳定地，不变地",
+    "phonetic": "ˈstedili",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "steamer",
+    "meaning": "n.轮船，汽船",
+    "phonetic": "ˈstiːmə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "steer",
+    "meaning": "vt.&vi.驾驶",
+    "phonetic": "stiə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stem",
+    "meaning": "n.茎，(树)干 vi.起源",
+    "phonetic": "stem",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stern",
+    "meaning": "a.严厉的；坚定的",
+    "phonetic": "stəːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sticky",
+    "meaning": "a.粘性的；胶粘的",
+    "phonetic": "ˈstiki",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stiff",
+    "meaning": "a.硬的；僵直的",
+    "phonetic": "stif",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stiffen",
+    "meaning": "vt.使硬；使僵硬",
+    "phonetic": "ˈstifn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stimulate",
+    "meaning": "vt.刺激，激励，激发",
+    "phonetic": "ˈstimjuleit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sting",
+    "meaning": "vt.刺；刺痛 vi.&n.刺",
+    "phonetic": "stiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stir",
+    "meaning": "vt.动；拨动；激动",
+    "phonetic": "stəː",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stitch",
+    "meaning": "n.一针；针脚 vt.缝",
+    "phonetic": "stit∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stock",
+    "meaning": "n.原料；库存品；股本",
+    "phonetic": "stɔk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stony",
+    "meaning": "a.多石的；冷酷的",
+    "phonetic": "ˈstəuni",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stool",
+    "meaning": "n.凳子",
+    "phonetic": "stuːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stoop",
+    "meaning": "vi.俯身；弯身 n.弯腰",
+    "phonetic": "stuːp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "storey",
+    "meaning": "n.(层)楼",
+    "phonetic": "ˈstɔːri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stormy",
+    "meaning": "a.有暴风雨的；激烈的",
+    "phonetic": "ˈstɔːmi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strain",
+    "meaning": "vt.拉紧 vi.尽力",
+    "phonetic": "strein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strap",
+    "meaning": "n.带子 vt.捆扎",
+    "phonetic": "stræp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stretch",
+    "meaning": "vt.伸展 vi.伸 n.伸展",
+    "phonetic": "stret∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strictly",
+    "meaning": "ad.严格地，严谨地",
+    "phonetic": "ˈstriktli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strip",
+    "meaning": "vt.剥；夺去 n.条带",
+    "phonetic": "strip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stripe",
+    "meaning": "n.条纹，条子",
+    "phonetic": "straip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stroke",
+    "meaning": "n.打，击；鸣声；中风",
+    "phonetic": "strəuk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "strongly",
+    "meaning": "ad.强壮地，强烈地",
+    "phonetic": "ˈstrɔŋli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stuff",
+    "meaning": "n.材料 vt.装，填，塞",
+    "phonetic": "stʌf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "stumble",
+    "meaning": "vi.绊倒；犯错误",
+    "phonetic": "ˈstʌmbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "submarine",
+    "meaning": "a.水下的 n.潜水艇",
+    "phonetic": "sʌbməˈriːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "submerge",
+    "meaning": "vt.浸没 vi.潜入水中",
+    "phonetic": "səbˈməːdʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "substance",
+    "meaning": "n.物质；实质；本旨",
+    "phonetic": "ˈsʌbstəns",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "subtract",
+    "meaning": "vt.减，减去，去掉",
+    "phonetic": "səbˈtrækt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suburb",
+    "meaning": "n.郊区，郊外，近郊",
+    "phonetic": "ˈsʌbəːb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "successfully",
+    "meaning": "ad.成功地",
+    "phonetic": "səkˈsesfuli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "succession",
+    "meaning": "n.连续；继任，继承",
+    "phonetic": "səkˈse∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "successive",
+    "meaning": "a.连续的；接连的",
+    "phonetic": "səkˈsesiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suddenly",
+    "meaning": "ad.突然地",
+    "phonetic": "ˈsʌdənli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sufficient",
+    "meaning": "a.足够的，充分的",
+    "phonetic": "səˈfi∫ənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sufficiently",
+    "meaning": "ad.足够地，充分地",
+    "phonetic": "səˈfi∫əntli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sulphur",
+    "meaning": "n.硫(磺)，硫黄",
+    "phonetic": "ˈsʌlfə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sum",
+    "meaning": "n.总数；金额 vi.共计",
+    "phonetic": "sʌm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "superficial",
+    "meaning": "a.表面的；肤浅的",
+    "phonetic": "sjuːpəˈfi∫əl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "supplement",
+    "meaning": "n.&vt.增补，补充",
+    "phonetic": "ˈsʌplimənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surely",
+    "meaning": "a.确实；稳当地",
+    "phonetic": "ˈ∫uəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surgery",
+    "meaning": "n.外科，外科手术",
+    "phonetic": "ˈsəːdʒəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surname",
+    "meaning": "n.姓",
+    "phonetic": "ˈsəːneim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surprising",
+    "meaning": "a.惊人/出人意外的",
+    "phonetic": "səˈpraiziŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surprisingly",
+    "meaning": "ad.惊人地",
+    "phonetic": "",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surrender",
+    "meaning": "vt.交出 vi.投降",
+    "phonetic": "səˈrendə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "surroundings",
+    "meaning": "n.周围的事物,环境",
+    "phonetic": "səˈraundiŋz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suspend",
+    "meaning": "vt.吊，悬；推迟",
+    "phonetic": "səsˈpend",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "suspicion",
+    "meaning": "n.怀疑，疑心，猜疑",
+    "phonetic": "səsˈpi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sustain",
+    "meaning": "vt.支撑；供养；忍受",
+    "phonetic": "səsˈtein",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "swamp",
+    "meaning": "n.沼泽，沼泽地",
+    "phonetic": "swɔmp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "swan",
+    "meaning": "n.天鹅",
+    "phonetic": "swɔn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "swarm",
+    "meaning": "n.一大群 vi.密集",
+    "phonetic": "swɔːm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sway",
+    "meaning": "vi.摇动 vt.摇；摇动",
+    "phonetic": "swei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sympathetic",
+    "meaning": "a.同情的；和谐的",
+    "phonetic": "ˌsimpəˈθetik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "sympathize",
+    "meaning": "vi.同情/感，共鸣",
+    "phonetic": "ˈsimpəθaiz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "synthetic",
+    "meaning": "a.综合的；合成的",
+    "phonetic": "sinˈθeti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tablet",
+    "meaning": "n.碑，匾；药片",
+    "phonetic": "ˈtæblit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tame",
+    "meaning": "a.驯服的；顺从的",
+    "phonetic": "teim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tan",
+    "meaning": "n.棕褐色 a.棕黄色的",
+    "phonetic": "tæn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "teaching",
+    "meaning": "n.教学，讲授；教导",
+    "phonetic": "ˈtiːt∫iŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "technician",
+    "meaning": "n.技术员，技师",
+    "phonetic": "tekˈni∫(ə)n",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tedious",
+    "meaning": "a.冗长乏味的，沉闷的",
+    "phonetic": "ˈtiːdiəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "temper",
+    "meaning": "n.韧度；心情，情绪",
+    "phonetic": "ˈtempə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tempt",
+    "meaning": "vt.引诱，诱惑；吸引",
+    "phonetic": "tempt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tenant",
+    "meaning": "n.承担人，房客，佃户",
+    "phonetic": "ˈtenənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tender",
+    "meaning": "a.嫩的；脆弱的",
+    "phonetic": "ˈtendə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tenth",
+    "meaning": "num.第十；十分之一",
+    "phonetic": "tenθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "terrific",
+    "meaning": "a.可怕的；极大的",
+    "phonetic": "təˈrifik",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "territory",
+    "meaning": "n.领土，版图；领域",
+    "phonetic": "ˈteritəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "textile",
+    "meaning": "n.纺织品 a.纺织的",
+    "phonetic": "ˈtekstail",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thermometer",
+    "meaning": "n.温度计，寒暑表",
+    "phonetic": "θəˈmɔmitə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thickness",
+    "meaning": "n.厚(度)；密(度)",
+    "phonetic": "ˈθiknis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thirdly",
+    "meaning": "ad.第三",
+    "phonetic": "ˈθəːdli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thorn",
+    "meaning": "n.刺，棘；荆棘；蒺藜",
+    "phonetic": "θɔːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thoughtful",
+    "meaning": "a.沉思的；体贴的",
+    "phonetic": "ˈθɔːtful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "threat",
+    "meaning": "n.威胁，恐吓，凶兆",
+    "phonetic": "θret",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "threaten",
+    "meaning": "vt.&vi.威胁，恐吓",
+    "phonetic": "ˈθretn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thrive",
+    "meaning": "vi.兴旺，繁荣，旺盛",
+    "phonetic": "θraiv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "throne",
+    "meaning": "n.宝座，御座；王位",
+    "phonetic": "θrəun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "throng",
+    "meaning": "n.群，人群 vt.挤满",
+    "phonetic": "θrɔŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thrust",
+    "meaning": "vt.插，刺 n.插；讽刺",
+    "phonetic": "θrʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "thumb",
+    "meaning": "n.(大)拇指",
+    "phonetic": "θʌm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tide",
+    "meaning": "n.潮，潮汐；潮流",
+    "phonetic": "taid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "timber",
+    "meaning": "n.木材，木料",
+    "phonetic": "ˈtimbə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "timid",
+    "meaning": "a.胆怯的；羞怯的",
+    "phonetic": "ˈtimid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "toe",
+    "meaning": "n.脚趾，足尖",
+    "phonetic": "təu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "torch",
+    "meaning": "n.火炬，火把；手电筒",
+    "phonetic": "tɔːt∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "torrent",
+    "meaning": "n.奔流，激流，洪流",
+    "phonetic": "ˈtɔrənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "torture",
+    "meaning": "n.拷问；折磨 vt.拷打",
+    "phonetic": "ˈtɔːt∫ə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "toss",
+    "meaning": "vt.&vi.扔，抛，掷",
+    "phonetic": "tɔːs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trace",
+    "meaning": "n.痕迹；丝毫 vt.跟踪",
+    "phonetic": "treis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tragedy",
+    "meaning": "n.悲剧；惨事，惨案",
+    "phonetic": "ˈtrædʒidi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trail",
+    "meaning": "n.痕迹；小径 vt.跟踪",
+    "phonetic": "treil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "traitor",
+    "meaning": "n.叛徒，卖国贼",
+    "phonetic": "ˈtreitə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tramp",
+    "meaning": "n.流浪者，游民",
+    "phonetic": "træmp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transistor",
+    "meaning": "n.晶体管",
+    "phonetic": "trænˈsistə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transmission",
+    "meaning": "n.传送;传动;发射",
+    "phonetic": "trænzˈmi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transmit",
+    "meaning": "vt.传送，传达；发射",
+    "phonetic": "trænzˈmit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "transportation",
+    "meaning": "n.运输，运送，客运",
+    "phonetic": "ˌtrænspɔːˈtei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tray",
+    "meaning": "n.(浅)盘，托盘，碟",
+    "phonetic": "trei",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "treason",
+    "meaning": "n.谋反，通敌，叛国罪",
+    "phonetic": "ˈtriːzn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "treaty",
+    "meaning": "n.条约；协议，协定",
+    "phonetic": "ˈtriːti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tremendous",
+    "meaning": "a.极大的，非常的",
+    "phonetic": "triˈmendəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tribe",
+    "meaning": "n.部落，宗族",
+    "phonetic": "traib",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trifle",
+    "meaning": "n.小事，琐事；少许",
+    "phonetic": "ˈtraifl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trim",
+    "meaning": "a.整齐的 vt.使整齐",
+    "phonetic": "trim",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "triumph",
+    "meaning": "n.凯旋；胜利 vi.成功",
+    "phonetic": "ˈtraiəmf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tropical",
+    "meaning": "a.热带的",
+    "phonetic": "ˈtrɔpikl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "trumpet",
+    "meaning": "n.喇叭，小号",
+    "phonetic": "ˈtrʌmpit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tub",
+    "meaning": "n.桶，盆，浴缸，浴盆",
+    "phonetic": "tʌb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tuck",
+    "meaning": "vt.折短，卷起；塞",
+    "phonetic": "tʌk",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tuition",
+    "meaning": "n.教，教诲；学费",
+    "phonetic": "tjuːˈi∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tumble",
+    "meaning": "vi.摔倒，跌倒；打滚",
+    "phonetic": "ˈtʌmbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "tunnel",
+    "meaning": "n.隧道，坑道，地道",
+    "phonetic": "ˈtʌnl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "turbine",
+    "meaning": "n.叶轮机，汽轮机",
+    "phonetic": "ˈtəːbain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "turbulent",
+    "meaning": "a.骚动的，骚乱的",
+    "phonetic": "ˈtəːbjulənt",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "turnip",
+    "meaning": "n.萝卜，芜菁",
+    "phonetic": "ˈtəːnip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "twinkle",
+    "meaning": "vi.闪烁，闪耀",
+    "phonetic": "ˈtwiŋkl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "ultimately",
+    "meaning": "ad.最终，最后",
+    "phonetic": "ˈʌltimətli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "undergo",
+    "meaning": "vt.经历，经受，忍受",
+    "phonetic": "ˌʌndəˈgəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "undergraduate",
+    "meaning": "n.大学肆业生",
+    "phonetic": "ˌʌndəˈgrædjuit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "underneath",
+    "meaning": "ad.在下面，在底下",
+    "phonetic": "ˌʌndəˈniːθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "undertaking",
+    "meaning": "n.任务，事业；许诺",
+    "phonetic": "ˌʌndəˈteikiŋ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "undoubtedly",
+    "meaning": "ad.无容置疑，肯定地",
+    "phonetic": "ʌnˈdautidli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "uneasy",
+    "meaning": "a.心神不安的，忧虑的",
+    "phonetic": "ʌnˈiːzi",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unfortunately",
+    "meaning": "ad.不幸地",
+    "phonetic": "ʌnˈfɔːtjunətli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unity",
+    "meaning": "n.单一；统一；团结",
+    "phonetic": "ˈjuːniti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unjust",
+    "meaning": "a.非正义的；不公平的",
+    "phonetic": "ˈʌnˈdʒʌst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unkind",
+    "meaning": "a.不仁慈的，不和善的",
+    "phonetic": "ʌnˈkaind",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unlikely",
+    "meaning": "a.未必的，未必可能的",
+    "phonetic": "ʌnˈlaikli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unload",
+    "meaning": "vt.卸(货) vi.卸货",
+    "phonetic": "ˈʌnˈləud",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unlucky",
+    "meaning": "a.不幸的；不吉的",
+    "phonetic": "ʌnˈlʌki",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unnecessary",
+    "meaning": "a.不必要的，多余的",
+    "phonetic": "ʌnˈnesisəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unsatisfactory",
+    "meaning": "a.不能令人满意的",
+    "phonetic": "ˈʌnsætisˈfæktəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unstable",
+    "meaning": "a.不稳固的；不稳定的",
+    "phonetic": "ˈʌnˈsteibl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unsuitable",
+    "meaning": "a.不合适的,不适宜的",
+    "phonetic": "ʌnˈsuːtəb(ə)l",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "unusually",
+    "meaning": "a.不平常地，非常",
+    "phonetic": "ʌnˈjuːʒəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "upright",
+    "meaning": "a.垂直的；正直的",
+    "phonetic": "ˈʌpˈrait",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "upside-down",
+    "meaning": "a.颠倒的，乱七八糟的",
+    "phonetic": "ˈʌpsaidˈdaun",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "up-to-date",
+    "meaning": "a.直到最近/现代的",
+    "phonetic": "ˈʌptəˈdeit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "upwards",
+    "meaning": "ad.趋向上升；以上",
+    "phonetic": "ˈʌpwədz",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "us",
+    "meaning": "pron.(宾格)我们",
+    "phonetic": "ʌs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "utmost",
+    "meaning": "a.最远的 n.极限",
+    "phonetic": "ˈʌtməust",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "utter",
+    "meaning": "a.完全的，彻底的",
+    "phonetic": "ˈʌtə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vacuum",
+    "meaning": "n.真空；真空吸尘器",
+    "phonetic": "ˈvækjuəm",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "van",
+    "meaning": "n.大篷车，运货车",
+    "phonetic": "væn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vanish",
+    "meaning": "vi.突然不见，消失",
+    "phonetic": "ˈvæni∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vanity",
+    "meaning": "n.虚荣心，虚夸",
+    "phonetic": "ˈvæniti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vapour",
+    "meaning": "n.汽，蒸气",
+    "phonetic": "ˈveipə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "veil",
+    "meaning": "n.面纱，面罩；遮蔽物",
+    "phonetic": "veil",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "velocity",
+    "meaning": "n.速度，速率",
+    "phonetic": "viˈlɔsiti",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "velvet",
+    "meaning": "n.丝绒，天鹅绒",
+    "phonetic": "ˈvelvit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "venture",
+    "meaning": "n.&vi.冒险 vt.敢于",
+    "phonetic": "ˈvent∫ə",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "verb",
+    "meaning": "n.动词",
+    "phonetic": "vəːb",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vessel",
+    "meaning": "n.容器；船，飞船；管",
+    "phonetic": "ˈvesl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "veteran",
+    "meaning": "n.老兵，老手",
+    "phonetic": "ˈvetərən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vex",
+    "meaning": "vt.使烦恼，使恼火",
+    "phonetic": "veks",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vibrate",
+    "meaning": "vt.使颤动 vi.颤动",
+    "phonetic": "vaiˈbreit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vibration",
+    "meaning": "n.颤动，振动；摆动",
+    "phonetic": "vaiˈbrei∫ən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "victorious",
+    "meaning": "a.胜利的，得胜的",
+    "phonetic": "vikˈtɔːriəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "viewpoint",
+    "meaning": "n.观点，看法，见解",
+    "phonetic": "ˈvjuːˌpɔint",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vigorous",
+    "meaning": "a.朝气蓬勃的",
+    "phonetic": "ˈvigərəs",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vine",
+    "meaning": "n.葡萄树",
+    "phonetic": "vain",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "violet",
+    "meaning": "n.紫罗兰",
+    "phonetic": "ˈvaiəlit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "virtually",
+    "meaning": "ad.实际上，事实上",
+    "phonetic": "ˈvəːtjuəli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "visible",
+    "meaning": "a.可见的，看得见的",
+    "phonetic": "ˈvizəbl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "vitamin",
+    "meaning": "n.维生素，维他命",
+    "phonetic": "ˈvaitəmin",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "volt",
+    "meaning": "n.伏特，伏",
+    "phonetic": "vəult",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "voltage",
+    "meaning": "n.电压",
+    "phonetic": "ˈvəultidʒ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "waggon",
+    "meaning": "n.四轮运货马车",
+    "phonetic": "ˈwægən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "waken",
+    "meaning": "vi.醒来 vt.弄醒",
+    "phonetic": "ˈweikən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "warn",
+    "meaning": "vt.警告 vi.发生警告",
+    "phonetic": "wɔːn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "waterfall",
+    "meaning": "n.瀑布",
+    "phonetic": "ˈwɔːtəfɔːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "waterproof",
+    "meaning": "a.不透水/防水的",
+    "phonetic": "ˈwɔːtəpruːf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wavelength",
+    "meaning": "n.波长",
+    "phonetic": "ˈweivleŋθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weaken",
+    "meaning": "vt.削弱 vi.变弱",
+    "phonetic": "ˈwiːkən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weapon",
+    "meaning": "n.武器，兵器",
+    "phonetic": "ˈwepən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weary",
+    "meaning": "a.疲倦的 vt.使疲乏",
+    "phonetic": "ˈwiəri",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weave",
+    "meaning": "vt.织，编 vi.纺织",
+    "phonetic": "wiːv",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "weld",
+    "meaning": "vt.&n.焊接，熔接",
+    "phonetic": "weld",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "westward",
+    "meaning": "a.向西的 ad.向西",
+    "phonetic": "ˈwestwəd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whilst",
+    "meaning": "conj.&n.当…的时候",
+    "phonetic": "wailst",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whip",
+    "meaning": "vt.鞭笞；搅打 n.鞭子",
+    "phonetic": "(h)wip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whirl",
+    "meaning": "vt.使回旋 vi.&n.回旋",
+    "phonetic": "(h)wəːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whisky",
+    "meaning": "n.威士忌酒",
+    "phonetic": "ˈ(h)wiski",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whitewash",
+    "meaning": "vt.粉刷，涂白",
+    "phonetic": "ˈ(h)waitwɔ∫",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "whoever",
+    "meaning": "pron.谁；无论谁",
+    "phonetic": "huːˈevə(r)",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wholly",
+    "meaning": "ad.完全地，全部",
+    "phonetic": "ˈhəuli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wicked",
+    "meaning": "a.坏的；令人厌恶的",
+    "phonetic": "ˈwikid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "widely",
+    "meaning": "ad.广，广泛",
+    "phonetic": "ˈwaidli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "widen",
+    "meaning": "vt.加宽 vi.变宽",
+    "phonetic": "ˈwaidn",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "widow",
+    "meaning": "n.寡妇",
+    "phonetic": "ˈwidəu",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "width",
+    "meaning": "n.宽阔，广阔；宽度",
+    "phonetic": "widθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wireless",
+    "meaning": "a.不用电线的，无线的",
+    "phonetic": "ˈwaiəlis",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wit",
+    "meaning": "n.智力，才智，智能",
+    "phonetic": "wit",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "withstand",
+    "meaning": "vt.抵挡，反抗",
+    "phonetic": "wiðˈstænd",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wolf",
+    "meaning": "n.狼",
+    "phonetic": "wulf",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "workman",
+    "meaning": "n.工人/匠，劳动者",
+    "phonetic": "ˈwəːkmən",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "workshop",
+    "meaning": "n.车间，工场；创作室",
+    "phonetic": "ˈwəːk∫ɔp",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "world-wide",
+    "meaning": "a.遍及全球的",
+    "phonetic": "ˈwəːldwaid",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "worship",
+    "meaning": "n.礼拜；崇拜 vt.崇拜",
+    "phonetic": "ˈwəː∫ip",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wreath",
+    "meaning": "n.花环，花圈，花冠",
+    "phonetic": "riːθ",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "wreck",
+    "meaning": "n.失事；残骸 vt.破坏",
+    "phonetic": "rek",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "yearly",
+    "meaning": "a.每年的 ad.一年一度",
+    "phonetic": "ˈjəːli",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "youthful",
+    "meaning": "a.年轻的，青年的",
+    "phonetic": "ˈjuːθful",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "zeal",
+    "meaning": "n.热心，热情，热忱",
+    "phonetic": "ziːl",
+    "example": "",
+    "hit": true
+  },
+  {
+    "word": "zealous",
+    "meaning": "a.热心的，热情的",
+    "phonetic": "ˈzeləs",
+    "example": "",
+    "hit": true
+  }
+]
