@@ -27,16 +27,24 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 自动 bump service-worker.js 里的 CACHE_VERSION
-      # 注意：bump 发生在 build time，不 commit 回仓库
-      - name: Bump SW cache version
+      # 自动 bump CACHE_VERSION (SW) + APP_VERSION (app.js)
+      # 不 commit 回仓库（build-time 修改）
+      - name: Bump versions
         run: |
           set -e
-          CURRENT=$(grep -oE "CACHE_VERSION = '[^']+'" public/service-worker.js | grep -oE "'[^']+'" | tr -d "'")
           SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-          NEW="v${CURRENT##*v}-${SHORT_SHA}"
-          echo "Bumping CACHE_VERSION: ${CURRENT} → ${NEW}"
-          sed -i "s/CACHE_VERSION = '${CURRENT}'/CACHE_VERSION = '${NEW}'/" public/service-worker.js
+
+          # 1. Bump CACHE_VERSION in service-worker.js
+          CURRENT_CACHE=$(grep -oE "CACHE_VERSION = '[^']+'" public/service-worker.js | grep -oE "'[^']+'" | tr -d "'")
+          NEW_CACHE="v${CURRENT_CACHE##*v}-${SHORT_SHA}"
+          sed -i "s/CACHE_VERSION = '${CURRENT_CACHE}'/CACHE_VERSION = '${NEW_CACHE}'/" public/service-worker.js
+          echo "CACHE: ${CURRENT_CACHE} → ${NEW_CACHE}"
+
+          # 2. Bump APP_VERSION in app.js
+          CURRENT_APP=$(grep -oE "APP_VERSION = '[^']+'" public/app.js | grep -oE "'[^']+'" | tr -d "'")
+          NEW_APP="${CURRENT_APP}-${SHORT_SHA}"
+          sed -i "s/APP_VERSION = '${CURRENT_APP}'/APP_VERSION = '${NEW_APP}'/" public/app.js
+          echo "APP: ${CURRENT_APP} → ${NEW_APP}"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -25,6 +25,9 @@ const LABELS = {
 };
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
+/** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
+const APP_VERSION = 'v1.0.0';
+
 // ===== 存储读写 =====
 // 原始读写（不经过 profile 前缀，给档案管理自己用）
 function _rawLoad(key, def) {
@@ -595,6 +598,10 @@ function route() {
   // 路由渲染完，如果是学习页，立即把当前圆环进度渲染出来
   const p2 = (location.hash.slice(1) || '/').split('/').filter(Boolean)[0] || 'home';
   if (p2 === 'study' && timer.id) timerRender();
+
+  // 同步 APP_VERSION 到 header 徽章
+  const verEl = document.getElementById('app-version');
+  if (verEl) verEl.textContent = APP_VERSION;
 }
 
 // ===== 页面渲染 =====
@@ -634,6 +641,8 @@ function renderHome() {
   return `
   <header class="topbar">
     <div class="brand">背单词</div>
+    <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
+    <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="刷新应用 · 清缓存重载（数据更新后用）">🔄</button>
     <div class="profile-chip" data-action="go-profile" title="切换/管理用户">
       <span class="profile-icon">👤</span><span class="profile-name">${escapeHtml(getActiveProfileName() || '默认用户')}</span><span class="profile-caret">▾</span>
     </div>
@@ -1274,6 +1283,7 @@ function onAction(e) {
     case 'go-lookup':location.hash = '#/lookup'; break;
     case 'go-phrase':location.hash = '#/phrase'; break;
     case 'go-profile':location.hash = '#/profile'; break;
+    case 'refresh-app': refreshApp(); break;
     case 'search':  doSearch(); break;
     case 'lookup-study': {
       const n = parseInt(el.dataset.n || '20', 10);
@@ -1686,5 +1696,31 @@ function renderProfile() {
       <div class="profile-list">${items}</div>
       <button class="btn-primary" data-action="profile-create">+ 新建用户</button>
     </main>`;
+}
+
+// ===== 刷新整个 app（清缓存 + unregister SW + cache-busting 重载）=====
+async function refreshApp() {
+  const btn = document.getElementById('refresh-app-btn');
+  if (!btn) return;
+  const original = btn.textContent;
+  btn.textContent = '⏳';
+  btn.disabled = true;
+  try {
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.filter(k => k.startsWith('vocab-pwa-')).map(k => caches.delete(k)));
+    }
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+    const url = new URL(location.href);
+    url.searchParams.set('_t', String(Date.now()));
+    location.replace(url);
+  } catch (e) {
+    alert('刷新失败: ' + e.message);
+    btn.textContent = original;
+    btn.disabled = false;
+  }
 }
 

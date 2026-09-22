@@ -497,3 +497,37 @@ body {
   text-decoration: none;
 }
 
+/* ===== 版本号徽章 + 刷新按钮（header） ===== */
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  user-select: none;
+  cursor: help;
+}
+
+.refresh-app-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+.refresh-app-btn:hover { background: rgba(255,255,255,0.28); }
+.refresh-app-btn:active { transform: scale(0.92); }
+.refresh-app-btn:disabled { opacity: 0.6; cursor: wait; }
+
