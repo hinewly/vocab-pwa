@@ -615,3 +615,33 @@ body {
   font-weight: 400;
 }
 
+/* ===== 区块分组标题 ===== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 18px 0 8px;
+  letter-spacing: 0.3px;
+}
+.section-header span:first-child {
+  font-size: 15px;
+}
+
+/* ===== 系统卡（区别于学习卡）===== */
+.cat-card.system-card {
+  background: #f9fafb;
+  border: 1.5px dashed #d1d5db;
+  border-left: 3px solid currentColor;
+}
+.cat-card.system-card:hover {
+  background: white;
+  border-color: #9ca3af;
+  border-style: solid;
+}
+.cat-card.system-card .cat-foot {
+  color: #4b5563;
+}
+

@@ -30,9 +30,9 @@ const APP_VERSION = 'v1.0.1';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
-  const { icon, name, color, action, dataAttrs = '', badge, badgeColor, progress, progressColor, footer } = opts;
+  const { icon, name, color, action, dataAttrs = '', badge, badgeColor, progress, progressColor, footer, className = '' } = opts;
   return `
-    <div class="cat-card" data-action="${action}" ${dataAttrs} style="--c:${color}">
+    <div class="cat-card ${className}" data-action="${action}" ${dataAttrs} style="--c:${color}">
       <div class="cat-head">
         <span class="cat-ico">${icon}</span>
         <span class="cat-name">${escapeHtml(name)}</span>
@@ -646,16 +646,16 @@ function renderHome() {
     footer: '已学 ' + phraseStudiedCount() + '/' + phraseTotal()
   });
   const statsCard = compactCard({
-    icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats',
-    footer: '每日数据 · 标签分布'
+    icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
+    footer: '每日数据 · 标签分布 ›'
   });
   const devplanCard = compactCard({
-    icon: '📋', name: '开发计划', color: '#f59e0b', action: 'go-devplan',
-    footer: 'V1.20 路线 · 后续规划'
+    icon: '📋', name: '开发计划', color: '#f59e0b', action: 'go-devplan', className: 'system-card',
+    footer: 'V1.20 路线 · 后续规划 ›'
   });
   const changelogCard = compactCard({
-    icon: '📝', name: '更新日志', color: '#10b981', action: 'go-changelog',
-    footer: '版本变更记录'
+    icon: '📝', name: '更新日志', color: '#10b981', action: 'go-changelog', className: 'system-card',
+    footer: '版本变更记录 ›'
   });
   const cards = Object.keys(CATS).map(cat => {
     const total = catCount(cat);
@@ -704,13 +704,26 @@ function renderHome() {
       <button class="search-btn" data-action="search">搜索</button>
     </div>
     <div id="search-result"></div>
+    <h3 class="section-header"><span>📚</span><span>学习</span></h3>
     <div class="cats-grid">
       ${cards}
-      ${lookupCard}${phraseCard}${statsCard}${devplanCard}${changelogCard}
+      ${lookupCard}${phraseCard}
+    </div>
+    <h3 class="section-header"><span>🛠️</span><span>系统</span></h3>
+    <div class="cats-grid">
+      ${statsCard}${devplanCard}${changelogCard}
     </div>
     <footer class="contact-footer">
-      <small>📮 问题反馈 · <a href="mailto:[email protected]?subject=背单词%20PWA%20反馈">[email protected]</a></small>
+      <small>📮 问题反馈 · <span id="contact-email"></span></small>
     </footer>
+    <script>
+      (function(){
+        const u = 'hinewly', d = '163.com';
+        const addr = u + '‎@' + d;
+        document.getElementById('contact-email').innerHTML =
+          '<a href="mailto:' + addr + '?subject=' + encodeURIComponent('背单词 PWA 反馈') + '">' + addr + '</a>';
+      })();
+    </script>
   </main>`;
 }
 
