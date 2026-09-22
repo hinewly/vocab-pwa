@@ -368,16 +368,16 @@ body {
   align-items: center;
   gap: 4px;
   padding: 5px 12px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.4);    /* 提高对比度：0.15 → 0.4 */
+  color: #047857;                       /* 深绿色文字，对比绿底 */
   border-radius: 16px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
-  color: white;
   border: none;
   user-select: none;
 }
-.profile-chip:active { background: rgba(255,255,255,0.28); }
+.profile-chip:active { background: rgba(255,255,255,0.55); }
 .profile-name { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .profile-caret { font-size: 9px; opacity: 0.75; }
 
