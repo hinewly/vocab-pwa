@@ -1,14 +1,14 @@
-// vocab-pwa · Service Worker
-// 策略：cache-first + 后台更新
+// vocab-pwa · Service Worker (v2: 自动 cache-busting)
+// 策略：cache-first + 后台更新；CACHE_VERSION 由 deploy workflow 自动 bump
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const ASSETS = [
   './',
   './index.html',
-  './style.css?v=1.20',
-  './app.js?v=1.20',
-  './data.js?v=1.20',
-  './phrases.js?v=1.20',
+  './style.css?v=2',
+  './app.js?v=2',
+  './data.js?v=2',
+  './phrases.js?v=2',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
@@ -29,6 +29,7 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
+        // 删所有非 v2 的旧缓存
         keys.filter(k => k !== CACHE_VERSION).map(k => caches.delete(k))
       ))
       .then(() => self.clients.claim())
@@ -46,7 +47,7 @@ self.addEventListener('fetch', event => {
           caches.open(CACHE_VERSION).then(c => c.put(event.request, clone));
         }
         return response;
-      }).catch(() => cached);
+    }).catch(() => cached);
     })
   );
 });
