@@ -361,3 +361,139 @@ body {
 /* ===== 短语本 ===== */
 .level-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .level-tag { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: #f0f0f5; color: var(--ink-soft); }
+
+/* ===== 多用户档案 ===== */
+.profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  user-select: none;
+}
+.profile-chip:active { background: rgba(255,255,255,0.28); }
+.profile-name { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.profile-caret { font-size: 9px; opacity: 0.75; }
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.profile-intro {
+  background: #ecfdf5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: #065f46;
+}
+.profile-intro p { margin: 0; }
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+.profile-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.profile-item.active {
+  border-color: #059669;
+  background: #f0fdf4;
+}
+.profile-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+.profile-item-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+}
+.profile-badge {
+  display: inline-block;
+  background: #059669;
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+.profile-item-date {
+  color: #9ca3af;
+  font-size: 12px;
+}
+.profile-item-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  color: #374151;
+}
+.btn-sm:active { background: #f3f4f6; }
+.btn-sm.primary {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+.btn-sm.danger {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.btn-primary:active { background: #047857; }
+
+.contact-footer {
+  margin-top: 24px;
+  padding: 16px 12px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  border-top: 1px solid #e5e7eb;
+}
+.contact-footer a {
+  color: #059669;
+  text-decoration: none;
+}
+

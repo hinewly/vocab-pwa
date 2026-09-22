@@ -26,11 +26,103 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 存储读写 =====
-function load(key, def) {
+// 原始读写（不经过 profile 前缀，给档案管理自己用）
+function _rawLoad(key, def) {
   try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; }
   catch (e) { return def; }
 }
-function save(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+function _rawSave(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+// ===== 多用户档案管理 =====
+const PROFILES_KEY = 'wa:profiles';
+const ACTIVE_PROFILE_KEY = 'wa:active-profile';
+const MIGRATED_KEY = 'wa:migrated-v2';
+const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor'];
+
+function getProfiles() { return _rawLoad(PROFILES_KEY, []); }
+function saveProfiles(p) { _rawSave(PROFILES_KEY, p); }
+function getActiveProfileId() {
+  const ps = getProfiles();
+  const aid = _rawLoad(ACTIVE_PROFILE_KEY, null);
+  if (aid && ps.some(p => p.id === aid)) return aid;
+  return ps[0]?.id || null;
+}
+function getActiveProfileName() {
+  const id = getActiveProfileId();
+  if (!id) return null;
+  return getProfiles().find(p => p.id === id)?.name || null;
+}
+function profileKey(key) {
+  const id = getActiveProfileId();
+  return id ? key.replace(/^wa:/, `wa:${id}:`) : key;
+}
+function createProfile(name) {
+  const ps = getProfiles();
+  const id = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  ps.push({ id, name: name || '新用户', createdAt: Date.now() });
+  saveProfiles(ps);
+  return id;
+}
+function renameProfile(id, newName) {
+  const ps = getProfiles();
+  const p = ps.find(x => x.id === id);
+  if (p) { p.name = newName; saveProfiles(ps); }
+}
+function deleteProfile(id) {
+  const ps = getProfiles().filter(p => p.id !== id);
+  saveProfiles(ps);
+  STATE_KEYS.forEach(k => localStorage.removeItem(`wa:${id}:${k}`));
+  if (_rawLoad(ACTIVE_PROFILE_KEY, null) === id) {
+    const na = ps[0]?.id;
+    if (na) _rawSave(ACTIVE_PROFILE_KEY, na);
+    else localStorage.removeItem(ACTIVE_PROFILE_KEY);
+  }
+}
+function setActiveProfile(id) {
+  _rawSave(ACTIVE_PROFILE_KEY, id);
+  reloadStore();
+}
+function reloadStore() {
+  STORE.labels    = load('wa:labels', {});
+  STORE.studied   = load('wa:studied', {});
+  STORE.sessions  = load('wa:sessions', defaultsByCat());
+  STORE.totals    = load('wa:totals',   defaultsByCat());
+  STORE.checkin   = load('wa:checkin',  { streak: 0, lastDate: '', dates: [] });
+  STORE.autoBackup= load('wa:autoBackup',{ lastAuto: '', count: 0, handleReady: false });
+  STORE.cursor    = load('wa:cursor',   defaultsByCat());
+  STORE.lookups   = load('wa:lookups', {});
+  STORE.pLabels   = load('wa:p-labels', {});
+  STORE.pStudied  = load('wa:p-studied', {});
+  STORE.pSessions = load('wa:p-sessions', 0);
+  STORE.pTotals   = load('wa:p-totals',  0);
+  STORE.pCursor   = load('wa:p-cursor',  0);
+}
+
+// 一次性迁移：老数据 (wa:labels 等无前缀) → "用户1"档案
+function migrateToProfiles() {
+  if (_rawLoad(MIGRATED_KEY, false)) return;
+  const hasOld = STATE_KEYS.some(k => localStorage.getItem(`wa:${k}`) !== null);
+  if (hasOld) {
+    const id = createProfile('用户1');
+    STATE_KEYS.forEach(k => {
+      const v = localStorage.getItem(`wa:${k}`);
+      if (v !== null) {
+        localStorage.setItem(`wa:${id}:${k}`, v);
+        localStorage.removeItem(`wa:${k}`);
+      }
+    });
+    _rawSave(ACTIVE_PROFILE_KEY, id);
+  } else {
+    const id = createProfile('默认用户');
+    _rawSave(ACTIVE_PROFILE_KEY, id);
+  }
+  _rawSave(MIGRATED_KEY, true);
+}
+migrateToProfiles();
+
+// 应用层 load/save：自动加 profile 前缀
+function load(key, def) { return _rawLoad(profileKey(key), def); }
+function save(key, val) { _rawSave(profileKey(key), val); }
 
 /** 根据 WORDS 动态生成分类默认值对象，新增分类时自动适配，无需改代码 */
 function defaultsByCat() {
@@ -487,6 +579,7 @@ function route() {
   else if (p === 'stats') html = renderStats();
   else if (p === 'lookup') html = renderLookup();
   else if (p === 'phrase') html = renderPhraseBook();
+  else if (p === 'profile') html = renderProfile();
   else if (p === 'dev-plan') { renderDevPlan(app); return; }
   else if (p === 'changelog') { renderChangelog(app); return; }
   else html = renderHome();
@@ -534,6 +627,9 @@ function renderHome() {
   return `
   <header class="topbar">
     <div class="brand">背单词</div>
+    <div class="profile-chip" data-action="go-profile" title="切换/管理用户">
+      <span class="profile-icon">👤</span><span class="profile-name">${escapeHtml(getActiveProfileName() || '默认用户')}</span><span class="profile-caret">▾</span>
+    </div>
     <div class="checkin" data-action="go-stats">
       <span class="fire">🔥</span><span>${ci.streak}</span><small>连续打卡</small>
     </div>
@@ -565,6 +661,9 @@ function renderHome() {
         </div>
       </div>
     </div>
+    <footer class="contact-footer">
+      <small>📮 问题反馈 · <a href="mailto:[email protected]?subject=背单词%20PWA%20反馈">[email protected]</a></small>
+    </footer>
     <div class="cat-card" data-action="go-phrase" style="--c:#e17055">
       <div class="cat-head">
         <span class="cat-ico">📚</span>
@@ -1167,6 +1266,7 @@ function onAction(e) {
     case 'go-review':location.hash = '#/review/' + cat; break;
     case 'go-lookup':location.hash = '#/lookup'; break;
     case 'go-phrase':location.hash = '#/phrase'; break;
+    case 'go-profile':location.hash = '#/profile'; break;
     case 'search':  doSearch(); break;
     case 'lookup-study': {
       const n = parseInt(el.dataset.n || '20', 10);
@@ -1242,6 +1342,48 @@ function onAction(e) {
     case 'timer-pause': timerTogglePause(); break;
     case 'manual-export': manualExport(); break;
     case 'setup-autobackup': setupAutoBackup(); break;
+        case 'profile-create': {
+      const name = prompt('新用户名称：', '用户' + (getProfiles().length + 1));
+      if (name && name.trim()) {
+        const id = createProfile(name.trim());
+        setActiveProfile(id);
+        route();
+      }
+      break;
+    }
+    case 'profile-switch': {
+      const id = el.dataset.id;
+      const ps = getProfiles();
+      const p = ps.find(x => x.id === id);
+      if (!p || p.id === getActiveProfileId()) break;
+      if (confirm(`切换到「${p.name}」？当前用户「${getActiveProfileName()}」的修改会自动保存。`)) {
+        persist();
+        setActiveProfile(id);
+        route();
+      }
+      break;
+    }
+    case 'profile-rename': {
+      const id = el.dataset.id;
+      const ps = getProfiles();
+      const p = ps.find(x => x.id === id);
+      if (!p) break;
+      const nn = prompt('新名称：', p.name);
+      if (nn && nn.trim()) { renameProfile(id, nn.trim()); route(); }
+      break;
+    }
+    case 'profile-delete': {
+      const id = el.dataset.id;
+      const ps = getProfiles();
+      if (ps.length <= 1) { alert('至少要保留一个用户'); break; }
+      const p = ps.find(x => x.id === id);
+      if (!p) break;
+      if (!confirm(`确定要删除用户「${p.name}」吗？\n该用户的所有学习记录将永久丢失！`)) break;
+      deleteProfile(id);
+      reloadStore();
+      route();
+      break;
+    }
     case 'backup-now': (async () => { const h = await getHandle(); if (h) { await doAutoBackup(h); route(); } })(); break;
     case 'import-backup': document.getElementById('import-file').click(); break;
   }
@@ -1500,3 +1642,42 @@ window.addEventListener('hashchange', route);
 document.addEventListener('visibilitychange', timerOnVisibility);
 route();
 checkAutoBackup(); // 启动时检查是否到了自动备份周期
+
+
+// ===== 用户档案管理页面 =====
+function renderProfile() {
+  const profiles = getProfiles();
+  const activeId = getActiveProfileId();
+  const items = profiles.map(p => {
+    const isActive = p.id === activeId;
+    const date = new Date(p.createdAt);
+    const dateStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+    return `
+      <div class="profile-item ${isActive ? 'active' : ''}">
+        <div class="profile-item-main">
+          <span class="profile-item-name">${escapeHtml(p.name)}</span>
+          ${isActive ? '<span class="profile-badge">当前</span>' : ''}
+          <small class="profile-item-date">创建于 ${dateStr}</small>
+        </div>
+        <div class="profile-item-actions">
+          ${!isActive ? `<button class="btn-sm primary" data-action="profile-switch" data-id="${p.id}">切换</button>` : ''}
+          <button class="btn-sm" data-action="profile-rename" data-id="${p.id}">改名</button>
+          ${profiles.length > 1 ? `<button class="btn-sm danger" data-action="profile-delete" data-id="${p.id}">删除</button>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-home">← 返回</button>
+      <div class="brand">用户管理</div>
+    </header>
+    <main class="page">
+      <div class="profile-intro">
+        <p>每个用户的学习记录（标签、打卡、查词本…）独立保存，互不干扰。</p>
+      </div>
+      <div class="profile-list">${items}</div>
+      <button class="btn-primary" data-action="profile-create">+ 新建用户</button>
+    </main>`;
+}
+
