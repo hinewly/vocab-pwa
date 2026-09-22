@@ -27,17 +27,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 自动 bump service-worker.js 里的 CACHE_VERSION + 所有 ?v=N 资源链接
+      # 自动 bump service-worker.js 里的 CACHE_VERSION
+      # 注意：bump 发生在 build time，不 commit 回仓库
       - name: Bump SW cache version
         run: |
           set -e
-          CURRENT=$(grep -oE "CACHE_VERSION = 'v[0-9]+'" public/service-worker.js | grep -oE 'v[0-9]+' | tr -d 'v')
+          CURRENT=$(grep -oE "CACHE_VERSION = '[^']+'" public/service-worker.js | grep -oE "'[^']+'" | tr -d "'")
           SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-          NEW="v$((CURRENT + 1))-${SHORT_SHA}"
+          NEW="v${CURRENT##*v}-${SHORT_SHA}"
           echo "Bumping CACHE_VERSION: ${CURRENT} → ${NEW}"
-          sed -i "s/CACHE_VERSION = 'v${CURRENT}'/CACHE_VERSION = '${NEW}'/" public/service-worker.js
-          sed -i "s/?v=${CURRENT}/?v=${NEW}/g" public/service-worker.js
-          # 不需要 commit 这个改动（这是 build-time 修改）
+          sed -i "s/CACHE_VERSION = '${CURRENT}'/CACHE_VERSION = '${NEW}'/" public/service-worker.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
