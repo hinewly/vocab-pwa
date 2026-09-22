@@ -92,6 +92,9 @@ window.AFFIXES = {
     { a: 'il-/ir-', m: 'in- 的变体（l/r 前）', ex: ['legal → illegal', 'regular → irregular'] },
     { a: 'im-', m: 'in- 的变体（b/m/p 前）', ex: ['possible → impossible', 'balance → imbalance'] },
     { a: 'a-', m: '处于...状态', ex: ['moral → amoral', 'political → apolitical', 'typical → atypical'] }
+    { a: 'step-', m: '继；后', e.g.: ['mother → stepmother', 'father → stepfather', 'child → stepchild'] },
+    { a: 'well-', m: '好；充分', e.g.: ['known → well-known', 'do → welldo', 'off → well-off'] },
+    { a: 'extra-', m: '额外；超出（再加一条）', e.g.: ['ordinary → extraordinary', 'curricular → extracurricular'] },
   ],
 
   suffix: [
@@ -199,6 +202,11 @@ window.AFFIXES = {
     // 副词（强调）
     { a: '-ly', m: '方式；状态（再列）', ex: ['only', 'early', 'lively'] },
     { a: '-ways', m: '方向；方式', ex: ['sideways', 'lengthways', 'crossways'] }
+    { a: '-scape', m: '景象；景色', e.g.: ['land → landscape', 'sea → seascape', 'moon → moonscape'] },
+    { a: '-berry', m: '浆果', e.g.: ['straw → strawberry', 'blue → blueberry', 'rasp → raspberry'] },
+    { a: '-ever', m: '任何；究竟', e.g.: ['who → whoever', 'what → whatever', 'when → whenever'] },
+    { a: '-ling', m: '小；不重要（再加）', e.g.: ['sibling', 'inkling', 'underling'] },
+    { a: '-phile', m: '爱好者（再加）', e.g.: ['audio → audiophile', 'photo → photophile'] },
   ]
 };
 

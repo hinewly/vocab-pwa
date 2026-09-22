@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.0.2';
+const APP_VERSION = 'v1.1.0';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -577,6 +577,63 @@ function affixStudiedCount() {
   return Object.keys(STORE.aStudied).filter(k => k.startsWith('affix:')).length;
 }
 function affixLabelOf(item) { return STORE.aLabels[affixKey(item)]; }
+let affixSession = { list: [], idx: 0, current: null, showing: true };
+
+/** 抽 N 个未掌握的词缀（加权：未标记的优先） */
+function pickAffixes(n) {
+  const all = affixAll();
+  const unlearned = all.filter(a => !affixLabelOf(a));
+  const learned = all.filter(a => affixLabelOf(a));
+  // 游标推进：保持顺序，避免重复
+  const start = STORE.aCursor % Math.max(1, unlearned.length || 1);
+  const picks = [];
+  for (let i = 0; i < n; i++) {
+    const pool = unlearned.length ? unlearned : learned;
+    if (!pool.length) break;
+    const idx = (start + i) % pool.length;
+    picks.push(pool[idx]);
+  }
+  STORE.aCursor = (STORE.aCursor + picks.length) % Math.max(1, (unlearned.length || 1));
+  return picks;
+}
+
+/** 开始学习 session */
+function startAffixStudy(n) {
+  affixSession.list = pickAffixes(Math.min(n, affixTotal()));
+  affixSession.idx = 0;
+  affixSession.current = affixSession.list[0] || null;
+  affixSession.showing = true;
+  persist();
+  location.hash = '#/affix-study';
+}
+
+/** 翻面 */
+function flipAffixCard() {
+  affixSession.showing = !affixSession.showing;
+  route();
+}
+
+/** 打标签 */
+function markAffixLabel(label) {
+  if (!affixSession.current) return;
+  const k = affixKey(affixSession.current);
+  STORE.aLabels[k] = label;
+  STORE.aStudied[k] = (STORE.aStudied[k] || 0) + 1;
+  // 推进到下一个
+  affixSession.idx++;
+  if (affixSession.idx >= affixSession.list.length) {
+    STORE.aSessions++;
+    STORE.aTotals += affixSession.list.length;
+    affixSession.current = null;
+    persist();
+    location.hash = '#/affix-result';
+  } else {
+    affixSession.current = affixSession.list[affixSession.idx];
+    affixSession.showing = true;
+    route();
+  }
+}
+
 function affixMastery() {
   const total = affixTotal();
   if (!total) return 0;
@@ -654,6 +711,9 @@ function route() {
   else if (p === 'stats') html = renderStats();
   else if (p === 'lookup') html = renderLookup();
   else if (p === 'phrase') html = renderPhraseBook();
+  else if (p === 'affix') html = renderAffix();
+  else if (p === 'affix-study') html = renderAffixStudy();
+  else if (p === 'affix-result') html = renderAffixResult();
   else if (p === 'profile') html = renderProfile();
   else if (p === 'dev-plan') { renderDevPlan(app); return; }
   else if (p === 'changelog') { renderChangelog(app); return; }
@@ -752,7 +812,7 @@ function renderHome() {
     <h3 class="section-header"><span>📚</span><span>学习</span></h3>
     <div class="cats-grid">
       ${cards}
-      ${lookupCard}${phraseCard}
+      ${lookupCard}${phraseCard}${affixCard}
     </div>
     <h3 class="section-header"><span>🛠️</span><span>系统</span></h3>
     <div class="cats-grid">
@@ -1341,6 +1401,10 @@ function onAction(e) {
     case 'go-review':location.hash = '#/review/' + cat; break;
     case 'go-lookup':location.hash = '#/lookup'; break;
     case 'go-phrase':location.hash = '#/phrase'; break;
+    case 'go-affix':location.hash = '#/affix'; break;
+    case 'affix-study': startAffixStudy(parseInt(el.dataset.num, 10)); break;
+    case 'flip-affix': flipAffixCard(); break;
+    case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-profile':location.hash = '#/profile'; break;
     case 'refresh-app': refreshApp(); break;
     case 'search':  doSearch(); break;
@@ -1844,5 +1908,88 @@ async function refreshApp() {
     btn.textContent = original;
     btn.disabled = false;
   }
+}
+
+
+// ===== 词缀渲染函数 =====
+function renderAffix() {
+  const total = affixTotal();
+  const studied = affixStudiedCount();
+  const pct = affixMastery();
+  const lb = affixCountLabels();
+  const prefixCount = (window.AFFIXES || {}).prefix && window.AFFIXES.prefix.length || 0;
+  const suffixCount = (window.AFFIXES || {}).suffix && window.AFFIXES.suffix.length || 0;
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-home">← 返回</button>
+      <div class="brand">词缀</div>
+    </header>
+    <main class="page">
+      <div class="affix-intro">
+        <h3>📐 常用英语词缀</h3>
+        <p>精选 ${total} 条（前缀 ${prefixCount} + 后缀 ${suffixCount}）。</p>
+        <p>掌握词缀，举一反三：act → action / actor / interact / transaction</p>
+      </div>
+      <div class="affix-stats">
+        <div>已学 <b>${studied}</b>/${total} · 掌握度 <b style="color:${masteryColor(pct)}">${pct}%</b></div>
+        <div>过关 ${lb.graduate} · 必背 ${lb.must} · 重点 ${lb.key} · 模糊 ${lb.fuzzy}</div>
+      </div>
+      <h4>选择本次练习数量</h4>
+      <div class="num-btns">
+        <button class="num-btn" data-action="affix-study" data-num="10">10</button>
+        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="20">20</button>
+        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="50">50</button>
+        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="100">100</button>
+        <button class="num-btn num-btn-max" data-action="affix-study" data-num="${total}">全部</button>
+      </div>
+    </main>`;
+}
+
+function renderAffixStudy() {
+  if (!affixSession.current) return renderAffixResult();
+  const a = affixSession.current;
+  const showing = affixSession.showing;
+  const typeLabel = a.type === 'prefix' ? '前缀' : '后缀';
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-affix">← 返回</button>
+      <div class="brand">词缀 ${affixSession.idx + 1}/${affixSession.list.length}</div>
+    </header>
+    <main class="page study-page">
+      <div class="affix-card ${showing ? 'front' : 'back'}" data-action="flip-affix">
+        ${showing ? `
+          <div class="affix-type">${typeLabel}</div>
+          <div class="affix-text">${a.a}</div>
+          <div class="affix-hint">👆 点击翻面</div>
+        ` : `
+          <div class="affix-meaning">${a.m}</div>
+          <div class="affix-type-badge">${typeLabel} · ${a.a}</div>
+          <div class="affix-examples">
+            ${a.ex.map(e => '<div class="affix-ex">' + e + '</div>').join('')}
+          </div>
+        `}
+      </div>
+      <div class="label-btns">
+        ${LABEL_ORDER.map(l => '<button class="label-btn" style="--c:' + LABELS[l].color + '" data-action="label-affix" data-label="' + l + '">' + LABELS[l].name + '</button>').join('')}
+      </div>
+    </main>`;
+}
+
+function renderAffixResult() {
+  const total = affixSession.list.length;
+  const new_grad = affixSession.list.filter(a => affixLabelOf(a) === 'graduate').length;
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-affix">← 返回</button>
+      <div class="brand">本轮完成</div>
+    </header>
+    <main class="page">
+      <div class="result-card">
+        <h2>🎉 本轮 ${total} 条完成</h2>
+        <div>本轮新标"过关" ${new_grad} 条</div>
+        <div>累计已学 ${affixStudiedCount()}/${affixTotal()} · 掌握度 ${affixMastery()}%</div>
+      </div>
+      <button class="btn-primary" data-action="go-affix">回到词缀</button>
+    </main>`;
 }
 
