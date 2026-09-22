@@ -585,3 +585,33 @@ body {
   .cat-card { padding: 10px 12px !important; }
 }
 
+/* ===== 行内改名输入框 ===== */
+.profile-item.editing {
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.profile-rename-input {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: 1.5px solid #059669;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  max-width: 240px;
+  background: white;
+  color: #111827;
+  font-family: inherit;
+}
+
+.profile-rename-input:focus {
+  border-color: #047857;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.profile-rename-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+

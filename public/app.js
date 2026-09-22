@@ -108,6 +108,8 @@ function deleteProfile(id) {
     else localStorage.removeItem(ACTIVE_PROFILE_KEY);
   }
 }
+let editingProfileId = null;  // 行内编辑：当前在改名的 profile id
+
 function setActiveProfile(id) {
   _rawSave(ACTIVE_PROFILE_KEY, id);
   reloadStore();
@@ -1389,11 +1391,46 @@ function onAction(e) {
     }
     case 'profile-rename': {
       const id = el.dataset.id;
-      const ps = getProfiles();
-      const p = ps.find(x => x.id === id);
-      if (!p) break;
-      const nn = prompt('新名称：', p.name);
-      if (nn && nn.trim()) { renameProfile(id, nn.trim()); route(); }
+      editingProfileId = id;
+      route();
+      // 自动聚焦到输入框 + 绑定键盘事件
+      setTimeout(() => {
+        const input = document.querySelector('.profile-rename-input');
+        if (!input) return;
+        input.focus();
+        input.select();
+        const finish = (save) => {
+          if (save) {
+            const nn = input.value.trim();
+            if (nn) renameProfile(input.dataset.id, nn);
+          }
+          editingProfileId = null;
+          route();
+        };
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') { e.preventDefault(); finish(true); }
+          else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
+        });
+        // blur 保存（100ms 延迟，避免和按钮点击冲突）
+        input.addEventListener('blur', () => {
+          setTimeout(() => {
+            if (editingProfileId === input.dataset.id) finish(true);
+          }, 100);
+        });
+      }, 0);
+      break;
+    }
+    case 'profile-rename-save': {
+      const id = el.dataset.id;
+      const input = document.querySelector('.profile-rename-input');
+      if (input && input.value.trim()) renameProfile(id, input.value.trim());
+      editingProfileId = null;
+      route();
+      break;
+    }
+    case 'profile-rename-cancel': {
+      editingProfileId = null;
+      route();
       break;
     }
     case 'profile-delete': {
@@ -1674,8 +1711,27 @@ function renderProfile() {
   const activeId = getActiveProfileId();
   const items = profiles.map(p => {
     const isActive = p.id === activeId;
+    const isEditing = p.id === editingProfileId;
     const date = new Date(p.createdAt);
     const dateStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+
+    if (isEditing) {
+      // 行内编辑状态：input + 保存/取消
+      return `
+        <div class="profile-item active editing">
+          <div class="profile-item-main">
+            <input type="text" class="profile-rename-input" data-id="${p.id}"
+                   value="${escapeHtml(p.name)}" maxlength="20"
+                   placeholder="输入新名称" autocomplete="off" />
+            <small class="profile-item-date">创建于 ${dateStr} · 按回车保存，ESC 取消</small>
+          </div>
+          <div class="profile-item-actions">
+            <button class="btn-sm primary" data-action="profile-rename-save" data-id="${p.id}">保存</button>
+            <button class="btn-sm" data-action="profile-rename-cancel" data-id="${p.id}">取消</button>
+          </div>
+        </div>`;
+    }
+
     return `
       <div class="profile-item ${isActive ? 'active' : ''}">
         <div class="profile-item-main">
