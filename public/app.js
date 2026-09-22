@@ -617,6 +617,8 @@ function route() {
   else html = renderHome();
   app.innerHTML = html;
   window.scrollTo(0, 0);
+  // 注入 footer 邮箱（innerHTML 不执行 <script>，必须在这里手动调用）
+  if (typeof updateContactEmail === 'function') updateContactEmail();
   // 路由渲染完，如果是学习页，立即把当前圆环进度渲染出来
   const p2 = (location.hash.slice(1) || '/').split('/').filter(Boolean)[0] || 'home';
   if (p2 === 'study' && timer.id) timerRender();
@@ -716,14 +718,6 @@ function renderHome() {
     <footer class="contact-footer">
       <small>📮 问题反馈 · <span id="contact-email"></span></small>
     </footer>
-    <script>
-      (function(){
-        const u = 'hinewly', d = '163.com';
-        const addr = u + '‎@' + d;
-        document.getElementById('contact-email').innerHTML =
-          '<a href="mailto:' + addr + '?subject=' + encodeURIComponent('背单词 PWA 反馈') + '">' + addr + '</a>';
-      })();
-    </script>
   </main>`;
 }
 
@@ -1136,7 +1130,7 @@ async function renderChangelog(app) {
     <div class="devplan-body">加载中...</div>
   </main>`;
   try {
-    const res = await fetch('更新日志.md');
+    const res = await fetch('CHANGELOG.md');
     const text = await res.text();
     const body = app.querySelector('.devplan-body');
     if (window.marked) {
@@ -1775,6 +1769,15 @@ function renderProfile() {
 }
 
 // ===== 刷新整个 app（清缓存 + unregister SW + cache-busting 重载）=====
+/** 注入联系邮箱到 footer（innerHTML 不执行 <script>，必须在 route() 后手动调用）*/
+function updateContactEmail() {
+  const el = document.getElementById('contact-email');
+  if (!el) return;
+  const u = 'hinewly', d = '163.com';
+  const addr = u + '@' + d;
+  el.innerHTML = '<a href="mailto:' + addr + '?subject=' + encodeURIComponent('背单词 PWA 反馈') + '">' + addr + '</a>';
+}
+
 async function refreshApp() {
   const btn = document.getElementById('refresh-app-btn');
   if (!btn) return;
