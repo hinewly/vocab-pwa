@@ -531,3 +531,57 @@ body {
 .refresh-app-btn:active { transform: scale(0.92); }
 .refresh-app-btn:disabled { opacity: 0.6; cursor: wait; }
 
+/* ===== 分类卡 2 列网格 + 紧凑版式 ===== */
+.cats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.cat-card {
+  padding: 12px 14px !important;  /* 比原来更紧凑 */
+}
+
+.cat-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.cat-pct-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  margin-left: auto;
+  min-width: 40px;
+  text-align: center;
+}
+
+.mastery-bar-wrap {
+  margin: 6px 0;
+}
+
+.mastery-bar-wrap .mastery-bar {
+  margin: 0;
+  height: 6px;  /* 比原来更细 */
+}
+
+.cat-foot {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* 小屏：依然 2 列（用户确认：手机也是点进去学习，不是光看）*/
+@media (max-width: 360px) {
+  .cats-grid { gap: 8px; }
+  .cat-card { padding: 10px 12px !important; }
+}
+

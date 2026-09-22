@@ -621,20 +621,16 @@ function renderHome() {
         <div class="cat-head">
           <span class="cat-ico">${CATS[cat].icon}</span>
           <span class="cat-name">${CATS[cat].name}</span>
+          <span class="cat-pct-badge" style="background:${color}">${pct}%</span>
         </div>
-        <div class="cat-stats">
-          <span>${studied}/${total} 已学 · 过关 ${lb.graduate}</span>
-          <span>必背 ${lb.must} · 重点 ${lb.key}</span>
-        </div>
-        <div class="mastery">
-          <div class="mastery-info">
-            <span>掌握度 <small style="color:${color}">${masteryLabel(pct)}</small></span>
-            <b style="color:${color}">${pct}%</b>
-          </div>
+        <div class="mastery-bar-wrap">
           <div class="mastery-bar">
             <div class="mastery-fill" style="width:${pct}%;background:${color}"></div>
             <div class="mastery-target" style="left:${target}%" title="目标 ${target}%"></div>
           </div>
+        </div>
+        <div class="cat-foot">
+          <small>已学 ${studied}/${total}</small>
         </div>
       </div>`;
   }).join('');
@@ -660,7 +656,7 @@ function renderHome() {
       <button class="search-btn" data-action="search">搜索</button>
     </div>
     <div id="search-result"></div>
-    ${cards}
+    <div class="cats-grid">${cards}</div>
     <div class="cat-card lookup-card" data-action="go-lookup" style="--c:#6c5ce7">
       <div class="cat-head">
         <span class="cat-ico">🔍</span>
