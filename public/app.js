@@ -33,6 +33,13 @@ function _rawLoad(key, def) {
 }
 function _rawSave(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
+/** HTML 转义（防止用户输入的档案名带特殊字符破坏 DOM）*/
+function escapeHtml(str) {
+  return String(str == null ? '' : str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[c]);
+}
+
 // ===== 多用户档案管理 =====
 const PROFILES_KEY = 'wa:profiles';
 const ACTIVE_PROFILE_KEY = 'wa:active-profile';
