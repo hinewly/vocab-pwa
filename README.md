@@ -43,11 +43,14 @@ vocab-pwa/
 ├── DESIGN.md             ← V1.20 设计文档（来自原项目）
 ├── 开发计划.md            ← 来自原项目
 ├── 更新日志.md            ← 来自原项目
-├── index.html            ← 入口
-├── app.js                ← 主逻辑（V1.20 原版，即将改造）
-├── style.css             ← 样式
+├── index.html            ← 入口（含 PWA meta + SW 注册）
+├── app.js                ← 主逻辑（V1.20 + 多用户档案系统）
+├── style.css             ← 样式（含 profile / contact-footer 等）
+├── manifest.json         ← PWA 应用清单
+├── service-worker.js     ← 离线缓存（自动 CACHE_VERSION bump）
 ├── data.js               ← 6722 词词库（700 KB）
 ├── phrases.js            ← 410 条短语（51 KB）
+├── icons/                ← PWA 图标（192/512/maskable-512/favicon）
 ├── build-data.js         ← 词库构建脚本
 ├── build-phonetic.js     ← 音标补全脚本
 ├── 单词资料/              ← 源数据（更新词库时使用）
