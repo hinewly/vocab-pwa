@@ -92,3 +92,7 @@ vocab-pwa/
 - 📐 设计文档：[DESIGN.md](./DESIGN.md)
 - 🛠️ 开发计划：[开发计划.md](./开发计划.md)
 - 📝 更新日志：[更新日志.md](./更新日志.md)
+
+## 七、版本更新
+
+所有版本变更记录见 [`CHANGELOG.md`](./CHANGELOG.md)。
