@@ -67,7 +67,7 @@ function escapeHtml(str) {
 const PROFILES_KEY = 'wa:profiles';
 const ACTIVE_PROFILE_KEY = 'wa:active-profile';
 const MIGRATED_KEY = 'wa:migrated-v2';
-const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor'];
+const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor'];
 
 function getProfiles() { return _rawLoad(PROFILES_KEY, []); }
 function saveProfiles(p) { _rawSave(PROFILES_KEY, p); }
@@ -128,6 +128,11 @@ function reloadStore() {
   STORE.pSessions = load('wa:p-sessions', 0);
   STORE.pTotals   = load('wa:p-totals',  0);
   STORE.pCursor   = load('wa:p-cursor',  0);
+  STORE.aLabels   = load('wa:a-labels', {});
+  STORE.aStudied  = load('wa:a-studied', {});
+  STORE.aSessions = load('wa:a-sessions', 0);
+  STORE.aTotals   = load('wa:a-totals',  0);
+  STORE.aCursor   = load('wa:a-cursor',  0);
 }
 
 // 一次性迁移：老数据 (wa:labels 等无前缀) → "用户1"档案
@@ -177,7 +182,12 @@ const STORE = {
   pStudied: load('wa:p-studied', {}),                                // 短语已学 { "phrase:短语": 次数 }
   pSessions: load('wa:p-sessions', 0),                               // 短语完成轮数
   pTotals:  load('wa:p-totals', 0),                                  // 短语累计练习数
-  pCursor:  load('wa:p-cursor', 0)                                   // 短语游标
+  pCursor:  load('wa:p-cursor', 0),                                   // 短语游标
+  aLabels:  load('wa:a-labels', {}),                                 // 词缀标签 { "affix:type:form": "know|fuzzy|key|must|graduate" }
+  aStudied: load('wa:a-studied', {}),                                 // 词缀已学 { "affix:type:form": 练习次数 }
+  aSessions: load('wa:a-sessions', 0),                                // 词缀完成轮数
+  aTotals:  load('wa:a-totals', 0),                                   // 词缀累计练习数
+  aCursor:  load('wa:a-cursor', 0)                                    // 词缀游标
 };
 /** 持久化全部状态 */
 function persist() {
@@ -194,6 +204,11 @@ function persist() {
   save('wa:p-sessions', STORE.pSessions);
   save('wa:p-totals', STORE.pTotals);
   save('wa:p-cursor', STORE.pCursor);
+  save('wa:a-labels', STORE.aLabels);
+  save('wa:a-studied', STORE.aStudied);
+  save('wa:a-sessions', STORE.aSessions);
+  save('wa:a-totals', STORE.aTotals);
+  save('wa:a-cursor', STORE.aCursor);
 }
 
 // ===== 工具函数 =====
@@ -540,6 +555,34 @@ function phraseKey(phrase) { return 'phrase:' + phrase; }
 function phraseLabelOf(phrase) { return STORE.pLabels[phraseKey(phrase)]; }
 /** 短语总数 */
 function phraseTotal() { return (window.PHRASES || []).length; }
+
+/** 词缀相关辅助 */
+function affixAll() {
+  // 合并 prefix + suffix，每条带 type 标记
+  const ps = (window.AFFIXES || {}).prefix || [];
+  const sf = (window.AFFIXES || {}).suffix || [];
+  return [...ps.map(a => ({ ...a, type: 'prefix' })), ...sf.map(a => ({ ...a, type: 'suffix' }))];
+}
+function affixKey(item) { return 'affix:' + item.type + ':' + item.a; }
+function affixTotal() { return affixAll().length; }
+function affixCountLabels() {
+  const r = { know: 0, fuzzy: 0, key: 0, must: 0, graduate: 0 };
+  Object.keys(STORE.aLabels).forEach(k => {
+    const l = STORE.aLabels[k];
+    if (r[l] !== undefined) r[l]++;
+  });
+  return r;
+}
+function affixStudiedCount() {
+  return Object.keys(STORE.aStudied).filter(k => k.startsWith('affix:')).length;
+}
+function affixLabelOf(item) { return STORE.aLabels[affixKey(item)]; }
+function affixMastery() {
+  const total = affixTotal();
+  if (!total) return 0;
+  const lb = affixCountLabels();
+  return Math.round(((lb.graduate + lb.know) / total) * 100);
+}
 /** 统计短语各标签数 */
 function phraseCountLabels() {
   const r = { know: 0, fuzzy: 0, key: 0, must: 0, graduate: 0 };
