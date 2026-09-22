@@ -750,7 +750,15 @@ function renderHome() {
     progress: phrasePctVal, progressColor: phraseColorVal,
     footer: '已学 ' + phraseStudiedCount() + '/' + phraseTotal()
   });
-  const statsCard = compactCard({
+  const affixPctVal = affixMastery();
+  const affixColorVal = masteryColor(affixPctVal);
+  const affixCard = compactCard({
+    icon: '📐', name: '词缀', color: '#9b59b6', action: 'go-affix',
+    badge: affixPctVal + '%', badgeColor: affixColorVal,
+    progress: affixPctVal, progressColor: affixColorVal,
+    footer: '已学 ' + affixStudiedCount() + '/' + affixTotal()
+  });
+    const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
     footer: '每日数据 · 标签分布 ›'
   });
