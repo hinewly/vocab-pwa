@@ -28,6 +28,26 @@ const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
 const APP_VERSION = 'v1.0.0';
 
+/** 紧凑卡模板：所有首页卡片统一风格 */
+function compactCard(opts) {
+  const { icon, name, color, action, dataAttrs = '', badge, badgeColor, progress, progressColor, footer } = opts;
+  return `
+    <div class="cat-card" data-action="${action}" ${dataAttrs} style="--c:${color}">
+      <div class="cat-head">
+        <span class="cat-ico">${icon}</span>
+        <span class="cat-name">${escapeHtml(name)}</span>
+        ${badge ? `<span class="cat-pct-badge" style="background:${badgeColor || color}">${escapeHtml(badge)}</span>` : ''}
+      </div>
+      ${progress !== undefined ? `
+      <div class="mastery-bar-wrap">
+        <div class="mastery-bar">
+          <div class="mastery-fill" style="width:${progress}%;background:${progressColor || color}"></div>
+        </div>
+      </div>` : ''}
+      ${footer ? `<div class="cat-foot"><small>${escapeHtml(footer)}</small></div>` : ''}
+    </div>`;
+}
+
 // ===== 存储读写 =====
 // 原始读写（不经过 profile 前缀，给档案管理自己用）
 function _rawLoad(key, def) {
@@ -609,6 +629,32 @@ function route() {
 /** 首页：打卡条 + 三分类卡片 + 统计入口 */
 function renderHome() {
   const ci = STORE.checkin;
+  // 5 张辅助卡的渲染（统一用 compactCard 模板）
+  const phrasePctVal = phraseMastery();
+  const phraseColorVal = masteryColor(phrasePctVal);
+  const lookupCard = compactCard({
+    icon: '🔍', name: '查词本', color: '#6c5ce7', action: 'go-lookup',
+    badge: lookupTotal() + ' 词',
+    footer: '按查词次数排序'
+  });
+  const phraseCard = compactCard({
+    icon: '📚', name: '短语本', color: '#e17055', action: 'go-phrase',
+    badge: phrasePctVal + '%', badgeColor: phraseColorVal,
+    progress: phrasePctVal, progressColor: phraseColorVal,
+    footer: '已学 ' + phraseStudiedCount() + '/' + phraseTotal()
+  });
+  const statsCard = compactCard({
+    icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats',
+    footer: '每日数据 · 标签分布'
+  });
+  const devplanCard = compactCard({
+    icon: '📋', name: '开发计划', color: '#f59e0b', action: 'go-devplan',
+    footer: 'V1.20 路线 · 后续规划'
+  });
+  const changelogCard = compactCard({
+    icon: '📝', name: '更新日志', color: '#10b981', action: 'go-changelog',
+    footer: '版本变更记录'
+  });
   const cards = Object.keys(CATS).map(cat => {
     const total = catCount(cat);
     const lb = countLabels(cat);
@@ -656,48 +702,13 @@ function renderHome() {
       <button class="search-btn" data-action="search">搜索</button>
     </div>
     <div id="search-result"></div>
-    <div class="cats-grid">${cards}</div>
-    <div class="cat-card lookup-card" data-action="go-lookup" style="--c:#6c5ce7">
-      <div class="cat-head">
-        <span class="cat-ico">🔍</span>
-        <span class="cat-name">查词本</span>
-      </div>
-      <div class="cat-stats">
-        <span>已收集 ${lookupTotal()} 个词</span>
-        <span>按查词次数排序</span>
-      </div>
-      <div class="mastery">
-        <div class="mastery-info">
-          <span>老记不住的词，专门练</span>
-          <b>专练 ›</b>
-        </div>
-      </div>
+    <div class="cats-grid">
+      ${cards}
+      ${lookupCard}${phraseCard}${statsCard}${devplanCard}${changelogCard}
     </div>
     <footer class="contact-footer">
       <small>📮 问题反馈 · <a href="mailto:[email protected]?subject=背单词%20PWA%20反馈">[email protected]</a></small>
     </footer>
-    <div class="cat-card" data-action="go-phrase" style="--c:#e17055">
-      <div class="cat-head">
-        <span class="cat-ico">📚</span>
-        <span class="cat-name">短语本</span>
-      </div>
-      <div class="cat-stats">
-        <span>${phraseStudiedCount()}/${phraseTotal()} 已学 · 过关 ${phraseCountLabels().graduate}</span>
-        <span>必背 ${phraseCountLabels().must} · 重点 ${phraseCountLabels().key}</span>
-      </div>
-      <div class="mastery">
-        <div class="mastery-info">
-          <span>掌握度 <small style="color:${masteryColor(phraseMastery())}">${masteryLabel(phraseMastery())}</small></span>
-          <b style="color:${masteryColor(phraseMastery())}">${phraseMastery()}%</b>
-        </div>
-        <div class="mastery-bar">
-          <div class="mastery-fill" style="width:${phraseMastery()}%;background:${masteryColor(phraseMastery())}"></div>
-        </div>
-      </div>
-    </div>
-    <button class="btn-ghost" data-action="go-stats">学习统计</button>
-    <button class="btn-ghost" data-action="go-devplan" style="margin-top:8px;font-size:13px;opacity:.7">📋 开发计划</button>
-    <button class="btn-ghost" data-action="go-changelog" style="margin-top:6px;font-size:13px;opacity:.7">📝 更新日志</button>
   </main>`;
 }
 

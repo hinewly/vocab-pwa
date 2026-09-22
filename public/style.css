@@ -503,9 +503,9 @@ body {
   align-items: center;
   padding: 2px 10px;
   font-size: 12px;
-  font-weight: 500;
-  background: rgba(255,255,255,0.2);
-  color: white;
+  font-weight: 600;
+  background: rgba(255,255,255,0.5);   /* 提高对比度 */
+  color: #047857;                      /* 深绿色，对比绿底 */
   border-radius: 10px;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   user-select: none;
