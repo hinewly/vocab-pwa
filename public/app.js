@@ -1943,12 +1943,12 @@ function renderAffix() {
         <div>过关 ${lb.graduate} · 必背 ${lb.must} · 重点 ${lb.key} · 模糊 ${lb.fuzzy}</div>
       </div>
       <h4>选择本次练习数量</h4>
-      <div class="num-btns">
+      <div class="num-row">
         <button class="num-btn" data-action="affix-study" data-num="10">10</button>
-        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="20">20</button>
-        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="50">50</button>
-        <button class="num-btn num-btn-pro" data-action="affix-study" data-num="100">100</button>
-        <button class="num-btn num-btn-max" data-action="affix-study" data-num="${total}">全部</button>
+        <button class="num-btn" data-action="affix-study" data-num="20">20</button>
+        <button class="num-btn" data-action="affix-study" data-num="50">50</button>
+        <button class="num-btn" data-action="affix-study" data-num="100">100</button>
+        <button class="num-btn-max" data-action="affix-study" data-num="${total}">全部</button>
       </div>
     </main>`;
 }
@@ -1973,7 +1973,14 @@ function renderAffixStudy() {
           <div class="affix-meaning">${a.m}</div>
           <div class="affix-type-badge">${typeLabel} · ${a.a}</div>
           <div class="affix-examples">
-            ${a.ex.map(e => '<div class="affix-ex">' + e + '</div>').join('')}
+            ${a.ex.map(e => {
+              const m = e.match(/^(.+?)\s*→\s*(.+)$/);
+              if (m) {
+                const [, root, derived] = m;
+                return '<div class="affix-ex"><span class="affix-ex-pair"><span class="affix-ex-word">' + root + '</span></span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair"><span class="affix-ex-word">' + derived + '</span></span></div>';
+              }
+              return '<div class="affix-ex">' + e + '</div>';
+            }).join('')}
           </div>
         `}
       </div>
