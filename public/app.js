@@ -1798,7 +1798,22 @@ function importBackup(file) {
     try {
       const data = JSON.parse(reader.result);
       if (!data.labels || !data.studied) throw new Error('文件格式不对');
-      if (!confirm('导入将覆盖当前所有学习记录，确定吗？')) return;
+
+      // 记住当前 profile，导入完成后切回去
+      const prevProfileId = getActiveProfileId();
+
+      // 找/建一个 "导入数据" 用的 profile（"用户1"如果不存在就新建"导入数据"）
+      // 这样导入的数据肯定有个 profile 装着，不会和当前 profile 混淆
+      const profiles = getProfiles();
+      let targetProfileId = profiles.find(p => p.name === '用户1')?.id;
+      if (!targetProfileId) {
+        targetProfileId = createProfile('导入数据');
+      }
+
+      // 临时切到目标 profile
+      _rawSave(ACTIVE_PROFILE_KEY, targetProfileId);
+      reloadStore();
+
       STORE.labels = data.labels;
       STORE.studied = data.studied;
       STORE.sessions = data.sessions || STORE.sessions;
@@ -1812,8 +1827,25 @@ function importBackup(file) {
       if (data.pSessions !== undefined) STORE.pSessions = data.pSessions;
       if (data.pTotals !== undefined) STORE.pTotals = data.pTotals;
       if (data.pCursor !== undefined) STORE.pCursor = data.pCursor;
+      // 词缀字段（vocab-pwa 才有）
+      if (data.aLabels) STORE.aLabels = data.aLabels;
+      if (data.aStudied) STORE.aStudied = data.aStudied;
+      if (data.aSessions !== undefined) STORE.aSessions = data.aSessions;
+      if (data.aTotals !== undefined) STORE.aTotals = data.aTotals;
+      if (data.aCursor !== undefined) STORE.aCursor = data.aCursor;
+
       persist();
-      alert('导入成功，学习记录已恢复。');
+
+      // 切回原 profile
+      if (prevProfileId && prevProfileId !== targetProfileId) {
+        _rawSave(ACTIVE_PROFILE_KEY, prevProfileId);
+        reloadStore();
+      }
+
+      // 统计导入了多少词
+      const wordCount = Object.keys(data.labels || {}).length;
+      alert(`导入成功！\n\n已恢复到 profile「导入数据」（您之前的所有数据）。\n\n共 ${wordCount} 个词的标签记录。\n\n当前 profile 已切回您原本的「${getActiveProfileName()}」。\n请到「#profile」页切换到「导入数据」profile 查看。`);
+
       route();
     } catch (e) {
       alert('文件格式错误：' + e.message);
