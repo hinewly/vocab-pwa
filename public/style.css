@@ -769,3 +769,55 @@ body {
   font-size: 14px;
 }
 
+/* 备份区按钮组（占满整列 + 主/次区分） */
+.backup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+.backup-actions .btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .15s, background .15s;
+  border: 1.5px solid transparent;
+}
+.backup-actions .btn-action .btn-ico {
+  font-size: 18px;
+  line-height: 1;
+}
+.backup-actions .btn-action.primary {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.25);
+}
+.backup-actions .btn-action.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+}
+.backup-actions .btn-action.primary:active {
+  transform: translateY(0);
+}
+.backup-actions .btn-action.primary:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.backup-actions .btn-action.secondary {
+  background: #fff;
+  color: #6366f1;
+  border-color: #c7d2fe;
+}
+.backup-actions .btn-action.secondary:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+

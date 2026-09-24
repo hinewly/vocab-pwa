@@ -1194,11 +1194,19 @@ function renderStats() {
         <span class="l">上次自动备份</span><span class="v">${STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto).toLocaleString('zh-CN') : '—'}</span>
         <span class="l">自动备份次数</span><span class="v">${STORE.autoBackup.count || 0}</span>
       </div>
-      <div class="btns" style="margin-top:12px">
-        <button class="btn-main" data-action="manual-export">手动导出</button>
-        <button class="btn-main" data-action="setup-autobackup">${STORE.autoBackup.handleReady ? '重新设置自动备份' : '设置自动备份'}</button>
-        <button class="btn-ghost" data-action="import-backup">导入备份</button>
-        <button class="btn-main" data-action="backup-now" ${STORE.autoBackup.handleReady ? '' : 'disabled'}>立即备份一次</button>
+      <div class="btns backup-actions">
+        <button class="btn-action primary" data-action="manual-export">
+          <span class="btn-ico">📤</span><span>手动导出</span>
+        </button>
+        <button class="btn-action primary" data-action="setup-autobackup">
+          <span class="btn-ico">⚙️</span><span>${STORE.autoBackup.handleReady ? '重新设置自动备份' : '设置自动备份'}</span>
+        </button>
+        <button class="btn-action primary" data-action="backup-now" ${STORE.autoBackup.handleReady ? '' : 'disabled'}>
+          <span class="btn-ico">💾</span><span>立即备份一次</span>
+        </button>
+        <button class="btn-action secondary" data-action="import-backup">
+          <span class="btn-ico">📥</span><span>导入备份</span>
+        </button>
       </div>
       <input type="file" id="import-file" accept=".json" style="display:none">
     </div>
