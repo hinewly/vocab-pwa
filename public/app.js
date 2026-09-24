@@ -735,6 +735,8 @@ function route() {
 
 /** 首页：打卡条 + 三分类卡片 + 统计入口 */
 function renderHome() {
+  // 每天进首页自动打卡（防止"看了页面但没背词"导致 streak=0）
+  checkin();
   const ci = STORE.checkin;
   // 5 张辅助卡的渲染（统一用 compactCard 模板）
   const phrasePctVal = phraseMastery();
