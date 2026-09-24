@@ -821,3 +821,17 @@ body {
   border-color: #6366f1;
 }
 
+/* 词缀例词中文对照（挂在英文下方） */
+.affix-ex-word {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.affix-ex-cn {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+}
+

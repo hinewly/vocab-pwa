@@ -2015,13 +2015,31 @@ function renderAffixStudy() {
           <div class="affix-meaning">${a.m}</div>
           <div class="affix-type-badge">${typeLabel} · ${a.a}</div>
           <div class="affix-examples">
-            ${a.ex.map(e => {
+            ${a.ex.map((e, i) => {
               const m = e.match(/^(.+?)\s*→\s*(.+)$/);
               if (m) {
                 const [, root, derived] = m;
-                return '<div class="affix-ex"><span class="affix-ex-pair"><span class="affix-ex-word">' + root + '</span></span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair"><span class="affix-ex-word">' + derived + '</span></span></div>';
+                // 取 exCn[i]（如有）作为中文对照
+                let cnPair = null;
+                if (a.exCn && a.exCn[i]) {
+                  const cm = a.exCn[i].match(/^(.+?)\s*→\s*(.+)$/);
+                  if (cm) cnPair = [cm[1].trim(), cm[2].trim()];
+                }
+                const rootHtml = cnPair
+                  ? '<span class="affix-ex-word">' + root + '<span class="affix-ex-cn">' + cnPair[0] + '</span></span>'
+                  : '<span class="affix-ex-word">' + root + '</span>';
+                const derivedHtml = cnPair
+                  ? '<span class="affix-ex-word">' + derived + '<span class="affix-ex-cn">' + cnPair[1] + '</span></span>'
+                  : '<span class="affix-ex-word">' + derived + '</span>';
+                return '<div class="affix-ex"><span class="affix-ex-pair">' + rootHtml + '</span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair">' + derivedHtml + '</span></div>';
               }
-              return '<div class="affix-ex">' + e + '</div>';
+              // 非 X → Y 格式：也尝试显示中文
+              let cnPlain = null;
+              if (a.exCn && a.exCn[i]) cnPlain = a.exCn[i];
+              const plainHtml = cnPlain
+                ? '<span class="affix-ex-word">' + e + '<span class="affix-ex-cn">' + cnPlain + '</span></span>'
+                : '<span class="affix-ex-word">' + e + '</span>';
+              return '<div class="affix-ex"><span class="affix-ex-pair">' + plainHtml + '</span></div>';
             }).join('')}
           </div>
         `}

@@ -17,7 +17,7 @@ window.AFFIXES = {
     // 反义/否定类
     { a: 'un-', m: '不，相反', ex: ['happy → unhappy', 'lock → unlock', 'tie → untie'] },
     { a: 'in-', m: '不（b/m/p 前变 im-，l 前变 il-，r 前变 ir-）', ex: ['correct → incorrect', 'possible → impossible', 'legal → illegal', 'regular → irregular'] },
-    { a: 'dis-', m: '不，相反，取消', ex: ['agree → disagree', 'like → dislike', 'connect → disconnect'] },
+    { a: 'dis-', m: '不，相反，取消', ex: ['agree → disagree', 'like → dislike', 'connect → disconnect'], exCn: ['同意 → 不同意', '喜欢 → 不喜欢', '连接 → 断开'] },
     { a: 'non-', m: '非，不', ex: ['sense → nonsense', 'stop → nonstop', 'profit → nonprofit'] },
     { a: 'de-', m: '向下；否定；去除', ex: ['grade → degrade', 'crease → decrease', 'code → decode'] },
     { a: 'mis-', m: '错误地', ex: ['use → misuse', 'understand → misunderstand', 'lead → mislead'] },
@@ -25,13 +25,13 @@ window.AFFIXES = {
     { a: 'contra-', m: '反对，相反', ex: ['dict → contradict', 'ry → contrary'] },
 
     // 反向/重复/返回
-    { a: 're-', m: '再，又；返回', ex: ['write → rewrite', 'turn → return', 'view → review'] },
+    { a: 're-', m: '再，又；返回', ex: ['write → rewrite', 'turn → return', 'view → review'], exCn: ['写 → 重写', '转 → 返回', '看 → 复查'] },
     { a: 're-', m: '向后', ex: ['call → recall', 'tract → retract', 'cede → recede'] },
 
     // 时间/位置/顺序
-    { a: 'pre-', m: '在...之前', ex: ['view → preview', 'war → prewar', 'pay → prepay'] },
+    { a: 'pre-', m: '在...之前', ex: ['view → preview', 'war → prewar', 'pay → prepay'], exCn: ['看 → 预览', '战争 → 战前', '付 → 预付'] },
     { a: 'post-', m: '在...之后', ex: ['war → postwar', 'graduate → postgraduate'] },
-    { a: 'fore-', m: '在前；预先', ex: ['see → foresee', 'tell → foretell', 'head → forehead'] },
+    { a: 'fore-', m: '在前；预先', ex: ['see → foresee', 'tell → foretell', 'head → forehead'], exCn: ['看见 → 预见', '告诉 → 预言', '头 → 额头'] },
     { a: 'ex-', m: '前；向外', ex: ['wife → ex-wife', 'port → export', 'change → exchange'] },
 
     // 程度/大小
@@ -99,7 +99,7 @@ window.AFFIXES = {
 
   suffix: [
     // 名词后缀 -tion/-sion/-ment/-ness/-ity
-    { a: '-tion', m: '动作；状态（-ation/-ition/-ution）', ex: ['act → action', 'move → motion', 'produce → production'] },
+    { a: '-tion', m: '动作；状态（-ation/-ition/-ution）', ex: ['act → action', 'move → motion', 'produce → production'], exCn: ['行动 → 行动(名词)', '移动 → 运动', '生产 → 产量'] },
     { a: '-sion', m: '动作；状态（-asion/-ision/-usion）', ex: ['decide → decision', 'divide → division', 'confuse → confusion'] },
     { a: '-ment', m: '行为；结果；状态', ex: ['move → movement', 'develop → development', 'argue → argument'] },
     { a: '-ness', m: '性质；状态', ex: ['happy → happiness', 'kind → kindness', 'dark → darkness'] },
@@ -109,7 +109,7 @@ window.AFFIXES = {
     { a: '-ism', m: '主义；学说', ex: ['social → socialism', 'hero → heroism', 'tour → tourism'] },
 
     // 形容词后缀
-    { a: '-able/-ible', m: '可...的；能...的', ex: ['read → readable', 'eat → eatable', 'sense → sensible'] },
+    { a: '-able/-ible', m: '可...的；能...的', ex: ['read → readable', 'eat → eatable', 'sense → sensible'], exCn: ['读 → 可读的', '吃 → 可吃的', '感觉 → 明智的'] },
     { a: '-al', m: '与...有关的', ex: ['nature → natural', 'culture → cultural', 'music → musical'] },
     { a: '-an/-ian', m: '属于...的人', ex: ['America → American', 'music → musician', 'library → librarian'] },
     { a: '-ant/-ent', m: '...的人/物', ex: ['assist → assistant', 'serve → servant', 'differ → different'] },
@@ -200,7 +200,7 @@ window.AFFIXES = {
     { a: '-type', m: '类型；印刷', ex: ['photo → prototype', 'stereo → stereotype', 'archetype'] },
 
     // 副词（强调）
-    { a: '-ly', m: '方式；状态（再列）', ex: ['only', 'early', 'lively'] },
+    { a: '-ly', m: '方式；状态（再列）', ex: ['only', 'early', 'lively'], exCn: ['只', '早', '有生气的'] },
     { a: '-ways', m: '方向；方式', ex: ['sideways', 'lengthways', 'crossways'] },
     { a: '-scape', m: '景象；景色', ex: ['land → landscape', 'sea → seascape', 'moon → moonscape'] },
     { a: '-berry', m: '浆果', ex: ['straw → strawberry', 'blue → blueberry', 'rasp → raspberry'] },
