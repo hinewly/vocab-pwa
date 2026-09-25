@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.1.3';
+const APP_VERSION = 'v1.1.4';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -598,32 +598,49 @@ function affixStudiedCount() {
 }
 function affixLabelOf(item) { return STORE.aLabels[affixKey(item)]; }
 let affixSession = { list: [], idx: 0, current: null, showing: true };
+let affixBatch = { list: [] };
 
-/** 抽 N 个未掌握的词缀（加权：未标记的优先） */
+/** 抽 N 个未掌握的词缀（未标记优先；按游标顺序取，不足时用已标记补充） */
 function pickAffixes(n) {
   const all = affixAll();
   const unlearned = all.filter(a => !affixLabelOf(a));
   const learned = all.filter(a => affixLabelOf(a));
-  // 游标推进：保持顺序，避免重复
   const start = STORE.aCursor % Math.max(1, unlearned.length || 1);
-  const picks = [];
-  for (let i = 0; i < n; i++) {
-    const pool = unlearned.length ? unlearned : learned;
-    if (!pool.length) break;
-    const idx = (start + i) % pool.length;
-    picks.push(pool[idx]);
-  }
+  const unlearnedPicks = unlearned.slice(start).concat(unlearned.slice(0, start)).slice(0, n);
+  const learnedStart = STORE.aCursor % Math.max(1, learned.length || 1);
+  const learnedPicks = learned.slice(learnedStart).concat(learned.slice(0, learnedStart)).slice(0, Math.max(0, n - unlearnedPicks.length));
+  const picks = [...unlearnedPicks, ...learnedPicks];
   STORE.aCursor = (STORE.aCursor + picks.length) % Math.max(1, (unlearned.length || 1));
   return picks;
 }
 
-/** 开始学习 session */
-function startAffixStudy(n) {
-  affixSession.list = pickAffixes(Math.min(n, affixTotal()));
-  affixSession.idx = 0;
-  affixSession.current = affixSession.list[0] || null;
-  affixSession.showing = true;
+/** 开始批量整理：先一次性列出本轮词缀 */
+function startAffixBatch(n) {
+  affixBatch.list = pickAffixes(Math.min(n, affixTotal()));
+  if (affixBatch.list.length === 0) {
+    alert('词缀库为空');
+    return;
+  }
   persist();
+  location.hash = '#/affix-batch';
+}
+
+/** 开始逐卡学习：优先学已勾选词缀，未勾选时学本轮全部 */
+function startAffixStudyFromBatch(checkedOnly) {
+  if (!affixBatch.list.length) return;
+  let list = affixBatch.list;
+  if (checkedOnly) {
+    const checked = new Set([...document.querySelectorAll('.batch-check:checked')].map(el => el.dataset.key));
+    list = affixBatch.list.filter(a => checked.has(affixKey(a)));
+    if (list.length === 0) {
+      alert('请先勾选要逐卡学习的词缀');
+      return;
+    }
+  }
+  affixSession.list = list;
+  affixSession.idx = 0;
+  affixSession.current = list[0] || null;
+  affixSession.showing = true;
   location.hash = '#/affix-study';
 }
 
@@ -732,6 +749,7 @@ function route() {
   else if (p === 'lookup') html = renderLookup();
   else if (p === 'phrase') html = renderPhraseBook();
   else if (p === 'affix') html = renderAffix();
+  else if (p === 'affix-batch') html = renderAffixBatch();
   else if (p === 'affix-study') html = renderAffixStudy();
   else if (p === 'affix-result') html = renderAffixResult();
   else if (p === 'profile') html = renderProfile();
@@ -1440,7 +1458,11 @@ function onAction(e) {
     case 'go-lookup':location.hash = '#/lookup'; break;
     case 'go-phrase':location.hash = '#/phrase'; break;
     case 'go-affix':location.hash = '#/affix'; break;
-    case 'affix-study': startAffixStudy(parseInt(el.dataset.num, 10)); break;
+    case 'affix-study': startAffixBatch(parseInt(el.dataset.num, 10)); break;
+    case 'affix-batch-check': updateAffixBatchCount(); break;
+    case 'affix-batch-select': selectAffixBatch(el.dataset.mode); break;
+    case 'affix-batch-label': markAffixBatchLabel(el.dataset.label); break;
+    case 'affix-batch-study': startAffixStudyFromBatch(el.dataset.mode === 'checked'); break;
     case 'flip-affix': flipAffixCard(); break;
     case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-profile':location.hash = '#/profile'; break;
@@ -1992,6 +2014,53 @@ async function refreshApp() {
 }
 
 
+// ===== 词缀批量整理 =====
+/** 获取本轮勾选的词缀 key */
+function getCheckedAffixKeys() {
+  return new Set([...document.querySelectorAll('.batch-check:checked')].map(el => el.dataset.key));
+}
+
+/** 更新批量页顶部的已选数量 */
+function updateAffixBatchCount() {
+  const el = document.getElementById('batch-selected-count');
+  if (!el) return;
+  const total = document.querySelectorAll('.batch-check').length;
+  const selected = document.querySelectorAll('.batch-check:checked').length;
+  el.textContent = `${selected}/${total}`;
+}
+
+/** 批量选择：all / none / unmarked */
+function selectAffixBatch(mode) {
+  document.querySelectorAll('.batch-check').forEach(input => {
+    const item = input.closest('.batch-item');
+    if (mode === 'all') input.checked = true;
+    else if (mode === 'none') input.checked = false;
+    else if (mode === 'unmarked') input.checked = !item || !item.dataset.current;
+  });
+  updateAffixBatchCount();
+}
+
+/** 批量打标签 */
+function markAffixBatchLabel(label) {
+  const checked = [...document.querySelectorAll('.batch-check:checked')];
+  if (checked.length === 0) {
+    alert('请先勾选要标记的词缀');
+    return;
+  }
+  const keySet = new Set(checked.map(el => el.dataset.key));
+  affixBatch.list.forEach(a => {
+    const k = affixKey(a);
+    if (keySet.has(k)) {
+      STORE.aLabels[k] = label;
+      STORE.aStudied[k] = (STORE.aStudied[k] || 0) + 1;
+    }
+  });
+  STORE.aTotals += checked.length;
+  persist();
+  showToast(`已将 ${checked.length} 条词缀标为「${LABELS[label].name}」`, 'success');
+  route();
+}
+
 // ===== 词缀渲染函数 =====
 function renderAffix() {
   const total = affixTotal();
@@ -2026,6 +2095,87 @@ function renderAffix() {
     </main>`;
 }
 
+
+function renderAffixBatch() {
+  if (!affixBatch.list.length) return renderAffix();
+  const total = affixBatch.list.length;
+  const items = affixBatch.list.map((a, idx) => {
+    const k = affixKey(a);
+    const current = affixLabelOf(a);
+    const typeLabel = a.type === 'prefix' ? '前缀' : '后缀';
+    const lb = current ? LABELS[current] : null;
+    return `
+      <div class="batch-item" data-current="${current || ''}">
+        <input class="batch-check" type="checkbox" data-action="affix-batch-check" data-key="${escapeHtml(k)}" aria-label="选择 ${escapeHtml(a.a)}">
+        <div class="batch-item-body">
+          <div class="batch-item-head">
+            <b class="batch-affix">${escapeHtml(a.a)}</b>
+            <span class="batch-type">${typeLabel}</span>
+            ${lb
+              ? `<span class="batch-label" style="background:${lb.color}">${lb.name}</span>`
+              : '<span class="batch-label unlabeled">未标记</span>'}
+            <small class="batch-no">#${idx + 1}</small>
+          </div>
+          <div class="batch-meaning">${escapeHtml(a.m)}</div>
+          ${affixExamplesHtml(a)}
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-affix">← 返回</button>
+      <div class="brand">批量整理</div>
+    </header>
+    <main class="page batch-page">
+      <div class="batch-toolbar">
+        <div>
+          <b>${total}</b> 条词缀
+          <small>已选 <span id="batch-selected-count">0/${total}</span></small>
+        </div>
+        <div class="batch-tools">
+          <button class="tool-btn" data-action="affix-batch-select" data-mode="all">全选</button>
+          <button class="tool-btn" data-action="affix-batch-select" data-mode="none">取消</button>
+          <button class="tool-btn" data-action="affix-batch-select" data-mode="unmarked">未标记</button>
+        </div>
+      </div>
+
+      <div class="batch-list">${items}</div>
+
+      <div class="label-btns batch-actions">
+        ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="affix-batch-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
+      </div>
+
+      <button class="btn-primary batch-study-btn" data-action="affix-batch-study" data-mode="checked">开始逐卡学习已勾选</button>
+      <button class="btn-secondary batch-study-all-btn" data-action="affix-batch-study">开始逐卡学习全部</button>
+    </main>`;
+}
+
+/** 词缀例词渲染（批量列表和逐卡学习共用） */
+function affixExamplesHtml(a) {
+  return `
+    <div class="affix-examples">
+      ${a.ex.map((e, i) => {
+        const m = e.match(/^(.+?)\s*→\s*(.+)$/);
+        if (m) {
+          const [, root, derived] = m;
+          let cnPair = null;
+          if (a.exCn && a.exCn[i]) {
+            const cm = a.exCn[i].match(/^(.+?)\s*→\s*(.+)$/);
+            if (cm) cnPair = [cm[1].trim(), cm[2].trim()];
+          }
+          const rootHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + root + affixSpeakBtn(root) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[0] + '</span>' : '') + '</span>';
+          const derivedHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + derived + affixSpeakBtn(derived) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[1] + '</span>' : '') + '</span>';
+          return '<div class="affix-ex"><span class="affix-ex-pair">' + rootHtml + '</span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair">' + derivedHtml + '</span></div>';
+        }
+        let cnPlain = null;
+        if (a.exCn && a.exCn[i]) cnPlain = a.exCn[i];
+        const plainHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + e + affixSpeakBtn(e) + '</span>' + (cnPlain ? '<span class="affix-ex-cn">' + cnPlain + '</span>' : '') + '</span>';
+        return '<div class="affix-ex"><span class="affix-ex-pair">' + plainHtml + '</span></div>';
+      }).join('')}
+    </div>`;
+}
+
 /** 词缀例词小发音按钮（每个英文词都可单独朗读） */
 function affixSpeakBtn(word) {
   if (!word) return '';
@@ -2052,28 +2202,7 @@ function renderAffixStudy() {
         ` : `
           <div class="affix-meaning">${a.m}</div>
           <div class="affix-type-badge">${typeLabel} · ${a.a}</div>
-          <div class="affix-examples">
-            ${a.ex.map((e, i) => {
-              const m = e.match(/^(.+?)\s*→\s*(.+)$/);
-              if (m) {
-                const [, root, derived] = m;
-                // 取 exCn[i]（如有）作为中文对照
-                let cnPair = null;
-                if (a.exCn && a.exCn[i]) {
-                  const cm = a.exCn[i].match(/^(.+?)\s*→\s*(.+)$/);
-                  if (cm) cnPair = [cm[1].trim(), cm[2].trim()];
-                }
-                const rootHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + root + affixSpeakBtn(root) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[0] + '</span>' : '') + '</span>';
-                const derivedHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + derived + affixSpeakBtn(derived) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[1] + '</span>' : '') + '</span>';
-                return '<div class="affix-ex"><span class="affix-ex-pair">' + rootHtml + '</span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair">' + derivedHtml + '</span></div>';
-              }
-              // 非 X → Y 格式：也尝试显示中文
-              let cnPlain = null;
-              if (a.exCn && a.exCn[i]) cnPlain = a.exCn[i];
-              const plainHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + e + affixSpeakBtn(e) + '</span>' + (cnPlain ? '<span class="affix-ex-cn">' + cnPlain + '</span>' : '') + '</span>';
-              return '<div class="affix-ex"><span class="affix-ex-pair">' + plainHtml + '</span></div>';
-            }).join('')}
-          </div>
+          ${affixExamplesHtml(a)}
         `}
       </div>
       <div class="label-btns">

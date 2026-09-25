@@ -690,6 +690,159 @@ body {
   color: #4b5563;
 }
 
+/* ===== 词缀批量整理 ===== */
+.batch-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: white;
+  border: 1px solid #e9d5ff;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(124, 58, 237, 0.08);
+}
+.batch-toolbar > div:first-child {
+  font-size: 15px;
+  color: #581c87;
+}
+.batch-toolbar small {
+  display: block;
+  margin-top: 2px;
+  color: #7c3aed;
+  font-weight: 600;
+}
+.batch-tools {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.tool-btn {
+  padding: 8px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.tool-btn:hover {
+  border-color: #c4b5fd;
+  color: #6d28d9;
+  background: #faf5ff;
+}
+.batch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+.batch-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 13px 14px;
+  background: white;
+  border: 1.5px solid #ede9fe;
+  border-radius: 14px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.batch-item:has(.batch-check:checked) {
+  border-color: #a78bfa;
+  background: #faf5ff;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.10);
+}
+.batch-check {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: #7c3aed;
+  cursor: pointer;
+}
+.batch-item-body {
+  min-width: 0;
+}
+.batch-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.batch-affix {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 19px;
+  color: #6b21a8;
+}
+.batch-type {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 600;
+}
+.batch-label {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+}
+.batch-label.unlabeled {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+.batch-no {
+  margin-left: auto;
+  color: #c4b5fd;
+  font-size: 11px;
+}
+.batch-meaning {
+  margin: 5px 0 2px;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 600;
+}
+.batch-item .affix-examples {
+  margin-top: 6px;
+}
+.batch-item .affix-ex {
+  font-size: 12px;
+  padding: 5px 8px;
+}
+.batch-actions {
+  position: sticky;
+  bottom: 10px;
+  z-index: 20;
+  padding: 10px;
+  background: rgba(255, 255, 255, .94);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e9d5ff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(76, 29, 149, .14);
+}
+.btn-secondary {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px;
+  border: 1.5px solid #ddd6fe;
+  border-radius: 12px;
+  background: white;
+  color: #7c3aed;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.btn-secondary:hover {
+  background: #faf5ff;
+  border-color: #a78bfa;
+}
+
 .affix-intro + h4,
 .affix-stats + h4 {
   font-size: 14px;
