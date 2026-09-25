@@ -46,6 +46,9 @@ jobs:
           sed -i "s/APP_VERSION = '${CURRENT_APP}'/APP_VERSION = '${NEW_APP}'/" public/app.js
           echo "APP: ${CURRENT_APP} → ${NEW_APP}"
 
+      - name: Sync changelog
+        run: cp CHANGELOG.md public/CHANGELOG.md
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
