@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.1.5';
+const APP_VERSION = 'v1.1.6';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
