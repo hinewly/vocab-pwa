@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.1.0';
+const APP_VERSION = 'v1.1.1';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -62,6 +62,26 @@ function escapeHtml(str) {
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[c]);
 }
+// ===== Toast 通知（非阻塞，右下角，自动消失）=====
+function showToast(msg, type = 'info', duration = 4000) {
+  let wrap = document.getElementById('toast-wrap');
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.id = 'toast-wrap';
+    wrap.className = 'toast-wrap';
+    document.body.appendChild(wrap);
+  }
+  const el = document.createElement('div');
+  el.className = 'toast toast-' + type;
+  el.textContent = msg;
+  wrap.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => {
+    el.classList.remove('show');
+    el.addEventListener('transitionend', () => el.remove(), { once: true });
+  }, duration);
+}
+
 
 // ===== 多用户档案管理 =====
 const PROFILES_KEY = 'wa:profiles';
@@ -1583,7 +1603,10 @@ function onAction(e) {
 }
 
 // 备份文件导入：监听 file input change
-document.getElementById('import-file')?.addEventListener('change', e => {
+// 注意：#import-file 在 stats 页 innerHTML 里，启动时还不存在，
+// 不能直接 addEventListener（之前那样绑不上，选完文件没任何反应），必须事件委托
+document.addEventListener('change', e => {
+  if (e.target.id !== 'import-file') return;
   const f = e.target.files[0];
   if (f) importBackup(f);
   e.target.value = '';
@@ -1727,12 +1750,13 @@ function manualExport() {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+  showToast(`备份已导出：wordapp-manual-${dateStamp()}.json`, 'success');
 }
 
 /** 首次设置自动备份：让用户选一个备份目录并授权（Chrome 的 File System Access API 目录模式） */
 async function setupAutoBackup() {
   if (!window.showDirectoryPicker) {
-    alert('当前浏览器不支持目录自动备份，请用 Chrome 浏览器，或使用"手动导出"。');
+    showToast('当前浏览器不支持目录自动备份，请用 Chrome 浏览器，或使用「手动导出」。', 'error', 6000);
     return;
   }
   try {
@@ -1741,7 +1765,7 @@ async function setupAutoBackup() {
     await saveHandle(dirHandle);
     STORE.autoBackup.handleReady = true;
     await doAutoBackup(dirHandle);
-    alert(`自动备份已设置到目录："${dirHandle.name}"\n将每天自动备份一次，保留最近 7 份。`);
+    showToast(`自动备份已设置到目录：${dirHandle.name}（每天一次，保留最近 7 份）`, 'success', 5000);
     persist();
     route();
   } catch (e) {
@@ -1805,15 +1829,17 @@ function importBackup(file) {
   reader.onload = () => {
     try {
       const data = JSON.parse(reader.result);
-      if (!data.labels || !data.studied) throw new Error('文件格式不对');
+      // V1.20 老备份只有 labels 一个字段，所以不能要求 labels+studied 同时存在
+      if (!data || (data.labels === undefined && data.studied === undefined && data.pLabels === undefined && data.aLabels === undefined)) {
+        throw new Error('文件里没有学习记录数据');
+      }
 
       // 记住当前 profile，导入完成后切回去
       const prevProfileId = getActiveProfileId();
 
-      // 找/建一个 "导入数据" 用的 profile（"用户1"如果不存在就新建"导入数据"）
-      // 这样导入的数据肯定有个 profile 装着，不会和当前 profile 混淆
+      // 导入到独立的「导入数据」profile（已存在则复用，避免重复导入产生一堆 profile）
       const profiles = getProfiles();
-      let targetProfileId = profiles.find(p => p.name === '用户1')?.id;
+      let targetProfileId = profiles.find(p => p.name === '导入数据')?.id;
       if (!targetProfileId) {
         targetProfileId = createProfile('导入数据');
       }
@@ -1850,13 +1876,18 @@ function importBackup(file) {
         reloadStore();
       }
 
-      // 统计导入了多少词
+      // 统计导入了多少词/短语/词缀
       const wordCount = Object.keys(data.labels || {}).length;
-      alert(`导入成功！\n\n已恢复到 profile「导入数据」（您之前的所有数据）。\n\n共 ${wordCount} 个词的标签记录。\n\n当前 profile 已切回您原本的「${getActiveProfileName()}」。\n请到「#profile」页切换到「导入数据」profile 查看。`);
+      const phraseCount = Object.keys(data.pLabels || {}).length;
+      const affixCount = Object.keys(data.aLabels || {}).length;
+      const parts = [`共导入 ${wordCount} 个单词`];
+      if (phraseCount) parts.push(`${phraseCount} 个短语`);
+      if (affixCount) parts.push(`${affixCount} 条词缀`);
+      showToast(`导入成功，${parts.join('、')}。请到「用户管理」页切换到「导入数据」查看。`, 'success', 6000);
 
       route();
     } catch (e) {
-      alert('文件格式错误：' + e.message);
+      showToast('导入失败：' + e.message, 'error', 6000);
     }
   };
   reader.readAsText(file);
@@ -1954,7 +1985,7 @@ async function refreshApp() {
     url.searchParams.set('_t', String(Date.now()));
     location.replace(url);
   } catch (e) {
-    alert('刷新失败: ' + e.message);
+    showToast('刷新失败: ' + e.message, 'error', 6000);
     btn.textContent = original;
     btn.disabled = false;
   }
