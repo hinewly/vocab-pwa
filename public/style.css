@@ -213,6 +213,19 @@ body {
 
 /* ===== 标签按钮 ===== */
 .label-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-top: 8px; }
+.label-btns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 16px;
+}
+.label-btns .label-btn {
+  min-height: 52px;
+  padding: 13px 16px;
+  font-size: 15px;
+  border-radius: 14px;
+}
 .label-btn {
   padding: 13px; border: none; border-radius: 12px;
   background: var(--c); color: #fff; font-size: 15px;
