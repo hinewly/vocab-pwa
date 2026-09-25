@@ -828,6 +828,34 @@ body {
   align-items: center;
   gap: 2px;
 }
+.affix-ex-en {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.affix-speak-btn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .12s ease, background .15s ease, box-shadow .15s ease;
+}
+.affix-speak-btn:hover {
+  background: #ddd6fe;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 2px 6px rgba(124, 58, 237, .22);
+}
+.affix-speak-btn:active {
+  transform: translateY(0) scale(.98);
+}
 .affix-ex-cn {
   font-size: 11px;
   color: #6b7280;

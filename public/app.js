@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.1.1';
+const APP_VERSION = 'v1.1.2';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2026,6 +2026,13 @@ function renderAffix() {
     </main>`;
 }
 
+/** 词缀例词小发音按钮（每个英文词都可单独朗读） */
+function affixSpeakBtn(word) {
+  if (!word) return '';
+  const safe = escapeHtml(word);
+  return '<button class="affix-speak-btn" data-action="speak" data-word="' + safe + '" title="朗读 ' + safe + '" aria-label="朗读 ' + safe + '">🔊</button>';
+}
+
 function renderAffixStudy() {
   if (!affixSession.current) return renderAffixResult();
   const a = affixSession.current;
@@ -2056,20 +2063,14 @@ function renderAffixStudy() {
                   const cm = a.exCn[i].match(/^(.+?)\s*→\s*(.+)$/);
                   if (cm) cnPair = [cm[1].trim(), cm[2].trim()];
                 }
-                const rootHtml = cnPair
-                  ? '<span class="affix-ex-word">' + root + '<span class="affix-ex-cn">' + cnPair[0] + '</span></span>'
-                  : '<span class="affix-ex-word">' + root + '</span>';
-                const derivedHtml = cnPair
-                  ? '<span class="affix-ex-word">' + derived + '<span class="affix-ex-cn">' + cnPair[1] + '</span></span>'
-                  : '<span class="affix-ex-word">' + derived + '</span>';
+                const rootHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + root + affixSpeakBtn(root) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[0] + '</span>' : '') + '</span>';
+                const derivedHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + derived + affixSpeakBtn(derived) + '</span>' + (cnPair ? '<span class="affix-ex-cn">' + cnPair[1] + '</span>' : '') + '</span>';
                 return '<div class="affix-ex"><span class="affix-ex-pair">' + rootHtml + '</span><span class="affix-ex-arrow">→</span><span class="affix-ex-pair">' + derivedHtml + '</span></div>';
               }
               // 非 X → Y 格式：也尝试显示中文
               let cnPlain = null;
               if (a.exCn && a.exCn[i]) cnPlain = a.exCn[i];
-              const plainHtml = cnPlain
-                ? '<span class="affix-ex-word">' + e + '<span class="affix-ex-cn">' + cnPlain + '</span></span>'
-                : '<span class="affix-ex-word">' + e + '</span>';
+              const plainHtml = '<span class="affix-ex-word"><span class="affix-ex-en">' + e + affixSpeakBtn(e) + '</span>' + (cnPlain ? '<span class="affix-ex-cn">' + cnPlain + '</span>' : '') + '</span>';
               return '<div class="affix-ex"><span class="affix-ex-pair">' + plainHtml + '</span></div>';
             }).join('')}
           </div>

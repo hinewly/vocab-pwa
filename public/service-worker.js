@@ -2,7 +2,7 @@
 // 缓存策略：仅用 CACHE_VERSION 失效，不用 ?v= query
 // 关键资源必须 cache；CDN 资源降级可选（内置浏览器可能屏蔽外网）
 
-const CACHE_VERSION = 'v1.1.1';
+const CACHE_VERSION = 'v1.1.2';
 
 const CRITICAL_ASSETS = [
   './',
