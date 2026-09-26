@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.1';
+const APP_VERSION = 'v1.2.2';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -845,7 +845,12 @@ function startAffixBatch(n) {
     return;
   }
   persist();
-  location.hash = '#/affix-batch';
+  const targetHash = '#/affix-batch';
+  if (location.hash === targetHash) {
+    route();
+  } else {
+    location.hash = targetHash;
+  }
 }
 
 /** 开始逐卡学习：优先学已勾选词缀，未勾选时学本轮全部 */
