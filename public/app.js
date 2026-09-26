@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.1.6';
+const APP_VERSION = 'v1.2.0';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -87,7 +87,7 @@ function showToast(msg, type = 'info', duration = 4000) {
 const PROFILES_KEY = 'wa:profiles';
 const ACTIVE_PROFILE_KEY = 'wa:active-profile';
 const MIGRATED_KEY = 'wa:migrated-v2';
-const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor'];
+const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor', 'a-words'];
 
 function getProfiles() { return _rawLoad(PROFILES_KEY, []); }
 function saveProfiles(p) { _rawSave(PROFILES_KEY, p); }
@@ -153,6 +153,7 @@ function reloadStore() {
   STORE.aSessions = load('wa:a-sessions', 0);
   STORE.aTotals   = load('wa:a-totals',  0);
   STORE.aCursor   = load('wa:a-cursor',  0);
+  STORE.aWords    = load('wa:a-words',   {});
 }
 
 // 一次性迁移：老数据 (wa:labels 等无前缀) → "用户1"档案
@@ -207,7 +208,8 @@ const STORE = {
   aStudied: load('wa:a-studied', {}),                                 // 词缀已学 { "affix:type:form": 练习次数 }
   aSessions: load('wa:a-sessions', 0),                                // 词缀完成轮数
   aTotals:  load('wa:a-totals', 0),                                   // 词缀累计练习数
-  aCursor:  load('wa:a-cursor', 0)                                    // 词缀游标
+  aCursor:  load('wa:a-cursor', 0),                                   // 词缀游标
+  aWords:   load('wa:a-words',  {})                                   // 全局词缀新词例词本 { key: { word, meaning, affixes, ... } }
 };
 /** 持久化全部状态 */
 function persist() {
@@ -229,6 +231,7 @@ function persist() {
   save('wa:a-sessions', STORE.aSessions);
   save('wa:a-totals', STORE.aTotals);
   save('wa:a-cursor', STORE.aCursor);
+  save('wa:a-words', STORE.aWords);
 }
 
 // ===== 工具函数 =====
@@ -598,7 +601,185 @@ function affixStudiedCount() {
 }
 function affixLabelOf(item) { return STORE.aLabels[affixKey(item)]; }
 let affixSession = { list: [], idx: 0, current: null, showing: true };
-let affixBatch = { list: [] };
+let affixBatch = { list: [], mode: 'affix', wordFilter: 'all' };
+let affixWordsFilter = 'all';
+
+function normalizeWordKey(word) {
+  return String(word || '').trim().toLowerCase().replace(/^[^a-z'-]+|[^a-z'-]+$/g, '');
+}
+
+function mainWordMatches(word) {
+  const key = normalizeWordKey(word);
+  if (!key) return [];
+  const out = [];
+  Object.keys(window.WORDS || {}).forEach(cat => {
+    (window.WORDS[cat] || []).forEach(item => {
+      if (normalizeWordKey(item.word) === key) out.push({ cat, item });
+    });
+  });
+  return out;
+}
+
+function affixExampleItems(a) {
+  const out = [];
+  (a.ex || []).forEach((e, i) => {
+    const enParts = String(e || '').split(/\s*→\s*/).map(normalizeWordKey).filter(Boolean);
+    const cnParts = String((a.exCn || [])[i] || '').split(/\s*→\s*/).map(x => x.trim()).filter(Boolean);
+    enParts.forEach((word, idx) => {
+      out.push({
+        key: word,
+        word,
+        meaning: cnParts[idx] || cnParts[cnParts.length - 1] || '',
+        affix: a.a,
+        affixKey: affixKey(a),
+        affixType: a.type
+      });
+    });
+  });
+  return out;
+}
+
+function affixExampleItemsForAffixes(list) {
+  const map = new Map();
+  (list || []).forEach(a => {
+    affixExampleItems(a).forEach(it => {
+      const old = map.get(it.key);
+      if (old) {
+        if (!old.affixes.includes(it.affix)) old.affixes.push(it.affix);
+      } else {
+        map.set(it.key, { ...it, affixes: [it.affix] });
+      }
+    });
+  });
+  return [...map.values()];
+}
+
+function affixWordState(word) {
+  const key = normalizeWordKey(word);
+  const matches = mainWordMatches(word);
+  if (matches.length) {
+    const first = matches[0];
+    let label = '';
+    matches.forEach(({ cat, item }) => {
+      if (!label) label = STORE.labels[wordKey(cat, item.word)] || '';
+    });
+    return {
+      key,
+      word: first.item.word || key,
+      meaning: first.item.meaning || '',
+      phonetic: first.item.phonetic || '',
+      isNew: false,
+      existsIn: matches.map(m => m.cat),
+      label,
+      record: null
+    };
+  }
+  const record = STORE.aWords[key] || null;
+  return {
+    key,
+    word: record?.word || key,
+    meaning: record?.meaning || '',
+    phonetic: record?.phonetic || '',
+    isNew: true,
+    existsIn: [],
+    label: record?.label || '',
+    record
+  };
+}
+
+function affixExampleStatesForAffixes(list) {
+  return affixExampleItemsForAffixes(list).map(it => ({ ...it, ...affixWordState(it.word) }));
+}
+
+function syncAffixExampleWords(list) {
+  const now = Date.now();
+  affixExampleItemsForAffixes(list).forEach(it => {
+    if (mainWordMatches(it.word).length) return;
+    const rec = STORE.aWords[it.key] || {
+      word: it.word,
+      meaning: '',
+      affixes: [],
+      source: 'affix-example',
+      label: '',
+      studied: 0,
+      firstSeenAt: now
+    };
+    if (!rec.word) rec.word = it.word;
+    if (!rec.meaning && it.meaning) rec.meaning = it.meaning;
+    if (!Array.isArray(rec.affixes)) rec.affixes = [];
+    if (!rec.affixes.includes(it.affix)) rec.affixes.push(it.affix);
+    rec.source = 'affix-example';
+    STORE.aWords[it.key] = rec;
+  });
+  return affixExampleStatesForAffixes(list);
+}
+
+function allAffixExampleStates() {
+  const states = affixExampleStatesForAffixes(affixAll());
+  const map = new Map(states.map(s => [s.key, s]));
+  Object.keys(STORE.aWords || {}).forEach(key => {
+    if (map.has(key)) return;
+    const rec = STORE.aWords[key] || {};
+    const st = affixWordState(rec.word || key);
+    map.set(key, {
+      key,
+      word: rec.word || key,
+      meaning: st.meaning || rec.meaning || '',
+      phonetic: st.phonetic || rec.phonetic || '',
+      affixes: Array.isArray(rec.affixes) ? rec.affixes : [],
+      isNew: st.isNew,
+      existsIn: st.existsIn,
+      label: st.label,
+      record: st.record
+    });
+  });
+  return [...map.values()];
+}
+
+function filterAffixExampleStates(states, filter) {
+  if (filter === 'new') return states.filter(x => x.isNew);
+  if (filter === 'main') return states.filter(x => !x.isNew);
+  if (filter === 'unmarked') return states.filter(x => !x.label);
+  if (filter === 'labeled') return states.filter(x => !!x.label);
+  if (filter === 'graduate') return states.filter(x => x.label === 'graduate');
+  return states;
+}
+
+function affixExampleStats() {
+  const states = allAffixExampleStates();
+  return {
+    total: states.length,
+    newCount: states.filter(x => x.isNew).length,
+    mainCount: states.filter(x => !x.isNew).length,
+    unmarked: states.filter(x => !x.label).length,
+    graduate: states.filter(x => x.label === 'graduate').length
+  };
+}
+
+function setAffixExampleWordLabel(word, label) {
+  const key = normalizeWordKey(word);
+  if (!key || !LABELS[label]) return;
+  const matches = mainWordMatches(word);
+  if (matches.length) {
+    matches.forEach(({ cat, item }) => {
+      STORE.labels[wordKey(cat, item.word || word)] = label;
+    });
+  } else if (STORE.aWords[key]) {
+    STORE.aWords[key].label = label;
+    STORE.aWords[key].studied = (STORE.aWords[key].studied || 0) + 1;
+  }
+  persist();
+}
+
+function affixExampleFilterButtons(action, current) {
+  const filters = [
+    ['all', '全部'], ['new', '新词'], ['main', '已在主词库'],
+    ['unmarked', '未标记'], ['labeled', '已标记'], ['graduate', '已掌握']
+  ];
+  return filters.map(([v, name]) =>
+    `<button class="tool-btn ${current === v ? 'active' : ''}" data-action="${action}" data-filter="${v}">${name}</button>`
+  ).join('');
+}
 
 /** 抽 N 个未掌握的词缀（未标记优先；按游标顺序取，不足时用已标记补充） */
 function pickAffixes(n) {
@@ -617,6 +798,8 @@ function pickAffixes(n) {
 /** 开始批量整理：先一次性列出本轮词缀 */
 function startAffixBatch(n) {
   affixBatch.list = pickAffixes(Math.min(n, affixTotal()));
+  affixBatch.mode = 'affix';
+  affixBatch.wordFilter = 'all';
   if (affixBatch.list.length === 0) {
     alert('词缀库为空');
     return;
@@ -750,6 +933,7 @@ function route() {
   else if (p === 'phrase') html = renderPhraseBook();
   else if (p === 'affix') html = renderAffix();
   else if (p === 'affix-batch') html = renderAffixBatch();
+  else if (p === 'affix-words') html = renderAffixWordsBook();
   else if (p === 'affix-study') html = renderAffixStudy();
   else if (p === 'affix-result') html = renderAffixResult();
   else if (p === 'profile') html = renderProfile();
@@ -796,7 +980,7 @@ function renderHome() {
     icon: '📐', name: '词缀', color: '#9b59b6', action: 'go-affix',
     badge: affixPctVal + '%', badgeColor: affixColorVal,
     progress: affixPctVal, progressColor: affixColorVal,
-    footer: '已学 ' + affixStudiedCount() + '/' + affixTotal()
+    footer: '已学 ' + affixStudiedCount() + '/' + affixTotal() + ' · 例词新词 ' + Object.keys(STORE.aWords || {}).length
   });
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
@@ -1459,10 +1643,16 @@ function onAction(e) {
     case 'go-phrase':location.hash = '#/phrase'; break;
     case 'go-affix':location.hash = '#/affix'; break;
     case 'affix-study': startAffixBatch(parseInt(el.dataset.num, 10)); break;
+    case 'go-affix-words': location.hash = '#/affix-words'; break;
+    case 'affix-batch-mode': switchAffixBatchMode(el.dataset.mode); break;
+    case 'affix-batch-mode-filter': affixBatch.wordFilter = el.dataset.filter || 'all'; route(); break;
     case 'affix-batch-check': updateAffixBatchCount(); break;
     case 'affix-batch-select': selectAffixBatch(el.dataset.mode); break;
     case 'affix-batch-label': markAffixBatchLabel(el.dataset.label); break;
     case 'affix-batch-study': startAffixStudyFromBatch(el.dataset.mode === 'checked'); break;
+    case 'affix-words-filter': affixWordsFilter = el.dataset.filter || 'all'; route(); break;
+    case 'affix-words-select': selectAffixBatch(el.dataset.mode); break;
+    case 'affix-words-label': markAffixWordsBookLabel(el.dataset.label); break;
     case 'flip-affix': flipAffixCard(); break;
     case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-profile':location.hash = '#/profile'; break;
@@ -1751,7 +1941,13 @@ function collectData() {
     pStudied: STORE.pStudied,
     pSessions: STORE.pSessions,
     pTotals: STORE.pTotals,
-    pCursor: STORE.pCursor
+    pCursor: STORE.pCursor,
+    aLabels: STORE.aLabels,
+    aStudied: STORE.aStudied,
+    aSessions: STORE.aSessions,
+    aTotals: STORE.aTotals,
+    aCursor: STORE.aCursor,
+    aWords: STORE.aWords
   };
 }
 
@@ -1889,6 +2085,7 @@ function importBackup(file) {
       if (data.aSessions !== undefined) STORE.aSessions = data.aSessions;
       if (data.aTotals !== undefined) STORE.aTotals = data.aTotals;
       if (data.aCursor !== undefined) STORE.aCursor = data.aCursor;
+      STORE.aWords = data.aWords || {};
 
       persist();
 
@@ -2040,11 +2237,26 @@ function selectAffixBatch(mode) {
   updateAffixBatchCount();
 }
 
-/** 批量打标签 */
+// ===== 词缀批量 / 例词本操作 =====
+function switchAffixBatchMode(mode) {
+  affixBatch.mode = mode === 'words' ? 'words' : 'affix';
+  if (affixBatch.mode === 'words') {
+    syncAffixExampleWords(affixBatch.list);
+    persist();
+  }
+  route();
+}
+
 function markAffixBatchLabel(label) {
   const checked = [...document.querySelectorAll('.batch-check:checked')];
-  if (checked.length === 0) {
-    alert('请先勾选要标记的词缀');
+  if (!checked.length) {
+    alert(affixBatch.mode === 'words' ? '请先勾选要标记的例词' : '请先勾选要标记的词缀');
+    return;
+  }
+  if (affixBatch.mode === 'words') {
+    checked.forEach(el => setAffixExampleWordLabel(el.dataset.word, label));
+    showToast(`已将 ${checked.length} 个例词标为「${LABELS[label].name}」`, 'success');
+    route();
     return;
   }
   const keySet = new Set(checked.map(el => el.dataset.key));
@@ -2059,6 +2271,43 @@ function markAffixBatchLabel(label) {
   persist();
   showToast(`已将 ${checked.length} 条词缀标为「${LABELS[label].name}」`, 'success');
   route();
+}
+
+function markAffixWordsBookLabel(label) {
+  const checked = [...document.querySelectorAll('.batch-check:checked')];
+  if (!checked.length) {
+    alert('请先勾选要标记的例词');
+    return;
+  }
+  checked.forEach(el => setAffixExampleWordLabel(el.dataset.word, label));
+  showToast(`已将 ${checked.length} 个例词标为「${LABELS[label].name}」`, 'success');
+  route();
+}
+
+function affixExampleStateHtml(st, idx, checkAction) {
+  const lb = st.label && LABELS[st.label] ? LABELS[st.label] : null;
+  const sourceText = st.isNew
+    ? '词缀新词'
+    : st.existsIn.map(cat => '已在' + (CATS[cat]?.name || cat)).join(' · ');
+  return `
+    <div class="batch-item word-item" data-current="${escapeHtml(st.label || '')}">
+      <input class="batch-check" type="checkbox" data-action="${checkAction}" data-key="wa:${escapeHtml(st.key)}" data-word="${escapeHtml(st.key)}" aria-label="选择 ${escapeHtml(st.word)}">
+      <div class="batch-item-body">
+        <div class="batch-item-head">
+          <b class="batch-word">${escapeHtml(st.word)}</b>
+          ${affixSpeakBtn(st.word)}
+          ${lb
+            ? `<span class="batch-label" style="background:${lb.color}">${lb.name}</span>`
+            : '<span class="batch-label unlabeled">未标记</span>'}
+          <small class="batch-no">#${idx + 1}</small>
+        </div>
+        <div class="batch-meaning">${escapeHtml(st.meaning || '—')}</div>
+        <div class="batch-word-meta">
+          <span class="word-source ${st.isNew ? 'new' : ''}">${escapeHtml(sourceText)}</span>
+          ${(st.affixes || []).map(a => `<span class="word-affix">${escapeHtml(a)}</span>`).join('')}
+        </div>
+      </div>
+    </div>`;
 }
 
 // ===== 词缀渲染函数 =====
@@ -2084,6 +2333,9 @@ function renderAffix() {
         <div>已学 <b>${studied}</b>/${total} · 掌握度 <b style="color:${masteryColor(pct)}">${pct}%</b></div>
         <div>过关 ${lb.graduate} · 必背 ${lb.must} · 重点 ${lb.key} · 模糊 ${lb.fuzzy}</div>
       </div>
+      <button class="btn-secondary affix-words-entry" data-action="go-affix-words">
+        📖 词缀例词本 · 例词新词 ${Object.keys(STORE.aWords || {}).length}
+      </button>
       <h4>选择本次练习数量</h4>
       <div class="num-row">
         <button class="num-btn" data-action="affix-study" data-num="10">10</button>
@@ -2098,8 +2350,44 @@ function renderAffix() {
 
 function renderAffixBatch() {
   if (!affixBatch.list.length) return renderAffix();
-  const total = affixBatch.list.length;
-  const items = affixBatch.list.map((a, idx) => {
+  const wordsMode = affixBatch.mode === 'words';
+  const total = wordsMode ? affixExampleItemsForAffixes(affixBatch.list).length : affixBatch.list.length;
+  let items = '';
+
+  if (wordsMode) {
+    const states = syncAffixExampleWords(affixBatch.list);
+    const filtered = filterAffixExampleStates(states, affixBatch.wordFilter);
+    items = filtered.map((st, idx) => affixExampleStateHtml(st, idx, 'affix-batch-check')).join('');
+    return `
+      <header class="topbar">
+        <button class="back-btn" data-action="go-affix">← 返回</button>
+        <div class="brand">例词整理</div>
+      </header>
+      <main class="page batch-page">
+        <div class="affix-mode-tabs">
+          <button class="mode-tab" data-action="affix-batch-mode" data-mode="affix">词缀模式</button>
+          <button class="mode-tab active" data-action="affix-batch-mode" data-mode="words">例词模式</button>
+        </div>
+        <div class="batch-toolbar">
+          <div>
+            <b>${filtered.length}</b> 个例词
+            <small>已选 <span id="batch-selected-count">0/${filtered.length}</span></small>
+          </div>
+          <div class="batch-tools">
+            <button class="tool-btn" data-action="affix-batch-select" data-mode="all">全选</button>
+            <button class="tool-btn" data-action="affix-batch-select" data-mode="none">取消</button>
+            <button class="tool-btn" data-action="affix-batch-select" data-mode="unmarked">未标记</button>
+          </div>
+        </div>
+        <div class="filter-row">${affixExampleFilterButtons('affix-batch-mode-filter', affixBatch.wordFilter)}</div>
+        <div class="batch-list">${items || '<p class="empty">当前筛选没有例词。</p>'}</div>
+        <div class="label-btns batch-actions">
+          ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="affix-batch-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
+        </div>
+      </main>`;
+  }
+
+  items = affixBatch.list.map((a, idx) => {
     const k = affixKey(a);
     const current = affixLabelOf(a);
     const typeLabel = a.type === 'prefix' ? '前缀' : '后缀';
@@ -2128,6 +2416,10 @@ function renderAffixBatch() {
       <div class="brand">批量整理</div>
     </header>
     <main class="page batch-page">
+      <div class="affix-mode-tabs">
+        <button class="mode-tab active" data-action="affix-batch-mode" data-mode="affix">词缀模式</button>
+        <button class="mode-tab" data-action="affix-batch-mode" data-mode="words">例词模式</button>
+      </div>
       <div class="batch-toolbar">
         <div>
           <b>${total}</b> 条词缀
@@ -2148,6 +2440,46 @@ function renderAffixBatch() {
 
       <button class="btn-primary batch-study-btn" data-action="affix-batch-study" data-mode="checked">开始逐卡学习已勾选</button>
       <button class="btn-secondary batch-study-all-btn" data-action="affix-batch-study">开始逐卡学习全部</button>
+    </main>`;
+}
+
+function renderAffixWordsBook() {
+  syncAffixExampleWords(affixAll());
+  persist();
+  const stats = affixExampleStats();
+  const all = allAffixExampleStates();
+  const filtered = filterAffixExampleStates(all, affixWordsFilter);
+  const rows = filtered.map((st, idx) => affixExampleStateHtml(st, idx, 'affix-batch-check')).join('');
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-affix">← 返回</button>
+      <div class="brand">词缀例词本</div>
+    </header>
+    <main class="page batch-page">
+      <div class="affix-intro">
+        <h3>📖 全局词缀例词本</h3>
+        <p>新词自动收入这里；已在主词库的例词只显示来源，标记会写回原词库。</p>
+      </div>
+      <div class="affix-stats">
+        <div>总例词 <b>${stats.total}</b> · 新词 <b>${stats.newCount}</b> · 主词库 <b>${stats.mainCount}</b></div>
+        <div>未标记 ${stats.unmarked} · 已掌握 ${stats.graduate}</div>
+      </div>
+      <div class="filter-row">${affixExampleFilterButtons('affix-words-filter', affixWordsFilter)}</div>
+      <div class="batch-toolbar">
+        <div>
+          <b>${filtered.length}</b> 个例词
+          <small>已选 <span id="batch-selected-count">0/${filtered.length}</span></small>
+        </div>
+        <div class="batch-tools">
+          <button class="tool-btn" data-action="affix-words-select" data-mode="all">全选</button>
+          <button class="tool-btn" data-action="affix-words-select" data-mode="none">取消</button>
+          <button class="tool-btn" data-action="affix-words-select" data-mode="unmarked">未标记</button>
+        </div>
+      </div>
+      <div class="batch-list">${rows || '<p class="empty">当前筛选没有例词。</p>'}</div>
+      <div class="label-btns batch-actions">
+        ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="affix-words-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
+      </div>
     </main>`;
 }
 
