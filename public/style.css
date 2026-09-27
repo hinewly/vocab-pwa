@@ -142,6 +142,20 @@ body {
 }
 .num-btn:hover { border-color: var(--main); }
 .num-btn.active { background: var(--main); color: #fff; border-color: var(--main); }
+.unified-num-row .num-btn {
+  background: #fff;
+  border-color: #e5e7eb;
+  color: #374151;
+  box-shadow: none;
+}
+.unified-num-row .num-btn:hover {
+  border-color: #a78bfa;
+  color: #6d28d9;
+  transform: translateY(-1px);
+}
+.unified-num-row .num-btn:active {
+  transform: translateY(0);
+}
 
 /* 加量按钮：100 词（绿色渐变，状态不错冲刺用） */
 .num-btn-pro {
@@ -1202,3 +1216,92 @@ body {
 .toast-success { background: #059669; }
 .toast-error   { background: #dc2626; }
 .toast-info    { background: #2563eb; }
+
+
+/* ===== 初中标签词表管理（v1.2.4 先仅 junior） ===== */
+.tag-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.label-book-searchbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.label-book-searchbar input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  font-size: 14px;
+}
+.label-book-searchbar input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, .12);
+}
+.label-book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+.label-book-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  background: white;
+  border: 1.5px solid #ede9fe;
+  border-radius: 13px;
+}
+.label-book-check {
+  width: 20px;
+  height: 20px;
+  accent-color: #7c3aed;
+  cursor: pointer;
+}
+.label-book-word {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.label-book-word b {
+  color: #4c1d95;
+  font-size: 16px;
+}
+.label-book-word small {
+  color: #6b7280;
+  font-size: 12px;
+}
+.label-book-select {
+  min-width: 82px;
+  padding: 7px 8px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.label-book-select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+}
+.label-book-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+}

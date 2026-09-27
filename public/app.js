@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.3';
+const APP_VERSION = 'v1.2.4';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -988,6 +988,7 @@ function route() {
   let html = '';
   if (p === 'home' || p === '') html = renderHome();
   else if (p === 'cat') html = renderCat(parts[1]);
+  else if (p === 'label-book') html = renderLabelBook(parts[1], parts[2], parseInt(parts[3] || '1', 10));
   else if (p === 'study') html = renderStudy(parts[1], parseInt(parts[2] || '20', 10));
   else if (p === 'review') html = renderReview(parts[1]);
   else if (p === 'result') html = renderResult(parts[1]);
@@ -1241,21 +1242,136 @@ function renderCat(cat) {
         <span class="l">完成轮数</span><span class="v">${STORE.sessions[cat] || 0}</span>
       </div>
       <div class="tag-row">
-        ${LABEL_ORDER.map(l => `<span class="tag" style="background:${LABELS[l].color}">${LABELS[l].name} ${lb[l]}</span>`).join('')}
+        ${LABEL_ORDER.map(l => cat === 'junior'
+          ? `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`
+          : `<span class="tag" style="background:${LABELS[l].color}">${LABELS[l].name} ${lb[l]}</span>`
+        ).join('')}
       </div>
     </div>
 
     <div class="section-title">选择数量开始学习</div>
-    <div class="num-row">
-      ${[10, 20, 50].map(n => `<button class="num-btn" data-action="study" data-cat="${cat}" data-n="${n}">${n}</button>`).join('')}
-      <button class="num-btn-pro" data-action="study" data-cat="${cat}" data-n="100">100</button>
-      <button class="num-btn-max" data-action="study" data-cat="${cat}" data-n="200">200</button>
+    <div class="num-row unified-num-row">
+      ${[10, 20, 50, 100, 200].map(n => `<button class="num-btn" data-action="study" data-cat="${cat}" data-n="${n}">${n}</button>`).join('')}
     </div>
 
     <button class="btn-ghost" data-action="go-review" data-cat="${cat}">按标签复习（强化记忆）</button>
     <button class="btn-ghost" data-action="review-graduate" data-cat="${cat}">复习过关词（${lb.graduate}）</button>
     <button class="btn-ghost" data-action="reset-graduate" data-cat="${cat}">重置过关（${lb.graduate}）</button>
   </main>`;
+}
+
+// ===== 初中标签词表管理（先仅开放 junior） =====
+const LABEL_BOOK_PAGE_SIZE = 50;
+let labelBookState = { search: '' };
+
+function labelBookWords(cat, label) {
+  const q = labelBookState.search.trim().toLowerCase();
+  return (window.WORDS[cat] || [])
+    .filter(w => labelOf(cat, w.word) === label)
+    .filter(w => !q
+      || String(w.word || '').toLowerCase().includes(q)
+      || String(w.meaning || '').toLowerCase().includes(q));
+}
+
+function renderLabelBook(cat, label, page) {
+  // 这个功能先只开放初中；其他词本等确认效果后再开放。
+  if (cat !== 'junior' || !CATS[cat] || !LABELS[label]) { location.hash = '#/cat/junior'; return ''; }
+
+  const all = labelBookWords(cat, label);
+  const totalPages = Math.max(1, Math.ceil(all.length / LABEL_BOOK_PAGE_SIZE));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const start = (currentPage - 1) * LABEL_BOOK_PAGE_SIZE;
+  const rows = all.slice(start, start + LABEL_BOOK_PAGE_SIZE).map(w => {
+    const current = labelOf(cat, w.word) || '';
+    return `
+      <div class="label-book-row">
+        <input class="label-book-check" type="checkbox" data-word="${escapeHtml(w.word)}" aria-label="选择 ${escapeHtml(w.word)}">
+        <div class="label-book-word">
+          <b>${escapeHtml(w.word)}</b>
+          <button class="affix-speak-btn" data-action="speak" data-word="${escapeHtml(w.word)}" title="朗读 ${escapeHtml(w.word)}" aria-label="朗读 ${escapeHtml(w.word)}">🔊</button>
+          <small>${escapeHtml(w.meaning || '—')}</small>
+        </div>
+        <select class="label-book-select" data-word="${escapeHtml(w.word)}" aria-label="修改 ${escapeHtml(w.word)} 的标签">
+          <option value="" ${current === '' ? 'selected' : ''}>清除</option>
+          ${LABEL_ORDER.map(l => `<option value="${l}" ${current === l ? 'selected' : ''}>${LABELS[l].name}</option>`).join('')}
+        </select>
+      </div>`;
+  }).join('');
+
+  return `
+    <header class="topbar">
+      <button class="back-btn" data-action="go-cat" data-cat="${cat}">← 返回</button>
+      <div class="brand">${CATS[cat].name} · ${LABELS[label].name}</div>
+    </header>
+    <main class="page batch-page">
+      <div class="affix-intro">
+        <h3>🏷️ ${LABELS[label].name}词表</h3>
+        <p>当前标签共 ${all.length} 个词。每页 50 个；右侧改标签后立即保存。</p>
+      </div>
+
+      <div class="label-book-searchbar">
+        <input type="text" id="label-book-search" value="${escapeHtml(labelBookState.search)}" placeholder="🔍 搜索单词或释义" autocomplete="off">
+        <button class="tool-btn" data-action="label-book-search">筛选</button>
+      </div>
+
+      <div class="batch-toolbar">
+        <div>
+          <b>${all.length}</b> 个词
+          <small>已选 <span id="label-book-selected-count">0/${rows.length}</span></small>
+        </div>
+        <div class="batch-tools">
+          <button class="tool-btn" data-action="label-book-select" data-mode="all">全选本页</button>
+          <button class="tool-btn" data-action="label-book-select" data-mode="none">取消</button>
+        </div>
+      </div>
+
+      <div class="label-book-list">${rows || '<p class="empty">没有匹配的单词。</p>'}</div>
+
+      <div class="label-book-pagination">
+        <button class="tool-btn" data-action="label-book-page" data-page="prev" ${currentPage <= 1 ? 'disabled' : ''}>上一页</button>
+        <span>${currentPage} / ${totalPages}</span>
+        <button class="tool-btn" data-action="label-book-page" data-page="next" ${currentPage >= totalPages ? 'disabled' : ''}>下一页</button>
+      </div>
+
+      <div class="label-btns batch-actions">
+        ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="label-book-batch-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
+        <button class="label-btn" style="--c:#64748b" data-action="label-book-batch-label" data-label="">清除</button>
+      </div>
+    </main>`;
+}
+
+function updateLabelBookSelectedCount() {
+  const el = document.getElementById('label-book-selected-count');
+  if (!el) return;
+  const total = document.querySelectorAll('.label-book-check').length;
+  const selected = document.querySelectorAll('.label-book-check:checked').length;
+  el.textContent = `${selected}/${total}`;
+}
+
+function selectLabelBookPage(mode) {
+  document.querySelectorAll('.label-book-check').forEach(input => {
+    input.checked = mode === 'all';
+  });
+  updateLabelBookSelectedCount();
+}
+
+function setLabelBookWordLabel(cat, word, label) {
+  const key = wordKey(cat, word);
+  if (label && LABELS[label]) STORE.labels[key] = label;
+  else delete STORE.labels[key];
+  persist();
+}
+
+function markLabelBookBatchLabel(label) {
+  const checked = [...document.querySelectorAll('.label-book-check:checked')];
+  if (!checked.length) {
+    alert('请先勾选要调整的单词');
+    return;
+  }
+  checked.forEach(input => setLabelBookWordLabel('junior', input.dataset.word, label));
+  const labelText = label ? LABELS[label].name : '已清除标签';
+  showToast(`已保存 ${checked.length} 个词：${labelText}`, 'success');
+  route();
 }
 
 /** 学习卡片页 */
@@ -1715,6 +1831,28 @@ function onAction(e) {
   switch (a) {
     case 'go-home': location.hash = '#/'; break;
     case 'go-cat':  location.hash = '#/cat/' + cat; break;
+    case 'go-label-book': {
+      if (cat === 'junior') {
+        labelBookState.search = '';
+        location.hash = `#/label-book/${cat}/${el.dataset.label}/1`;
+      }
+      break;
+    }
+    case 'label-book-search': {
+      const input = document.getElementById('label-book-search');
+      labelBookState.search = input ? input.value.trim() : '';
+      route();
+      break;
+    }
+    case 'label-book-select': selectLabelBookPage(el.dataset.mode); break;
+    case 'label-book-page': {
+      const parts = (location.hash.slice(1) || '/').split('/').filter(Boolean);
+      const current = parseInt(parts[3] || '1', 10);
+      const next = el.dataset.page === 'prev' ? current - 1 : current + 1;
+      location.hash = `#/label-book/junior/${parts[2] || 'know'}/${Math.max(1, next)}`;
+      break;
+    }
+    case 'label-book-batch-label': markLabelBookBatchLabel(el.dataset.label); break;
     case 'go-stats':location.hash = '#/stats'; break;
     case 'go-devplan': location.hash = '#/dev-plan'; break;
     case 'go-changelog': location.hash = '#/changelog'; break;
@@ -1923,6 +2061,19 @@ function onAction(e) {
 // 注意：#import-file 在 stats 页 innerHTML 里，启动时还不存在，
 // 不能直接 addEventListener（之前那样绑不上，选完文件没任何反应），必须事件委托
 document.addEventListener('change', e => {
+  const select = e.target.closest('.label-book-select');
+  if (select) {
+    setLabelBookWordLabel('junior', select.dataset.word, select.value);
+    const labelText = select.value ? LABELS[select.value].name : '已清除标签';
+    showToast(`${select.dataset.word} 已改为：${labelText}`, 'success');
+    return;
+  }
+
+  if (e.target.classList && e.target.classList.contains('label-book-check')) {
+    updateLabelBookSelectedCount();
+    return;
+  }
+
   if (e.target.id !== 'import-file') return;
   const f = e.target.files[0];
   if (f) importBackup(f);
@@ -1932,6 +2083,14 @@ document.addEventListener('change', e => {
 // 搜索框回车触发搜索
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
+    const labelInput = document.getElementById('label-book-search');
+    if (labelInput && document.activeElement === labelInput) {
+      e.preventDefault();
+      labelBookState.search = labelInput.value.trim();
+      route();
+      return;
+    }
+
     const input = document.getElementById('search-input');
     if (input && document.activeElement === input) {
       e.preventDefault();
