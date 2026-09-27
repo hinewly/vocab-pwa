@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.7';
+const APP_VERSION = 'v1.2.8';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2452,7 +2452,7 @@ async function refreshApp() {
   try {
     if ('caches' in window) {
       const keys = await caches.keys();
-      await Promise.all(keys.filter(k => k.startsWith('vocab-pwa-')).map(k => caches.delete(k)));
+      await Promise.all(keys.map(k => caches.delete(k)));
     }
     if ('serviceWorker' in navigator) {
       const regs = await navigator.serviceWorker.getRegistrations();

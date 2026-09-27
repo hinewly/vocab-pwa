@@ -5,6 +5,19 @@
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 ---
 
+## [v1.2.8] - 2026-09-27
+
+修复顶栏 🔄 刷新按钮清不掉缓存的 bug（内嵌浏览器一直显示旧版本）。
+
+### 🐛 修复
+
+- `refreshApp()` 之前只删 `vocab-pwa-*` 前缀的缓存，实际缓存 key 是 `v1.2.x`，永远匹配不到 → 改为删除全部 Cache Storage。
+
+### 🔧 工程化
+
+- `APP_VERSION` 升到 `v1.2.8`
+- Service Worker `CACHE_VERSION` 升到 `v1.2.8`
+
 ## [v1.2.7] - 2026-09-27
 
 标签词表管理扩展到全部词本。
