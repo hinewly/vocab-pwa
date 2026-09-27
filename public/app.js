@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.6';
+const APP_VERSION = 'v1.2.7';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1242,10 +1242,7 @@ function renderCat(cat) {
         <span class="l">完成轮数</span><span class="v">${STORE.sessions[cat] || 0}</span>
       </div>
       <div class="tag-row">
-        ${LABEL_ORDER.map(l => cat === 'junior'
-          ? `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`
-          : `<span class="tag" style="background:${LABELS[l].color}">${LABELS[l].name} ${lb[l]}</span>`
-        ).join('')}
+        ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
     </div>
 
@@ -1260,7 +1257,7 @@ function renderCat(cat) {
   </main>`;
 }
 
-// ===== 初中标签词表管理（先仅开放 junior） =====
+// ===== 标签词表管理（全词本通用） =====
 const LABEL_BOOK_PAGE_SIZE = 50;
 let labelBookState = { search: '' };
 
@@ -1274,8 +1271,7 @@ function labelBookWords(cat, label) {
 }
 
 function renderLabelBook(cat, label, page) {
-  // 这个功能先只开放初中；其他词本等确认效果后再开放。
-  if (cat !== 'junior' || !CATS[cat] || !LABELS[label]) { location.hash = '#/cat/junior'; return ''; }
+  if (!CATS[cat] || !LABELS[label]) { location.hash = '#/'; return ''; }
 
   const all = labelBookWords(cat, label);
   const totalPages = Math.max(1, Math.ceil(all.length / LABEL_BOOK_PAGE_SIZE));
@@ -1285,13 +1281,13 @@ function renderLabelBook(cat, label, page) {
     const current = labelOf(cat, w.word) || '';
     return `
       <div class="label-book-row">
-        <input class="label-book-check" type="checkbox" data-word="${escapeHtml(w.word)}" aria-label="选择 ${escapeHtml(w.word)}">
+        <input class="label-book-check" type="checkbox" data-cat="${cat}" data-word="${escapeHtml(w.word)}" aria-label="选择 ${escapeHtml(w.word)}">
         <div class="label-book-word">
           <b>${escapeHtml(w.word)}</b>
           <button class="affix-speak-btn" data-action="speak" data-word="${escapeHtml(w.word)}" title="朗读 ${escapeHtml(w.word)}" aria-label="朗读 ${escapeHtml(w.word)}">🔊</button>
           <small>${escapeHtml(w.meaning || '—')}</small>
         </div>
-        <select class="label-book-select" data-word="${escapeHtml(w.word)}" aria-label="修改 ${escapeHtml(w.word)} 的标签">
+        <select class="label-book-select" data-cat="${cat}" data-word="${escapeHtml(w.word)}" aria-label="修改 ${escapeHtml(w.word)} 的标签">
           <option value="" ${current === '' ? 'selected' : ''}>未标记</option>
           ${LABEL_ORDER.map(l => `<option value="${l}" ${current === l ? 'selected' : ''}>${LABELS[l].name}</option>`).join('')}
         </select>
@@ -1334,8 +1330,8 @@ function renderLabelBook(cat, label, page) {
       </div>
 
       <div class="label-btns batch-actions">
-        ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="label-book-batch-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
-        <button class="label-btn" style="--c:#64748b" data-action="label-book-batch-label" data-label="">未标记</button>
+        ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="label-book-batch-label" data-cat="${cat}" data-label="${l}">${LABELS[l].name}</button>`).join('')}
+        <button class="label-btn" style="--c:#64748b" data-action="label-book-batch-label" data-cat="${cat}" data-label="">未标记</button>
       </div>
     </main>`;
 }
@@ -1362,13 +1358,13 @@ function setLabelBookWordLabel(cat, word, label) {
   persist();
 }
 
-function markLabelBookBatchLabel(label) {
+function markLabelBookBatchLabel(cat, label) {
   const checked = [...document.querySelectorAll('.label-book-check:checked')];
   if (!checked.length) {
     alert('请先勾选要调整的单词');
     return;
   }
-  checked.forEach(input => setLabelBookWordLabel('junior', input.dataset.word, label));
+  checked.forEach(input => setLabelBookWordLabel(input.dataset.cat || cat, input.dataset.word, label));
   const labelText = label ? LABELS[label].name : '未标记';
   showToast(`已保存 ${checked.length} 个词：${labelText}`, 'success');
   route();
@@ -1832,10 +1828,8 @@ function onAction(e) {
     case 'go-home': location.hash = '#/'; break;
     case 'go-cat':  location.hash = '#/cat/' + cat; break;
     case 'go-label-book': {
-      if (cat === 'junior') {
-        labelBookState.search = '';
-        location.hash = `#/label-book/${cat}/${el.dataset.label}/1`;
-      }
+      labelBookState.search = '';
+      location.hash = `#/label-book/${cat}/${el.dataset.label}/1`;
       break;
     }
     case 'label-book-search': {
@@ -1849,10 +1843,10 @@ function onAction(e) {
       const parts = (location.hash.slice(1) || '/').split('/').filter(Boolean);
       const current = parseInt(parts[3] || '1', 10);
       const next = el.dataset.page === 'prev' ? current - 1 : current + 1;
-      location.hash = `#/label-book/junior/${parts[2] || 'know'}/${Math.max(1, next)}`;
+      location.hash = `#/label-book/${parts[1]}/${parts[2] || 'know'}/${Math.max(1, next)}`;
       break;
     }
-    case 'label-book-batch-label': markLabelBookBatchLabel(el.dataset.label); break;
+    case 'label-book-batch-label': markLabelBookBatchLabel(el.dataset.cat, el.dataset.label); break;
     case 'go-stats':location.hash = '#/stats'; break;
     case 'go-devplan': location.hash = '#/dev-plan'; break;
     case 'go-changelog': location.hash = '#/changelog'; break;
@@ -2063,7 +2057,7 @@ function onAction(e) {
 document.addEventListener('change', e => {
   const select = e.target.closest('.label-book-select');
   if (select) {
-    setLabelBookWordLabel('junior', select.dataset.word, select.value);
+    setLabelBookWordLabel(select.dataset.cat, select.dataset.word, select.value);
     const labelText = select.value ? LABELS[select.value].name : '未标记';
     showToast(`${select.dataset.word} 已改为：${labelText}`, 'success');
     return;
