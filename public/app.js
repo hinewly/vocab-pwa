@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.5';
+const APP_VERSION = 'v1.2.6';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1335,7 +1335,7 @@ function renderLabelBook(cat, label, page) {
 
       <div class="label-btns batch-actions">
         ${LABEL_ORDER.map(l => `<button class="label-btn" style="--c:${LABELS[l].color}" data-action="label-book-batch-label" data-label="${l}">${LABELS[l].name}</button>`).join('')}
-        <button class="label-btn" style="--c:#64748b" data-action="label-book-batch-label" data-label="">清除</button>
+        <button class="label-btn" style="--c:#64748b" data-action="label-book-batch-label" data-label="">未标记</button>
       </div>
     </main>`;
 }
