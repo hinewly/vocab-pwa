@@ -26,7 +26,7 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.4';
+const APP_VERSION = 'v1.2.5';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1292,7 +1292,7 @@ function renderLabelBook(cat, label, page) {
           <small>${escapeHtml(w.meaning || '—')}</small>
         </div>
         <select class="label-book-select" data-word="${escapeHtml(w.word)}" aria-label="修改 ${escapeHtml(w.word)} 的标签">
-          <option value="" ${current === '' ? 'selected' : ''}>清除</option>
+          <option value="" ${current === '' ? 'selected' : ''}>未标记</option>
           ${LABEL_ORDER.map(l => `<option value="${l}" ${current === l ? 'selected' : ''}>${LABELS[l].name}</option>`).join('')}
         </select>
       </div>`;
@@ -1369,7 +1369,7 @@ function markLabelBookBatchLabel(label) {
     return;
   }
   checked.forEach(input => setLabelBookWordLabel('junior', input.dataset.word, label));
-  const labelText = label ? LABELS[label].name : '已清除标签';
+  const labelText = label ? LABELS[label].name : '未标记';
   showToast(`已保存 ${checked.length} 个词：${labelText}`, 'success');
   route();
 }
@@ -2064,7 +2064,7 @@ document.addEventListener('change', e => {
   const select = e.target.closest('.label-book-select');
   if (select) {
     setLabelBookWordLabel('junior', select.dataset.word, select.value);
-    const labelText = select.value ? LABELS[select.value].name : '已清除标签';
+    const labelText = select.value ? LABELS[select.value].name : '未标记';
     showToast(`${select.dataset.word} 已改为：${labelText}`, 'success');
     return;
   }
