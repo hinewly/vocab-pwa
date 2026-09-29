@@ -47,7 +47,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.9';
+const APP_VERSION = 'v1.2.10';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -175,6 +175,30 @@ function reloadStore() {
   STORE.aTotals   = load('wa:a-totals',  0);
   STORE.aCursor   = load('wa:a-cursor',  0);
   STORE.aWords    = pruneAffixExampleRecords(load('wa:a-words', {}));
+}
+
+/** 清空当前用户的学习进度；保留用户档案与自动备份设置 */
+function resetActiveProfileProgress() {
+  STORE.labels    = {};
+  STORE.studied   = {};
+  STORE.sessions  = defaultsByCat();
+  STORE.totals    = defaultsByCat();
+  STORE.checkin   = { streak: 0, lastDate: '', dates: [] };
+  STORE.cursor    = defaultsByCat();
+  STORE.lookups   = {};
+  STORE.pLabels   = {};
+  STORE.pStudied  = {};
+  STORE.pSessions = 0;
+  STORE.pTotals   = 0;
+  STORE.pCursor   = 0;
+  STORE.aLabels   = {};
+  STORE.aStudied  = {};
+  STORE.aSessions = 0;
+  STORE.aTotals   = 0;
+  STORE.aCursor   = 0;
+  STORE.aWords    = {};
+  session = null;
+  persist();
 }
 
 // 一次性迁移：老数据 (wa:labels 等无前缀) → "用户1"档案
@@ -1655,29 +1679,6 @@ function renderStats() {
       </div>
     </div>
     ${blocks}
-    <div class="stat-block">
-      <h3>💾 备份与恢复</h3>
-      <div class="stat-grid">
-        <span class="l">自动备份</span><span class="v">${STORE.autoBackup.handleReady ? '已设置' : '未设置'}</span>
-        <span class="l">上次自动备份</span><span class="v">${STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto).toLocaleString('zh-CN') : '—'}</span>
-        <span class="l">自动备份次数</span><span class="v">${STORE.autoBackup.count || 0}</span>
-      </div>
-      <div class="btns backup-actions">
-        <button class="btn-action primary" data-action="manual-export">
-          <span class="btn-ico">📤</span><span>手动导出</span>
-        </button>
-        <button class="btn-action primary" data-action="setup-autobackup">
-          <span class="btn-ico">⚙️</span><span>${STORE.autoBackup.handleReady ? '重新设置自动备份' : '设置自动备份'}</span>
-        </button>
-        <button class="btn-action primary" data-action="backup-now" ${STORE.autoBackup.handleReady ? '' : 'disabled'}>
-          <span class="btn-ico">💾</span><span>立即备份一次</span>
-        </button>
-        <button class="btn-action secondary" data-action="import-backup">
-          <span class="btn-ico">📥</span><span>导入备份</span>
-        </button>
-      </div>
-      <input type="file" id="import-file" accept=".json" style="display:none">
-    </div>
     <button class="btn-ghost" data-action="go-home">返回首页</button>
   </main>`;
 }
@@ -2121,6 +2122,15 @@ function onAction(e) {
       route();
       break;
     }
+    case 'reset-active-profile': {
+      const name = getActiveProfileName() || '默认用户';
+      const ok = confirm(`确定要清空用户「${name}」的全部学习进度吗？\n\n将删除：标签、已学记录、打卡、查词本、短语与词缀记录。\n此操作不可恢复，建议先在上方备份。`);
+      if (!ok) break;
+      resetActiveProfileProgress();
+      showToast('已清空当前用户的学习进度', 'success');
+      route();
+      break;
+    }
     case 'backup-now': (async () => { const h = await getHandle(); if (h) { await doAutoBackup(h); route(); } })(); break;
     case 'import-backup': document.getElementById('import-file').click(); break;
   }
@@ -2505,6 +2515,38 @@ function renderProfile() {
       </div>
       <div class="profile-list">${items}</div>
       <button class="btn-primary" data-action="profile-create">+ 新建用户</button>
+
+      <div class="stat-block">
+        <h3>💾 备份与恢复</h3>
+        <div class="stat-grid">
+          <span class="l">自动备份</span><span class="v">${STORE.autoBackup.handleReady ? '已设置' : '未设置'}</span>
+          <span class="l">上次自动备份</span><span class="v">${STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto).toLocaleString('zh-CN') : '—'}</span>
+          <span class="l">自动备份次数</span><span class="v">${STORE.autoBackup.count || 0}</span>
+        </div>
+        <div class="btns backup-actions">
+          <button class="btn-action primary" data-action="manual-export">
+            <span class="btn-ico">📤</span><span>手动导出</span>
+          </button>
+          <button class="btn-action primary" data-action="setup-autobackup">
+            <span class="btn-ico">⚙️</span><span>${STORE.autoBackup.handleReady ? '重新设置自动备份' : '设置自动备份'}</span>
+          </button>
+          <button class="btn-action primary" data-action="backup-now" ${STORE.autoBackup.handleReady ? '' : 'disabled'}>
+            <span class="btn-ico">💾</span><span>立即备份一次</span>
+          </button>
+          <button class="btn-action secondary" data-action="import-backup">
+            <span class="btn-ico">📥</span><span>导入备份</span>
+          </button>
+        </div>
+        <input type="file" id="import-file" accept=".json" style="display:none">
+      </div>
+
+      <div class="stat-block">
+        <h3>🧹 全部清除</h3>
+        <p class="hint">将清空当前用户「${escapeHtml(getActiveProfileName() || '默认用户')}」的学习进度，包括标签、已学记录、打卡、查词本、短语与词缀记录。此操作不可恢复，建议先备份。</p>
+        <button class="btn-action danger" data-action="reset-active-profile">
+          <span class="btn-ico">🗑️</span><span>全部清除学习进度</span>
+        </button>
+      </div>
     </main>`;
 }
 
