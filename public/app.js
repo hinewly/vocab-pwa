@@ -25,8 +25,29 @@ const LABELS = {
 };
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
+// ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
+const UNLOCK_CODE = 'VOCAB-2026';
+const UNLOCK_KEY = 'wa:unlocked';
+const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
+function isUnlocked() {
+  try { return localStorage.getItem(UNLOCK_KEY) === '1'; } catch (e) { return false; }
+}
+function accessibleWords(cat) {
+  const list = window.WORDS[cat] || [];
+  if (cat === 'junior' || isUnlocked()) return list;
+  const limit = TRIAL_LIMITS[cat];
+  return limit ? list.slice(0, limit) : list;
+}
+function isWordAccessible(cat, word) {
+  if (cat === 'junior' || isUnlocked()) return true;
+  const limit = TRIAL_LIMITS[cat];
+  if (!limit) return true;
+  const idx = (window.WORDS[cat] || []).findIndex(w => w.word === word);
+  return idx !== -1 && idx < limit;
+}
+
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.8';
+const APP_VERSION = 'v1.2.9';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -302,7 +323,7 @@ function masteryOf(cat) {
  */
 function pickWords(cat, n) {
   // 过滤掉已过关（标"过关"）的词
-  const list = (window.WORDS[cat] || []).filter(w => labelOf(cat, w.word) !== 'graduate');
+  const list = accessibleWords(cat).filter(w => labelOf(cat, w.word) !== 'graduate');
   if (list.length === 0) return [];
 
   // 拆分：未学过 vs 已学过
@@ -354,7 +375,7 @@ function wordKey2(cat, word) { return cat + ':' + word; }
  * 按标签筛选抽词（复习模式）
  */
 function pickByLabels(cat, labels, n) {
-  const list = (window.WORDS[cat] || []).filter(w => {
+  const list = accessibleWords(cat).filter(w => {
     const l = labelOf(cat, w.word);
     return l && labels.includes(l);
   });
@@ -373,7 +394,7 @@ function searchWord(word) {
   if (!q) return [];
   const results = [];
   Object.keys(CATS).forEach(cat => {
-    const list = window.WORDS[cat] || [];
+    const list = accessibleWords(cat);
     for (const w of list) {
       if (w.word.toLowerCase() === q) {
         results.push({ cat, word: w.word, phonetic: w.phonetic, meaning: w.meaning, example: w.example });
@@ -417,10 +438,12 @@ function pickFromLookups(n) {
     const word = rest.join(':');
     return { cat, word, count: STORE.lookups[k].count };
   });
+  // 只允许复习当前可访问的词
+  const accessibleItems = items.filter(it => isWordAccessible(it.cat, it.word));
   // 2. 按查词次数降序排列（查得越多越先练，不管什么标签都可复习/改标签）
-  items.sort((a, b) => b.count - a.count);
+  accessibleItems.sort((a, b) => b.count - a.count);
   // 3. 取前 n 个，还原为 WORDS 里的完整对象
-  const take = items.slice(0, n);
+  const take = accessibleItems.slice(0, n);
   return take.map(it => {
     const w = (window.WORDS[it.cat] || []).find(x => x.word === it.word);
     return w ? { ...w, _cat: it.cat, _lookupCount: it.count } : null;
@@ -1001,6 +1024,7 @@ function route() {
   else if (p === 'affix-study') html = renderAffixStudy();
   else if (p === 'affix-result') html = renderAffixResult();
   else if (p === 'profile') html = renderProfile();
+  else if (p === 'unlock') html = renderUnlock();
   else if (p === 'dev-plan') { renderDevPlan(app); return; }
   else if (p === 'changelog') { renderChangelog(app); return; }
   else html = renderHome();
@@ -1045,6 +1069,11 @@ function renderHome() {
     badge: affixPctVal + '%', badgeColor: affixColorVal,
     progress: affixPctVal, progressColor: affixColorVal,
     footer: '已学 ' + affixStudiedCount() + '/' + affixTotal() + ' · 我标记的例词 ' + affixExampleStats().total
+  });
+  const unlockCard = compactCard({
+    icon: '🔓', name: '解锁全部词本', color: '#ff6b35', action: 'go-unlock',
+    badge: '未解锁', badgeColor: '#ff6b35',
+    footer: '激活码解锁高中 / 四级 / 六级 / 专业'
   });
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
@@ -1109,6 +1138,7 @@ function renderHome() {
     <div class="cats-grid">
       ${cards}
       ${lookupCard}${phraseCard}${affixCard}
+      ${isUnlocked() ? '' : unlockCard}
     </div>
     <h3 class="section-header"><span>🛠️</span><span>系统</span></h3>
     <div class="cats-grid">
@@ -1226,6 +1256,9 @@ function renderPhraseBook() {
 function renderCat(cat) {
   if (!CATS[cat]) { location.hash = '#/'; return ''; }
   const total = catCount(cat);
+  const accessible = accessibleWords(cat);
+  const accessibleCount = accessible.length;
+  const isTrial = !isUnlocked() && cat !== 'junior' && accessibleCount < total;
   const lb = countLabels(cat);
   const studied = studiedCount(cat);
   return `
@@ -1244,16 +1277,45 @@ function renderCat(cat) {
       <div class="tag-row">
         ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
+      ${isTrial ? `
+      <p class="hint">当前试学 ${accessibleCount} / ${total} 词，解锁后可学全部。</p>
+      <button class="btn-main" data-action="go-unlock">🔓 解锁全部词本</button>
+      ` : ''}
     </div>
 
     <div class="section-title">选择数量开始学习</div>
     <div class="num-row unified-num-row">
-      ${[10, 20, 50, 100, 200].map(n => `<button class="num-btn" data-action="study" data-cat="${cat}" data-n="${n}">${n}</button>`).join('')}
+      ${[10, 20, 50, 100, 200].filter(n => n <= accessibleCount).map(n => `<button class="num-btn" data-action="study" data-cat="${cat}" data-n="${n}">${n}</button>`).join('')}
     </div>
 
     <button class="btn-ghost" data-action="go-review" data-cat="${cat}">按标签复习（强化记忆）</button>
     <button class="btn-ghost" data-action="review-graduate" data-cat="${cat}">复习过关词（${lb.graduate}）</button>
     <button class="btn-ghost" data-action="reset-graduate" data-cat="${cat}">重置过关（${lb.graduate}）</button>
+  </main>`;
+}
+
+/** 解锁全部词本页 */
+function renderUnlock() {
+  const unlocked = isUnlocked();
+  return `
+  <header class="topbar">
+    <button class="back" data-action="go-home">‹ 返回</button>
+    <div>解锁全部词本</div><div></div>
+  </header>
+  <main class="page">
+    <div class="stat-block">
+      <h3>🔓 解锁全部词本</h3>
+      <p class="hint">初中词本完全免费；高中 / 四级 / 六级 / 专业开放部分词。付费后输入激活码即可解锁全部词本。</p>
+      ${unlocked ? `
+      <p class="hint">✅ 当前已解锁全部词本。</p>
+      ` : `
+      <div class="search-box">
+        <input type="text" id="unlock-code" placeholder="请输入激活码" autocomplete="off">
+        <button class="search-btn" data-action="unlock-submit">解锁</button>
+      </div>
+      <p class="hint">激活码请联系作者获取。</p>
+      `}
+    </div>
   </main>`;
 }
 
@@ -1263,7 +1325,7 @@ let labelBookState = { search: '' };
 
 function labelBookWords(cat, label) {
   const q = labelBookState.search.trim().toLowerCase();
-  return (window.WORDS[cat] || [])
+  return accessibleWords(cat)
     .filter(w => labelOf(cat, w.word) === label)
     .filter(w => !q
       || String(w.word || '').toLowerCase().includes(q)
@@ -1893,6 +1955,19 @@ function onAction(e) {
     case 'flip-affix': flipAffixCard(); break;
     case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-profile':location.hash = '#/profile'; break;
+    case 'go-unlock':location.hash = '#/unlock'; break;
+    case 'unlock-submit': {
+      const input = document.getElementById('unlock-code');
+      const code = (input?.value || '').trim();
+      if (code.toUpperCase() === UNLOCK_CODE) {
+        localStorage.setItem(UNLOCK_KEY, '1');
+        showToast('解锁成功，全部词本已开放', 'success');
+        location.hash = '#/';
+      } else {
+        showToast('激活码不正确', 'error');
+      }
+      break;
+    }
     case 'refresh-app': refreshApp(); break;
     case 'search':  doSearch(); break;
     case 'lookup-study': {
