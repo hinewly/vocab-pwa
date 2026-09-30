@@ -283,10 +283,15 @@ async function load() {
 
 async function confirmOrder(id) {
   if (!confirm('确认这笔款已收到？')) return;
-  await fetch('/admin/confirm?key=' + KEY, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ orderId: id }),
-  });
+  try {
+    const r = await fetch('/admin/confirm?key=' + KEY, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId: id }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) { alert('已确认，分配激活码：' + d.code); }
+    else { alert('确认失败：' + (d.error || '未知错误')); }
+  } catch (e) { alert('网络异常，请重试'); }
   load();
 }
 

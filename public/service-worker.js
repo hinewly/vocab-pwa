@@ -2,7 +2,7 @@
 // 缓存策略：仅用 CACHE_VERSION 失效，不用 ?v= query
 // 关键资源必须 cache；CDN 资源降级可选（内置浏览器可能屏蔽外网）
 
-const CACHE_VERSION = 'v1.2.12';
+const CACHE_VERSION = 'v1.2.13';
 
 const CRITICAL_ASSETS = [
   './',
@@ -46,6 +46,9 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+  // 动态接口/页面不缓存（订单状态、取码页、管理台），直连网络
+  const path = new URL(event.request.url).pathname;
+  if (path.startsWith('/api/') || path.startsWith('/o/') || path.startsWith('/c/') || path.startsWith('/admin')) return;
   event.respondWith((async () => {
     const cached = await caches.match(event.request);
     if (cached) return cached;
