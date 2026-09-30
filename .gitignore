@@ -28,3 +28,6 @@ temp/
 
 # PWA 缓存调试
 *.map
+
+# 会话交接与敏感底账（不提交公开仓库）
+docs/handoff/
