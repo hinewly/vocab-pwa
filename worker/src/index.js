@@ -297,7 +297,7 @@ async function load() {
     : pending.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ok" onclick="confirmOrder(\'' + o.id + '\')">确认收款</button></div>'
+        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
@@ -333,7 +333,7 @@ function renderTable() {
       '<td><span class="tag ' + c.status + '">' + (c.status === 'used' ? '已用' : '未用') + '</span></td>' +
       '<td>' + devCount + '/3</td>' +
       '<td class="muted">' + fmt(c.created_at) + '</td>' +
-      '<td><button class="copy" onclick="copyLink(\'' + link + '\')">复制链接</button></td>' +
+      '<td><button class="copy" onclick="copyLink(\\'' + link + '\\')">复制链接</button></td>' +
       '</tr>';
   }).join('');
   document.getElementById('codetable').innerHTML =
@@ -370,7 +370,7 @@ async function seed() {
   if (!confirm('生成 100 个新激活码？')) return;
   const r = await fetch('/admin/seed?key=' + KEY + '&count=100', { method: 'POST' });
   const d = await r.json();
-  document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\n');
+  document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
   load();
 }
 
