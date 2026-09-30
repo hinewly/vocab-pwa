@@ -15,6 +15,7 @@
  *   GET  /admin/orders            查看订单
  *   POST /admin/confirm           确认订单 { orderId } → 自动分配激活码
  *   POST /admin/unbind            手动解绑设备 { code, deviceId }
+ *   POST /admin/reject            拒绝订单 { orderId }（标记 rejected，不删除）
  */
 
 const JSON_HEADERS = {
@@ -268,6 +269,8 @@ function adminPageHtml() {
   .muted { color: #999; font-size: 12px; }
   button { border: none; border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
   .ok { background: #16a34a; color: #fff; }
+  .no { background: #eef1f5; color: #888; padding: 8px 12px; font-size: 13px; }
+  .no { background: #eef1f5; color: #888; padding: 8px 12px; font-size: 13px; }
   .blue { background: #2f6fed; color: #fff; }
   .ghost { background: #eef1f5; color: #555; }
   .ghost.on { background: #2f6fed; color: #fff; }
@@ -334,7 +337,8 @@ async function load() {
     : pending.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button></div>'
+        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button>' +
+        '<button class="no" onclick="rejectOrder(\\'' + o.id + '\\')">✕ 拒绝</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
@@ -388,7 +392,7 @@ function renderTable() {
       '<td><span class="tag ' + c.status + '">' + (c.status === 'used' ? '已用' : '未用') + '</span></td>' +
       '<td class="devcell">' + devHtml + '</td>' +
       '<td class="muted">' + fmt(c.created_at) + '</td>' +
-      '<td><button class="copy" onclick="copyLink(\\'' + link + '\')">复制链接</button></td>' +
+      '<td><button class="copy" onclick="copyLink(\\'' + link + '\\')">复制链接</button></td>' +
       '</tr>';
   }).join('');
   document.getElementById('codetable').innerHTML =
@@ -399,7 +403,7 @@ function unbindDev(ri, di) {
   const row = BINDINGS[ri];
   if (!row) return;
   const dev = row.devices[di];
-  if (!confirm('确定解绑设备 ' + dev.id.slice(0, 10) + '… ？\n解绑后该用户在新设备重新输入激活码即可。')) return;
+  if (!confirm('确定解绑设备 ' + dev.id.slice(0, 10) + '… ？\\n解绑后该用户在新设备重新输入激活码即可。')) return;
   fetch('/admin/unbind?key=' + KEY, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ code: row.code, deviceId: dev.id }),
@@ -434,6 +438,20 @@ async function confirmOrder(id) {
     const d = await r.json().catch(() => ({}));
     if (d.ok) { alert('已确认，分配激活码：' + d.code); }
     else { alert('确认失败：' + (d.error || '未知错误')); }
+  } catch (e) { alert('网络异常，请重试'); }
+  load();
+}
+
+async function rejectOrder(id) {
+  if (!confirm('确定拒绝这笔订单？拒绝后用户将无法获得激活码。\\n误拒可在数据库中恢复。')) return;
+  try {
+    const r = await fetch('/admin/reject?key=' + KEY, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId: id }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) { alert('已拒绝'); }
+    else { alert('拒绝失败：' + (d.error || '未知错误')); }
   } catch (e) { alert('网络异常，请重试'); }
   load();
 }
@@ -618,6 +636,17 @@ export default {
           env.DB.prepare("UPDATE orders SET status = 'paid', code = ?, paid_at = ? WHERE id = ?").bind(unused.code, now, orderId),
         ]);
         return json({ ok: true, code: unused.code, link: `${url.origin}/c/${unused.claim_token}` });
+      }
+
+      if (request.method === 'POST' && path === '/admin/reject') {
+        const body = await request.json().catch(() => ({}));
+        const orderId = String(body.orderId || '');
+        const result = await env.DB
+          .prepare("UPDATE orders SET status = 'rejected' WHERE id = ? AND status = 'pending'")
+          .bind(orderId)
+          .run();
+        if (!result.meta.changes) return json({ ok: false, error: '订单不存在或状态已变' }, 404);
+        return json({ ok: true });
       }
 
       if (request.method === 'GET' && path === '/admin/orders') {
