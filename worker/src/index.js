@@ -166,6 +166,8 @@ function orderPageHtml(token) {
           box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 360px; width: 90%; }
   h1 { font-size: 18px; color: #333; margin: 0 0 8px; }
   .sub { font-size: 13px; color: #999; margin: 0 0 16px; line-height: 1.7; }
+  .mail { font-size: 13px; color: #888; margin-top: 20px; line-height: 1.8; }
+  .mail a { color: #2f6fed; }
   .spin { display: inline-block; width: 28px; height: 28px; border: 3px solid #eee;
           border-top-color: #2f6fed; border-radius: 50%; animation: r 0.8s linear infinite; }
   @keyframes r { to { transform: rotate(360deg); } }
@@ -181,7 +183,8 @@ function orderPageHtml(token) {
 <div class="card">
   <div id="waiting">
     <h1>⏳ 支付确认中…</h1>
-    <p class="sub">管理员确认后，本页会自动显示你的专属激活码。<br>通常几分钟内完成，请稍后再回来看看。<br><b>请先收藏 / 截图保存本页！</b></p>
+    <p class="sub">管理员确认收款后，本页会自动显示你的专属激活码。<br>确认可能需要几个小时，你可以先离开，<br>过一段时间回到本页查看即可（本页长期有效）。<br><b>请先收藏 / 截图保存本页！</b></p>
+    <p class="mail">超过 24 小时仍未显示激活码？<br>请发邮件至 <a href="mailto:hinewly@163.com">hinewly@163.com</a> 联系我们。</p>
     <div class="spin"></div>
   </div>
   <div id="done" class="hidden">
@@ -189,7 +192,7 @@ function orderPageHtml(token) {
     <p class="sub">这是你的专属激活码</p>
     <div class="code" id="code"></div>
     <button onclick="copyCode()">一键复制</button>
-    <p class="tip">请务必截图保存！<br>激活码是你的购买凭证，永久有效。<br>清除数据 / 更换设备后，在 App 解锁页重新输入此码即可，无需重复购买。</p>
+    <p class="tip">收到激活码后，请先收藏本页、截图保存！<br>激活码是你的购买凭证，永久有效。<br>清除数据 / 更换设备后，在 App 解锁页重新输入此码即可，无需重复购买。</p>
   </div>
 </div>
 <script>
