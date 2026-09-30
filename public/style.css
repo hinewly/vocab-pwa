@@ -1313,3 +1313,10 @@ body {
   font-size: 13px;
   font-weight: 600;
 }
+
+/* ===== 解锁页：价格与收款码 ===== */
+.price-line { text-align: center; margin: 12px 0 4px; }
+.price-line del { color: #999; font-size: 16px; margin-right: 8px; }
+.price-now { color: #e65100; font-size: 30px; font-weight: 700; }
+.price-badge { background: #ff6b35; color: #fff; font-size: 11px; border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: 6px; }
+.pay-qr { display: block; margin: 10px auto 4px; width: 230px; max-width: 72%; border-radius: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12); }

@@ -27,7 +27,9 @@ const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
 // 激活码验证走 Cloudflare Worker 后端（6位纯数字，软绑定最多3台设备）
-const UNLOCK_API = 'https://api.daobox.app/api/activate';
+const UNLOCK_API_BASE = 'https://daobox.app';
+const UNLOCK_API = UNLOCK_API_BASE + '/api/activate';
+const ORDER_API = UNLOCK_API_BASE + '/api/order';
 const UNLOCK_KEY = 'wa:unlocked';
 const DEVICE_ID_KEY = 'wa:device_id';
 
@@ -68,6 +70,26 @@ async function submitUnlock(rawCode) {
     showToast('网络异常，请检查网络后重试', 'error');
   }
 }
+
+async function submitOrder(contact) {
+  try {
+    const res = await fetch(ORDER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contact }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (data.ok && data.checkUrl) {
+      showToast('登记成功！请保存打开的取码页', 'success');
+      window.open(data.checkUrl, '_blank');
+      return true;
+    }
+    showToast(data.error || '登记失败，请稍后再试', 'error');
+  } catch (e) {
+    showToast('网络异常，请稍后再试', 'error');
+  }
+  return false;
+}
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
   try { return localStorage.getItem(UNLOCK_KEY) === '1'; } catch (e) { return false; }
@@ -87,7 +109,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.11';
+const APP_VERSION = 'v1.2.12';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1369,15 +1391,23 @@ function renderUnlock() {
   <main class="page">
     <div class="stat-block">
       <h3>🔓 解锁全部词本</h3>
-      <p class="hint">初中词本完全免费；高中 / 四级 / 六级 / 专业开放部分词。付费后输入激活码即可解锁全部词本。</p>
+      <p class="hint">一次付费 · 永久解锁 · 一个码可绑 3 台设备（家长和孩子共用）<br>覆盖初中 / 高中 / 四级 / 六级 / 专业词本，掌握 4000+ 核心词汇。</p>
+      <p class="price-line"><del>¥19.9</del> <span class="price-now">¥9.9</span><span class="price-badge">限时早鸟</span></p>
+      <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
+      <p class="hint">① 微信扫码付款（早鸟价 ¥9.9）</p>
       ${unlocked ? `
       <p class="hint">✅ 当前已解锁全部词本。</p>
       ` : `
       <div class="search-box">
-        <input type="text" id="unlock-code" placeholder="请输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
+        <input type="text" id="order-contact" placeholder="② 已付款？填手机号登记" autocomplete="off">
+        <button class="search-btn" data-action="order-submit">登记</button>
+      </div>
+      <p class="hint">登记后打开你的专属「取码页」，请收藏 / 截图保存。管理员确认收款后（通常几分钟内），取码页会自动显示激活码。</p>
+      <div class="search-box">
+        <input type="text" id="unlock-code" placeholder="③ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
         <button class="search-btn" data-action="unlock-submit">解锁</button>
       </div>
-      <p class="hint">付款后打开管理员提供的专属链接即可看到激活码（支持一键复制）。<br>激活码是购买凭证，请截图保存；清除数据或更换设备后重新输入即可再次解锁，无需重复购买。</p>
+      <p class="hint">激活码是购买凭证，永久有效。清除数据或更换设备后重新输入即可，无需重复购买。</p>
       `}
     </div>
   </main>`;
@@ -1997,6 +2027,20 @@ function onAction(e) {
     case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-profile':location.hash = '#/profile'; break;
     case 'go-unlock':location.hash = '#/unlock'; break;
+    case 'order-submit': {
+      const cInput = document.getElementById('order-contact');
+      const cBtn = cInput?.parentElement?.querySelector('button');
+      const contact = (cInput?.value || '').trim();
+      if (contact.length < 4) {
+        showToast('请填写有效的手机号或微信号', 'error');
+        break;
+      }
+      if (cBtn) { cBtn.disabled = true; cBtn.textContent = '提交中…'; }
+      submitOrder(contact).finally(() => {
+        if (cBtn) { cBtn.disabled = false; cBtn.textContent = '登记'; }
+      });
+      break;
+    }
     case 'unlock-submit': {
       const input = document.getElementById('unlock-code');
       const btn = input?.parentElement?.querySelector('button');

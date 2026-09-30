@@ -1,12 +1,20 @@
 /**
- * daobox-api — vocab-pwa 激活码后端
+ * daobox-api — vocab-pwa 激活码 + 付款登记后端
  *
- * 端点：
- *   POST /api/activate          验证激活码并绑定设备（App 解锁页调用）
- *   GET  /c/:claimToken         隐藏取码页（付款后用户打开，显示激活码 + 一键复制）
- *   POST /admin/seed            管理员：批量生成激活码
- *   GET  /admin/list            管理员：查看所有激活码和绑定情况
- *   POST /admin/unbind          管理员：手动解绑设备（用户换机超限时用）
+ * 用户侧端点：
+ *   POST /api/activate            验证激活码并绑定设备（App 解锁页调用）
+ *   POST /api/order               付款登记 { contact } → 返回取码页地址
+ *   GET  /api/order/status?token= 取码页轮询订单状态
+ *   GET  /o/:token                取码页（确认前显示"确认中"，确认后显示激活码）
+ *   GET  /c/:claimToken           直接取码页（预生成码的隐藏链接）
+ *
+ * 管理侧端点（?key=ADMIN_KEY）：
+ *   GET  /admin                   管理台页面（手机可用）
+ *   POST /admin/seed              批量生成激活码
+ *   GET  /admin/list              查看所有激活码和绑定
+ *   GET  /admin/orders            查看订单
+ *   POST /admin/confirm           确认订单 { orderId } → 自动分配激活码
+ *   POST /admin/unbind            手动解绑设备 { code, deviceId }
  */
 
 const JSON_HEADERS = {
@@ -17,8 +25,6 @@ const JSON_HEADERS = {
 };
 
 const MAX_DEVICES_PER_CODE = 3;
-
-// 输错限速：连续 5 次错误 → 冷却 10 分钟；再次触发 → 冷却翻倍
 const FAIL_LIMIT = 5;
 const COOLDOWN_BASE_SECONDS = 10 * 60;
 
@@ -30,16 +36,20 @@ function genSixDigitCode() {
   return String(Math.floor(100000 + Math.random() * 900000));
 }
 
-function genToken() {
-  const bytes = new Uint8Array(12);
-  crypto.getRandomValues(bytes);
-  return [...bytes].map((b) => b.toString(16).padStart(2, '0')).join('');
+function genToken(bytes = 12) {
+  const arr = new Uint8Array(bytes);
+  crypto.getRandomValues(arr);
+  return [...arr].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
 function normalizeCode(raw) {
-  // 只留数字，兼容用户手滑加了空格或横线
   const digits = String(raw || '').replace(/\D/g, '');
   return digits.length === 6 ? digits : null;
+}
+
+function normalizeContact(raw) {
+  const s = String(raw || '').trim().slice(0, 64);
+  return s.length >= 4 ? s : null;
 }
 
 // ---------- 限速 ----------
@@ -71,12 +81,11 @@ async function recordFail(db, key) {
     return;
   }
 
-  // 若冷却已过期，先重置 fails 再累计
-  const fails = (row.blocked_until > 0 && row.blocked_until < now) ? 1 : row.fails + 1;
-  const level = (row.blocked_until > 0 && row.blocked_until < now) ? row.level : row.level;
+  const resetCycle = row.blocked_until > 0 && row.blocked_until < now;
+  const fails = resetCycle ? 1 : row.fails + 1;
 
   if (fails >= FAIL_LIMIT) {
-    const newLevel = level + 1;
+    const newLevel = resetCycle ? row.level + 1 : row.level + 1;
     const cooldownMs = COOLDOWN_BASE_SECONDS * 1000 * Math.pow(2, newLevel - 1);
     await db
       .prepare('UPDATE attempts SET fails = 0, blocked_until = ?, level = ? WHERE key = ?')
@@ -85,7 +94,7 @@ async function recordFail(db, key) {
   } else {
     await db
       .prepare('UPDATE attempts SET fails = ?, level = ? WHERE key = ?')
-      .bind(fails, level, key)
+      .bind(fails, row.level, key)
       .run();
   }
 }
@@ -94,9 +103,9 @@ async function clearFails(db, key) {
   await db.prepare('DELETE FROM attempts WHERE key = ?').bind(key).run();
 }
 
-// ---------- 取码页 ----------
+// ---------- 页面模板 ----------
 
-function codePageHtml(code) {
+function codePageHtml(code, title = '支付成功 🎉') {
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -120,7 +129,7 @@ function codePageHtml(code) {
 </head>
 <body>
 <div class="card">
-  <h1>支付成功 🎉</h1>
+  <h1>${title}</h1>
   <p class="sub">这是你的专属激活码</p>
   <div class="code" id="code">${code}</div>
   <button onclick="copyCode()">一键复制</button>
@@ -143,6 +152,159 @@ function copyCode() {
 </html>`;
 }
 
+function orderPageHtml(token) {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>取码中心</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", sans-serif; background: #f7f6f2;
+         display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+  .card { background: #fff; border-radius: 16px; padding: 40px 32px; text-align: center;
+          box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 360px; width: 90%; }
+  h1 { font-size: 18px; color: #333; margin: 0 0 8px; }
+  .sub { font-size: 13px; color: #999; margin: 0 0 16px; line-height: 1.7; }
+  .spin { display: inline-block; width: 28px; height: 28px; border: 3px solid #eee;
+          border-top-color: #2f6fed; border-radius: 50%; animation: r 0.8s linear infinite; }
+  @keyframes r { to { transform: rotate(360deg); } }
+  .code { font-size: 40px; letter-spacing: 8px; font-weight: 700; color: #1a1a1a;
+          font-variant-numeric: tabular-nums; margin: 16px 0 24px; user-select: all; }
+  button { background: #2f6fed; color: #fff; border: none; border-radius: 10px;
+           padding: 12px 32px; font-size: 16px; cursor: pointer; }
+  .tip { font-size: 12px; color: #c0392b; margin-top: 20px; line-height: 1.6; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="waiting">
+    <h1>⏳ 支付确认中…</h1>
+    <p class="sub">管理员确认后，本页会自动显示你的专属激活码。<br>通常几分钟内完成，请稍后再回来看看。<br><b>请先收藏 / 截图保存本页！</b></p>
+    <div class="spin"></div>
+  </div>
+  <div id="done" class="hidden">
+    <h1>支付确认成功 🎉</h1>
+    <p class="sub">这是你的专属激活码</p>
+    <div class="code" id="code"></div>
+    <button onclick="copyCode()">一键复制</button>
+    <p class="tip">请务必截图保存！<br>激活码是你的购买凭证，永久有效。<br>清除数据 / 更换设备后，在 App 解锁页重新输入此码即可，无需重复购买。</p>
+  </div>
+</div>
+<script>
+const token = '${token}';
+async function poll() {
+  try {
+    const r = await fetch('/api/order/status?token=' + token);
+    const d = await r.json();
+    if (d.status === 'paid' && d.code) {
+      document.getElementById('waiting').classList.add('hidden');
+      document.getElementById('done').classList.remove('hidden');
+      document.getElementById('code').textContent = d.code;
+      clearInterval(timer);
+    }
+  } catch (e) {}
+}
+const timer = setInterval(poll, 15000);
+poll();
+function copyCode() {
+  const code = document.getElementById('code').textContent.trim();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code).then(() => alert('已复制：' + code));
+  }
+}
+</script>
+</body>
+</html>`;
+}
+
+function adminPageHtml() {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DaoBox 管理台</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", sans-serif; background: #f2f4f7; margin: 0; padding: 16px; }
+  h1 { font-size: 20px; } h2 { font-size: 16px; margin: 24px 0 8px; }
+  .card { background: #fff; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .row { display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 0; border-bottom: 1px solid #f0f0f0; flex-wrap: wrap; }
+  .row:last-child { border-bottom: none; }
+  .muted { color: #999; font-size: 12px; }
+  button { border: none; border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+  .ok { background: #16a34a; color: #fff; }
+  .blue { background: #2f6fed; color: #fff; }
+  textarea { width: 100%; height: 120px; font-size: 11px; margin-top: 8px; }
+  .stat { font-size: 14px; color: #555; }
+</style>
+</head>
+<body>
+<h1>DaoBox 管理台</h1>
+<h2>待确认订单</h2>
+<div id="pending" class="card"><span class="muted">加载中…</span></div>
+<h2>激活码统计</h2>
+<div id="stats" class="card"><span class="muted">加载中…</span></div>
+<h2>生成激活码</h2>
+<div class="card">
+  <button class="blue" onclick="seed()">＋ 生成 100 个新码</button>
+  <textarea id="seedout" placeholder="生成后这里显示所有取码链接，长按全选复制保存" readonly></textarea>
+</div>
+<script>
+const KEY = new URLSearchParams(location.search).get('key');
+const fmt = (t) => new Date(t).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+async function load() {
+  const [ord, codes] = await Promise.all([
+    fetch('/admin/orders?key=' + KEY).then(r => r.json()),
+    fetch('/admin/list?key=' + KEY).then(r => r.json()),
+  ]);
+  const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
+  const pending = orders.filter(o => o.status === 'pending');
+  const paid = orders.filter(o => o.status === 'paid');
+
+  document.getElementById('pending').innerHTML = pending.length === 0
+    ? '<span class="muted">暂无待确认订单 ✅</span>'
+    : pending.map(o =>
+        '<div class="row"><b>' + esc(o.contact) + '</b>' +
+        '<span class="muted">' + fmt(o.created_at) + '</span>' +
+        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button></div>'
+      ).join('') +
+      (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
+        paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
+
+  const all = codes.codes || [];
+  const used = all.filter(c => c.status === 'used').length;
+  document.getElementById('stats').innerHTML =
+    '<span class="stat">共 ' + all.length + ' 个码 · 已用 ' + used + ' · 剩余 ' + (all.length - used) + '</span>' +
+    '<div class="muted">已用码明细：' + all.filter(c => c.status === 'used').slice(0, 20).map(c => c.code).join('，') + '</div>';
+}
+
+async function confirmOrder(id) {
+  if (!confirm('确认这笔款已收到？')) return;
+  await fetch('/admin/confirm?key=' + KEY, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ orderId: id }),
+  });
+  load();
+}
+
+async function seed() {
+  if (!confirm('生成 100 个新激活码？')) return;
+  const r = await fetch('/admin/seed?key=' + KEY + '&count=100', { method: 'POST' });
+  const d = await r.json();
+  document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
+  load();
+}
+
+function esc(s) { return String(s || '').replace(/[<>&"]/g, ''); }
+load();
+</script>
+</body>
+</html>`;
+}
+
 // ---------- 路由 ----------
 
 export default {
@@ -154,7 +316,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // ---- 隐藏取码页 ----
+    // ---- 隐藏取码页（预生成码） ----
     if (request.method === 'GET' && path.startsWith('/c/')) {
       const token = path.slice(3);
       const row = await env.DB
@@ -165,6 +327,21 @@ export default {
         return new Response('链接无效或已过期', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
       }
       return new Response(codePageHtml(row.code), {
+        headers: { 'Content-Type': 'text/html; charset=utf-8' },
+      });
+    }
+
+    // ---- 订单取码页 ----
+    if (request.method === 'GET' && path.startsWith('/o/')) {
+      const token = path.slice(3);
+      const row = await env.DB
+        .prepare('SELECT id FROM orders WHERE token = ?')
+        .bind(token)
+        .first();
+      if (!row) {
+        return new Response('链接无效或已过期', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+      }
+      return new Response(orderPageHtml(token), {
         headers: { 'Content-Type': 'text/html; charset=utf-8' },
       });
     }
@@ -206,10 +383,8 @@ export default {
         .prepare('SELECT device_id FROM bindings WHERE code = ?')
         .bind(code)
         .all();
-
       const deviceIds = (bound.results || []).map((r) => r.device_id);
 
-      // 已绑定本设备 → 直接通过（清数据/换档案重新激活的场景）
       if (deviceIds.includes(deviceId)) {
         await clearFails(env.DB, limitKey);
         return json({ ok: true, plan: 'all', message: '已解锁' });
@@ -223,7 +398,6 @@ export default {
         }, 403);
       }
 
-      // 绑定新设备
       await env.DB
         .prepare('INSERT INTO bindings (code, device_id, bound_at) VALUES (?, ?, ?)')
         .bind(code, deviceId, Date.now())
@@ -237,22 +411,81 @@ export default {
       return json({ ok: true, plan: 'all', message: '已解锁' });
     }
 
+    // ---- 付款登记 ----
+    if (request.method === 'POST' && path === '/api/order') {
+      const body = await request.json().catch(() => ({}));
+      const contact = normalizeContact(body.contact);
+      if (!contact) {
+        return json({ ok: false, error: '请填写有效的手机号或微信号' }, 400);
+      }
+      const id = genToken(6);
+      const token = genToken(12);
+      await env.DB
+        .prepare('INSERT INTO orders (id, token, contact, status, created_at) VALUES (?, ?, ?, ?, ?)')
+        .bind(id, token, contact, 'pending', Date.now())
+        .run();
+      return json({ ok: true, orderId: id, checkUrl: `${url.origin}/o/${token}` });
+    }
+
+    // ---- 订单状态轮询 ----
+    if (request.method === 'GET' && path === '/api/order/status') {
+      const token = url.searchParams.get('token') || '';
+      const row = await env.DB
+        .prepare('SELECT status, code FROM orders WHERE token = ?')
+        .bind(token)
+        .first();
+      if (!row) return json({ ok: false, error: '订单不存在' }, 404);
+      return json({ ok: true, status: row.status, code: row.status === 'paid' ? row.code : undefined });
+    }
+
     // ---- 管理接口 ----
-    if (path.startsWith('/admin/')) {
+    if (path === '/admin' || path.startsWith('/admin/')) {
       const key = url.searchParams.get('key') || request.headers.get('X-Admin-Key');
       if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
         return json({ ok: false, error: '无权限' }, 401);
       }
 
-      // 批量生成激活码
+      if (request.method === 'GET' && path === '/admin') {
+        return new Response(adminPageHtml(), {
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
+      }
+
+      if (request.method === 'POST' && path === '/admin/confirm') {
+        const body = await request.json().catch(() => ({}));
+        const orderId = String(body.orderId || '');
+        const order = await env.DB
+          .prepare("SELECT id, status FROM orders WHERE id = ? AND status = 'pending'")
+          .bind(orderId)
+          .first();
+        if (!order) return json({ ok: false, error: '订单不存在或已确认' }, 404);
+
+        const unused = await env.DB
+          .prepare("SELECT code, claim_token FROM codes WHERE status = 'unused' LIMIT 1")
+          .first();
+        if (!unused) return json({ ok: false, error: '激活码已用完，请先生成新码' }, 500);
+
+        const now = Date.now();
+        await env.DB.batch([
+          env.DB.prepare("UPDATE codes SET status = 'used', claimed_at = ? WHERE code = ?").bind(now, unused.code),
+          env.DB.prepare("UPDATE orders SET status = 'paid', code = ?, paid_at = ? WHERE id = ?").bind(unused.code, now, orderId),
+        ]);
+        return json({ ok: true, code: unused.code, link: `${url.origin}/c/${unused.claim_token}` });
+      }
+
+      if (request.method === 'GET' && path === '/admin/orders') {
+        const rows = await env.DB
+          .prepare('SELECT id, contact, status, code, created_at, paid_at FROM orders ORDER BY created_at DESC LIMIT 200')
+          .all();
+        return json({ ok: true, orders: rows.results });
+      }
+
       if (request.method === 'POST' && path === '/admin/seed') {
         const count = Math.min(parseInt(url.searchParams.get('count') || '100', 10), 2000);
         const stmts = [];
         const results = [];
-
         for (let i = 0; i < count; i++) {
           let code;
-          // 生成不重复的码
           for (let tries = 0; tries < 20; tries++) {
             code = genSixDigitCode();
             const exists = await env.DB
@@ -269,12 +502,10 @@ export default {
           );
           results.push({ code, link: `${url.origin}/c/${token}` });
         }
-
         await env.DB.batch(stmts);
         return json({ ok: true, generated: results.length, codes: results });
       }
 
-      // 查看所有码
       if (request.method === 'GET' && path === '/admin/list') {
         const codes = await env.DB
           .prepare(`
@@ -289,7 +520,6 @@ export default {
         return json({ ok: true, codes: codes.results });
       }
 
-      // 手动解绑
       if (request.method === 'POST' && path === '/admin/unbind') {
         const body = await request.json().catch(() => ({}));
         const code = normalizeCode(body.code);

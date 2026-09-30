@@ -22,3 +22,14 @@ CREATE TABLE IF NOT EXISTS attempts (
   blocked_until INTEGER NOT NULL DEFAULT 0,
   level         INTEGER NOT NULL DEFAULT 0
 );
+
+-- 付款登记订单（个人收款码无回调，管理员人工确认）
+CREATE TABLE IF NOT EXISTS orders (
+  id         TEXT PRIMARY KEY,           -- 订单号（随机短ID）
+  token      TEXT UNIQUE NOT NULL,       -- 取码页访问令牌 /o/<token>
+  contact    TEXT NOT NULL,              -- 用户留的联系方式（手机号/微信号）
+  status     TEXT NOT NULL DEFAULT 'pending',  -- pending | paid
+  code       TEXT,                       -- 确认后分配的激活码
+  created_at INTEGER NOT NULL,
+  paid_at    INTEGER
+);
