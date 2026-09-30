@@ -162,59 +162,89 @@ function orderPageHtml(token) {
 <style>
   body { font-family: -apple-system, "PingFang SC", sans-serif; background: #f7f6f2;
          display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-  .card { background: #fff; border-radius: 16px; padding: 40px 32px; text-align: center;
-          box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 360px; width: 90%; }
-  h1 { font-size: 18px; color: #333; margin: 0 0 8px; }
-  .sub { font-size: 13px; color: #999; margin: 0 0 16px; line-height: 1.7; }
-  .mail { font-size: 13px; color: #888; margin-top: 20px; line-height: 1.8; }
-  .mail a { color: #2f6fed; }
-  .spin { display: inline-block; width: 28px; height: 28px; border: 3px solid #eee;
-          border-top-color: #2f6fed; border-radius: 50%; animation: r 0.8s linear infinite; }
-  @keyframes r { to { transform: rotate(360deg); } }
-  .code { font-size: 40px; letter-spacing: 8px; font-weight: 700; color: #1a1a1a;
-          font-variant-numeric: tabular-nums; margin: 16px 0 24px; user-select: all; }
+  .card { background: #fff; border-radius: 16px; padding: 36px 30px; text-align: center;
+          box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 380px; width: 90%; }
+  h1 { font-size: 20px; color: #1a1a1a; margin: 0 0 20px; }
+  .key { text-align: left; background: #f0f9f4; border-left: 4px solid #16a34a;
+         border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+  .key p { font-size: 14px; color: #333; line-height: 1.7; margin: 0; }
+  .key b { color: #16a34a; }
+  .cd { font-size: 14px; color: #6b7280; margin: 18px 0 14px; }
+  .cd b { color: #2f6fed; }
   button { background: #2f6fed; color: #fff; border: none; border-radius: 10px;
            padding: 12px 32px; font-size: 16px; cursor: pointer; }
-  .tip { font-size: 12px; color: #c0392b; margin-top: 20px; line-height: 1.6; }
+  .code { font-size: 40px; letter-spacing: 8px; font-weight: 700; color: #1a1a1a;
+          font-variant-numeric: tabular-nums; margin: 16px 0 24px; user-select: all; }
+  .tip { font-size: 13px; color: #c0392b; margin-top: 16px; line-height: 1.7; }
+  .mail { font-size: 13px; color: #888; margin-top: 18px; line-height: 1.8; }
+  .mail a { color: #2f6fed; }
   .hidden { display: none; }
 </style>
 </head>
 <body>
 <div class="card">
   <div id="waiting">
-    <h1>⏳ 支付确认中…</h1>
-    <p class="sub">管理员确认收款后，本页会自动显示你的专属激活码。<br>确认可能需要几个小时，你可以先离开，<br>过一段时间回到本页查看即可（本页长期有效）。<br><b>请先收藏 / 截图保存本页！</b></p>
+    <h1>✅ 支付成功，等待开通</h1>
+    <div class="key">
+      <p><b>📌 第 1 步：收藏 / 截图保存本页</b><br>激活码将显示在本页，请务必保存！</p>
+    </div>
+    <div class="key">
+      <p><b>⏰ 第 2 步：不用一直等</b><br>开通可能需要几小时，你可以先离开，<br>稍后从收藏夹打开本页，激活码会自动出现。</p>
+    </div>
+    <div class="cd" id="cd"><b>10</b> 秒后自动返回上一页</div>
+    <button onclick="goBack()">立即返回</button>
     <p class="mail">超过 24 小时仍未显示激活码？<br>请发邮件至 <a href="mailto:hinewly@163.com">hinewly@163.com</a> 联系我们。</p>
-    <div class="spin"></div>
   </div>
   <div id="done" class="hidden">
-    <h1>支付确认成功 🎉</h1>
-    <p class="sub">这是你的专属激活码</p>
+    <h1>🎉 开通成功！</h1>
+    <p class="tip" style="color:#16a34a; font-size:15px;">这是你的专属激活码</p>
     <div class="code" id="code"></div>
     <button onclick="copyCode()">一键复制</button>
-    <p class="tip">收到激活码后，请先收藏本页、截图保存！<br>激活码是你的购买凭证，永久有效。<br>清除数据 / 更换设备后，在 App 解锁页重新输入此码即可，无需重复购买。</p>
+    <p class="tip">收到激活码后，请先收藏本页、截图保存！<br>激活码是你的购买凭证，永久有效。<br>清除数据 / 更换浏览器或设备后，在 App 解锁页重新输入此码即可，无需重复购买。</p>
   </div>
 </div>
 <script>
-const token = '${token}';
-async function poll() {
-  try {
-    const r = await fetch('/api/order/status?token=' + token);
-    const d = await r.json();
-    if (d.status === 'paid' && d.code) {
-      document.getElementById('waiting').classList.add('hidden');
-      document.getElementById('done').classList.remove('hidden');
-      document.getElementById('code').textContent = d.code;
-      clearInterval(timer);
-    }
-  } catch (e) {}
+var token = '${token}';
+var cdTimer = null, pollTimer = null, left = 10;
+
+function showCode(code) {
+  clearInterval(cdTimer); clearInterval(pollTimer);
+  document.getElementById('waiting').classList.add('hidden');
+  document.getElementById('done').classList.remove('hidden');
+  document.getElementById('code').textContent = code;
 }
-const timer = setInterval(poll, 15000);
+
+function poll() {
+  fetch('/api/order/status?token=' + token)
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.status === 'paid' && d.code) showCode(d.code);
+    })
+    .catch(function(e) {});
+}
+
+function tick() {
+  left -= 1;
+  if (left <= 0) { goBack(); return; }
+  document.getElementById('cd').innerHTML = '<b>' + left + '</b> 秒后自动返回上一页';
+}
+
+function goBack() {
+  clearInterval(cdTimer);
+  if (window.history.length > 1) { window.history.back(); }
+  else {
+    document.getElementById('cd').textContent = '可以关闭本页了，稍后从收藏夹打开查看激活码';
+  }
+}
+
+cdTimer = setInterval(tick, 1000);
+pollTimer = setInterval(poll, 15000);
 poll();
+
 function copyCode() {
-  const code = document.getElementById('code').textContent.trim();
+  var code = document.getElementById('code').textContent.trim();
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(code).then(() => alert('已复制：' + code));
+    navigator.clipboard.writeText(code).then(function() { alert('已复制：' + code); });
   }
 }
 </script>
