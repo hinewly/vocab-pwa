@@ -285,6 +285,10 @@ function adminPageHtml() {
   .copy { background: #eef1f5; color: #2f6fed; padding: 4px 10px; font-size: 12px; border-radius: 6px; }
   .filter { display: flex; gap: 8px; margin-bottom: 10px; }
   .filter button { padding: 5px 14px; font-size: 13px; }
+  .devcell { max-width: 190px; }
+  .cnt { font-weight: 600; margin-bottom: 2px; }
+  .devline { display: flex; align-items: center; gap: 6px; padding: 2px 0; font-size: 12px; }
+  .mini { background: #eef1f5; color: #c0392b; padding: 2px 8px; font-size: 11px; border-radius: 6px; }
 </style>
 </head>
 <body>
@@ -351,26 +355,61 @@ function setFilter(f, btn) {
   renderTable();
 }
 
+var BINDINGS = [];  // 每行 { code, devices: [{id, t}] }，解绑按钮按索引取值
+
 function renderTable() {
   const list = ALLCODES.filter(c => FILTER === 'all' || c.status === FILTER);
+  BINDINGS = [];
   if (list.length === 0) {
     document.getElementById('codetable').innerHTML = '<span class="muted">该分类下暂无激活码</span>';
     return;
   }
   const rows = list.map((c, i) => {
-    const devCount = c.devices ? c.devices.split(',').filter(Boolean).length : 0;
+    const ids = c.devices ? c.devices.split(',').filter(Boolean) : [];
+    const times = c.bound_times ? String(c.bound_times).split(',').filter(Boolean) : [];
+    const devs = ids.map((id, j) => ({ id: id, t: Number(times[j] || 0) }));
+    BINDINGS.push({ code: c.code, devices: devs });
     const link = ORIGIN + '/c/' + c.claim_token;
+
+    let devHtml;
+    if (devs.length === 0) {
+      devHtml = '<div class="muted">未绑定</div>';
+    } else {
+      devHtml = '<div class="cnt">' + devs.length + '/3</div>' + devs.map((dv, j) =>
+        '<div class="devline"><span class="muted" title="' + dv.id + '">' + dv.id.slice(0, 10) + '…</span>' +
+        '<span class="muted">' + new Date(dv.t).toLocaleDateString('zh-CN') + '</span>' +
+        '<button class="mini" onclick="unbindDev(' + i + ',' + j + ')">解绑</button></div>'
+      ).join('');
+    }
+
     return '<tr class="' + c.status + '">' +
       '<td>' + (i + 1) + '</td>' +
       '<td class="mono">' + c.code + '</td>' +
       '<td><span class="tag ' + c.status + '">' + (c.status === 'used' ? '已用' : '未用') + '</span></td>' +
-      '<td>' + devCount + '/3</td>' +
+      '<td class="devcell">' + devHtml + '</td>' +
       '<td class="muted">' + fmt(c.created_at) + '</td>' +
-      '<td><button class="copy" onclick="copyLink(\\'' + link + '\\')">复制链接</button></td>' +
+      '<td><button class="copy" onclick="copyLink(\\'' + link + '\')">复制链接</button></td>' +
       '</tr>';
   }).join('');
   document.getElementById('codetable').innerHTML =
     '<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>激活码</th><th>状态</th><th>设备</th><th>生成时间</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+}
+
+function unbindDev(ri, di) {
+  const row = BINDINGS[ri];
+  if (!row) return;
+  const dev = row.devices[di];
+  if (!confirm('确定解绑设备 ' + dev.id.slice(0, 10) + '… ？\n解绑后该用户在新设备重新输入激活码即可。')) return;
+  fetch('/admin/unbind?key=' + KEY, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: row.code, deviceId: dev.id }),
+  })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) { alert('已解绑'); load(); }
+      else { alert('解绑失败：' + (d.error || '未知错误')); }
+    })
+    .catch(() => alert('网络异常，请重试'));
 }
 
 function copyLink(link) {
@@ -618,7 +657,8 @@ export default {
         const codes = await env.DB
           .prepare(`
             SELECT c.code, c.status, c.created_at, c.claimed_at, c.claim_token,
-                   GROUP_CONCAT(b.device_id) AS devices
+                   GROUP_CONCAT(b.device_id) AS devices,
+                   GROUP_CONCAT(b.bound_at) AS bound_times
             FROM codes c
             LEFT JOIN bindings b ON b.code = c.code
             GROUP BY c.code
