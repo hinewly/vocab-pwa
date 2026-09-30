@@ -26,8 +26,48 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
-const UNLOCK_CODE = 'VOCAB-2026';
+// 激活码验证走 Cloudflare Worker 后端（6位纯数字，软绑定最多3台设备）
+const UNLOCK_API = 'https://api.daobox.app/api/activate';
 const UNLOCK_KEY = 'wa:unlocked';
+const DEVICE_ID_KEY = 'wa:device_id';
+
+function getDeviceId() {
+  try {
+    let id = localStorage.getItem(DEVICE_ID_KEY);
+    if (!id) {
+      id = 'd' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+      localStorage.setItem(DEVICE_ID_KEY, id);
+    }
+    return id;
+  } catch (e) {
+    return 'anon-' + Math.random().toString(36).slice(2, 10);
+  }
+}
+
+async function submitUnlock(rawCode) {
+  const code = String(rawCode || '').replace(/\D/g, '');
+  if (code.length !== 6) {
+    showToast('请输入 6 位数字激活码', 'error');
+    return;
+  }
+  try {
+    const res = await fetch(UNLOCK_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, deviceId: getDeviceId() }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (data.ok) {
+      localStorage.setItem(UNLOCK_KEY, '1');
+      showToast('解锁成功，全部词本已开放', 'success');
+      location.hash = '#/';
+    } else {
+      showToast(data.error || '激活失败，请稍后再试', 'error');
+    }
+  } catch (e) {
+    showToast('网络异常，请检查网络后重试', 'error');
+  }
+}
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
   try { return localStorage.getItem(UNLOCK_KEY) === '1'; } catch (e) { return false; }
@@ -47,7 +87,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.10';
+const APP_VERSION = 'v1.2.11';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1334,10 +1374,10 @@ function renderUnlock() {
       <p class="hint">✅ 当前已解锁全部词本。</p>
       ` : `
       <div class="search-box">
-        <input type="text" id="unlock-code" placeholder="请输入激活码" autocomplete="off">
+        <input type="text" id="unlock-code" placeholder="请输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
         <button class="search-btn" data-action="unlock-submit">解锁</button>
       </div>
-      <p class="hint">激活码请联系作者获取。</p>
+      <p class="hint">付款后打开管理员提供的专属链接即可看到激活码（支持一键复制）。<br>激活码是购买凭证，请截图保存；清除数据或更换设备后重新输入即可再次解锁，无需重复购买。</p>
       `}
     </div>
   </main>`;
@@ -1959,14 +1999,11 @@ function onAction(e) {
     case 'go-unlock':location.hash = '#/unlock'; break;
     case 'unlock-submit': {
       const input = document.getElementById('unlock-code');
-      const code = (input?.value || '').trim();
-      if (code.toUpperCase() === UNLOCK_CODE) {
-        localStorage.setItem(UNLOCK_KEY, '1');
-        showToast('解锁成功，全部词本已开放', 'success');
-        location.hash = '#/';
-      } else {
-        showToast('激活码不正确', 'error');
-      }
+      const btn = input?.parentElement?.querySelector('button');
+      if (btn) { btn.disabled = true; btn.textContent = '验证中…'; }
+      submitUnlock(input?.value).finally(() => {
+        if (btn) { btn.disabled = false; btn.textContent = '解锁'; }
+      });
       break;
     }
     case 'refresh-app': refreshApp(); break;
