@@ -109,7 +109,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.17';
+const APP_VERSION = 'v1.2.18';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1405,7 +1405,7 @@ function renderUnlock() {
       </div>
       <p class="hint">登记后打开你的专属「取码页」，请收藏 / 截图保存。管理员确认收款后，取码页会自动显示激活码（可能需要几小时，请耐心等待）。超过 24 小时未出码，请发邮件至 hinewly@163.com。</p>
       <div class="search-box">
-        <input type="text" id="unlock-code" placeholder="③ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
+        <input type="text" id="unlock-code" placeholder="④ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
         <button class="search-btn" data-action="unlock-submit">解锁</button>
       </div>
       <p class="hint">激活码是购买凭证，永久有效。清除数据或更换设备后重新输入即可，无需重复购买。</p>
