@@ -646,14 +646,13 @@ async function confirmOrder(id) {
 }
 
 async function rejectOrder(id) {
-  if (!confirm('确定拒绝这笔订单？拒绝后用户将无法获得激活码。\\n误拒可在数据库中恢复。')) return;
   try {
     const r = await fetch('/admin/reject?key=' + KEY, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ orderId: id }),
     });
     const d = await r.json().catch(() => ({}));
-    if (d.ok) { alert('已拒绝'); }
+    if (d.ok) { alert('已拒绝，订单已标记为 rejected。'); }
     else { alert('拒绝失败：' + (d.error || '未知错误')); }
   } catch (e) { alert('网络异常，请重试'); }
   load();
