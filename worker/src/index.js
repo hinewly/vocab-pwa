@@ -236,8 +236,22 @@ function adminPageHtml() {
   button { border: none; border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
   .ok { background: #16a34a; color: #fff; }
   .blue { background: #2f6fed; color: #fff; }
+  .ghost { background: #eef1f5; color: #555; }
+  .ghost.on { background: #2f6fed; color: #fff; }
   textarea { width: 100%; height: 120px; font-size: 11px; margin-top: 8px; }
   .stat { font-size: 14px; color: #555; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 6px 4px; border-bottom: 1px solid #f0f0f0; text-align: left; }
+  th { color: #888; font-weight: 500; font-size: 12px; }
+  td.mono { font-variant-numeric: tabular-nums; letter-spacing: 1px; font-weight: 600; }
+  tr.used td { color: #c0392b; }
+  tr.used td.mono { text-decoration: line-through; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 11px; }
+  .tag.unused { background: #e7f5ec; color: #16a34a; }
+  .tag.used { background: #fdecea; color: #c0392b; }
+  .copy { background: #eef1f5; color: #2f6fed; padding: 4px 10px; font-size: 12px; border-radius: 6px; }
+  .filter { display: flex; gap: 8px; margin-bottom: 10px; }
+  .filter button { padding: 5px 14px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -251,9 +265,23 @@ function adminPageHtml() {
   <button class="blue" onclick="seed()">＋ 生成 100 个新码</button>
   <textarea id="seedout" placeholder="生成后这里显示所有取码链接，长按全选复制保存" readonly></textarea>
 </div>
+<h2>激活码明细</h2>
+<div class="card">
+  <div class="filter">
+    <button class="ghost" data-f="all" onclick="setFilter('all', this)">全部</button>
+    <button class="ghost" data-f="unused" onclick="setFilter('unused', this)">未用</button>
+    <button class="ghost" data-f="used" onclick="setFilter('used', this)">已用</button>
+  </div>
+  <div id="codetable"><span class="muted">加载中…</span></div>
+  <p class="muted" style="margin-top:8px">点「复制链接」可复制该码的取码页链接（发给付款用户）。已用 = 红色划线。</p>
+</div>
 <script>
 const KEY = new URLSearchParams(location.search).get('key');
+const ORIGIN = location.origin;
+let ALLCODES = [];
+let FILTER = 'all';
 const fmt = (t) => new Date(t).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+const esc = (s) => String(s || '').replace(/[<>&"]/g, '');
 
 async function load() {
   const [ord, codes] = await Promise.all([
@@ -269,16 +297,59 @@ async function load() {
     : pending.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button></div>'
+        '<button class="ok" onclick="confirmOrder(\'' + o.id + '\')">确认收款</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
 
-  const all = codes.codes || [];
-  const used = all.filter(c => c.status === 'used').length;
+  ALLCODES = (codes.codes || []);
+  ALLCODES.sort((a, b) => (a.status === b.status) ? (b.created_at - a.created_at) : (a.status === 'used' ? -1 : 1));
+  const used = ALLCODES.filter(c => c.status === 'used').length;
   document.getElementById('stats').innerHTML =
-    '<span class="stat">共 ' + all.length + ' 个码 · 已用 ' + used + ' · 剩余 ' + (all.length - used) + '</span>' +
-    '<div class="muted">已用码明细：' + all.filter(c => c.status === 'used').slice(0, 20).map(c => c.code).join('，') + '</div>';
+    '<span class="stat">共 ' + ALLCODES.length + ' 个码 · 已用 ' + used + ' · 剩余 ' + (ALLCODES.length - used) + '</span>' +
+    '<div class="muted">已用码：' + ALLCODES.filter(c => c.status === 'used').map(c => c.code).join('，') + '</div>';
+  renderTable();
+}
+
+function setFilter(f, btn) {
+  FILTER = f;
+  document.querySelectorAll('.filter button').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTable();
+}
+
+function renderTable() {
+  const list = ALLCODES.filter(c => FILTER === 'all' || c.status === FILTER);
+  if (list.length === 0) {
+    document.getElementById('codetable').innerHTML = '<span class="muted">该分类下暂无激活码</span>';
+    return;
+  }
+  const rows = list.map((c, i) => {
+    const devCount = c.devices ? c.devices.split(',').filter(Boolean).length : 0;
+    const link = ORIGIN + '/c/' + c.claim_token;
+    return '<tr class="' + c.status + '">' +
+      '<td>' + (i + 1) + '</td>' +
+      '<td class="mono">' + c.code + '</td>' +
+      '<td><span class="tag ' + c.status + '">' + (c.status === 'used' ? '已用' : '未用') + '</span></td>' +
+      '<td>' + devCount + '/3</td>' +
+      '<td class="muted">' + fmt(c.created_at) + '</td>' +
+      '<td><button class="copy" onclick="copyLink(\'' + link + '\')">复制链接</button></td>' +
+      '</tr>';
+  }).join('');
+  document.getElementById('codetable').innerHTML =
+    '<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>激活码</th><th>状态</th><th>设备</th><th>生成时间</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+}
+
+function copyLink(link) {
+  const done = () => alert('取码链接已复制，可直接发给用户');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(link).then(done);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = link; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    done();
+  }
 }
 
 async function confirmOrder(id) {
@@ -299,11 +370,10 @@ async function seed() {
   if (!confirm('生成 100 个新激活码？')) return;
   const r = await fetch('/admin/seed?key=' + KEY + '&count=100', { method: 'POST' });
   const d = await r.json();
-  document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
+  document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\n');
   load();
 }
 
-function esc(s) { return String(s || '').replace(/[<>&"]/g, ''); }
 load();
 </script>
 </body>
