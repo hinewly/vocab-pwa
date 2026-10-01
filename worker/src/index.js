@@ -547,8 +547,8 @@ async function load() {
     : pending.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ok" onclick="confirmOrder(\\\'' + o.id + '\\'">确认收款</button>' +
-        '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\'">✕ 拒绝</button></div>'
+        '<button class="ok" onclick="confirmOrder(\\\'' + o.id + '\\')">确认收款</button>' +
+        '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\')">✕ 拒绝</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
@@ -560,7 +560,7 @@ async function load() {
       rejected.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\'">↩ 恢复</button>' +
+        '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\')">↩ 恢复</button>' +
         '<span class="muted">恢复后回到待确认列表</span></div>'
       ).join('') + '</div>';
   }
