@@ -28,6 +28,17 @@ const JSON_HEADERS = {
 const MAX_DEVICES_PER_CODE = 3;
 const FAIL_LIMIT = 5;
 const COOLDOWN_BASE_SECONDS = 10 * 60;
+const PROJECT_IDS = {
+  vocab_full: '背单词完整版',
+  lottery_full: '彩票完整版',
+};
+const DEFAULT_PROJECT_ID = 'vocab_full';
+
+function normalizeProjectId(value, { allowAll = false } = {}) {
+  const id = String(value || '').trim();
+  if (allowAll && id === 'all') return 'all';
+  return Object.prototype.hasOwnProperty.call(PROJECT_IDS, id) ? id : null;
+}
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: JSON_HEADERS });
@@ -500,10 +511,21 @@ function adminPageHtml() {
   .cnt { font-weight: 600; margin-bottom: 2px; }
   .devline { display: flex; align-items: center; gap: 6px; padding: 2px 0; font-size: 12px; }
   .mini { background: #eef1f5; color: #c0392b; padding: 2px 8px; font-size: 11px; border-radius: 6px; }
+  .project-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .project-btn.on { background: #2f6fed; color: #fff; }
+  .project-tag { display: inline-block; padding: 1px 7px; border-radius: 5px; font-size: 11px; background: #eef6ff; color: #2f6fed; }
 </style>
 </head>
 <body>
 <h1>DaoBox 管理台</h1>
+<div class="card">
+  <h2>项目</h2>
+  <div class="project-tabs">
+    <button class="ghost project-btn" data-project="vocab_full">背单词完整版</button>
+    <button class="ghost project-btn" data-project="lottery_full">彩票完整版</button>
+    <button class="ghost project-btn" data-project="all">全部</button>
+  </div>
+</div>
 <h2>待确认订单</h2>
 <div id="pending" class="card"><span class="muted">加载中…</span></div>
 <div id="rejected"></div>
@@ -528,15 +550,47 @@ function adminPageHtml() {
 <script>
 const KEY = new URLSearchParams(location.search).get('key');
 const ORIGIN = location.origin;
+const PROJECT_IDS = {
+  vocab_full: '背单词完整版',
+  lottery_full: '彩票完整版',
+};
+let PROJECT = new URLSearchParams(location.search).get('project') || sessionStorage.getItem('daobox_admin_project') || 'vocab_full';
+if (PROJECT !== 'all' && !PROJECT_IDS[PROJECT]) PROJECT = 'vocab_full';
 let ALLCODES = [];
 let FILTER = 'all';
+
+function projectName(id) {
+  return PROJECT_IDS[id] || '未知';
+}
+
+function updateProjectTabs() {
+  document.querySelectorAll('.project-btn').forEach(function (btn) {
+    btn.classList.toggle('on', btn.dataset.project === PROJECT);
+  });
+}
+
+function setProject(id) {
+  PROJECT = id;
+  sessionStorage.setItem('daobox_admin_project', id);
+  const url = new URL(location.href);
+  url.searchParams.set('project', id);
+  history.replaceState({}, '', url);
+  updateProjectTabs();
+  load();
+}
+
+document.addEventListener('click', function (event) {
+  const btn = event.target.closest('.project-btn');
+  if (btn) setProject(btn.dataset.project);
+});
+updateProjectTabs();
 const fmt = (t) => new Date(t).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 const esc = (s) => String(s || '').replace(/[<>&"]/g, '');
 
 async function load() {
   const [ord, codes] = await Promise.all([
-    fetch('/admin/orders?key=' + KEY).then(r => r.json()),
-    fetch('/admin/list?key=' + KEY).then(r => r.json()),
+    fetch('/admin/orders?key=' + encodeURIComponent(KEY) + '&project=' + encodeURIComponent(PROJECT)).then(r => r.json()),
+    fetch('/admin/list?key=' + encodeURIComponent(KEY) + '&project=' + encodeURIComponent(PROJECT)).then(r => r.json()),
   ]);
   const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
   const pending = orders.filter(o => o.status === 'pending');
@@ -546,7 +600,7 @@ async function load() {
   document.getElementById('pending').innerHTML = pending.length === 0
     ? '<span class="muted">暂无待确认订单 ✅</span>'
     : pending.map(o =>
-        '<div class="row"><b>' + esc(o.contact) + '</b>' +
+        '<div class="row"><span class="project-tag">' + esc(projectName(o.project_id)) + '</span><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
         '<button class="ok" onclick="confirmOrder(\\\'' + o.id + '\\')">确认收款</button>' +
         '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\')">✕ 拒绝</button>' +
@@ -575,7 +629,7 @@ async function load() {
   if (deleted.length > 0) {
     deletedHtml = '<h2>已删除订单 (' + deleted.length + ')</h2><div class="card">' +
       deleted.map(o =>
-        '<div class="row"><b>' + esc(o.contact) + '</b>' +
+        '<div class="row"><span class="project-tag">' + esc(projectName(o.project_id)) + '</span><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
         '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\')">↩ 恢复</button>' +
         '<span class="muted">误删可恢复，回到待确认列表</span></div>'
@@ -628,6 +682,7 @@ function renderTable() {
 
     return '<tr class="' + c.status + '">' +
       '<td>' + (i + 1) + '</td>' +
+      '<td><span class="project-tag">' + esc(projectName(c.project_id)) + '</span></td>' +
       '<td class="mono">' + c.code + '</td>' +
       '<td><span class="tag ' + c.status + '">' + (c.status === 'used' ? '已用' : '未用') + '</span></td>' +
       '<td class="devcell">' + devHtml + '</td>' +
@@ -636,7 +691,7 @@ function renderTable() {
       '</tr>';
   }).join('');
   document.getElementById('codetable').innerHTML =
-    '<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>激活码</th><th>状态</th><th>设备</th><th>生成时间</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    '<div style="overflow-x:auto"><table><thead><tr><th>#</th><th>项目</th><th>激活码</th><th>状态</th><th>设备</th><th>生成时间</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div>';
 }
 
 function unbindDev(ri, di) {
@@ -736,7 +791,11 @@ async function deleteOrder(id) {
 }
 
 async function seed() {
-  const r = await fetch('/admin/seed?key=' + KEY + '&count=100', { method: 'POST' });
+  if (PROJECT === 'all') {
+    alert('请先选择一个具体项目，再生成激活码。');
+    return;
+  }
+  const r = await fetch('/admin/seed?key=' + encodeURIComponent(KEY) + '&count=100&project=' + encodeURIComponent(PROJECT), { method: 'POST' });
   const d = await r.json();
   document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
   load();
@@ -794,13 +853,14 @@ export default {
       const body = await request.json().catch(() => ({}));
       const code = normalizeCode(body.code);
       const deviceId = String(body.deviceId || '').slice(0, 128);
+      const projectId = body.projectId ? normalizeProjectId(body.projectId) : DEFAULT_PROJECT_ID;
 
-      if (!code || !deviceId) {
-        return json({ ok: false, error: '参数不完整' }, 400);
+      if (!code || !deviceId || !projectId) {
+        return json({ ok: false, error: body.projectId && !projectId ? '未知项目' : '参数不完整' }, 400);
       }
 
       const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-      const limitKey = `${ip}:${deviceId}`;
+      const limitKey = `${projectId}:${ip}:${deviceId}`;
 
       const gate = await checkBlocked(env.DB, limitKey);
       if (gate.blocked) {
@@ -813,8 +873,8 @@ export default {
       }
 
       const codeRow = await env.DB
-        .prepare('SELECT code, status FROM codes WHERE code = ?')
-        .bind(code)
+        .prepare('SELECT code, status FROM codes WHERE project_id = ? AND code = ?')
+        .bind(projectId, code)
         .first();
 
       if (!codeRow) {
@@ -823,8 +883,8 @@ export default {
       }
 
       const bound = await env.DB
-        .prepare('SELECT device_id FROM bindings WHERE code = ?')
-        .bind(code)
+        .prepare('SELECT device_id FROM bindings WHERE project_id = ? AND code = ?')
+        .bind(projectId, code)
         .all();
       const deviceIds = (bound.results || []).map((r) => r.device_id);
 
@@ -842,12 +902,12 @@ export default {
       }
 
       await env.DB
-        .prepare('INSERT INTO bindings (code, device_id, bound_at) VALUES (?, ?, ?)')
-        .bind(code, deviceId, Date.now())
+        .prepare('INSERT INTO bindings (project_id, code, device_id, bound_at) VALUES (?, ?, ?, ?)')
+        .bind(projectId, code, deviceId, Date.now())
         .run();
       await env.DB
-        .prepare("UPDATE codes SET status = 'used', claimed_at = ? WHERE code = ? AND status = 'unused'")
-        .bind(Date.now(), code)
+        .prepare("UPDATE codes SET status = 'used', claimed_at = ? WHERE project_id = ? AND code = ? AND status = 'unused'")
+        .bind(Date.now(), projectId, code)
         .run();
       await clearFails(env.DB, limitKey);
 
@@ -858,14 +918,18 @@ export default {
     if (request.method === 'POST' && path === '/api/order') {
       const body = await request.json().catch(() => ({}));
       const contact = normalizeContact(body.contact);
+      const projectId = body.projectId ? normalizeProjectId(body.projectId) : DEFAULT_PROJECT_ID;
       if (!contact) {
         return json({ ok: false, error: '请填写有效的手机号或微信号' }, 400);
+      }
+      if (!projectId) {
+        return json({ ok: false, error: '未知项目' }, 400);
       }
       const id = genToken(6);
       const token = genToken(12);
       await env.DB
-        .prepare('INSERT INTO orders (id, token, contact, status, created_at) VALUES (?, ?, ?, ?, ?)')
-        .bind(id, token, contact, 'pending', Date.now())
+        .prepare('INSERT INTO orders (project_id, id, token, contact, status, created_at) VALUES (?, ?, ?, ?, ?, ?)')
+        .bind(projectId, id, token, contact, 'pending', Date.now())
         .run();
       return json({ ok: true, orderId: id, checkUrl: `${url.origin}/o/${token}` });
     }
@@ -898,19 +962,20 @@ export default {
         const body = await request.json().catch(() => ({}));
         const orderId = String(body.orderId || '');
         const order = await env.DB
-          .prepare("SELECT id, status FROM orders WHERE id = ? AND status = 'pending'")
+          .prepare("SELECT project_id, id, status FROM orders WHERE id = ? AND status = 'pending'")
           .bind(orderId)
           .first();
         if (!order) return json({ ok: false, error: '订单不存在或已确认' }, 404);
 
         const unused = await env.DB
-          .prepare("SELECT code, claim_token FROM codes WHERE status = 'unused' LIMIT 1")
+          .prepare("SELECT code, claim_token FROM codes WHERE project_id = ? AND status = 'unused' LIMIT 1")
+          .bind(order.project_id)
           .first();
-        if (!unused) return json({ ok: false, error: '激活码已用完，请先生成新码' }, 500);
+        if (!unused) return json({ ok: false, error: '该项目的激活码已用完，请先生成新码' }, 500);
 
         const now = Date.now();
         await env.DB.batch([
-          env.DB.prepare("UPDATE codes SET status = 'used', claimed_at = ? WHERE code = ?").bind(now, unused.code),
+          env.DB.prepare("UPDATE codes SET status = 'used', claimed_at = ? WHERE project_id = ? AND code = ?").bind(now, order.project_id, unused.code),
           env.DB.prepare("UPDATE orders SET status = 'paid', code = ?, paid_at = ? WHERE id = ?").bind(unused.code, now, orderId),
         ]);
         return json({ ok: true, code: unused.code, link: `${url.origin}/c/${unused.claim_token}` });
@@ -950,14 +1015,19 @@ export default {
       }
 
       if (request.method === 'GET' && path === '/admin/orders') {
-        const rows = await env.DB
-          .prepare('SELECT id, contact, status, code, created_at, paid_at FROM orders ORDER BY created_at DESC LIMIT 200')
-          .all();
+        const project = normalizeProjectId(url.searchParams.get('project'), { allowAll: true }) || DEFAULT_PROJECT_ID;
+        const sql = 'SELECT project_id, id, contact, status, code, created_at, paid_at FROM orders'
+          + (project === 'all' ? '' : ' WHERE project_id = ?')
+          + ' ORDER BY created_at DESC LIMIT 500';
+        const rows = project === 'all'
+          ? await env.DB.prepare(sql).all()
+          : await env.DB.prepare(sql).bind(project).all();
         return json({ ok: true, orders: rows.results });
       }
 
       if (request.method === 'POST' && path === '/admin/seed') {
         const count = Math.min(parseInt(url.searchParams.get('count') || '100', 10), 2000);
+        const project = normalizeProjectId(url.searchParams.get('project')) || DEFAULT_PROJECT_ID;
         const stmts = [];
         const results = [];
         for (let i = 0; i < count; i++) {
@@ -973,8 +1043,8 @@ export default {
           const token = genToken();
           stmts.push(
             env.DB
-              .prepare('INSERT INTO codes (code, claim_token, status, created_at) VALUES (?, ?, ?, ?)')
-              .bind(code, token, 'unused', Date.now())
+              .prepare('INSERT INTO codes (project_id, code, claim_token, status, created_at) VALUES (?, ?, ?, ?, ?)')
+              .bind(project, code, token, 'unused', Date.now())
           );
           results.push({ code, link: `${url.origin}/c/${token}` });
         }
@@ -983,17 +1053,20 @@ export default {
       }
 
       if (request.method === 'GET' && path === '/admin/list') {
-        const codes = await env.DB
-          .prepare(`
-            SELECT c.code, c.status, c.created_at, c.claimed_at, c.claim_token,
+        const project = normalizeProjectId(url.searchParams.get('project'), { allowAll: true }) || DEFAULT_PROJECT_ID;
+        const sql = `
+            SELECT c.project_id, c.code, c.status, c.created_at, c.claimed_at, c.claim_token,
                    GROUP_CONCAT(b.device_id) AS devices,
                    GROUP_CONCAT(b.bound_at) AS bound_times
             FROM codes c
             LEFT JOIN bindings b ON b.code = c.code
+            ${project === 'all' ? '' : 'WHERE c.project_id = ?'}
             GROUP BY c.code
             ORDER BY c.created_at DESC
-          `)
-          .all();
+          `;
+        const codes = project === 'all'
+          ? await env.DB.prepare(sql).all()
+          : await env.DB.prepare(sql).bind(project).all();
         return json({ ok: true, codes: codes.results });
       }
 

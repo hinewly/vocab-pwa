@@ -1,6 +1,13 @@
-# daobox-api — vocab-pwa 激活码后端
+# daobox-api — 多项目激活码后端
 
-Cloudflare Workers + D1，负责激活码的生成、验证、设备软绑定。
+Cloudflare Workers + D1，负责多个项目的激活码生成、验证、设备软绑定和付款登记。
+
+当前支持：
+
+- `vocab_full`：背单词完整版
+- `lottery_full`：彩票完整版
+
+管理台按项目切换，数据表使用 `project_id` 区分。
 
 ## 首次部署（只需做一次）
 
@@ -29,9 +36,13 @@ npx wrangler deploy
 
 ## 生成一批激活码
 
+管理台会按当前项目生成。也可以用接口：
+
 ```bash
-curl -X POST "https://api.daobox.app/admin/seed?key=你的ADMIN_KEY&count=200"
+curl -X POST "https://api.daobox.app/admin/seed?key=你的ADMIN_KEY&count=200&project=lottery_full"
 ```
+
+`project` 可用 `vocab_full`、`lottery_full`。
 
 返回每张码和对应的隐藏取码链接：
 
@@ -58,7 +69,7 @@ curl -X POST "https://api.daobox.app/admin/unbind?key=你的ADMIN_KEY" \
 ### POST /api/activate
 
 ```json
-请求：{ "code": "382914", "deviceId": "随机设备ID" }
+请求：{ "projectId": "lottery_full", "code": "382914", "deviceId": "随机设备ID" }
 成功：{ "ok": true, "plan": "all" }
 失败：{ "ok": false, "error": "原因" }
 ```
