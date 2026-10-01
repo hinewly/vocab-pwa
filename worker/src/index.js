@@ -547,6 +547,8 @@ function adminPageHtml() {
   .project-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
   .project-btn.on { background: #2f6fed; color: #fff; }
   .project-tag { display: inline-block; padding: 1px 7px; border-radius: 5px; font-size: 11px; background: #eef6ff; color: #2f6fed; }
+  tr.log-fail td { color: #c0392b; }
+  tr.log-ok td { color: #16a34a; }
 </style>
 </head>
 <body>
@@ -564,6 +566,8 @@ function adminPageHtml() {
 <!-- 管理内容 -->
 <div id="admin-content" style="display:none">
 <h1>DaoBox 管理台 <button class="ghost" style="float:right;padding:4px 12px;font-size:12px" onclick="logout()">退出</button></h1>
+<h2 style="margin-top:12px">登录记录</h2>
+<div id="loginlogs" class="card"><span class="muted">加载中…</span></div>
 <div class="card">
   <h2>项目</h2>
   <div class="project-tabs">
@@ -583,8 +587,6 @@ function adminPageHtml() {
   <button class="blue" onclick="seed()">＋ 生成 100 个新码</button>
   <textarea id="seedout" placeholder="生成后这里显示所有取码链接，长按全选复制保存" readonly></textarea>
 </div>
-<h2>登录记录</h2>
-<div id="loginlogs" class="card"><span class="muted">加载中…</span></div>
 <h2>激活码明细</h2>
 <div class="card">
   <div class="filter">
@@ -648,14 +650,19 @@ async function load() {
   const logList = logs.logs || [];
   document.getElementById('loginlogs').innerHTML = logList.length === 0
     ? '<span class="muted">暂无登录记录</span>'
-    : logList.map(l => {
-        const flag = l.success ? '✅' : '❌';
-        const status = l.success ? '成功' : '失败';
-        const loc = [l.country, l.city].filter(Boolean).join(' ') || '未知';
-        return '<div class="row"><span>' + flag + '</span><b>' + esc(l.username) + '</b>' +
-          '<span class="muted">' + esc(loc) + '</span><span class="muted">' + esc(l.ip) + '</span>' +
-          '<span class="muted">' + fmt(l.time) + '</span><span class="muted">' + status + '</span></div>';
-      }).join('');
+    : '<div style="overflow-x:auto"><table><thead><tr><th>结果</th><th>用户名</th><th>地区</th><th>IP 地址</th><th>时间</th></tr></thead><tbody>' +
+      logList.map(l => {
+        const flag = l.success ? '✅ 成功' : '❌ 失败';
+        const loc = [l.country, l.city].filter(Boolean).join(' · ') || '未知';
+        return '<tr class="' + (l.success ? 'log-ok' : 'log-fail') + '">' +
+          '<td>' + flag + '</td>' +
+          '<td>' + esc(l.username) + '</td>' +
+          '<td>' + esc(loc) + '</td>' +
+          '<td class="mono">' + esc(l.ip) + '</td>' +
+          '<td>' + fmt(l.time) + '</td>' +
+          '</tr>';
+      }).join('') +
+      '</tbody></table></div>';
   const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
   const pending = orders.filter(o => o.status === 'pending');
   const rejected = orders.filter(o => o.status === 'rejected');
