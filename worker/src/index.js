@@ -577,7 +577,7 @@ async function load() {
       deleted.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ghost" onclick="restoreOrder(\'' + o.id + '\')">↩ 恢复</button>' +
+        '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\')">↩ 恢复</button>' +
         '<span class="muted">误删可恢复，回到待确认列表</span></div>'
       ).join('') + '</div>';
   }
