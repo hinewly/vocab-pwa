@@ -109,7 +109,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.18';
+const APP_VERSION = 'v1.2.19';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2034,8 +2034,8 @@ function onAction(e) {
       const cBtn = pInput?.parentElement?.querySelector('button');
       const phone = (pInput?.value || '').trim();
       const nick = (nInput?.value || '').trim();
-      if (phone.length < 4) {
-        showToast('请填写有效的手机号', 'error');
+      if (!/^1[3-9]\d{9}$/.test(phone)) {
+        showToast('请填写正确的11位手机号', 'error');
         break;
       }
       if (nick.length < 1) {
