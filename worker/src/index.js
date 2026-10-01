@@ -50,7 +50,12 @@ function normalizeCode(raw) {
 
 function normalizeContact(raw) {
   const s = String(raw || '').trim().slice(0, 64);
-  return s.length >= 4 ? s : null;
+  if (!/^[\d\s]+ \/ .+/.test(s)) return null; // must be "phone / nickname" format
+  const phone = s.split(' / ')[0].replace(/\s/g, '');
+  if (!/^1[3-9]\d{9}$/.test(phone)) return null;
+  const nick = s.split(' / ').slice(1).join(' / ').trim();
+  if (!nick) return null;
+  return phone + ' / ' + nick;
 }
 
 // ---------- 限速 ----------
@@ -501,6 +506,7 @@ function adminPageHtml() {
 <h1>DaoBox 管理台</h1>
 <h2>待确认订单</h2>
 <div id="pending" class="card"><span class="muted">加载中…</span></div>
+<div id="rejected"></div>
 <h2>激活码统计</h2>
 <div id="stats" class="card"><span class="muted">加载中…</span></div>
 <h2>生成激活码</h2>
@@ -533,6 +539,7 @@ async function load() {
   ]);
   const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
   const pending = orders.filter(o => o.status === 'pending');
+  const rejected = orders.filter(o => o.status === 'rejected');
   const paid = orders.filter(o => o.status === 'paid');
 
   document.getElementById('pending').innerHTML = pending.length === 0
@@ -540,11 +547,24 @@ async function load() {
     : pending.map(o =>
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
-        '<button class="ok" onclick="confirmOrder(\\'' + o.id + '\\')">确认收款</button>' +
-        '<button class="no" onclick="rejectOrder(\\'' + o.id + '\\')">✕ 拒绝</button></div>'
+        '<button class="ok" onclick="confirmOrder(\\\'' + o.id + '\\'">确认收款</button>' +
+        '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\'">✕ 拒绝</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
+
+  // Rejected orders section
+  var rejectedHtml = '';
+  if (rejected.length > 0) {
+    rejectedHtml = '<h2>已拒绝订单 (' + rejected.length + ')</h2><div class="card">' +
+      rejected.map(o =>
+        '<div class="row"><b>' + esc(o.contact) + '</b>' +
+        '<span class="muted">' + fmt(o.created_at) + '</span>' +
+        '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\'">↩ 恢复</button>' +
+        '<span class="muted">恢复后回到待确认列表</span></div>'
+      ).join('') + '</div>';
+  }
+  document.getElementById('rejected').innerHTML = rejectedHtml;
 
   ALLCODES = (codes.codes || []);
   ALLCODES.sort((a, b) => (a.status === b.status) ? (b.created_at - a.created_at) : (a.status === 'used' ? -1 : 1));
@@ -606,7 +626,6 @@ function unbindDev(ri, di) {
   const row = BINDINGS[ri];
   if (!row) return;
   const dev = row.devices[di];
-  if (!confirm('确定解绑设备 ' + dev.id.slice(0, 10) + '… ？\\n解绑后该用户在新设备重新输入激活码即可。')) return;
   fetch('/admin/unbind?key=' + KEY, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ code: row.code, deviceId: dev.id }),
@@ -632,7 +651,6 @@ function copyLink(link) {
 }
 
 async function confirmOrder(id) {
-  if (!confirm('确认这笔款已收到？')) return;
   try {
     const r = await fetch('/admin/confirm?key=' + KEY, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -658,8 +676,20 @@ async function rejectOrder(id) {
   load();
 }
 
+async function restoreOrder(id) {
+  try {
+    const r = await fetch('/admin/restore?key=' + KEY, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId: id }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) { alert('已恢复，订单回到待确认列表'); }
+    else { alert('恢复失败：' + (d.error || '未知错误')); }
+  } catch (e) { alert('网络异常，请重试'); }
+  load();
+}
+
 async function seed() {
-  if (!confirm('生成 100 个新激活码？')) return;
   const r = await fetch('/admin/seed?key=' + KEY + '&count=100', { method: 'POST' });
   const d = await r.json();
   document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
@@ -845,6 +875,17 @@ export default {
         const orderId = String(body.orderId || '');
         const result = await env.DB
           .prepare("UPDATE orders SET status = 'rejected' WHERE id = ? AND status = 'pending'")
+          .bind(orderId)
+          .run();
+        if (!result.meta.changes) return json({ ok: false, error: '订单不存在或状态已变' }, 404);
+        return json({ ok: true });
+      }
+
+      if (request.method === 'POST' && path === '/admin/restore') {
+        const body = await request.json().catch(() => ({}));
+        const orderId = String(body.orderId || '');
+        const result = await env.DB
+          .prepare("UPDATE orders SET status = 'pending' WHERE id = ? AND status = 'rejected'")
           .bind(orderId)
           .run();
         if (!result.meta.changes) return json({ ok: false, error: '订单不存在或状态已变' }, 404);
