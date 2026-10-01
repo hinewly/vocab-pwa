@@ -8,8 +8,9 @@
  *   GET  /o/:token                取码页（确认前显示"确认中"，确认后显示激活码）
  *   GET  /c/:claimToken           直接取码页（预生成码的隐藏链接）
  *
- * 管理侧端点（?key=ADMIN_KEY）：
- *   GET  /admin                   管理台页面（手机可用）
+ * 管理侧端点（X-Admin-Token 认证，需先 POST /admin/login）：
+ *   POST /admin/login             登录 { username, password } → 返回 token
+ *   GET  /admin                   管理台页面（含登录界面，手机可用）
  *   POST /admin/seed              批量生成激活码
  *   GET  /admin/list              查看所有激活码和绑定
  *   GET  /admin/orders            查看订单
@@ -52,6 +53,37 @@ function genToken(bytes = 12) {
   const arr = new Uint8Array(bytes);
   crypto.getRandomValues(arr);
   return [...arr].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+
+// ---------- 管理台 Token 认证 ----------
+const ADMIN_TOKEN_TTL_MS = 24 * 60 * 60 * 1000; // 24 小时
+
+async function hmacSign(secret, message) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    'raw', encoder.encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, encoder.encode(message));
+  return [...new Uint8Array(sig)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function genAdminToken(secret) {
+  const expiry = Date.now() + ADMIN_TOKEN_TTL_MS;
+  const sig = await hmacSign(secret, String(expiry));
+  return expiry + '.' + sig;
+}
+
+async function verifyAdminToken(token, secret) {
+  if (!token || !secret) return false;
+  const parts = token.split('.');
+  if (parts.length !== 2) return false;
+  const expiryStr = parts[0];
+  const expiry = parseInt(expiryStr, 10);
+  if (!expiry || Date.now() > expiry) return false;
+  const expected = await hmacSign(secret, expiryStr);
+  return parts[1] === expected;
 }
 
 function normalizeCode(raw) {
@@ -151,7 +183,7 @@ function codePageHtml(code, title = '支付成功 🎉') {
   <div class="code" id="code">${code}</div>
   <button onclick="copyCode()">一键复制</button>
   <p class="tip">请务必截图保存本页！<br>激活码是你的购买凭证，<br>清除数据 / 更换设备后，重新输入此码即可再次解锁，无需重复购买。</p>
-</div>
+</div><!-- /admin-content -->
 <script>
 function copyCode() {
   const code = document.getElementById('code').textContent.trim();
@@ -517,7 +549,20 @@ function adminPageHtml() {
 </style>
 </head>
 <body>
-<h1>DaoBox 管理台</h1>
+<!-- 登录界面 -->
+<div id="login-screen" style="display:none;max-width:320px;margin:60px auto 0;">
+  <h1 style="text-align:center">DaoBox 管理台</h1>
+  <div class="card">
+    <h2>登录</h2>
+    <input id="login-user" placeholder="用户名" style="width:100%;padding:10px;margin:4px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-size:15px;">
+    <input id="login-pass" type="password" placeholder="密码" style="width:100%;padding:10px;margin:4px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-size:15px;">
+    <button class="blue" style="width:100%;margin-top:8px;padding:12px" onclick="doLogin()">登 录</button>
+    <div id="login-error" style="color:#c0392b;font-size:13px;margin-top:8px;display:none"></div>
+  </div>
+</div>
+<!-- 管理内容 -->
+<div id="admin-content" style="display:none">
+<h1>DaoBox 管理台 <button class="ghost" style="float:right;padding:4px 12px;font-size:12px" onclick="logout()">退出</button></h1>
 <div class="card">
   <h2>项目</h2>
   <div class="project-tabs">
@@ -548,8 +593,10 @@ function adminPageHtml() {
   <p class="muted" style="margin-top:8px">点「复制链接」可复制该码的取码页链接（发给付款用户）。已用 = 红色划线。</p>
 </div>
 <script>
-const KEY = new URLSearchParams(location.search).get('key');
+const TOKEN_KEY = 'daobox_admin_token';
 const ORIGIN = location.origin;
+function getToken() { return localStorage.getItem(TOKEN_KEY); }
+function authHeaders() { return { 'X-Admin-Token': getToken(), 'Content-Type': 'application/json' }; }
 const PROJECT_IDS = {
   vocab_full: '背单词完整版',
   lottery_full: '彩票完整版',
@@ -589,8 +636,8 @@ const esc = (s) => String(s || '').replace(/[<>&"]/g, '');
 
 async function load() {
   const [ord, codes] = await Promise.all([
-    fetch('/admin/orders?key=' + encodeURIComponent(KEY) + '&project=' + encodeURIComponent(PROJECT)).then(r => r.json()),
-    fetch('/admin/list?key=' + encodeURIComponent(KEY) + '&project=' + encodeURIComponent(PROJECT)).then(r => r.json()),
+    fetch('/admin/orders?project=' + encodeURIComponent(PROJECT), { headers: authHeaders() }).then(r => r.json()),
+    fetch('/admin/list?project=' + encodeURIComponent(PROJECT), { headers: authHeaders() }).then(r => r.json()),
   ]);
   const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
   const pending = orders.filter(o => o.status === 'pending');
@@ -698,8 +745,8 @@ function unbindDev(ri, di) {
   const row = BINDINGS[ri];
   if (!row) return;
   const dev = row.devices[di];
-  fetch('/admin/unbind?key=' + KEY, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
+  fetch('/admin/unbind', {
+    method: 'POST', headers: authHeaders(),
     body: JSON.stringify({ code: row.code, deviceId: dev.id }),
   })
     .then(r => r.json())
@@ -724,8 +771,8 @@ function copyLink(link) {
 
 async function confirmOrder(id) {
   try {
-    const r = await fetch('/admin/confirm?key=' + KEY, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('/admin/confirm', {
+      method: 'POST', headers: authHeaders(),
       body: JSON.stringify({ orderId: id }),
     });
     const d = await r.json().catch(() => ({}));
@@ -737,8 +784,8 @@ async function confirmOrder(id) {
 
 async function rejectOrder(id) {
   try {
-    const r = await fetch('/admin/reject?key=' + KEY, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('/admin/reject', {
+      method: 'POST', headers: authHeaders(),
       body: JSON.stringify({ orderId: id }),
     });
     const d = await r.json().catch(() => ({}));
@@ -750,8 +797,8 @@ async function rejectOrder(id) {
 
 async function restoreOrder(id) {
   try {
-    const r = await fetch('/admin/restore?key=' + KEY, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('/admin/restore', {
+      method: 'POST', headers: authHeaders(),
       body: JSON.stringify({ orderId: id }),
     });
     const d = await r.json().catch(() => ({}));
@@ -779,8 +826,8 @@ function armDelete(btn, id) {
 
 async function deleteOrder(id) {
   try {
-    const r = await fetch('/admin/delete?key=' + KEY, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('/admin/delete', {
+      method: 'POST', headers: authHeaders(),
       body: JSON.stringify({ orderId: id }),
     });
     const d = await r.json().catch(function () { return {}; });
@@ -795,13 +842,68 @@ async function seed() {
     alert('请先选择一个具体项目，再生成激活码。');
     return;
   }
-  const r = await fetch('/admin/seed?key=' + encodeURIComponent(KEY) + '&count=100&project=' + encodeURIComponent(PROJECT), { method: 'POST' });
+  const r = await fetch('/admin/seed?count=100&project=' + encodeURIComponent(PROJECT), { method: 'POST', headers: authHeaders() });
   const d = await r.json();
   document.getElementById('seedout').value = (d.codes || []).map(c => c.code + '  ' + c.link).join('\\n');
   load();
 }
 
-load();
+
+async function doLogin() {
+  const username = document.getElementById('login-user').value.trim();
+  const password = document.getElementById('login-pass').value;
+  const errDiv = document.getElementById('login-error');
+  errDiv.style.display = 'none';
+  try {
+    const r = await fetch('/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      localStorage.setItem(TOKEN_KEY, d.token);
+      showAdmin();
+    } else {
+      errDiv.textContent = d.error || '登录失败';
+      errDiv.style.display = 'block';
+    }
+  } catch(e) {
+    errDiv.textContent = '网络异常，请重试';
+    errDiv.style.display = 'block';
+  }
+}
+
+function logout() {
+  localStorage.removeItem(TOKEN_KEY);
+  location.reload();
+}
+
+function showLogin() {
+  document.getElementById('login-screen').style.display = 'block';
+  document.getElementById('admin-content').style.display = 'none';
+}
+
+function showAdmin() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('admin-content').style.display = 'block';
+  load();
+}
+
+async function checkAuth() {
+  const token = getToken();
+  if (!token) { showLogin(); return; }
+  try {
+    const r = await fetch('/admin/verify', { headers: { 'X-Admin-Token': token } });
+    if (r.ok) { showAdmin(); } else { localStorage.removeItem(TOKEN_KEY); showLogin(); }
+  } catch(e) { showLogin(); }
+}
+
+document.getElementById('login-pass').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLogin();
+});
+
+checkAuth();
 </script>
 </body>
 </html>`;
@@ -947,15 +1049,35 @@ export default {
 
     // ---- 管理接口 ----
     if (path === '/admin' || path.startsWith('/admin/')) {
-      const key = url.searchParams.get('key') || request.headers.get('X-Admin-Key');
-      if (!env.ADMIN_KEY || key !== env.ADMIN_KEY) {
-        return json({ ok: false, error: '无权限' }, 401);
+
+      // 登录接口不需要 Token
+      if (request.method === 'POST' && path === '/admin/login') {
+        const body = await request.json().catch(() => ({}));
+        const username = String(body.username || '').trim();
+        const password = String(body.password || '');
+        if (!env.ADMIN_USER || !env.ADMIN_PASS || username !== env.ADMIN_USER || password !== env.ADMIN_PASS) {
+          return json({ ok: false, error: '用户名或密码错误' }, 401);
+        }
+        const token = await genAdminToken(env.ADMIN_SECRET || env.ADMIN_PASS);
+        return json({ ok: true, token, expiresAt: Date.now() + ADMIN_TOKEN_TTL_MS });
       }
 
+      // 管理台页面 HTML 本身不需要 Token（客户端自行判断登录状态）
       if (request.method === 'GET' && path === '/admin') {
         return new Response(adminPageHtml(), {
           headers: { 'Content-Type': 'text/html; charset=utf-8' },
         });
+      }
+
+      // 其他管理 API 需要有效 Token
+      const adminToken = request.headers.get('X-Admin-Token');
+      const tokenValid = await verifyAdminToken(adminToken, env.ADMIN_SECRET || env.ADMIN_PASS);
+      if (!tokenValid) {
+        return json({ ok: false, error: '登录已过期，请重新登录' }, 401);
+      }
+
+      if (request.method === 'GET' && path === '/admin/verify') {
+        return json({ ok: true });
       }
 
       if (request.method === 'POST' && path === '/admin/confirm') {
