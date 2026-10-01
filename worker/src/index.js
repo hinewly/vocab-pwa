@@ -507,6 +507,7 @@ function adminPageHtml() {
 <h2>待确认订单</h2>
 <div id="pending" class="card"><span class="muted">加载中…</span></div>
 <div id="rejected"></div>
+<div id="deleted"></div>
 <h2>激活码统计</h2>
 <div id="stats" class="card"><span class="muted">加载中…</span></div>
 <h2>生成激活码</h2>
@@ -548,7 +549,8 @@ async function load() {
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
         '<button class="ok" onclick="confirmOrder(\\\'' + o.id + '\\')">确认收款</button>' +
-        '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\')">✕ 拒绝</button></div>'
+        '<button class="no" onclick="rejectOrder(\\\'' + o.id + '\\')">✕ 拒绝</button>' +
+        '<button class="no" onclick="armDelete(this,\\'' + o.id + '\\')">🗑 删除</button></div>'
       ).join('') +
       (paid.length ? '<div class="muted" style="margin-top:10px">最近已确认：' +
         paid.slice(0, 5).map(o => esc(o.contact) + ' → ' + (o.code || '?')).join('，') + '</div>' : '');
@@ -561,10 +563,25 @@ async function load() {
         '<div class="row"><b>' + esc(o.contact) + '</b>' +
         '<span class="muted">' + fmt(o.created_at) + '</span>' +
         '<button class="ghost" onclick="restoreOrder(\\\'' + o.id + '\\')">↩ 恢复</button>' +
+        '<button class="no" onclick="armDelete(this,\\'' + o.id + '\\')">🗑 删除</button>' +
         '<span class="muted">恢复后回到待确认列表</span></div>'
       ).join('') + '</div>';
   }
   document.getElementById('rejected').innerHTML = rejectedHtml;
+
+  // Deleted orders section
+  const deleted = orders.filter(o => o.status === 'deleted');
+  var deletedHtml = '';
+  if (deleted.length > 0) {
+    deletedHtml = '<h2>已删除订单 (' + deleted.length + ')</h2><div class="card">' +
+      deleted.map(o =>
+        '<div class="row"><b>' + esc(o.contact) + '</b>' +
+        '<span class="muted">' + fmt(o.created_at) + '</span>' +
+        '<button class="ghost" onclick="restoreOrder(\'' + o.id + '\')">↩ 恢复</button>' +
+        '<span class="muted">误删可恢复，回到待确认列表</span></div>'
+      ).join('') + '</div>';
+  }
+  document.getElementById('deleted').innerHTML = deletedHtml;
 
   ALLCODES = (codes.codes || []);
   ALLCODES.sort((a, b) => (a.status === b.status) ? (b.created_at - a.created_at) : (a.status === 'used' ? -1 : 1));
@@ -685,6 +702,35 @@ async function restoreOrder(id) {
     const d = await r.json().catch(() => ({}));
     if (d.ok) { alert('已恢复，订单回到待确认列表'); }
     else { alert('恢复失败：' + (d.error || '未知错误')); }
+  } catch (e) { alert('网络异常，请重试'); }
+  load();
+}
+
+function armDelete(btn, id) {
+  if (btn.dataset.armed === '1') { deleteOrder(id); return; }
+  btn.dataset.armed = '1';
+  btn.textContent = '确认删除？';
+  btn.style.background = '#c0392b';
+  btn.style.color = '#fff';
+  setTimeout(function () {
+    if (btn.isConnected && btn.dataset.armed === '1') {
+      btn.dataset.armed = '';
+      btn.textContent = '🗑 删除';
+      btn.style.background = '';
+      btn.style.color = '';
+    }
+  }, 4000);
+}
+
+async function deleteOrder(id) {
+  try {
+    const r = await fetch('/admin/delete?key=' + KEY, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId: id }),
+    });
+    const d = await r.json().catch(function () { return {}; });
+    if (d.ok) { alert('已删除，误删可在「已删除订单」区恢复'); }
+    else { alert('删除失败：' + (d.error || '未知错误')); }
   } catch (e) { alert('网络异常，请重试'); }
   load();
 }
@@ -881,11 +927,22 @@ export default {
         return json({ ok: true });
       }
 
+      if (request.method === 'POST' && path === '/admin/delete') {
+        const body = await request.json().catch(() => ({}));
+        const orderId = String(body.orderId || '');
+        const result = await env.DB
+          .prepare("UPDATE orders SET status = 'deleted' WHERE id = ? AND status IN ('pending','rejected')")
+          .bind(orderId)
+          .run();
+        if (!result.meta.changes) return json({ ok: false, error: '订单不存在或状态已变' }, 404);
+        return json({ ok: true });
+      }
+
       if (request.method === 'POST' && path === '/admin/restore') {
         const body = await request.json().catch(() => ({}));
         const orderId = String(body.orderId || '');
         const result = await env.DB
-          .prepare("UPDATE orders SET status = 'pending' WHERE id = ? AND status = 'rejected'")
+          .prepare("UPDATE orders SET status = 'pending' WHERE id = ? AND status IN ('rejected','deleted')")
           .bind(orderId)
           .run();
         if (!result.meta.changes) return json({ ok: false, error: '订单不存在或状态已变' }, 404);
