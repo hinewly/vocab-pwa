@@ -34,6 +34,7 @@ const PROJECT_IDS = {
   lottery_full: '彩票完整版',
 };
 const DEFAULT_PROJECT_ID = 'vocab_full';
+const ADMIN_PATH_SECRET = 'moon-tiger';
 
 function normalizeProjectId(value, { allowAll = false } = {}) {
   const id = String(value || '').trim();
@@ -582,6 +583,8 @@ function adminPageHtml() {
   <button class="blue" onclick="seed()">＋ 生成 100 个新码</button>
   <textarea id="seedout" placeholder="生成后这里显示所有取码链接，长按全选复制保存" readonly></textarea>
 </div>
+<h2>登录记录</h2>
+<div id="loginlogs" class="card"><span class="muted">加载中…</span></div>
 <h2>激活码明细</h2>
 <div class="card">
   <div class="filter">
@@ -635,10 +638,24 @@ const fmt = (t) => new Date(t).toLocaleString('zh-CN', { month: 'numeric', day: 
 const esc = (s) => String(s || '').replace(/[<>&"]/g, '');
 
 async function load() {
-  const [ord, codes] = await Promise.all([
+  const [ord, codes, logs] = await Promise.all([
     fetch('/admin/orders?project=' + encodeURIComponent(PROJECT), { headers: authHeaders() }).then(r => r.json()),
     fetch('/admin/list?project=' + encodeURIComponent(PROJECT), { headers: authHeaders() }).then(r => r.json()),
+    fetch('/admin/loginlogs', { headers: authHeaders() }).then(r => r.json()).catch(() => ({ logs: [] })),
   ]);
+
+  // 渲染登录记录
+  const logList = logs.logs || [];
+  document.getElementById('loginlogs').innerHTML = logList.length === 0
+    ? '<span class="muted">暂无登录记录</span>'
+    : logList.map(l => {
+        const flag = l.success ? '✅' : '❌';
+        const status = l.success ? '成功' : '失败';
+        const loc = [l.country, l.city].filter(Boolean).join(' ') || '未知';
+        return '<div class="row"><span>' + flag + '</span><b>' + esc(l.username) + '</b>' +
+          '<span class="muted">' + esc(loc) + '</span><span class="muted">' + esc(l.ip) + '</span>' +
+          '<span class="muted">' + fmt(l.time) + '</span><span class="muted">' + status + '</span></div>';
+      }).join('');
   const orders = (ord.orders || []).slice().sort((a, b) => b.created_at - a.created_at);
   const pending = orders.filter(o => o.status === 'pending');
   const rejected = orders.filter(o => o.status === 'rejected');
@@ -1055,15 +1072,33 @@ export default {
         const body = await request.json().catch(() => ({}));
         const username = String(body.username || '').trim();
         const password = String(body.password || '');
-        if (!env.ADMIN_USER || !env.ADMIN_PASS || username !== env.ADMIN_USER || password !== env.ADMIN_PASS) {
+        const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+        const cfCountry = request.cf?.country || '';
+        const cfCity = request.cf?.city || '';
+        const success = env.ADMIN_USER && env.ADMIN_PASS && username === env.ADMIN_USER && password === env.ADMIN_PASS;
+
+        // 记录登录日志（成功和失败都记）
+        try {
+          await env.DB
+            .prepare('INSERT INTO login_logs (time, ip, country, city, username, success) VALUES (?, ?, ?, ?, ?, ?)')
+            .bind(Date.now(), ip, cfCountry, cfCity, username, success ? 1 : 0)
+            .run();
+        } catch (e) { console.error('login log error:', e); }
+
+        if (!success) {
           return json({ ok: false, error: '用户名或密码错误' }, 401);
         }
         const token = await genAdminToken(env.ADMIN_SECRET || env.ADMIN_PASS);
         return json({ ok: true, token, expiresAt: Date.now() + ADMIN_TOKEN_TTL_MS });
       }
 
-      // 管理台页面 HTML 本身不需要 Token（客户端自行判断登录状态）
+      // /admin 精确路径 → 返回 404（隐蔽入口，防止被猜到）
       if (request.method === 'GET' && path === '/admin') {
+        return new Response('Not found', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+      }
+
+      // 管理台页面在隐藏路径 /admin/moon-tiger
+      if (request.method === 'GET' && path === '/admin/' + ADMIN_PATH_SECRET) {
         return new Response(adminPageHtml(), {
           headers: { 'Content-Type': 'text/html; charset=utf-8' },
         });
@@ -1078,6 +1113,13 @@ export default {
 
       if (request.method === 'GET' && path === '/admin/verify') {
         return json({ ok: true });
+      }
+
+      if (request.method === 'GET' && path === '/admin/loginlogs') {
+        const rows = await env.DB
+          .prepare('SELECT time, ip, country, city, username, success FROM login_logs ORDER BY time DESC LIMIT 200')
+          .all();
+        return json({ ok: true, logs: rows.results });
       }
 
       if (request.method === 'POST' && path === '/admin/confirm') {
