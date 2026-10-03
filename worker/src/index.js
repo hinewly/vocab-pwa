@@ -1111,6 +1111,23 @@ export default {
         });
       }
 
+      // 门户统一账号表结构迁移（幂等 DDL；X-Admin-Key 认证，供 daobox-home 部署流程调用）
+      if (request.method === 'POST' && path === '/admin/portal-schema') {
+        if (!env.ADMIN_KEY || request.headers.get('X-Admin-Key') !== env.ADMIN_KEY) {
+          return json({ ok: false, error: 'unauthorized' }, 401);
+        }
+        const ddl = [
+          "CREATE TABLE IF NOT EXISTS portal_users (id INTEGER PRIMARY KEY AUTOINCREMENT, phone TEXT NOT NULL UNIQUE, nickname TEXT, pass_hash TEXT NOT NULL, source TEXT, created_at INTEGER NOT NULL, last_login_at INTEGER, status TEXT NOT NULL DEFAULT 'active')",
+          "CREATE TABLE IF NOT EXISTS portal_login_logs (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, ts INTEGER NOT NULL, src TEXT, app TEXT, ip_hash TEXT, ua TEXT)",
+          "CREATE INDEX IF NOT EXISTS idx_pll_user_ts ON portal_login_logs(user_id, ts)",
+          "CREATE TABLE IF NOT EXISTS portal_usage_log (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, app TEXT NOT NULL, action TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 1, ts INTEGER NOT NULL)",
+          "CREATE INDEX IF NOT EXISTS idx_pul_user ON portal_usage_log(user_id, app, action, ts)",
+          "CREATE TABLE IF NOT EXISTS portal_quota (identity TEXT NOT NULL, app TEXT NOT NULL, action TEXT NOT NULL, date TEXT NOT NULL, used INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (identity, app, action, date))"
+        ];
+        await env.DB.batch(ddl.map(s => env.DB.prepare(s)));
+        return json({ ok: true, applied: ddl.length });
+      }
+
       // 其他管理 API 需要有效 Token
       const adminToken = request.headers.get('X-Admin-Token');
       const tokenValid = await verifyAdminToken(adminToken, env.ADMIN_SECRET || env.ADMIN_PASS);
