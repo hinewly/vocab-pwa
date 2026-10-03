@@ -4,7 +4,7 @@ compatibility_date = "2024-09-01"
 
 # 绑定域名（部署时自动配置 DNS 和证书）
 routes = [
-  { pattern = "daobox.app", custom_domain = true },
+  { pattern = "vocab.daobox.app", custom_domain = true },
   { pattern = "api.daobox.app", custom_domain = true }
 ]
 
@@ -18,7 +18,7 @@ database_id = "ce6de996-0995-485c-b0ea-5ae0c5a11417"
 [vars]
 ADMIN_KEY = "91fe1d1ae28599d0031c64832e6de56619b80ea51193ef96"
 
-# 前端静态资源（public/）由 Worker 直接托管 → daobox.app 就是完整站点
+# 前端静态资源（public/）由 Worker 直接托管 → vocab.daobox.app 就是完整站点
 # 注意：[assets] 必须放在所有顶层 key 之后（TOML 表作用域）
 [assets]
 directory = "../public"
