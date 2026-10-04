@@ -1325,3 +1325,29 @@ body {
 .price-now { color: #e65100; font-size: 30px; font-weight: 700; }
 .price-badge { background: #ff6b35; color: #fff; font-size: 11px; border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: 6px; }
 .pay-qr { display: block; margin: 10px auto 4px; width: 230px; max-width: 72%; border-radius: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12); }
+
+/* ===== v1.2.22 试学横幅 + 词本编号 ===== */
+.trial-banner {
+  background: #fff7e0;
+  border: 1px solid #f5d472;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b5200;
+  text-align: center;
+}
+.trial-banner b { color: #c0392b; }
+.trial-banner small { color: #8a7a3a; }
+.word-no {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.label-book-row .row-no {
+  margin-left: 6px;
+  color: #94a3b8;
+  font-weight: 600;
+}

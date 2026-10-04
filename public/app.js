@@ -113,7 +113,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.21';
+const APP_VERSION = 'v1.2.22';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -618,6 +618,12 @@ let reviewSel = { labels: new Set(), n: 20 };
 
 /** 初始化一次学习会话 */
 function startSession(cat, words) {
+  // 单词模式：附加全词表序号（1-based），供卡片显示「第 N / total 词」
+  if (CATS[cat]) {
+    const full = window.WORDS[cat] || [];
+    const idxMap = new Map(full.map((w, i) => [w.word, i + 1]));
+    words = words.map(w => ({ ...w, _idx: idxMap.get(w.word) || 0 }));
+  }
   session = { cat, words, idx: 0, flipped: false, labels: {} };
   // 启动时重置倒计时（短语用 12s/条，单词用 8s/条）
   const secPer = (cat === 'phrase') ? SEC_PER_PHRASE : SEC_PER_WORD;
@@ -1427,8 +1433,8 @@ function renderCat(cat) {
         ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
       ${isTrial ? `
-      <p class="hint">当前试学 ${accessibleCount} / ${total} 词，登录 DaoBox 账号后免费解锁全部。</p>
-      <button class="btn-main" data-action="go-unlock">🔓 免费解锁全部词本</button>
+      <div class="trial-banner">🆓 免费试学前 <b>${accessibleCount}</b> 词（本词本共 <b>${total}</b> 词）<br><small>登录即可免费解锁全部词本，无需付费</small></div>
+      <button class="btn-main" data-action="go-unlock">🔓 登录 / 免费解锁全部词本</button>
       ` : ''}
     </div>
 
@@ -1502,13 +1508,16 @@ function renderLabelBook(cat, label, page) {
   const totalPages = Math.max(1, Math.ceil(all.length / LABEL_BOOK_PAGE_SIZE));
   const currentPage = Math.min(Math.max(1, page), totalPages);
   const start = (currentPage - 1) * LABEL_BOOK_PAGE_SIZE;
+  const full = window.WORDS[cat] || [];
+  const idxMap = new Map(full.map((w, i) => [w.word, i + 1]));
   const rows = all.slice(start, start + LABEL_BOOK_PAGE_SIZE).map(w => {
     const current = labelOf(cat, w.word) || '';
+    const rowNo = (cat !== 'junior' && idxMap.get(w.word)) ? `<small class="row-no">#${idxMap.get(w.word)}</small>` : '';
     return `
       <div class="label-book-row">
         <input class="label-book-check" type="checkbox" data-cat="${cat}" data-word="${escapeHtml(w.word)}" aria-label="选择 ${escapeHtml(w.word)}">
         <div class="label-book-word">
-          <b>${escapeHtml(w.word)}</b>
+          <b>${escapeHtml(w.word)}</b>${rowNo}
           <button class="affix-speak-btn" data-action="speak" data-word="${escapeHtml(w.word)}" title="朗读 ${escapeHtml(w.word)}" aria-label="朗读 ${escapeHtml(w.word)}">🔊</button>
           <small>${escapeHtml(w.meaning || '—')}</small>
         </div>
@@ -1643,7 +1652,11 @@ function renderStudy(cat, n) {
     const lvColor = w.level === '初中' ? '#4f8cff' : w.level === '高中' ? '#7c5cff' : '#00b894';
     phraseInfo = `<div class="lookup-info"><span style="color:${lvColor}">📖 ${w.level}</span> ${lbText}</div>`;
   }
+  // 词本编号（初中不显示，仅高中/四六级/专业）
+  const wordNo = (!isLookup && !isPhrase && !isAffixWords && cat !== 'junior' && w._idx)
+    ? `<div class="word-no">第 ${w._idx} / ${(window.WORDS[cat] || []).length} 词</div>` : '';
   const front = `
+    ${wordNo}
     <div class="card-word">${displayText}</div>
     ${ph}
     ${speakBtn}
