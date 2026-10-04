@@ -92,7 +92,11 @@ async function submitOrder(contact) {
 }
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
-  try { return localStorage.getItem(UNLOCK_KEY) === '1'; } catch (e) { return false; }
+  try {
+    if (localStorage.getItem(UNLOCK_KEY) === '1') return true;
+    // 2026-10 策略：登录 DaoBox 账号即免费解锁全部词库（激活码通道保留）
+    return !!localStorage.getItem('daobox_token');
+  } catch (e) { return false; }
 }
 function accessibleWords(cat) {
   const list = window.WORDS[cat] || [];
@@ -109,7 +113,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.20';
+const APP_VERSION = 'v1.2.21';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1218,7 +1222,7 @@ function renderHome() {
   const unlockCard = compactCard({
     icon: '🔓', name: '解锁全部词本', color: '#ff6b35', action: 'go-unlock',
     badge: '未解锁', badgeColor: '#ff6b35',
-    footer: '激活码解锁高中 / 四级 / 六级 / 专业'
+    footer: '登录免费解锁 / 或用激活码'
   });
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
@@ -1423,8 +1427,8 @@ function renderCat(cat) {
         ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
       ${isTrial ? `
-      <p class="hint">当前试学 ${accessibleCount} / ${total} 词，解锁后可学全部。</p>
-      <button class="btn-main" data-action="go-unlock">🔓 解锁全部词本</button>
+      <p class="hint">当前试学 ${accessibleCount} / ${total} 词，登录 DaoBox 账号后免费解锁全部。</p>
+      <button class="btn-main" data-action="go-unlock">🔓 免费解锁全部词本</button>
       ` : ''}
     </div>
 
@@ -1450,13 +1454,17 @@ function renderUnlock() {
   <main class="page">
     <div class="stat-block">
       <h3>🔓 解锁全部词本</h3>
-      <p class="hint">一次付费 · 永久解锁 · 一个码可绑 3 台设备（家长和孩子共用）<br>覆盖初中 / 高中 / 四级 / 六级 / 专业词本，掌握 4000+ 核心词汇。</p>
-      <p class="price-line"><del>¥19.9</del> <span class="price-now">¥9.9</span><span class="price-badge">限时早鸟</span></p>
-      <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
-      <p class="hint">① 微信扫码付款（早鸟价 ¥9.9）</p>
+      <p class="hint">覆盖初中 / 高中 / 四级 / 六级 / 专业词本，掌握 4000+ 核心词汇。</p>
       ${unlocked ? `
       <p class="hint">✅ 当前已解锁全部词本。</p>
       ` : `
+      <p class="price-line"><span class="price-now">登录即免费解锁</span><span class="price-badge">注册用户专享</span></p>
+      <a class="btn-main" href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Funlock" style="text-align:center;display:block;text-decoration:none">登录 / 注册 DaoBox 账号</a>
+      <p class="hint">登录后返回本站即自动解锁全部词库，并免费获得云备份（换设备一键恢复）。</p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0">
+      <p class="hint"><b>此前购买过激活码？</b>微信扫码付款的老用户通道仍然有效：</p>
+      <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
+      <p class="hint">① 微信扫码付款（早鸟价 ¥9.9）</p>
       <div class="search-box">
         <input type="tel" id="order-phone" placeholder="② 已付款？填手机号登记" autocomplete="off" inputmode="numeric" maxlength="11">
         <input type="text" id="order-nick" placeholder="③ 微信昵称（收款方看到的名称）" autocomplete="off">
