@@ -109,7 +109,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.19';
+const APP_VERSION = 'v1.2.20';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -547,6 +547,65 @@ function checkin() {
   STORE.checkin.lastDate = today;
   STORE.checkin.dates.push(today);
   if (STORE.checkin.dates.length > 400) STORE.checkin.dates = STORE.checkin.dates.slice(-400);
+  // 桥接：打卡同步 DaoBox → 今日彩票/麻将额度 +2（需登录，未登录静默跳过）
+  if (window.DaoBox) {
+    DaoBox.checkin().then(d => { if (d && d.granted) showToast(d.message, 'success'); }).catch(() => {});
+  }
+}
+
+// ===== DaoBox 云备份 =====
+function collectVocabStorage() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('wa:')) data[k] = localStorage.getItem(k);
+  }
+  return data;
+}
+
+async function cloudBackup() {
+  if (!window.DaoBox || !DaoBox.getToken()) {
+    showToast('请先登录 DaoBox 账号', 'error');
+    if (window.DaoBox) location.href = DaoBox.loginUrl();
+    return;
+  }
+  try {
+    const payload = JSON.stringify({ data: JSON.stringify(collectVocabStorage()) });
+    const r = await fetch('https://daobox.app/api/backup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + DaoBox.getToken() },
+      body: payload,
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) showToast(`云备份成功（${Math.round(d.size / 1024)}KB）`, 'success');
+    else showToast(d.error || '备份失败', 'error');
+  } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
+}
+
+async function cloudRestore() {
+  if (!window.DaoBox || !DaoBox.getToken()) {
+    showToast('请先登录 DaoBox 账号', 'error');
+    if (window.DaoBox) location.href = DaoBox.loginUrl();
+    return;
+  }
+  if (!confirm('将从云端恢复并覆盖当前全部学习进度，继续？')) return;
+  try {
+    const r = await fetch('https://daobox.app/api/backup', {
+      headers: { Authorization: 'Bearer ' + DaoBox.getToken() },
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!d.ok || !d.data) { showToast(d.data === null ? '云端还没有备份记录' : (d.error || '恢复失败'), 'error'); return; }
+    const data = JSON.parse(d.data);
+    const stale = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('wa:')) stale.push(k);
+    }
+    stale.forEach(k => localStorage.removeItem(k));
+    Object.entries(data).forEach(([k, v]) => localStorage.setItem(k, v));
+    showToast('恢复成功，正在刷新…', 'success');
+    setTimeout(() => location.reload(), 800);
+  } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
 }
 
 // ===== 当前学习会话（内存）=====
@@ -2133,6 +2192,8 @@ function onAction(e) {
     case 'speak': speakWord(el.dataset.word); break;
     case 'timer-pause': timerTogglePause(); break;
     case 'manual-export': manualExport(); break;
+    case 'cloud-backup': cloudBackup(); break;
+    case 'cloud-restore': cloudRestore(); break;
     case 'setup-autobackup': setupAutoBackup(); break;
         case 'profile-create': {
       const name = prompt('新用户名称：', '用户' + (getProfiles().length + 1));
@@ -2627,6 +2688,19 @@ function renderProfile() {
           </button>
         </div>
         <input type="file" id="import-file" accept=".json" style="display:none">
+      </div>
+
+      <div class="stat-block">
+        <h3>☁️ 云备份（DaoBox 账号）</h3>
+        <p class="hint">登录 DaoBox 后可把全部学习进度备份到云端，换设备一键恢复。未登录？<a href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Fprofile" style="color:#2563eb">去登录</a></p>
+        <div class="btns backup-actions">
+          <button class="btn-action primary" data-action="cloud-backup">
+            <span class="btn-ico">☁️</span><span>备份到云端</span>
+          </button>
+          <button class="btn-action secondary" data-action="cloud-restore">
+            <span class="btn-ico">📥</span><span>从云端恢复</span>
+          </button>
+        </div>
       </div>
 
       <div class="stat-block">

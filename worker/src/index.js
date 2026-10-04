@@ -1122,7 +1122,9 @@ export default {
           "CREATE INDEX IF NOT EXISTS idx_pll_user_ts ON portal_login_logs(user_id, ts)",
           "CREATE TABLE IF NOT EXISTS portal_usage_log (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, app TEXT NOT NULL, action TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 1, ts INTEGER NOT NULL)",
           "CREATE INDEX IF NOT EXISTS idx_pul_user ON portal_usage_log(user_id, app, action, ts)",
-          "CREATE TABLE IF NOT EXISTS portal_quota (identity TEXT NOT NULL, app TEXT NOT NULL, action TEXT NOT NULL, date TEXT NOT NULL, used INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (identity, app, action, date))"
+          "CREATE TABLE IF NOT EXISTS portal_quota (identity TEXT NOT NULL, app TEXT NOT NULL, action TEXT NOT NULL, date TEXT NOT NULL, used INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (identity, app, action, date))",
+          "CREATE TABLE IF NOT EXISTS portal_bonus (user_id INTEGER NOT NULL, date TEXT NOT NULL, bonus INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (user_id, date))",
+          "CREATE TABLE IF NOT EXISTS portal_backups (user_id INTEGER PRIMARY KEY, data TEXT NOT NULL, updated_at INTEGER NOT NULL)"
         ];
         await env.DB.batch(ddl.map(s => env.DB.prepare(s)));
         return json({ ok: true, applied: ddl.length });
