@@ -112,7 +112,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.23';
+const APP_VERSION = 'v1.2.24';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2729,6 +2729,8 @@ function renderProfile() {
           <span class="btn-ico">🗑️</span><span>全部清除学习进度</span>
         </button>
       </div>
+
+      <p class="hint" style="text-align:center;margin-top:18px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
     </main>`;
 }
 
