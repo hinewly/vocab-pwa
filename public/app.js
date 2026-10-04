@@ -27,7 +27,7 @@ const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
 // 激活码验证走 Cloudflare Worker 后端（6位纯数字，软绑定最多3台设备）
-const UNLOCK_API_BASE = 'https://daobox.app';
+const UNLOCK_API_BASE = 'https://api.daobox.app';
 const UNLOCK_API = UNLOCK_API_BASE + '/api/activate';
 const ORDER_API = UNLOCK_API_BASE + '/api/order';
 const UNLOCK_KEY = 'wa:unlocked';
@@ -112,7 +112,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.24';
+const APP_VERSION = 'v1.2.25';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
