@@ -31,6 +31,7 @@ const FAIL_LIMIT = 5;
 const COOLDOWN_BASE_SECONDS = 10 * 60;
 const PROJECT_IDS = {
   vocab_full: '背单词完整版',
+  vocab_offline: '背单词单机版',
   lottery_full: '彩票完整版',
 };
 const DEFAULT_PROJECT_ID = 'vocab_full';
@@ -572,6 +573,7 @@ function adminPageHtml() {
   <h2>项目</h2>
   <div class="project-tabs">
     <button class="ghost project-btn" data-project="vocab_full">背单词完整版</button>
+    <button class="ghost project-btn" data-project="vocab_offline">背单词单机版</button>
     <button class="ghost project-btn" data-project="lottery_full">彩票完整版</button>
     <button class="ghost project-btn" data-project="all">全部</button>
   </div>
@@ -604,6 +606,7 @@ function getToken() { return localStorage.getItem(TOKEN_KEY); }
 function authHeaders() { return { 'X-Admin-Token': getToken(), 'Content-Type': 'application/json' }; }
 const PROJECT_IDS = {
   vocab_full: '背单词完整版',
+  vocab_offline: '背单词单机版',
   lottery_full: '彩票完整版',
 };
 let PROJECT = new URLSearchParams(location.search).get('project') || sessionStorage.getItem('daobox_admin_project') || 'vocab_full';

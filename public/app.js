@@ -56,7 +56,7 @@ async function submitUnlock(rawCode) {
     const res = await fetch(UNLOCK_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code, deviceId: getDeviceId() }),
+      body: JSON.stringify({ code, deviceId: getDeviceId(), projectId: window.VOCAB_OFFLINE ? 'vocab_offline' : undefined }),
     });
     const data = await res.json().catch(() => ({}));
     if (data.ok) {
@@ -1458,11 +1458,12 @@ function renderUnlock() {
       ${unlocked ? `
       <p class="hint">✅ 当前已解锁全部词本。</p>
       ` : `
+      ${window.VOCAB_OFFLINE ? '' : `
       <p class="price-line"><span class="price-now">登录即免费解锁</span><span class="price-badge">注册用户专享</span></p>
       <a class="btn-main" href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Funlock" style="text-align:center;display:block;text-decoration:none">登录 / 注册 DaoBox 账号</a>
       <p class="hint">登录后返回本站即自动解锁全部词库，并免费获得云备份（换设备一键恢复）。</p>
-      <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0">
-      <p class="hint"><b>此前购买过激活码？</b>微信扫码付款的老用户通道仍然有效：</p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0">`}
+      <p class="hint">${window.VOCAB_OFFLINE ? '<b>单机版用户：</b>输入购买时获得的 6 位激活码完成激活（首次需联网，之后永久离线可用）。' : '<b>此前购买过激活码？</b>微信扫码付款的老用户通道仍然有效：'}</p>
       <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
       <p class="hint">① 微信扫码付款（早鸟价 ¥9.9）</p>
       <div class="search-box">
