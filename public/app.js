@@ -148,18 +148,46 @@ async function consumePointsToday(app) {
     return 'exhausted';
   } catch (e) { return 'error'; }
 }
-async function submitPointsOrder(tier, contact) {
+async function submitPointsOrder(tier, contact, screenshot) {
   try {
     const r = await fetch(POINTS_API + '/order', {
       method: 'POST',
       headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
-      body: JSON.stringify({ tier, contact }),
+      body: JSON.stringify({ tier, contact, screenshot }),
     });
     const d = await r.json().catch(() => ({}));
     if (d.ok) return d;
     showToast(d.error || '登记失败，请稍后再试', 'error');
   } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
   return null;
+}
+
+/** 付款截图压缩：长边 ≤1280px，JPEG 质量从 0.7 逐步降到 ≤120KB */
+function compressImageFile(file) {
+  return new Promise((resolve) => {
+    if (!file || !file.type.startsWith('image/')) return resolve(null);
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      try {
+        const max = 1280;
+        let { width, height } = img;
+        if (width > max || height > max) {
+          const k = max / Math.max(width, height);
+          width = Math.round(width * k); height = Math.round(height * k);
+        }
+        const cv = document.createElement('canvas');
+        cv.width = width; cv.height = height;
+        cv.getContext('2d').drawImage(img, 0, 0, width, height);
+        URL.revokeObjectURL(url);
+        let q = 0.7, out = cv.toDataURL('image/jpeg', q);
+        while (out.length > 120000 && q > 0.35) { q -= 0.1; out = cv.toDataURL('image/jpeg', q); }
+        resolve(out);
+      } catch (e) { URL.revokeObjectURL(url); resolve(null); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
+    img.src = url;
+  });
 }
 
 // 学习门槛：已激活 → 放行；点数今日已激活 → 放行；
@@ -214,7 +242,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.28';
+const APP_VERSION = 'v1.2.29';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1581,12 +1609,18 @@ function renderUnlock() {
           <input type="text" id="points-nick" placeholder="② 已付款？填微信昵称（收款方看到的名称）" autocomplete="off">
           <button class="search-btn" data-action="points-order-submit">登记</button>
         </div>
-        <p class="hint"><b>① 选档</b> → <b>② 微信扫码付款</b> → <b>③ 填昵称登记</b>。管理员确认收款后点数自动到账（通常几分钟～几小时）。超过 24 小时未到账请发邮件至 <span class="contact-email"></span>。</p>
+        <p class="hint"><b>① 选档</b> → <b>② 微信扫码付款（转账时在留言栏填你的手机号）</b> → <b>③ 填昵称登记</b>（可附付款截图，核对更快）。管理员确认后点数自动到账，我们尽量在 <b>48 小时内</b>处理；超时未到账请发邮件至 <span class="contact-email"></span>。</p>
         <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款">
+        <div class="search-box">
+          <input type="file" id="points-shot" accept="image/*" style="width:auto;font-size:12px">
+          <span class="hint" style="font-size:11px">付款截图（可选，自动压缩）</span>
+        </div>
+        <img id="points-shot-preview" style="display:none;max-width:200px;border-radius:8px;margin:6px 0" alt="付款截图预览">
       </div>
       <details style="margin-top:16px">
         <summary style="cursor:pointer;font-size:13px;color:#6b7280">想永久解锁本工具？（激活码买断）</summary>
         <div style="margin-top:12px">
+          <button class="btn-ghost" data-action="buyout-interest" style="width:100%;margin-bottom:12px">📝 想要永久买断？先登记意向（不付款，仅统计需求，攒够了再开放）</button>
           <p class="price-line"><span class="price-now">早鸟价 ¥9.9</span><span class="price-badge">一次付费 · 永久解锁本工具</span></p>
           <p class="hint"><b>① 微信扫码付款：</b></p>
           <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
@@ -2316,10 +2350,35 @@ function onAction(e) {
       if (!nick.trim()) { showToast('请填写微信昵称，方便核对收款', 'error'); return; }
       const tier = POINT_TIERS.find(t => t.t === pointsSelTier) || POINT_TIERS[4];
       el.disabled = true; el.textContent = '登记中…';
-      submitPointsOrder(tier.t, nick.trim()).then(d => {
+      const shotInput = document.getElementById('points-shot');
+      const shotFile = shotInput && shotInput.files && shotInput.files[0];
+      (async () => {
+        const shot = shotFile ? await compressImageFile(shotFile) : null;
+        const d = await submitPointsOrder(tier.t, nick.trim(), shot);
         el.disabled = false; el.textContent = '登记';
         if (d) showToast(`已登记 ¥${d.tier} = ${d.points} 点（单号 ${d.orderNo}），确认收款后自动到账`, 'success');
-      });
+      })();
+      break;
+    }
+    case 'buyout-interest': {
+      if (!pointsLoggedIn()) {
+        showToast('请先登录 DaoBox 账号', 'error');
+        if (window.DaoBox) location.href = DaoBox.loginUrl();
+        return;
+      }
+      (async () => {
+        el.disabled = true;
+        try {
+          const r = await fetch(POINTS_API.replace('/points', '') + '/buyout/interest', {
+            method: 'POST',
+            headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
+            body: JSON.stringify({ app: 'vocab' }),
+          });
+          const d = await r.json().catch(() => ({}));
+          if (d.ok) { el.textContent = `已登记（累计 ${d.total} 人）· 感谢反馈`; showToast('已登记买断意向，感谢反馈！', 'success'); }
+          else { el.disabled = false; showToast(d.error || '登记失败，请稍后再试', 'error'); }
+        } catch (e) { el.disabled = false; showToast('网络异常，请稍后再试', 'error'); }
+      })();
       break;
     }
     case 'study': {
