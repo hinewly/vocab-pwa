@@ -90,6 +90,108 @@ async function submitOrder(contact) {
   }
   return false;
 }
+// ===== 点数系统（1 点 = 1 天学习会员，vocab/shici/suan 三工具通用） =====
+const POINTS_API = 'https://daobox.app/api/points';
+const POINT_TIERS = [
+  { t: 5,  p: 50 },
+  { t: 10, p: 120 },
+  { t: 20, p: 260 },
+  { t: 30, p: 420 },
+  { t: 50, p: 750 },
+];
+const POINTS_CACHE_KEY = 'wa:points_cache';
+let pointsCache = loadPointsCache();
+let pointsSelTier = 50; // 默认选中主推档
+
+function loadPointsCache() {
+  try { return JSON.parse(localStorage.getItem(POINTS_CACHE_KEY)) || { balance: 0, activeToday: false, ts: 0 }; }
+  catch (e) { return { balance: 0, activeToday: false, ts: 0 }; }
+}
+function savePointsCache() {
+  try { localStorage.setItem(POINTS_CACHE_KEY, JSON.stringify(pointsCache)); } catch (e) {}
+}
+function pointsAuthHeaders() {
+  const t = window.DaoBox && DaoBox.getToken();
+  return t ? { Authorization: 'Bearer ' + t } : {};
+}
+function pointsLoggedIn() {
+  return !!(window.DaoBox && DaoBox.getToken());
+}
+async function refreshPointsStatus() {
+  if (!pointsLoggedIn()) { pointsCache = { balance: 0, activeToday: false, ts: 0 }; savePointsCache(); return pointsCache; }
+  try {
+    const r = await fetch(POINTS_API + '/status', { headers: pointsAuthHeaders() });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) {
+      pointsCache = { balance: d.balance, activeToday: d.activeToday, ts: Date.now() };
+      savePointsCache();
+    }
+  } catch (e) { /* 离线/网络异常沿用缓存 */ }
+  return pointsCache;
+}
+async function consumePointsToday(app) {
+  try {
+    const r = await fetch(POINTS_API + '/consume', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
+      body: JSON.stringify({ app }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) {
+      pointsCache.balance = (typeof d.balance === 'number') ? d.balance : pointsCache.balance;
+      pointsCache.activeToday = true;
+      savePointsCache();
+      return 'ok';
+    }
+    pointsCache.balance = (typeof d.balance === 'number') ? d.balance : pointsCache.balance;
+    savePointsCache();
+    return 'exhausted';
+  } catch (e) { return 'error'; }
+}
+async function submitPointsOrder(tier, contact) {
+  try {
+    const r = await fetch(POINTS_API + '/order', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
+      body: JSON.stringify({ tier, contact }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (d.ok) return d;
+    showToast(d.error || '登记失败，请稍后再试', 'error');
+  } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
+  return null;
+}
+
+// 学习门槛：已激活 → 放行；点数今日已激活 → 放行；
+// 否则先走免费每日额度（匿名 3 次 / 登录 10 次，服务端判定），
+// 额度用完再扣点数；余额不足 → 引导充值。完全离线 → 放行（轻量防护，防君子不防小人）。
+async function gateStudy(cb) {
+  if (isUnlocked()) return cb();
+  await refreshPointsStatus();
+  if (pointsCache.activeToday) return cb();
+  let quota = 'error';
+  try {
+    const r = await fetch('https://daobox.app/api/quota/consume', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ app: 'vocab', action: 'learn', n: 1 }),
+    });
+    quota = r.ok ? 'ok' : 'exceeded';
+  } catch (e) { quota = 'error'; }
+  if (quota === 'ok') return cb();
+  if (quota === 'error') return cb(); // 离线放行
+  if (pointsLoggedIn()) {
+    const res = await consumePointsToday('vocab');
+    if (res === 'ok') return cb();
+    if (res === 'error') return cb();
+    showToast('今日免费额度与点数均已用完，充值后继续畅学', 'error');
+  } else {
+    showToast('今日免费次数已用完，注册登录可获 10 次/天', 'error');
+  }
+  location.hash = '#/unlock';
+}
+
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
   try {
@@ -112,7 +214,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.25';
+const APP_VERSION = 'v1.2.26';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1186,6 +1288,7 @@ function route() {
   window.scrollTo(0, 0);
   // 注入 footer 邮箱（innerHTML 不执行 <script>，必须在这里手动调用）
   if (typeof updateContactEmail === 'function') updateContactEmail();
+  if (p === 'unlock' && typeof initUnlockPoints === 'function') initUnlockPoints();
   // 路由渲染完，如果是学习页，立即把当前圆环进度渲染出来
   const p2 = (location.hash.slice(1) || '/').split('/').filter(Boolean)[0] || 'home';
   if (p2 === 'study' && timer.id) timerRender();
@@ -1227,7 +1330,7 @@ function renderHome() {
   const unlockCard = compactCard({
     icon: '🔓', name: '解锁全部词本', color: '#ff6b35', action: 'go-unlock',
     badge: '未解锁', badgeColor: '#ff6b35',
-    footer: '激活码永久解锁 · 早鸟价 ¥9.9'
+    footer: '点数畅学 · ¥5=50天 · ¥50=750天最划算'
   });
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
@@ -1432,7 +1535,7 @@ function renderCat(cat) {
         ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
       ${isTrial ? `
-      <div class="trial-banner">🆓 免费试学前 <b>${accessibleCount}</b> 词（本词本共 <b>${total}</b> 词）<br><small>解锁全部词本需激活码（一次付费 ¥9.9 永久有效）</small></div>
+      <div class="trial-banner">🆓 免费试学前 <b>${accessibleCount}</b> 词（本词本共 <b>${total}</b> 词）<br><small>点数畅学全库：1 点 = 1 天 · ¥50 = 750 天最划算</small></div>
       <button class="btn-main" data-action="go-unlock">🔓 获取激活码 · 解锁全部词本</button>
       ` : ''}
     </div>
@@ -1448,9 +1551,13 @@ function renderCat(cat) {
   </main>`;
 }
 
-/** 解锁全部词本页 */
+/** 解锁全部词本页（点数畅学为主推，买断永久解锁弱化为折叠项） */
 function renderUnlock() {
   const unlocked = isUnlocked();
+  const tiersHtml = POINT_TIERS.map(t => `
+      <button class="tier-btn${t.t === pointsSelTier ? ' sel' : ''}" data-action="tier-select" data-tier="${t.t}">
+        <b>¥${t.t}</b><span>${t.p} 点</span><small>= ${t.p} 天</small>
+      </button>`).join('');
   return `
   <header class="topbar">
     <button class="back" data-action="go-home">‹ 返回</button>
@@ -1461,28 +1568,57 @@ function renderUnlock() {
       <h3>🔓 解锁全部词本</h3>
       <p class="hint">覆盖初中 / 高中 / 四级 / 六级 / 专业词本，掌握 4000+ 核心词汇。</p>
       ${unlocked ? `
-      <p class="hint">✅ 当前已解锁全部词本。</p>
+      <p class="hint">✅ 当前已永久解锁全部词本（激活码）。</p>
       ` : `
-      ${window.VOCAB_OFFLINE ? '' : `
-      <p class="price-line"><span class="price-now">早鸟价 ¥9.9</span><span class="price-badge">一次付费 · 永久解锁</span></p>
-      <p class="hint">登录 DaoBox 账号可免费获得云备份（换设备一键恢复），但解锁词本需激活码。</p>
-      <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0">`}
-      <p class="hint">${window.VOCAB_OFFLINE ? '<b>单机版用户：</b>输入购买时获得的 6 位激活码完成激活（首次需联网，之后永久离线可用）。' : '<b>① 微信扫码付款：</b>'}</p>
-      <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
-      <div class="search-box">
-        <input type="tel" id="order-phone" placeholder="② 已付款？填手机号登记" autocomplete="off" inputmode="numeric" maxlength="11">
-        <input type="text" id="order-nick" placeholder="③ 微信昵称（收款方看到的名称）" autocomplete="off">
-        <button class="search-btn" data-action="order-submit">登记</button>
+      <div id="points-box">
+        <h3 style="font-size:16px;margin:18px 0 6px">⚡ 点数畅学（推荐）</h3>
+        <p class="hint">1 点 = 1 天，<b>背单词 / 诗词 / 口算三个工具通用</b>，换设备登录即恢复。</p>
+        <div id="points-status" class="hint">账号状态加载中…</div>
+        <div class="tier-grid">
+          ${tiersHtml}
+        </div>
+        <div class="search-box">
+          <input type="text" id="points-nick" placeholder="② 已付款？填微信昵称（收款方看到的名称）" autocomplete="off">
+          <button class="search-btn" data-action="points-order-submit">登记</button>
+        </div>
+        <p class="hint"><b>① 选档</b> → <b>② 微信扫码付款</b> → <b>③ 填昵称登记</b>。管理员确认收款后点数自动到账（通常几分钟～几小时）。超过 24 小时未到账请发邮件至 <span class="contact-email"></span>。</p>
+        <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款">
       </div>
-      <p class="hint">登记后打开你的专属「取码页」，请收藏 / 截图保存。管理员确认收款后，取码页会自动显示激活码（可能需要几小时，请耐心等待）。超过 24 小时未出码，请发邮件至 hinewly@163.com。</p>
-      <div class="search-box">
-        <input type="text" id="unlock-code" placeholder="④ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
-        <button class="search-btn" data-action="unlock-submit">解锁</button>
-      </div>
-      <p class="hint">激活码是购买凭证，永久有效。清除数据或更换设备后重新输入即可，无需重复购买。</p>
+      <details style="margin-top:16px">
+        <summary style="cursor:pointer;font-size:13px;color:#6b7280">想永久解锁本工具？（激活码买断）</summary>
+        <div style="margin-top:12px">
+          <p class="price-line"><span class="price-now">早鸟价 ¥9.9</span><span class="price-badge">一次付费 · 永久解锁本工具</span></p>
+          <p class="hint"><b>① 微信扫码付款：</b></p>
+          <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
+          <div class="search-box">
+            <input type="tel" id="order-phone" placeholder="② 已付款？填手机号登记" autocomplete="off" inputmode="numeric" maxlength="11">
+            <input type="text" id="order-nick" placeholder="③ 微信昵称（收款方看到的名称）" autocomplete="off">
+            <button class="search-btn" data-action="order-submit">登记</button>
+          </div>
+          <p class="hint">登记后打开你的专属「取码页」，请收藏 / 截图保存。管理员确认收款后，取码页会自动显示激活码。</p>
+          <div class="search-box">
+            <input type="text" id="unlock-code" placeholder="④ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
+            <button class="search-btn" data-action="unlock-submit">解锁</button>
+          </div>
+          <p class="hint">激活码是购买凭证，永久有效。清除数据或更换设备后重新输入即可，无需重复购买。</p>
+        </div>
+      </details>
       `}
     </div>
   </main>`;
+}
+
+/** 解锁页渲染后的异步状态注入 */
+async function initUnlockPoints() {
+  if (isUnlocked()) return;
+  const box = document.getElementById('points-status');
+  if (!box) return;
+  if (!pointsLoggedIn()) {
+    box.innerHTML = '<a href="' + (window.DaoBox ? DaoBox.loginUrl() : '#') + '" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">注册 / 登录 DaoBox 账号后充值 →</a><p class="hint">点数绑定 DaoBox 账号，三个学习工具通用；登录免费获得 10 次/天学习额度。</p>';
+    return;
+  }
+  const st = await refreshPointsStatus();
+  box.innerHTML = '✅ 已登录 · 余额 <b>' + st.balance + '</b> 点' + (st.activeToday ? ' · 今日已激活' : ' · 今日未激活（开始学习时自动扣 1 点）');
 }
 
 // ===== 标签词表管理（全词本通用） =====
@@ -2165,10 +2301,33 @@ function onAction(e) {
       location.hash = `#/study/phrase/${n}`;
       break;
     }
+    case 'tier-select': {
+      pointsSelTier = parseInt(el.dataset.tier || '50', 10);
+      document.querySelectorAll('.tier-btn').forEach(b => b.classList.toggle('sel', parseInt(b.dataset.tier, 10) === pointsSelTier));
+      break;
+    }
+    case 'points-order-submit': {
+      if (!pointsLoggedIn()) {
+        showToast('请先登录 DaoBox 账号', 'error');
+        if (window.DaoBox) location.href = DaoBox.loginUrl();
+        return;
+      }
+      const nick = (document.getElementById('points-nick') || {}).value || '';
+      if (!nick.trim()) { showToast('请填写微信昵称，方便核对收款', 'error'); return; }
+      const tier = POINT_TIERS.find(t => t.t === pointsSelTier) || POINT_TIERS[4];
+      el.disabled = true; el.textContent = '登记中…';
+      submitPointsOrder(tier.t, nick.trim()).then(d => {
+        el.disabled = false; el.textContent = '登记';
+        if (d) showToast(`已登记 ¥${d.tier} = ${d.points} 点（单号 ${d.orderNo}），确认收款后自动到账`, 'success');
+      });
+      break;
+    }
     case 'study': {
       const n = parseInt(el.dataset.n || '20', 10);
-      startSession(cat, pickWords(cat, n));
-      location.hash = `#/study/${cat}/${n}`;
+      gateStudy(() => {
+        startSession(cat, pickWords(cat, n));
+        location.hash = `#/study/${cat}/${n}`;
+      });
       break;
     }
     case 'review-num':
@@ -2179,18 +2338,22 @@ function onAction(e) {
     case 'review-start': {
       const labels = [...document.querySelectorAll('.checks input:checked')].map(i => i.value);
       if (labels.length === 0) { alert('请至少勾选一个标签'); return; }
-      const words = pickByLabels(cat, labels, reviewSel.n);
-      if (words.length === 0) { alert('该标签下暂无单词'); return; }
-      startSession(cat, words);
-      location.hash = `#/study/${cat}/${reviewSel.n}`;
+      gateStudy(() => {
+        const words = pickByLabels(cat, labels, reviewSel.n);
+        if (words.length === 0) { alert('该标签下暂无单词'); return; }
+        startSession(cat, words);
+        location.hash = `#/study/${cat}/${reviewSel.n}`;
+      });
       break;
     }
     case 'review-graduate': {
       // 从过关词（标"过关"）里抽 20 个复习；复习时打其他标签会自动回炉训练池
-      const words = pickByLabels(cat, ['graduate'], 20);
-      if (words.length === 0) { alert('暂无过关词，先背几轮标"过关"吧'); return; }
-      startSession(cat, words);
-      location.hash = `#/study/${cat}/20`;
+      gateStudy(() => {
+        const words = pickByLabels(cat, ['graduate'], 20);
+        if (words.length === 0) { alert('暂无过关词，先背几轮标"过关"吧'); return; }
+        startSession(cat, words);
+        location.hash = `#/study/${cat}/20`;
+      });
       break;
     }
     case 'reset-graduate': {

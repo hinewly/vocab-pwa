@@ -1351,3 +1351,34 @@ body {
   color: #94a3b8;
   font-weight: 600;
 }
+
+/* ===== 点数充值档位 ===== */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+.tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 4px;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.tier-btn b { font-size: 15px; }
+.tier-btn span { font-size: 12px; color: #374151; }
+.tier-btn small { font-size: 10px; color: #9ca3af; }
+.tier-btn.sel {
+  border-color: #ff6b35;
+  background: #fff7ed;
+}
+.tier-btn.sel b { color: #ff6b35; }
+@media (max-width: 380px) {
+  .tier-grid { grid-template-columns: repeat(3, 1fr); }
+}
