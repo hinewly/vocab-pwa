@@ -192,6 +192,11 @@ body {
 .study { display: flex; flex-direction: column; align-items: center; }
 .progress { height: 4px; background: var(--line); position: relative; }
 .progress-bar { height: 100%; background: var(--main); transition: width .25s; }
+/* 免费时长倒计时条（学习页顶部） */
+.trial-bar { font-size: 12px; text-align: center; padding: 4px 0; color: var(--ink-soft); background: var(--bg, #f7f7f9); }
+.trial-bar.running { color: #b45309; }
+.trial-bar.member { color: #059669; }
+.trial-bar.expired { color: #dc2626; }
 
 .card {
   background: var(--card);

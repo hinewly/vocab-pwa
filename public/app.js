@@ -190,32 +190,75 @@ function compressImageFile(file) {
   });
 }
 
-// 学习门槛：已激活 → 放行；点数今日已激活 → 放行；
-// 否则先走免费每日额度（匿名 3 次 / 登录 10 次，服务端判定），
-// 额度用完再扣点数；余额不足 → 引导充值。完全离线 → 放行（轻量防护，防君子不防小人）。
+// ===== 免费时长（按天计时：未登录 5 分钟 / 登录 15 分钟，本地判定，过午夜重置） =====
+const TRIAL_SECONDS = { anon: 5 * 60, user: 15 * 60 };
+const TRIAL_STORE_PREFIX = 'wa:trial:';
+let trialTickerId = null;
+
+function trialDateKey() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function trialStoreKey() { return TRIAL_STORE_PREFIX + trialDateKey(); }
+function trialUsedSeconds() {
+  try { return parseInt(localStorage.getItem(trialStoreKey()) || '0', 10) || 0; } catch (e) { return 0; }
+}
+function trialSaveUsedSeconds(sec) {
+  try { localStorage.setItem(trialStoreKey(), String(Math.max(0, Math.round(sec)))); } catch (e) {}
+}
+function trialLimitSeconds() { return pointsLoggedIn() ? TRIAL_SECONDS.user : TRIAL_SECONDS.anon; }
+function trialRemainSeconds() { return Math.max(0, trialLimitSeconds() - trialUsedSeconds()); }
+
+/** 学习页顶部倒计时条（study 页渲染后由 trialBarSync 更新） */
+function trialBarSync() {
+  const el = document.getElementById('trial-bar');
+  if (!el) return;
+  if (isUnlocked() || pointsCache.activeToday) {
+    el.textContent = '✨ 会员畅学中';
+    el.className = 'trial-bar member';
+    return;
+  }
+  const remain = trialRemainSeconds();
+  if (remain <= 0) {
+    el.textContent = pointsLoggedIn() ? '今日免费 15 分钟已用完' : '今日免费 5 分钟已用完';
+    el.className = 'trial-bar expired';
+    return;
+  }
+  const m = Math.floor(remain / 60), s = remain % 60;
+  el.textContent = '今日免费 ' + m + ':' + String(s).padStart(2, '0');
+  el.className = 'trial-bar running';
+}
+
+/** 免费时段计时器：墙钟扣时间（切后台/锁屏照扣），持久化到 localStorage */
+function trialStartTicker() {
+  trialStopTicker();
+  let last = Date.now();
+  trialTickerId = setInterval(() => {
+    const now = Date.now();
+    trialSaveUsedSeconds(trialUsedSeconds() + (now - last) / 1000);
+    last = now;
+    trialBarSync();
+    if (trialRemainSeconds() <= 0) trialStopTicker();
+  }, 1000);
+}
+function trialStopTicker() { if (trialTickerId) { clearInterval(trialTickerId); trialTickerId = null; } }
+
+// 学习门槛：已激活（激活码 / 今日点数）→ 放行；
+// 否则走本地免费时长（未登录 5 分钟 / 登录 15 分钟），用完且登录有余额 → 自动扣 1 点激活今日；
+// 都没有 → 引导充值。完全离线 → 放行（轻量防护，防君子不防小人）。
 async function gateStudy(cb) {
-  if (isUnlocked()) return cb();
+  if (isUnlocked()) { trialBarSync(); return cb(); }
   await refreshPointsStatus();
-  if (pointsCache.activeToday) return cb();
-  let quota = 'error';
-  try {
-    const r = await fetch('https://daobox.app/api/quota/consume', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({ app: 'vocab', action: 'learn', n: 1 }),
-    });
-    quota = r.ok ? 'ok' : 'exceeded';
-  } catch (e) { quota = 'error'; }
-  if (quota === 'ok') return cb();
-  if (quota === 'error') return cb(); // 离线放行
+  if (pointsCache.activeToday) { trialBarSync(); return cb(); }
+  if (trialRemainSeconds() > 0) { trialStartTicker(); trialBarSync(); return cb(); }
+  // 免费时长用完：登录用户尝试扣 1 点（自动开通今日会员）
   if (pointsLoggedIn()) {
     const res = await consumePointsToday('vocab');
-    if (res === 'ok') return cb();
-    if (res === 'error') return cb();
-    showToast('今日免费额度与点数均已用完，充值后继续畅学', 'error');
+    if (res === 'ok') { trialBarSync(); return cb(); }
+    if (res === 'error') return cb(); // 离线放行
+    showToast('今日免费时长与点数均已用完，充值 1 点 = 全天畅学', 'error');
   } else {
-    showToast('今日免费次数已用完，注册登录可获 10 次/天', 'error');
+    showToast('今日免费 5 分钟已用完，注册登录每天 15 分钟', 'error');
   }
   location.hash = '#/unlock';
 }
@@ -242,7 +285,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.29';
+const APP_VERSION = 'v1.2.32';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1320,6 +1363,7 @@ function route() {
   // 路由渲染完，如果是学习页，立即把当前圆环进度渲染出来
   const p2 = (location.hash.slice(1) || '/').split('/').filter(Boolean)[0] || 'home';
   if (p2 === 'study' && timer.id) timerRender();
+  if (p2 === 'study' && typeof trialBarSync === 'function') trialBarSync();
 
   // 同步 APP_VERSION 到 header 徽章
   const verEl = document.getElementById('app-version');
@@ -1363,14 +1407,6 @@ function renderHome() {
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
     footer: '每日数据 · 标签分布 ›'
-  });
-  const devplanCard = compactCard({
-    icon: '📋', name: '开发计划', color: '#f59e0b', action: 'go-devplan', className: 'system-card',
-    footer: 'V1.20 路线 · 后续规划 ›'
-  });
-  const changelogCard = compactCard({
-    icon: '📝', name: '更新日志', color: '#10b981', action: 'go-changelog', className: 'system-card',
-    footer: '版本变更记录 ›'
   });
   const cards = Object.keys(CATS).map(cat => {
     const total = catCount(cat);
@@ -1427,11 +1463,12 @@ function renderHome() {
     </div>
     <h3 class="section-header"><span>🛠️</span><span>系统</span></h3>
     <div class="cats-grid">
-      ${statsCard}${devplanCard}${changelogCard}
+      ${statsCard}
     </div>
     <footer class="contact-footer">
       <small>📮 问题反馈 · <span id="contact-email"></span></small>
     </footer>
+    <p class="hint" style="text-align:center;margin-top:6px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
   </main>`;
 }
 
@@ -1648,7 +1685,7 @@ async function initUnlockPoints() {
   const box = document.getElementById('points-status');
   if (!box) return;
   if (!pointsLoggedIn()) {
-    box.innerHTML = '<a href="' + (window.DaoBox ? DaoBox.loginUrl() : '#') + '" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">注册 / 登录 DaoBox 账号后充值 →</a><p class="hint">点数绑定 DaoBox 账号，三个学习工具通用；登录免费获得 10 次/天学习额度。</p>';
+    box.innerHTML = '<a href="' + (window.DaoBox ? DaoBox.loginUrl() : '#') + '" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">注册 / 登录 DaoBox 账号后充值 →</a><p class="hint">点数绑定 DaoBox 账号，三个学习工具通用；未注册每天免费 5 分钟，注册登录每天 15 分钟；充值 1 点 = 1 天畅学。</p>';
     return;
   }
   const st = await refreshPointsStatus();
@@ -1854,6 +1891,7 @@ function renderStudy(cat, n) {
     </div>
   </header>
   <div class="progress"><div class="progress-bar" style="width:${s.idx / s.words.length * 100}%"></div></div>
+  <div class="trial-bar running" id="trial-bar">今日免费 --:--</div>
   <main class="page study">
     <div class="card">${s.flipped ? back : front}</div>
   </main>`;
