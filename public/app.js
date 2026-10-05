@@ -1980,7 +1980,7 @@ async function renderDevPlan(app) {
   </main>`;
   try {
     // fetch 本地 开发计划.md 文本内容（需通过 http server 访问，不能用 file://）
-    const res = await fetch('开发计划.md');
+    const res = await fetch('DEVPLAN.md');
     const text = await res.text();
     const body = app.querySelector('.devplan-body');
     // 用 marked 渲染 markdown（支持标题/表格/粗体/HTML 标签如红色 span），失败则纯文本
