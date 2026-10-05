@@ -34,6 +34,7 @@ const PROJECT_IDS = {
   vocab_offline: '背单词单机版',
   lottery_full: '彩票完整版',
   shici_full: '古诗词',
+  suan: '口算宝',
 };
 const DEFAULT_PROJECT_ID = 'vocab_full';
 const ADMIN_PATH_SECRET = 'moon-tiger';
@@ -610,6 +611,7 @@ const PROJECT_IDS = {
   vocab_offline: '背单词单机版',
   lottery_full: '彩票完整版',
   shici_full: '古诗词',
+  suan: '口算宝',
 };
 let PROJECT = new URLSearchParams(location.search).get('project') || sessionStorage.getItem('daobox_admin_project') || 'vocab_full';
 if (PROJECT !== 'all' && !PROJECT_IDS[PROJECT]) PROJECT = 'vocab_full';
