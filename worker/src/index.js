@@ -147,7 +147,7 @@ async function recordFail(db, key) {
       .run();
   } else {
     await db
-      .prepare('UPDATE attempts SET fails = ?, level = ? WHERE key = ?')
+      .prepare('UPDATE attempts SET fails = ?, level = ?, blocked_until = 0 WHERE key = ?')
       .bind(fails, row.level, key)
       .run();
   }
@@ -1091,6 +1091,18 @@ export default {
         const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
         const cfCountry = request.cf?.country || '';
         const cfCity = request.cf?.city || '';
+
+        // 防爆破：错 5 次锁 10 分钟，再错指数翻倍（与激活码接口同一 attempts 机制）
+        const adminLimitKey = 'adminlogin:' + ip;
+        const adminGate = await checkBlocked(env.DB, adminLimitKey);
+        if (adminGate.blocked) {
+          try {
+            await env.DB.prepare('INSERT INTO login_logs (time, ip, country, city, username, success) VALUES (?, ?, ?, ?, ?, 0)')
+              .bind(Date.now(), ip, cfCountry, cfCity, username).run();
+          } catch (e) {}
+          return json({ ok: false, error: `尝试次数过多，请 ${Math.ceil(adminGate.waitSeconds / 60)} 分钟后再试`, blocked: true, waitSeconds: adminGate.waitSeconds }, 429);
+        }
+
         const success = env.ADMIN_USER && env.ADMIN_PASS && username === env.ADMIN_USER && password === env.ADMIN_PASS;
 
         // 记录登录日志（成功和失败都记）
@@ -1102,8 +1114,10 @@ export default {
         } catch (e) { console.error('login log error:', e); }
 
         if (!success) {
+          try { await recordFail(env.DB, adminLimitKey); } catch (e) {}
           return json({ ok: false, error: '用户名或密码错误' }, 401);
         }
+        try { await clearFails(env.DB, adminLimitKey); } catch (e) {}
         const token = await genAdminToken(env.ADMIN_SECRET || env.ADMIN_PASS);
         return json({ ok: true, token, expiresAt: Date.now() + ADMIN_TOKEN_TTL_MS });
       }
