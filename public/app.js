@@ -266,8 +266,9 @@ async function gateStudy(cb) {
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
   try {
-    // 2026-10-04 策略：学习类收费，解锁仅凭激活码（登录只负责云备份/跨设备，不再解锁）
-    return localStorage.getItem(UNLOCK_KEY) === '1';
+    // 2026-10-12 定调（方案A）：登录即解锁全部词库（内容全给），使用时长由 portal 时长池限制
+    // 游客 30 分/天 · 注册 60 分/天 · 付费会员不限时；激活码（单机/兑换）仍然直接解锁
+    return localStorage.getItem(UNLOCK_KEY) === '1' || pointsLoggedIn();
   } catch (e) { return false; }
 }
 function accessibleWords(cat) {
@@ -285,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.33';
+const APP_VERSION = 'v1.2.34';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
