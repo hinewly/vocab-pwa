@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.36';
+const APP_VERSION = 'v1.2.37';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -412,30 +412,6 @@ function reloadStore() {
   STORE.aTotals   = load('wa:a-totals',  0);
   STORE.aCursor   = load('wa:a-cursor',  0);
   STORE.aWords    = pruneAffixExampleRecords(load('wa:a-words', {}));
-}
-
-/** 清空当前身份的学习进度；保留自动备份设置 */
-function resetActiveProfileProgress() {
-  STORE.labels    = {};
-  STORE.studied   = {};
-  STORE.sessions  = defaultsByCat();
-  STORE.totals    = defaultsByCat();
-  STORE.checkin   = { streak: 0, lastDate: '', dates: [] };
-  STORE.cursor    = defaultsByCat();
-  STORE.lookups   = {};
-  STORE.pLabels   = {};
-  STORE.pStudied  = {};
-  STORE.pSessions = 0;
-  STORE.pTotals   = 0;
-  STORE.pCursor   = 0;
-  STORE.aLabels   = {};
-  STORE.aStudied  = {};
-  STORE.aSessions = 0;
-  STORE.aTotals   = 0;
-  STORE.aCursor   = 0;
-  STORE.aWords    = {};
-  session = null;
-  persist();
 }
 
 // 应用层 load/save：自动加身份前缀
@@ -2466,15 +2442,6 @@ function onAction(e) {
     case 'cloud-backup': cloudBackup(false); break;
     case 'go-login': location.href = (window.DaoBox && DaoBox.loginUrl) ? DaoBox.loginUrl() : 'https://daobox.app/login?src=vocab&redirect=' + encodeURIComponent(location.href.split('#')[0]); break;
     case 'cloud-restore': cloudRestore(); break;
-    case 'reset-active-profile': {
-      const name = identityLabel();
-      const ok = confirm(`确定要清空用户「${name}」的全部学习进度吗？\n\n将删除：标签、已学记录、打卡、查词本、短语与词缀记录。\n此操作不可恢复，建议先在上方备份。`);
-      if (!ok) break;
-      resetActiveProfileProgress();
-      showToast('已清空当前用户的学习进度', 'success');
-      route();
-      break;
-    }
     case 'import-backup': document.getElementById('import-file').click(); break;
   }
 }
@@ -2730,14 +2697,6 @@ function renderProfile() {
           </button>
         </div>
       </div>`}
-
-      <div class="stat-block">
-        <h3>🧹 全部清除</h3>
-        <p class="hint">将清空${identityLabel()}的全部学习进度，包括标签、已学记录、打卡、查词本、短语与词缀记录。此操作不可恢复，建议先备份。</p>
-        <button class="btn-action danger" data-action="reset-active-profile">
-          <span class="btn-ico">🗑️</span><span>全部清除学习进度</span>
-        </button>
-      </div>
 
       <p class="hint" style="text-align:center;margin-top:18px;">
         <a href="javascript:void(0)" data-action="manual-export" style="color:#94a3b8;">导出备份文件</a>
