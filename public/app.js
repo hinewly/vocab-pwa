@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.34';
+const APP_VERSION = 'v1.2.35';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -343,57 +343,55 @@ function showToast(msg, type = 'info', duration = 4000) {
 }
 
 
-// ===== 多用户档案管理 =====
-const PROFILES_KEY = 'wa:profiles';
-const ACTIVE_PROFILE_KEY = 'wa:active-profile';
-const MIGRATED_KEY = 'wa:migrated-v2';
+// ===== 身份体系（2026-10-12 方案A：账号即用户）=====
+// 登录 DaoBox 账号 → 学习数据挂在 acc{id} 名下；未登录 → 游客 guest。
+// 本地多档案已下线：启动时旧「当前档案」数据自动并入当前身份，其余档案弃用（2026-10-12 用户拍板）。
+const IDENTITY_KEY = 'wa:identity';
 const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor', 'a-words'];
 
-function getProfiles() { return _rawLoad(PROFILES_KEY, []); }
-function saveProfiles(p) { _rawSave(PROFILES_KEY, p); }
-function getActiveProfileId() {
-  const ps = getProfiles();
-  const aid = _rawLoad(ACTIVE_PROFILE_KEY, null);
-  if (aid && ps.some(p => p.id === aid)) return aid;
-  return ps[0]?.id || null;
-}
-function getActiveProfileName() {
-  const id = getActiveProfileId();
-  if (!id) return null;
-  return getProfiles().find(p => p.id === id)?.name || null;
-}
-function profileKey(key) {
-  const id = getActiveProfileId();
-  return id ? key.replace(/^wa:/, `wa:${id}:`) : key;
-}
-function createProfile(name) {
-  const ps = getProfiles();
-  const id = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-  ps.push({ id, name: name || '新用户', createdAt: Date.now() });
-  saveProfiles(ps);
-  return id;
-}
-function renameProfile(id, newName) {
-  const ps = getProfiles();
-  const p = ps.find(x => x.id === id);
-  if (p) { p.name = newName; saveProfiles(ps); }
-}
-function deleteProfile(id) {
-  const ps = getProfiles().filter(p => p.id !== id);
-  saveProfiles(ps);
-  STATE_KEYS.forEach(k => localStorage.removeItem(`wa:${id}:${k}`));
-  if (_rawLoad(ACTIVE_PROFILE_KEY, null) === id) {
-    const na = ps[0]?.id;
-    if (na) _rawSave(ACTIVE_PROFILE_KEY, na);
-    else localStorage.removeItem(ACTIVE_PROFILE_KEY);
-  }
-}
-let editingProfileId = null;  // 行内编辑：当前在改名的 profile id
+let IDENTITY = _rawLoad(IDENTITY_KEY, 'guest') || 'guest';
 
-function setActiveProfile(id) {
-  _rawSave(ACTIVE_PROFILE_KEY, id);
-  reloadStore();
+function idKey(key) {
+  return key.replace(/^wa:/, `wa:${IDENTITY}:`);
 }
+
+function identityLabel() {
+  return IDENTITY === 'guest' ? '游客' : '当前账号';
+}
+
+// 等待 portal 身份就绪（portal.js 异步拉 /api/me）：登录则按账号隔离数据
+async function resolveIdentity() {
+  for (let i = 0; i < 25; i++) {
+    const u = window.DaoBox && DaoBox.user;
+    if (u && u.id) return 'acc' + u.id;
+    await new Promise(r => setTimeout(r, 100));
+  }
+  return 'guest';
+}
+
+// 归一化：旧「当前档案」数据并入当前身份；本地档案元数据与其余档案数据清理
+function normalizeStorage() {
+  const newPrefix = `wa:${IDENTITY}:`;
+  const hasNew = STATE_KEYS.some(k => localStorage.getItem(newPrefix + k) !== null);
+  const profiles = _rawLoad('wa:profiles', []);
+  if (profiles.length) {
+    const activeId = _rawLoad('wa:active-profile', null) || profiles[0]?.id || null;
+    const oldPrefix = activeId ? `wa:${activeId}:` : null;
+    const hasOld = oldPrefix ? STATE_KEYS.some(k => localStorage.getItem(oldPrefix + k) !== null) : false;
+    if (!hasNew && hasOld) {
+      STATE_KEYS.forEach(k => {
+        const v = localStorage.getItem(oldPrefix + k);
+        if (v !== null) localStorage.setItem(newPrefix + k, v);
+      });
+    }
+    // 其余本地档案按 2026-10-12 拍板弃用，全部清理
+    profiles.forEach(pp => STATE_KEYS.forEach(k => localStorage.removeItem(`wa:${pp.id}:${k}`)));
+  }
+  localStorage.removeItem('wa:profiles');
+  localStorage.removeItem('wa:active-profile');
+  localStorage.removeItem('wa:migrated-v2');
+}
+
 function reloadStore() {
   STORE.labels    = load('wa:labels', {});
   STORE.studied   = load('wa:studied', {});
@@ -416,7 +414,7 @@ function reloadStore() {
   STORE.aWords    = pruneAffixExampleRecords(load('wa:a-words', {}));
 }
 
-/** 清空当前用户的学习进度；保留用户档案与自动备份设置 */
+/** 清空当前身份的学习进度；保留自动备份设置 */
 function resetActiveProfileProgress() {
   STORE.labels    = {};
   STORE.studied   = {};
@@ -440,31 +438,9 @@ function resetActiveProfileProgress() {
   persist();
 }
 
-// 一次性迁移：老数据 (wa:labels 等无前缀) → "用户1"档案
-function migrateToProfiles() {
-  if (_rawLoad(MIGRATED_KEY, false)) return;
-  const hasOld = STATE_KEYS.some(k => localStorage.getItem(`wa:${k}`) !== null);
-  if (hasOld) {
-    const id = createProfile('用户1');
-    STATE_KEYS.forEach(k => {
-      const v = localStorage.getItem(`wa:${k}`);
-      if (v !== null) {
-        localStorage.setItem(`wa:${id}:${k}`, v);
-        localStorage.removeItem(`wa:${k}`);
-      }
-    });
-    _rawSave(ACTIVE_PROFILE_KEY, id);
-  } else {
-    const id = createProfile('默认用户');
-    _rawSave(ACTIVE_PROFILE_KEY, id);
-  }
-  _rawSave(MIGRATED_KEY, true);
-}
-migrateToProfiles();
-
-// 应用层 load/save：自动加 profile 前缀
-function load(key, def) { return _rawLoad(profileKey(key), def); }
-function save(key, val) { _rawSave(profileKey(key), val); }
+// 应用层 load/save：自动加身份前缀
+function load(key, def) { return _rawLoad(idKey(key), def); }
+function save(key, val) { _rawSave(idKey(key), val); }
 
 /** 根据 WORDS 动态生成分类默认值对象，新增分类时自动适配，无需改代码 */
 function defaultsByCat() {
@@ -730,18 +706,19 @@ function checkin() {
   }
 }
 
-// ===== DaoBox 云备份 =====
+// ===== DaoBox 云备份（2026-10-12：只备份当前身份的学习进度，Cookie 鉴权）=====
 function collectVocabStorage() {
   const data = {};
+  const prefix = `wa:${IDENTITY}:`;
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
-    if (k && k.startsWith('wa:')) data[k] = localStorage.getItem(k);
+    if (k && k.startsWith(prefix)) data[k] = localStorage.getItem(k);
   }
   return data;
 }
 
 async function cloudBackup() {
-  if (!window.DaoBox || !DaoBox.getToken()) {
+  if (!window.DaoBox || !DaoBox.user) {
     showToast('请先登录 DaoBox 账号', 'error');
     if (window.DaoBox) location.href = DaoBox.loginUrl();
     return;
@@ -750,7 +727,8 @@ async function cloudBackup() {
     const payload = JSON.stringify({ data: JSON.stringify(collectVocabStorage()) });
     const r = await fetch('https://daobox.app/api/backup', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + DaoBox.getToken() },
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
       body: payload,
     });
     const d = await r.json().catch(() => ({}));
@@ -760,23 +738,22 @@ async function cloudBackup() {
 }
 
 async function cloudRestore() {
-  if (!window.DaoBox || !DaoBox.getToken()) {
+  if (!window.DaoBox || !DaoBox.user) {
     showToast('请先登录 DaoBox 账号', 'error');
     if (window.DaoBox) location.href = DaoBox.loginUrl();
     return;
   }
-  if (!confirm('将从云端恢复并覆盖当前全部学习进度，继续？')) return;
+  if (!confirm('将从云端恢复并覆盖当前账号的全部学习进度，继续？')) return;
   try {
-    const r = await fetch('https://daobox.app/api/backup', {
-      headers: { Authorization: 'Bearer ' + DaoBox.getToken() },
-    });
+    const r = await fetch('https://daobox.app/api/backup', { credentials: 'include' });
     const d = await r.json().catch(() => ({}));
     if (!d.ok || !d.data) { showToast(d.data === null ? '云端还没有备份记录' : (d.error || '恢复失败'), 'error'); return; }
     const data = JSON.parse(d.data);
+    const prefix = `wa:${IDENTITY}:`;
     const stale = [];
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (k && k.startsWith('wa:')) stale.push(k);
+      if (k && k.startsWith(prefix)) stale.push(k);
     }
     stale.forEach(k => localStorage.removeItem(k));
     Object.entries(data).forEach(([k, v]) => localStorage.setItem(k, v));
@@ -1439,8 +1416,8 @@ function renderHome() {
     <div class="brand">背单词</div>
     <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
     <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="刷新应用 · 清缓存重载（数据更新后用）">🔄</button>
-    <div class="profile-chip" data-action="go-profile" title="切换/管理用户">
-      <span class="profile-icon">👤</span><span class="profile-name">${escapeHtml(getActiveProfileName() || '默认用户')}</span><span class="profile-caret">▾</span>
+    <div class="profile-chip" data-action="go-profile" title="备份与恢复">
+      <span class="profile-icon">⚙️</span><span class="profile-name">备份 / 设置</span>
     </div>
     <div class="checkin" data-action="go-stats">
       <span class="fire">🔥</span><span>${ci.streak}</span><small>连续打卡</small>
@@ -2475,85 +2452,8 @@ function onAction(e) {
     case 'cloud-backup': cloudBackup(); break;
     case 'cloud-restore': cloudRestore(); break;
     case 'setup-autobackup': setupAutoBackup(); break;
-        case 'profile-create': {
-      const name = prompt('新用户名称：', '用户' + (getProfiles().length + 1));
-      if (name && name.trim()) {
-        const id = createProfile(name.trim());
-        setActiveProfile(id);
-        route();
-      }
-      break;
-    }
-    case 'profile-switch': {
-      const id = el.dataset.id;
-      const ps = getProfiles();
-      const p = ps.find(x => x.id === id);
-      if (!p || p.id === getActiveProfileId()) break;
-      if (confirm(`切换到「${p.name}」？当前用户「${getActiveProfileName()}」的修改会自动保存。`)) {
-        persist();
-        setActiveProfile(id);
-        route();
-      }
-      break;
-    }
-    case 'profile-rename': {
-      const id = el.dataset.id;
-      editingProfileId = id;
-      route();
-      // 自动聚焦到输入框 + 绑定键盘事件
-      setTimeout(() => {
-        const input = document.querySelector('.profile-rename-input');
-        if (!input) return;
-        input.focus();
-        input.select();
-        const finish = (save) => {
-          if (save) {
-            const nn = input.value.trim();
-            if (nn) renameProfile(input.dataset.id, nn);
-          }
-          editingProfileId = null;
-          route();
-        };
-        input.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') { e.preventDefault(); finish(true); }
-          else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
-        });
-        // blur 保存（100ms 延迟，避免和按钮点击冲突）
-        input.addEventListener('blur', () => {
-          setTimeout(() => {
-            if (editingProfileId === input.dataset.id) finish(true);
-          }, 100);
-        });
-      }, 0);
-      break;
-    }
-    case 'profile-rename-save': {
-      const id = el.dataset.id;
-      const input = document.querySelector('.profile-rename-input');
-      if (input && input.value.trim()) renameProfile(id, input.value.trim());
-      editingProfileId = null;
-      route();
-      break;
-    }
-    case 'profile-rename-cancel': {
-      editingProfileId = null;
-      route();
-      break;
-    }
-    case 'profile-delete': {
-      const id = el.dataset.id;
-      const ps = getProfiles();
-      if (ps.length <= 1) { alert('至少要保留一个用户'); break; }
-      const p = ps.find(x => x.id === id);
-      if (!p) break;
-      if (!confirm(`确定要删除用户「${p.name}」吗？\n该用户的所有学习记录将永久丢失！`)) break;
-      deleteProfile(id);
-      reloadStore();
-      route();
-      break;
-    }
     case 'reset-active-profile': {
-      const name = getActiveProfileName() || '默认用户';
+      const name = identityLabel();
       const ok = confirm(`确定要清空用户「${name}」的全部学习进度吗？\n\n将删除：标签、已学记录、打卡、查词本、短语与词缀记录。\n此操作不可恢复，建议先在上方备份。`);
       if (!ok) break;
       resetActiveProfileProgress();
@@ -2825,48 +2725,6 @@ function importBackup(file) {
         throw new Error('文件里没有学习记录数据');
       }
 
-      // 记住当前 profile，导入完成后切回去
-      const prevProfileId = getActiveProfileId();
-
-      // 导入到独立的「导入数据」profile（已存在则复用，避免重复导入产生一堆 profile）
-      const profiles = getProfiles();
-      let targetProfileId = profiles.find(p => p.name === '导入数据')?.id;
-      if (!targetProfileId) {
-        targetProfileId = createProfile('导入数据');
-      }
-
-      // 临时切到目标 profile
-      _rawSave(ACTIVE_PROFILE_KEY, targetProfileId);
-      reloadStore();
-
-      STORE.labels = data.labels;
-      STORE.studied = data.studied;
-      STORE.sessions = data.sessions || STORE.sessions;
-      STORE.totals = data.totals || STORE.totals;
-      STORE.checkin = data.checkin || STORE.checkin;
-      if (data.autoBackup) STORE.autoBackup = data.autoBackup;
-      if (data.cursor) STORE.cursor = data.cursor;
-      if (data.lookups) STORE.lookups = data.lookups;
-      if (data.pLabels) STORE.pLabels = data.pLabels;
-      if (data.pStudied) STORE.pStudied = data.pStudied;
-      if (data.pSessions !== undefined) STORE.pSessions = data.pSessions;
-      if (data.pTotals !== undefined) STORE.pTotals = data.pTotals;
-      if (data.pCursor !== undefined) STORE.pCursor = data.pCursor;
-      // 词缀字段（vocab-pwa 才有）
-      if (data.aLabels) STORE.aLabels = data.aLabels;
-      if (data.aStudied) STORE.aStudied = data.aStudied;
-      if (data.aSessions !== undefined) STORE.aSessions = data.aSessions;
-      if (data.aTotals !== undefined) STORE.aTotals = data.aTotals;
-      if (data.aCursor !== undefined) STORE.aCursor = data.aCursor;
-      STORE.aWords = pruneAffixExampleRecords(data.aWords || {});
-
-      persist();
-
-      // 切回原 profile
-      if (prevProfileId && prevProfileId !== targetProfileId) {
-        _rawSave(ACTIVE_PROFILE_KEY, prevProfileId);
-        reloadStore();
-      }
 
       // 统计导入了多少词/短语/词缀
       const wordCount = Object.keys(data.labels || {}).length;
@@ -2875,7 +2733,7 @@ function importBackup(file) {
       const parts = [`共导入 ${wordCount} 个单词`];
       if (phraseCount) parts.push(`${phraseCount} 个短语`);
       if (affixCount) parts.push(`${affixCount} 条词缀`);
-      showToast(`导入成功，${parts.join('、')}。请到「用户管理」页切换到「导入数据」查看。`, 'success', 6000);
+      showToast(`导入成功，${parts.join('、')}。已导入到当前身份。`, 'success', 6000);
 
       route();
     } catch (e) {
@@ -2885,69 +2743,33 @@ function importBackup(file) {
   reader.readAsText(file);
 }
 
-// ===== 启动 =====
+// ===== 启动（2026-10-12：先解析身份再加载，账号即用户）=====
 window.addEventListener('hashchange', route);
 document.addEventListener('visibilitychange', timerOnVisibility);
-route();
-checkAutoBackup(); // 启动时检查是否到了自动备份周期
+(async () => {
+  IDENTITY = await resolveIdentity();
+  _rawSave(IDENTITY_KEY, IDENTITY);
+  normalizeStorage();
+  reloadStore();
+  route();
+  checkAutoBackup(); // 启动时检查是否到了自动备份周期
+})();
 
 
 // ===== 用户档案管理页面 =====
 function renderProfile() {
-  const profiles = getProfiles();
-  const activeId = getActiveProfileId();
-  const items = profiles.map(p => {
-    const isActive = p.id === activeId;
-    const isEditing = p.id === editingProfileId;
-    const date = new Date(p.createdAt);
-    const dateStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
-
-    if (isEditing) {
-      // 行内编辑状态：input + 保存/取消
-      return `
-        <div class="profile-item active editing">
-          <div class="profile-item-main">
-            <input type="text" class="profile-rename-input" data-id="${p.id}"
-                   value="${escapeHtml(p.name)}" maxlength="20"
-                   placeholder="输入新名称" autocomplete="off" />
-            <small class="profile-item-date">创建于 ${dateStr} · 按回车保存，ESC 取消</small>
-          </div>
-          <div class="profile-item-actions">
-            <button class="btn-sm primary" data-action="profile-rename-save" data-id="${p.id}">保存</button>
-            <button class="btn-sm" data-action="profile-rename-cancel" data-id="${p.id}">取消</button>
-          </div>
-        </div>`;
-    }
-
-    return `
-      <div class="profile-item ${isActive ? 'active' : ''}">
-        <div class="profile-item-main">
-          <span class="profile-item-name">${escapeHtml(p.name)}</span>
-          ${isActive ? '<span class="profile-badge">当前</span>' : ''}
-          <small class="profile-item-date">创建于 ${dateStr}</small>
-        </div>
-        <div class="profile-item-actions">
-          ${!isActive ? `<button class="btn-sm primary" data-action="profile-switch" data-id="${p.id}">切换</button>` : ''}
-          <button class="btn-sm" data-action="profile-rename" data-id="${p.id}">改名</button>
-          ${profiles.length > 1 ? `<button class="btn-sm danger" data-action="profile-delete" data-id="${p.id}">删除</button>` : ''}
-        </div>
-      </div>`;
-  }).join('');
-
   return `
     <header class="topbar">
       <button class="back-btn" data-action="go-home">← 返回</button>
-      <div class="brand">用户管理</div>
+      <div class="brand">备份与恢复</div>
     </header>
     <main class="page">
       <div class="profile-intro">
-        <p>每个用户的学习记录（标签、打卡、查词本…）独立保存，互不干扰。</p>
+        <p>学习进度自动跟随当前身份：登录 DaoBox 账号后归属账号，换设备登录同一账号即可延续；未登录则以游客身份保存在本机。</p>
       </div>
-      <div class="profile-list">${items}</div>
-      <button class="btn-primary" data-action="profile-create">+ 新建用户</button>
 
       <div class="stat-block">
-        <h3>💾 备份与恢复</h3>
+        <h3>💾 本地备份与恢复</h3>
         <div class="stat-grid">
           <span class="l">自动备份</span><span class="v">${STORE.autoBackup.handleReady ? '已设置' : '未设置'}</span>
           <span class="l">上次自动备份</span><span class="v">${STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto).toLocaleString('zh-CN') : '—'}</span>
@@ -2972,7 +2794,7 @@ function renderProfile() {
 
       <div class="stat-block">
         <h3>☁️ 云备份（DaoBox 账号）</h3>
-        <p class="hint">登录 DaoBox 后可把全部学习进度备份到云端，换设备一键恢复。未登录？<a href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Fprofile" style="color:#2563eb">去登录</a></p>
+        <p class="hint">登录后可把当前账号的全部学习进度备份到云端，换设备登录同一账号一键恢复。未登录？<a href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Fprofile" style="color:#2563eb">去登录</a></p>
         <div class="btns backup-actions">
           <button class="btn-action primary" data-action="cloud-backup">
             <span class="btn-ico">☁️</span><span>备份到云端</span>
@@ -2985,7 +2807,7 @@ function renderProfile() {
 
       <div class="stat-block">
         <h3>🧹 全部清除</h3>
-        <p class="hint">将清空当前用户「${escapeHtml(getActiveProfileName() || '默认用户')}」的学习进度，包括标签、已学记录、打卡、查词本、短语与词缀记录。此操作不可恢复，建议先备份。</p>
+        <p class="hint">将清空${identityLabel()}的全部学习进度，包括标签、已学记录、打卡、查词本、短语与词缀记录。此操作不可恢复，建议先备份。</p>
         <button class="btn-action danger" data-action="reset-active-profile">
           <span class="btn-ico">🗑️</span><span>全部清除学习进度</span>
         </button>
