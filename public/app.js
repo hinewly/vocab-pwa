@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.37';
+const APP_VERSION = 'v1.2.38';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2438,17 +2438,13 @@ function onAction(e) {
     case 'skip':  skipCard(); break;
     case 'speak': speakWord(el.dataset.word); break;
     case 'timer-pause': timerTogglePause(); break;
-    case 'manual-export': manualExport(); break;
     case 'cloud-backup': cloudBackup(false); break;
     case 'go-login': location.href = (window.DaoBox && DaoBox.loginUrl) ? DaoBox.loginUrl() : 'https://daobox.app/login?src=vocab&redirect=' + encodeURIComponent(location.href.split('#')[0]); break;
     case 'cloud-restore': cloudRestore(); break;
-    case 'import-backup': document.getElementById('import-file').click(); break;
   }
 }
 
-// 备份文件导入：监听 file input change
-// 注意：#import-file 在 stats 页 innerHTML 里，启动时还不存在，
-// 不能直接 addEventListener（之前那样绑不上，选完文件没任何反应），必须事件委托
+// 全局 change 事件委托（标签本等动态元素）
 document.addEventListener('change', e => {
   const select = e.target.closest('.label-book-select');
   if (select) {
@@ -2463,10 +2459,6 @@ document.addEventListener('change', e => {
     return;
   }
 
-  if (e.target.id !== 'import-file') return;
-  const f = e.target.files[0];
-  if (f) importBackup(f);
-  e.target.value = '';
 });
 
 // 搜索框回车触发搜索
@@ -2537,55 +2529,9 @@ function doSearch() {
   }).join('');
 }
 
-// ===== 备份与恢复（2026-10-12：备份=注册用户专属，全部走云端；本机仅保留导出/导入兜底）=====
+// ===== 备份与恢复（2026-10-12：备份=注册用户专属，全部走云端）=====
 const AUTO_BACKUP_INTERVAL = 6 * 60 * 60 * 1000;   // 自动云备份节流：6 小时
 const MANUAL_BACKUP_THROTTLE = 5 * 60 * 1000;      // 手动备份防手抖：5 分钟
-
-/** 收集当前全部学习数据，用于导出/备份 */
-function collectData() {
-  return {
-    version: 1,
-    exportTime: new Date().toISOString(),
-    labels: STORE.labels,
-    studied: STORE.studied,
-    sessions: STORE.sessions,
-    totals: STORE.totals,
-    checkin: STORE.checkin,
-    cursor: STORE.cursor,
-    lookups: STORE.lookups,
-    pLabels: STORE.pLabels,
-    pStudied: STORE.pStudied,
-    pSessions: STORE.pSessions,
-    pTotals: STORE.pTotals,
-    pCursor: STORE.pCursor,
-    aLabels: STORE.aLabels,
-    aStudied: STORE.aStudied,
-    aSessions: STORE.aSessions,
-    aTotals: STORE.aTotals,
-    aCursor: STORE.aCursor,
-    aWords: STORE.aWords
-  };
-}
-
-/** 日期戳 YYYYMMDD，用于生成文件名 */
-function dateStamp() {
-  const d = new Date();
-  return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
-}
-
-/** 手动导出：触发浏览器下载，文件名带 manual 标识与日期 */
-function manualExport() {
-  const blob = new Blob([JSON.stringify(collectData(), null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `wordapp-manual-${dateStamp()}.json`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast(`备份已导出：wordapp-manual-${dateStamp()}.json`, 'success');
-}
 
 /** 自动云备份：登录用户距上次备份超过 6 小时则静默备份一次 */
 async function maybeAutoBackup() {
@@ -2604,35 +2550,6 @@ async function fillLastBackupTime() {
     if (!el.isConnected) return;
     el.textContent = (d.ok && d.updatedAt) ? new Date(d.updatedAt).toLocaleString('zh-CN') : '—';
   } catch (e) { if (el.isConnected) el.textContent = '—'; }
-}
-
-/** 导入备份文件：覆盖当前所有学习记录 */
-function importBackup(file) {
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const data = JSON.parse(reader.result);
-      // V1.20 老备份只有 labels 一个字段，所以不能要求 labels+studied 同时存在
-      if (!data || (data.labels === undefined && data.studied === undefined && data.pLabels === undefined && data.aLabels === undefined)) {
-        throw new Error('文件里没有学习记录数据');
-      }
-
-
-      // 统计导入了多少词/短语/词缀
-      const wordCount = Object.keys(data.labels || {}).length;
-      const phraseCount = Object.keys(data.pLabels || {}).length;
-      const affixCount = Object.keys(data.aLabels || {}).length;
-      const parts = [`共导入 ${wordCount} 个单词`];
-      if (phraseCount) parts.push(`${phraseCount} 个短语`);
-      if (affixCount) parts.push(`${affixCount} 条词缀`);
-      showToast(`导入成功，${parts.join('、')}。已导入到当前身份。`, 'success', 6000);
-
-      route();
-    } catch (e) {
-      showToast('导入失败：' + e.message, 'error', 6000);
-    }
-  };
-  reader.readAsText(file);
 }
 
 // ===== 启动（2026-10-12：先解析身份再加载，账号即用户）=====
@@ -2698,13 +2615,7 @@ function renderProfile() {
         </div>
       </div>`}
 
-      <p class="hint" style="text-align:center;margin-top:18px;">
-        <a href="javascript:void(0)" data-action="manual-export" style="color:#94a3b8;">导出备份文件</a>
-        <span style="color:#cbd5e1"> · </span>
-        <a href="javascript:void(0)" data-action="import-backup" style="color:#94a3b8;">导入备份</a>
-      </p>
-      <input type="file" id="import-file" accept=".json" style="display:none">
-      <p class="hint" style="text-align:center;margin-top:6px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
+      <p class="hint" style="text-align:center;margin-top:18px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
     </main>`;
 }
 
