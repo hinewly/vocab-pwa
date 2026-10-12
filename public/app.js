@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.39';
+const APP_VERSION = 'v1.2.40';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1402,12 +1402,9 @@ function renderHome() {
   }).join('');
   return `
   <header class="topbar">
-    <div class="brand">背单词</div>
+    <div class="brand">📚 背单词</div>
     <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
     <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="刷新应用 · 清缓存重载（数据更新后用）">🔄</button>
-    <div class="checkin" data-action="go-stats">
-      <span class="fire">🔥</span><span>${ci.streak}</span><small>连续打卡</small>
-    </div>
   </header>
   <main class="page">
     <div class="hero">
