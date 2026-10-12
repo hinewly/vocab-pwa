@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.38';
+const APP_VERSION = 'v1.2.39';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1318,7 +1318,6 @@ function route() {
   else if (p === 'affix-words') html = renderAffixWordsBook();
   else if (p === 'affix-study') html = renderAffixStudy();
   else if (p === 'affix-result') html = renderAffixResult();
-  else if (p === 'profile') { html = renderProfile(); if (window.DaoBox && DaoBox.user) fillLastBackupTime(); }
   else if (p === 'unlock') html = renderUnlock();
   else if (p === 'dev-plan') { renderDevPlan(app); return; }
   else if (p === 'changelog') { renderChangelog(app); return; }
@@ -1406,9 +1405,6 @@ function renderHome() {
     <div class="brand">背单词</div>
     <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
     <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="刷新应用 · 清缓存重载（数据更新后用）">🔄</button>
-    <div class="profile-chip" data-action="go-profile" title="用户中心" id="identity-capsule">
-      <span class="profile-icon">👤</span><span class="profile-name">我的账号</span>
-    </div>
     <div class="checkin" data-action="go-stats">
       <span class="fire">🔥</span><span>${ci.streak}</span><small>连续打卡</small>
     </div>
@@ -2280,7 +2276,6 @@ function onAction(e) {
     case 'affix-words-label': markAffixWordsBookLabel(el.dataset.label); break;
     case 'flip-affix': flipAffixCard(); break;
     case 'label-affix': markAffixLabel(el.dataset.label); break;
-    case 'go-profile':location.hash = '#/profile'; break;
     case 'go-unlock':location.hash = '#/unlock'; break;
     case 'order-submit': {
       const pInput = document.getElementById('order-phone');
@@ -2540,18 +2535,6 @@ async function maybeAutoBackup() {
   await cloudBackup(true);
 }
 
-/** 拉取云端备份时间，填充用户中心的「上次备份」显示 */
-async function fillLastBackupTime() {
-  const el = document.getElementById('cloud-last-backup');
-  if (!el) return;
-  try {
-    const r = await fetch('https://daobox.app/api/backup', { credentials: 'include' });
-    const d = await r.json().catch(() => ({}));
-    if (!el.isConnected) return;
-    el.textContent = (d.ok && d.updatedAt) ? new Date(d.updatedAt).toLocaleString('zh-CN') : '—';
-  } catch (e) { if (el.isConnected) el.textContent = '—'; }
-}
-
 // ===== 启动（2026-10-12：先解析身份再加载，账号即用户）=====
 window.addEventListener('hashchange', route);
 document.addEventListener('visibilitychange', timerOnVisibility);
@@ -2563,80 +2546,24 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) maybe
   reloadStore();
   route();
   maybeAutoBackup(); // 登录用户：距上次备份超过 6 小时则静默自动云备份
-  let capTries = 0;
-  const capIv = setInterval(() => {
-    updateIdentityCapsule();
-    if ((window.DaoBox && DaoBox.user && DaoBox.timeInfo) || ++capTries > 10) clearInterval(capIv);
-  }, 500);
+
+  // 账号中心跳回自动执行（daobox.app/account 的备份卡片 → ?action=cloud-backup / cloud-restore）
+  const act = new URLSearchParams(location.search).get('action');
+  if (act === 'cloud-backup' || act === 'cloud-restore') {
+    history.replaceState(null, '', location.pathname + '?src=home');
+    if (window.DaoBox && DaoBox.user) {
+      setTimeout(async () => {
+        if (act === 'cloud-backup') {
+          await cloudBackup(false);
+          setTimeout(() => { location.href = 'https://daobox.app/account?src=vocab'; }, 1200);
+        } else {
+          await cloudRestore();
+        }
+      }, 800);
+    }
+  }
 })();
 
-
-// ===== 用户中心（2026-10-12：备份=注册用户专属，登录态分层展示）=====
-function renderProfile() {
-  const loggedIn = !!(window.DaoBox && DaoBox.user);
-  const u = loggedIn ? DaoBox.user : null;
-  const name = u ? (u.nickname || '我的账号') : '';
-  return `
-    <header class="topbar">
-      <button class="back-btn" data-action="go-home">← 返回</button>
-      <div class="brand">用户中心</div>
-    </header>
-    <main class="page">
-      <div class="profile-intro">
-        <p>${loggedIn
-          ? `当前身份：<b>${escapeHtml(name)}</b>。学习进度跟随账号：本机自动保存，云端自动备份，双保险不丢失。`
-          : '当前为游客身份，学习进度仅保存在本机浏览器。<b>登录 DaoBox 账号后自动云端备份</b>，换设备不丢失。'}</p>
-      </div>
-
-      ${loggedIn ? `
-      <div class="stat-block">
-        <h3>☁️ 云端备份</h3>
-        <div class="stat-grid">
-          <span class="l">自动备份</span><span class="v">已开启（每 6 小时自动一次）</span>
-          <span class="l">上次备份</span><span class="v" id="cloud-last-backup">—</span>
-        </div>
-        <p class="hint">进度自动备份到 DaoBox 云端；换设备登录同一账号后点「从云端恢复」即可找回。</p>
-        <div class="btns backup-actions">
-          <button class="btn-action primary" data-action="cloud-backup">
-            <span class="btn-ico">☁️</span><span>立即备份</span>
-          </button>
-          <button class="btn-action secondary" data-action="cloud-restore">
-            <span class="btn-ico">📥</span><span>从云端恢复</span>
-          </button>
-        </div>
-      </div>` : `
-      <div class="stat-block">
-        <h3>🔐 登录 DaoBox 账号</h3>
-        <p class="hint">登录后学习进度自动云端备份（每 6 小时一次），换设备一键恢复，还能解锁全部词库与会员时长。</p>
-        <div class="btns backup-actions">
-          <button class="btn-action primary" data-action="go-login">
-            <span class="btn-ico">→</span><span>去登录 / 注册</span>
-          </button>
-        </div>
-      </div>`}
-
-      <p class="hint" style="text-align:center;margin-top:18px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
-    </main>`;
-}
-
-/** 首页身份胶囊：昵称 + 会员/剩余时长（portal.js 数据到位后刷新） */
-function updateIdentityCapsule() {
-  const el = document.getElementById('identity-capsule');
-  if (!el) return;
-  const nameEl = el.querySelector('.profile-name');
-  if (!nameEl) return;
-  const u = window.DaoBox && DaoBox.user;
-  if (!u) { nameEl.textContent = '我的账号'; return; }
-  let nick = u.nickname || '我的账号';
-  if (nick.length > 8) nick = nick.slice(0, 8) + '…';
-  let suffix = '';
-  const t = window.DaoBox.timeInfo;
-  if (t) {
-    if (t.unlimited) suffix = ' · 会员不限时';
-    else if (typeof t.remaining === 'number') suffix = ' · 剩' + t.remaining + '分';
-  }
-  nameEl.textContent = nick + suffix;
-}
 
 // ===== 刷新整个 app（清缓存 + unregister SW + cache-busting 重载）=====
 /** 注入联系邮箱到 footer（innerHTML 不执行 <script>，必须在 route() 后手动调用）*/
