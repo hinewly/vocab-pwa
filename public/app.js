@@ -286,7 +286,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.35';
+const APP_VERSION = 'v1.2.36';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -347,7 +347,7 @@ function showToast(msg, type = 'info', duration = 4000) {
 // 登录 DaoBox 账号 → 学习数据挂在 acc{id} 名下；未登录 → 游客 guest。
 // 本地多档案已下线：启动时旧「当前档案」数据自动并入当前身份，其余档案弃用（2026-10-12 用户拍板）。
 const IDENTITY_KEY = 'wa:identity';
-const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'autoBackup', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor', 'a-words'];
+const STATE_KEYS = ['labels', 'studied', 'sessions', 'totals', 'checkin', 'cloud', 'cursor', 'lookups', 'p-labels', 'p-studied', 'p-sessions', 'p-totals', 'p-cursor', 'a-labels', 'a-studied', 'a-sessions', 'a-totals', 'a-cursor', 'a-words'];
 
 let IDENTITY = _rawLoad(IDENTITY_KEY, 'guest') || 'guest';
 
@@ -398,7 +398,7 @@ function reloadStore() {
   STORE.sessions  = load('wa:sessions', defaultsByCat());
   STORE.totals    = load('wa:totals',   defaultsByCat());
   STORE.checkin   = load('wa:checkin',  { streak: 0, lastDate: '', dates: [] });
-  STORE.autoBackup= load('wa:autoBackup',{ lastAuto: '', count: 0, handleReady: false });
+  STORE.cloud    = load('wa:cloud', { lastBackup: 0, lastManual: 0 });          // 云备份节流状态
   STORE.cursor    = load('wa:cursor',   defaultsByCat());
   STORE.lookups   = load('wa:lookups', {});
   STORE.pLabels   = load('wa:p-labels', {});
@@ -456,7 +456,7 @@ const STORE = {
   sessions: load('wa:sessions', defaultsByCat()),                    // 每分类完成轮数
   totals:   load('wa:totals',   defaultsByCat()),                    // 每分类累计练习词数
   checkin:  load('wa:checkin', { streak: 0, lastDate: '', dates: [] }),
-  autoBackup: load('wa:autobackup', { lastAuto: '', count: 0, handleReady: false }), // 自动备份状态
+  cloud:    load('wa:cloud', { lastBackup: 0, lastManual: 0 }),               // 云备份节流状态（时间戳）
   cursor:   load('wa:cursor',   defaultsByCat()),                    // 每分类未学词游标推进位置
   lookups:  load('wa:lookups', {}),                                  // 查词本：{ "cat:word": { count: 次数, lastAt: 时间戳 } }
   pLabels:  load('wa:p-labels', {}),                                 // 短语标签 { "phrase:短语": "know|fuzzy|..." }
@@ -479,7 +479,7 @@ function persist() {
   save('wa:sessions', STORE.sessions);
   save('wa:totals', STORE.totals);
   save('wa:checkin', STORE.checkin);
-  save('wa:autobackup', STORE.autoBackup);
+  save('wa:cloud', STORE.cloud);
   save('wa:cursor', STORE.cursor);
   save('wa:lookups', STORE.lookups);
   save('wa:p-labels', STORE.pLabels);
@@ -717,10 +717,18 @@ function collectVocabStorage() {
   return data;
 }
 
-async function cloudBackup() {
+async function cloudBackup(silent) {
   if (!window.DaoBox || !DaoBox.user) {
-    showToast('请先登录 DaoBox 账号', 'error');
-    if (window.DaoBox) location.href = DaoBox.loginUrl();
+    if (!silent) {
+      showToast('请先登录 DaoBox 账号', 'error');
+      if (window.DaoBox) location.href = DaoBox.loginUrl();
+    }
+    return;
+  }
+  const now = Date.now();
+  const throttle = silent ? AUTO_BACKUP_INTERVAL : MANUAL_BACKUP_THROTTLE;
+  if (now - (STORE.cloud.lastBackup || 0) < throttle) {
+    if (!silent) showToast('刚刚已备份过，无需重复', 'info');
     return;
   }
   try {
@@ -732,9 +740,15 @@ async function cloudBackup() {
       body: payload,
     });
     const d = await r.json().catch(() => ({}));
-    if (d.ok) showToast(`云备份成功（${Math.round(d.size / 1024)}KB）`, 'success');
-    else showToast(d.error || '备份失败', 'error');
-  } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
+    if (d.ok) {
+      STORE.cloud.lastBackup = Date.now();
+      if (!silent) STORE.cloud.lastManual = Date.now();
+      persist();
+      if (!silent) showToast(`云备份成功（${Math.round((d.size || 0) / 1024)}KB）`, 'success');
+      const el = document.getElementById('cloud-last-backup');
+      if (el && el.isConnected) el.textContent = '刚刚';
+    } else if (!silent) showToast(d.error || '备份失败', 'error');
+  } catch (e) { if (!silent) showToast('网络异常，请稍后再试', 'error'); }
 }
 
 async function cloudRestore() {
@@ -832,7 +846,7 @@ function timerTick() {
     alert(`⏱ 时间到！\n\n已完成 ${done} / ${total} 个词\n剩余 ${total - done} 个词不算学过，下次还会遇到。`);
     // 直接跳结果页（不调用 advance，不记 sessions 增量）
     persist();
-    checkAutoBackup();
+    maybeAutoBackup();
     location.hash = '#/result/' + session.cat;
     return;
   }
@@ -1328,7 +1342,7 @@ function route() {
   else if (p === 'affix-words') html = renderAffixWordsBook();
   else if (p === 'affix-study') html = renderAffixStudy();
   else if (p === 'affix-result') html = renderAffixResult();
-  else if (p === 'profile') html = renderProfile();
+  else if (p === 'profile') { html = renderProfile(); if (window.DaoBox && DaoBox.user) fillLastBackupTime(); }
   else if (p === 'unlock') html = renderUnlock();
   else if (p === 'dev-plan') { renderDevPlan(app); return; }
   else if (p === 'changelog') { renderChangelog(app); return; }
@@ -1416,8 +1430,8 @@ function renderHome() {
     <div class="brand">背单词</div>
     <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
     <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="刷新应用 · 清缓存重载（数据更新后用）">🔄</button>
-    <div class="profile-chip" data-action="go-profile" title="备份与恢复">
-      <span class="profile-icon">⚙️</span><span class="profile-name">备份 / 设置</span>
+    <div class="profile-chip" data-action="go-profile" title="用户中心" id="identity-capsule">
+      <span class="profile-icon">👤</span><span class="profile-name">我的账号</span>
     </div>
     <div class="checkin" data-action="go-stats">
       <span class="fire">🔥</span><span>${ci.streak}</span><small>连续打卡</small>
@@ -2205,7 +2219,7 @@ function advance() {
     }
     checkin();
     persist();
-    checkAutoBackup();
+    maybeAutoBackup();
     location.hash = '#/result/' + session.cat;
   } else {
     persist();
@@ -2449,9 +2463,9 @@ function onAction(e) {
     case 'speak': speakWord(el.dataset.word); break;
     case 'timer-pause': timerTogglePause(); break;
     case 'manual-export': manualExport(); break;
-    case 'cloud-backup': cloudBackup(); break;
+    case 'cloud-backup': cloudBackup(false); break;
+    case 'go-login': location.href = (window.DaoBox && DaoBox.loginUrl) ? DaoBox.loginUrl() : 'https://daobox.app/login?src=vocab&redirect=' + encodeURIComponent(location.href.split('#')[0]); break;
     case 'cloud-restore': cloudRestore(); break;
-    case 'setup-autobackup': setupAutoBackup(); break;
     case 'reset-active-profile': {
       const name = identityLabel();
       const ok = confirm(`确定要清空用户「${name}」的全部学习进度吗？\n\n将删除：标签、已学记录、打卡、查词本、短语与词缀记录。\n此操作不可恢复，建议先在上方备份。`);
@@ -2461,7 +2475,6 @@ function onAction(e) {
       route();
       break;
     }
-    case 'backup-now': (async () => { const h = await getHandle(); if (h) { await doAutoBackup(h); route(); } })(); break;
     case 'import-backup': document.getElementById('import-file').click(); break;
   }
 }
@@ -2557,45 +2570,9 @@ function doSearch() {
   }).join('');
 }
 
-// ===== 备份与恢复 =====
-const BACKUP_DB = 'wordapp';                       // IndexedDB 库名
-const BACKUP_STORE = 'handles';                    // 存 fileHandle 的 store
-const AUTO_BACKUP_INTERVAL = 1 * 24 * 60 * 60 * 1000; // 1 天触发一次自动备份（保留最近 7 份）
-
-/** 打开 IndexedDB（用于持久化 fileHandle，File System Access API 要求） */
-function openBackupDB() {
-  return new Promise((resolve, reject) => {
-    const req = indexedDB.open(BACKUP_DB, 1);
-    req.onupgradeneeded = e => {
-      const db = e.target.result;
-      if (!db.objectStoreNames.contains(BACKUP_STORE)) db.createObjectStore(BACKUP_STORE);
-    };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-}
-
-/** 把授权后的 fileHandle 存入 IndexedDB（页面刷新后仍能恢复） */
-async function saveHandle(handle) {
-  const db = await openBackupDB();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(BACKUP_STORE, 'readwrite');
-    tx.objectStore(BACKUP_STORE).put(handle, 'autobackup');
-    tx.oncomplete = () => resolve();
-    tx.onerror = () => reject(tx.error);
-  });
-}
-
-/** 取出之前授权的 fileHandle（若存在） */
-async function getHandle() {
-  const db = await openBackupDB();
-  return new Promise(resolve => {
-    const tx = db.transaction(BACKUP_STORE, 'readonly');
-    const req = tx.objectStore(BACKUP_STORE).get('autobackup');
-    req.onsuccess = () => resolve(req.result || null);
-    req.onerror = () => resolve(null);
-  });
-}
+// ===== 备份与恢复（2026-10-12：备份=注册用户专属，全部走云端；本机仅保留导出/导入兜底）=====
+const AUTO_BACKUP_INTERVAL = 6 * 60 * 60 * 1000;   // 自动云备份节流：6 小时
+const MANUAL_BACKUP_THROTTLE = 5 * 60 * 1000;      // 手动备份防手抖：5 分钟
 
 /** 收集当前全部学习数据，用于导出/备份 */
 function collectData() {
@@ -2607,7 +2584,6 @@ function collectData() {
     sessions: STORE.sessions,
     totals: STORE.totals,
     checkin: STORE.checkin,
-    autoBackup: STORE.autoBackup,
     cursor: STORE.cursor,
     lookups: STORE.lookups,
     pLabels: STORE.pLabels,
@@ -2644,74 +2620,23 @@ function manualExport() {
   showToast(`备份已导出：wordapp-manual-${dateStamp()}.json`, 'success');
 }
 
-/** 首次设置自动备份：让用户选一个备份目录并授权（Chrome 的 File System Access API 目录模式） */
-async function setupAutoBackup() {
-  if (!window.showDirectoryPicker) {
-    showToast('当前浏览器不支持目录自动备份，请用 Chrome 浏览器，或使用「手动导出」。', 'error', 6000);
-    return;
-  }
-  try {
-    // 弹目录选择框，用户导航到"背单词备份"目录并选中授权
-    const dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
-    await saveHandle(dirHandle);
-    STORE.autoBackup.handleReady = true;
-    await doAutoBackup(dirHandle);
-    showToast(`自动备份已设置到目录：${dirHandle.name}（每天一次，保留最近 7 份）`, 'success', 5000);
-    persist();
-    route();
-  } catch (e) {
-    if (e.name !== 'AbortError') console.error('设置自动备份失败:', e);
-  }
+/** 自动云备份：登录用户距上次备份超过 6 小时则静默备份一次 */
+async function maybeAutoBackup() {
+  if (!(window.DaoBox && DaoBox.user)) return;
+  if (Date.now() - (STORE.cloud.lastBackup || 0) < AUTO_BACKUP_INTERVAL) return;
+  await cloudBackup(true);
 }
 
-/** 执行自动备份：在已授权目录里新建带时间戳的备份文件，并滚动删除最旧的（保留最近 7 份） */
-async function doAutoBackup(dirHandle) {
-  if (!dirHandle) return;
+/** 拉取云端备份时间，填充用户中心的「上次备份」显示 */
+async function fillLastBackupTime() {
+  const el = document.getElementById('cloud-last-backup');
+  if (!el) return;
   try {
-    // 校验目录读写权限（页面刷新后 Chrome 可能要求重新确认）
-    const perm = await dirHandle.queryPermission({ mode: 'readwrite' });
-    if (perm !== 'granted') {
-      const req = await dirHandle.requestPermission({ mode: 'readwrite' });
-      if (req !== 'granted') return;
-    }
-    // 先更新 autoBackup.count/lastAuto（在 collectData 之前），确保备份文件内的数据自洽（count 含本次、lastAuto=本次）
-    STORE.autoBackup.lastAuto = new Date().toISOString();
-    STORE.autoBackup.count = (STORE.autoBackup.count || 0) + 1;
-    // 生成带时分时间戳的文件名，避免同一天多次备份重名
-    const d = new Date();
-    const stamp = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}-${String(d.getHours()).padStart(2, '0')}${String(d.getMinutes()).padStart(2, '0')}`;
-    const fileName = `wordapp-autobackup-${stamp}.json`;
-    // 在目录里创建新文件并写入
-    const fileHandle = await dirHandle.getFileHandle(fileName, { create: true });
-    const writable = await fileHandle.createWritable();
-    await writable.write(JSON.stringify(collectData(), null, 2));
-    await writable.close();
-    // 滚动删除：收集所有备份文件名，按时间戳排序，保留最近 7 份，删最旧的
-    const backups = [];
-    for await (const [name] of dirHandle.entries()) {
-      if (name.startsWith('wordapp-autobackup-') && name.endsWith('.json')) backups.push(name);
-    }
-    backups.sort();
-    while (backups.length > 7) {
-      const oldest = backups.shift();
-      try { await dirHandle.removeEntry(oldest); } catch (e) { console.warn('删除旧备份失败:', oldest, e); }
-    }
-    persist();
-  } catch (e) {
-    console.error('自动备份写入失败:', e);
-  }
-}
-
-/** 启动时检查：距上次自动备份超过 1 天则触发一次 */
-async function checkAutoBackup() {
-  const handle = await getHandle();
-  if (!handle) return;
-  STORE.autoBackup.handleReady = true;
-  const last = STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto) : null;
-  const now = new Date();
-  if (!last || (now - last) >= AUTO_BACKUP_INTERVAL) {
-    await doAutoBackup(handle);
-  }
+    const r = await fetch('https://daobox.app/api/backup', { credentials: 'include' });
+    const d = await r.json().catch(() => ({}));
+    if (!el.isConnected) return;
+    el.textContent = (d.ok && d.updatedAt) ? new Date(d.updatedAt).toLocaleString('zh-CN') : '—';
+  } catch (e) { if (el.isConnected) el.textContent = '—'; }
 }
 
 /** 导入备份文件：覆盖当前所有学习记录 */
@@ -2746,64 +2671,65 @@ function importBackup(file) {
 // ===== 启动（2026-10-12：先解析身份再加载，账号即用户）=====
 window.addEventListener('hashchange', route);
 document.addEventListener('visibilitychange', timerOnVisibility);
+document.addEventListener('visibilitychange', () => { if (document.hidden) maybeAutoBackup(); });
 (async () => {
   IDENTITY = await resolveIdentity();
   _rawSave(IDENTITY_KEY, IDENTITY);
   normalizeStorage();
   reloadStore();
   route();
-  checkAutoBackup(); // 启动时检查是否到了自动备份周期
+  maybeAutoBackup(); // 登录用户：距上次备份超过 6 小时则静默自动云备份
+  let capTries = 0;
+  const capIv = setInterval(() => {
+    updateIdentityCapsule();
+    if ((window.DaoBox && DaoBox.user && DaoBox.timeInfo) || ++capTries > 10) clearInterval(capIv);
+  }, 500);
 })();
 
 
-// ===== 用户档案管理页面 =====
+// ===== 用户中心（2026-10-12：备份=注册用户专属，登录态分层展示）=====
 function renderProfile() {
+  const loggedIn = !!(window.DaoBox && DaoBox.user);
+  const u = loggedIn ? DaoBox.user : null;
+  const name = u ? (u.nickname || '我的账号') : '';
   return `
     <header class="topbar">
       <button class="back-btn" data-action="go-home">← 返回</button>
-      <div class="brand">备份与恢复</div>
+      <div class="brand">用户中心</div>
     </header>
     <main class="page">
       <div class="profile-intro">
-        <p>学习进度自动跟随当前身份：登录 DaoBox 账号后归属账号，换设备登录同一账号即可延续；未登录则以游客身份保存在本机。</p>
+        <p>${loggedIn
+          ? `当前身份：<b>${escapeHtml(name)}</b>。学习进度跟随账号：本机自动保存，云端自动备份，双保险不丢失。`
+          : '当前为游客身份，学习进度仅保存在本机浏览器。<b>登录 DaoBox 账号后自动云端备份</b>，换设备不丢失。'}</p>
       </div>
 
+      ${loggedIn ? `
       <div class="stat-block">
-        <h3>💾 本地备份与恢复</h3>
+        <h3>☁️ 云端备份</h3>
         <div class="stat-grid">
-          <span class="l">自动备份</span><span class="v">${STORE.autoBackup.handleReady ? '已设置' : '未设置'}</span>
-          <span class="l">上次自动备份</span><span class="v">${STORE.autoBackup.lastAuto ? new Date(STORE.autoBackup.lastAuto).toLocaleString('zh-CN') : '—'}</span>
-          <span class="l">自动备份次数</span><span class="v">${STORE.autoBackup.count || 0}</span>
+          <span class="l">自动备份</span><span class="v">已开启（每 6 小时自动一次）</span>
+          <span class="l">上次备份</span><span class="v" id="cloud-last-backup">—</span>
         </div>
-        <div class="btns backup-actions">
-          <button class="btn-action primary" data-action="manual-export">
-            <span class="btn-ico">📤</span><span>手动导出</span>
-          </button>
-          <button class="btn-action primary" data-action="setup-autobackup">
-            <span class="btn-ico">⚙️</span><span>${STORE.autoBackup.handleReady ? '重新设置自动备份' : '设置自动备份'}</span>
-          </button>
-          <button class="btn-action primary" data-action="backup-now" ${STORE.autoBackup.handleReady ? '' : 'disabled'}>
-            <span class="btn-ico">💾</span><span>立即备份一次</span>
-          </button>
-          <button class="btn-action secondary" data-action="import-backup">
-            <span class="btn-ico">📥</span><span>导入备份</span>
-          </button>
-        </div>
-        <input type="file" id="import-file" accept=".json" style="display:none">
-      </div>
-
-      <div class="stat-block">
-        <h3>☁️ 云备份（DaoBox 账号）</h3>
-        <p class="hint">登录后可把当前账号的全部学习进度备份到云端，换设备登录同一账号一键恢复。未登录？<a href="https://daobox.app/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.app%2F%23%2Fprofile" style="color:#2563eb">去登录</a></p>
+        <p class="hint">进度自动备份到 DaoBox 云端；换设备登录同一账号后点「从云端恢复」即可找回。</p>
         <div class="btns backup-actions">
           <button class="btn-action primary" data-action="cloud-backup">
-            <span class="btn-ico">☁️</span><span>备份到云端</span>
+            <span class="btn-ico">☁️</span><span>立即备份</span>
           </button>
           <button class="btn-action secondary" data-action="cloud-restore">
             <span class="btn-ico">📥</span><span>从云端恢复</span>
           </button>
         </div>
-      </div>
+      </div>` : `
+      <div class="stat-block">
+        <h3>🔐 登录 DaoBox 账号</h3>
+        <p class="hint">登录后学习进度自动云端备份（每 6 小时一次），换设备一键恢复，还能解锁全部词库与会员时长。</p>
+        <div class="btns backup-actions">
+          <button class="btn-action primary" data-action="go-login">
+            <span class="btn-ico">→</span><span>去登录 / 注册</span>
+          </button>
+        </div>
+      </div>`}
 
       <div class="stat-block">
         <h3>🧹 全部清除</h3>
@@ -2813,8 +2739,33 @@ function renderProfile() {
         </button>
       </div>
 
-      <p class="hint" style="text-align:center;margin-top:18px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
+      <p class="hint" style="text-align:center;margin-top:18px;">
+        <a href="javascript:void(0)" data-action="manual-export" style="color:#94a3b8;">导出备份文件</a>
+        <span style="color:#cbd5e1"> · </span>
+        <a href="javascript:void(0)" data-action="import-backup" style="color:#94a3b8;">导入备份</a>
+      </p>
+      <input type="file" id="import-file" accept=".json" style="display:none">
+      <p class="hint" style="text-align:center;margin-top:6px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
     </main>`;
+}
+
+/** 首页身份胶囊：昵称 + 会员/剩余时长（portal.js 数据到位后刷新） */
+function updateIdentityCapsule() {
+  const el = document.getElementById('identity-capsule');
+  if (!el) return;
+  const nameEl = el.querySelector('.profile-name');
+  if (!nameEl) return;
+  const u = window.DaoBox && DaoBox.user;
+  if (!u) { nameEl.textContent = '我的账号'; return; }
+  let nick = u.nickname || '我的账号';
+  if (nick.length > 8) nick = nick.slice(0, 8) + '…';
+  let suffix = '';
+  const t = window.DaoBox.timeInfo;
+  if (t) {
+    if (t.unlimited) suffix = ' · 会员不限时';
+    else if (typeof t.remaining === 'number') suffix = ' · 剩' + t.remaining + '分';
+  }
+  nameEl.textContent = nick + suffix;
 }
 
 // ===== 刷新整个 app（清缓存 + unregister SW + cache-busting 重载）=====
