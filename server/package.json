@@ -1,0 +1,8 @@
+{
+  "name": "daobox-api-cn-server",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "^11.10.0"
+  }
+}
