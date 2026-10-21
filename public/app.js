@@ -27,7 +27,7 @@ const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
 // 激活码验证走 Cloudflare Worker 后端（6位纯数字，软绑定最多3台设备）
-const UNLOCK_API_BASE = 'https://api.daobox.app';
+const UNLOCK_API_BASE = (window.DB_API_HOME || 'https://api.daobox.app');
 const UNLOCK_API = UNLOCK_API_BASE + '/api/activate';
 const ORDER_API = UNLOCK_API_BASE + '/api/order';
 const UNLOCK_KEY = 'wa:unlocked';
@@ -91,7 +91,7 @@ async function submitOrder(contact) {
   return false;
 }
 // ===== 点数系统（1 点 = 1 天学习会员，vocab/shici/suan 三工具通用） =====
-const POINTS_API = 'https://daobox.app/api/points';
+const POINTS_API = (window.DB_HOME || 'https://daobox.app') + '/api/points';
 const POINT_TIERS = [
   { t: 5,  p: 50 },
   { t: 10, p: 120 },
@@ -709,7 +709,7 @@ async function cloudBackup(silent) {
   }
   try {
     const payload = JSON.stringify({ data: JSON.stringify(collectVocabStorage()) });
-    const r = await fetch('https://daobox.app/api/backup', {
+    const r = await fetch((window.DB_HOME || 'https://daobox.app') + '/api/backup', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -735,7 +735,7 @@ async function cloudRestore() {
   }
   if (!confirm('将从云端恢复并覆盖当前账号的全部学习进度，继续？')) return;
   try {
-    const r = await fetch('https://daobox.app/api/backup', { credentials: 'include' });
+    const r = await fetch((window.DB_HOME || 'https://daobox.app') + '/api/backup', { credentials: 'include' });
     const d = await r.json().catch(() => ({}));
     if (!d.ok || !d.data) { showToast(d.data === null ? '云端还没有备份记录' : (d.error || '恢复失败'), 'error'); return; }
     const data = JSON.parse(d.data);
@@ -1429,7 +1429,7 @@ function renderHome() {
     <footer class="contact-footer">
       <small>📮 问题反馈 · <span id="contact-email"></span></small>
     </footer>
-    <p class="hint" style="text-align:center;margin-top:6px;"><a href="https://daobox.app?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
+    <p class="hint" style="text-align:center;margin-top:6px;"><a href="${(window.DB_HOME || 'https://daobox.app')}?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
   </main>`;
 }
 
@@ -2431,7 +2431,7 @@ function onAction(e) {
     case 'speak': speakWord(el.dataset.word); break;
     case 'timer-pause': timerTogglePause(); break;
     case 'cloud-backup': cloudBackup(false); break;
-    case 'go-login': location.href = (window.DaoBox && DaoBox.loginUrl) ? DaoBox.loginUrl() : 'https://daobox.app/login?src=vocab&redirect=' + encodeURIComponent(location.href.split('#')[0]); break;
+    case 'go-login': location.href = (window.DaoBox && DaoBox.loginUrl) ? DaoBox.loginUrl() : (window.DB_HOME || 'https://daobox.app') + '/login?src=vocab&redirect=' + encodeURIComponent(location.href.split('#')[0]); break;
     case 'cloud-restore': cloudRestore(); break;
   }
 }
@@ -2552,7 +2552,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) maybe
       setTimeout(async () => {
         if (act === 'cloud-backup') {
           await cloudBackup(false);
-          setTimeout(() => { location.href = 'https://daobox.app/account?src=vocab'; }, 1200);
+          setTimeout(() => { location.href = (window.DB_HOME || 'https://daobox.app') + '/account?src=vocab'; }, 1200);
         } else {
           await cloudRestore();
         }

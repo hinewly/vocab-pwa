@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <script>
+    // 双域名适配：国内站 daobox.net.cn / 海外站 daobox.app，API 与门户按当前域名自动选择
+    window.DB_HOME = location.hostname.indexOf('daobox.net.cn') !== -1
+      ? 'https://daobox.net.cn' : 'https://daobox.app';
+    window.DB_API_HOME = window.DB_HOME.replace('://', '://api.');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#059669">
@@ -17,7 +23,7 @@
   <meta name="apple-mobile-web-app-title" content="背单词">
 
   <link rel="stylesheet" href="style.css">
-<script src="https://daobox.app/portal.js" data-app="vocab"></script>
+<script>document.write('<script src="' + window.DB_HOME + '/portal.js" data-app="vocab"><\/script>');</script>
 </head>
 <body>
   <div id="app"></div>
