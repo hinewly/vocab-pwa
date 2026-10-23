@@ -26,169 +26,25 @@ const LABELS = {
 const LABEL_ORDER = ['know', 'fuzzy', 'key', 'must', 'graduate'];
 
 // ===== 免费试学 / 付费解锁（轻量防护，防君子不防小人） =====
-// 激活码验证走 Cloudflare Worker 后端（6位纯数字，软绑定最多3台设备）
-const UNLOCK_API_BASE = (window.DB_API_HOME || 'https://api.daobox.app');
-const UNLOCK_API = UNLOCK_API_BASE + '/api/activate';
-const ORDER_API = UNLOCK_API_BASE + '/api/order';
+// 2026-10-22 激活码入口下线：UNLOCK_KEY 仅保留历史激活设备的有效性判定
 const UNLOCK_KEY = 'wa:unlocked';
-const DEVICE_ID_KEY = 'wa:device_id';
 
-function getDeviceId() {
-  try {
-    let id = localStorage.getItem(DEVICE_ID_KEY);
-    if (!id) {
-      id = 'd' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
-      localStorage.setItem(DEVICE_ID_KEY, id);
-    }
-    return id;
-  } catch (e) {
-    return 'anon-' + Math.random().toString(36).slice(2, 10);
-  }
-}
 
-async function submitUnlock(rawCode) {
-  const code = String(rawCode || '').replace(/\D/g, '');
-  if (code.length !== 6) {
-    showToast('请输入 6 位数字激活码', 'error');
-    return;
-  }
-  try {
-    const res = await fetch(UNLOCK_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code, deviceId: getDeviceId(), projectId: window.VOCAB_OFFLINE ? 'vocab_offline' : undefined }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (data.ok) {
-      localStorage.setItem(UNLOCK_KEY, '1');
-      showToast('解锁成功，全部词本已开放', 'success');
-      location.hash = '#/';
-    } else {
-      showToast(data.error || '激活失败，请稍后再试', 'error');
-    }
-  } catch (e) {
-    showToast('网络异常，请检查网络后重试', 'error');
-  }
-}
 
-async function submitOrder(contact) {
-  try {
-    const res = await fetch(ORDER_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contact }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (data.ok && data.checkUrl) {
-      showToast('登记成功！请保存打开的取码页', 'success');
-      window.open(data.checkUrl, '_blank');
-      return true;
-    }
-    showToast(data.error || '登记失败，请稍后再试', 'error');
-  } catch (e) {
-    showToast('网络异常，请稍后再试', 'error');
-  }
-  return false;
-}
-// ===== 点数系统（1 点 = 1 天学习会员，vocab/shici/suan 三工具通用） =====
-const POINTS_API = (window.DB_HOME || 'https://daobox.app') + '/api/points';
-const POINT_TIERS = [
-  { t: 5,  p: 50 },
-  { t: 10, p: 120 },
-  { t: 20, p: 260 },
-  { t: 30, p: 420 },
-  { t: 50, p: 750 },
-];
-const POINTS_CACHE_KEY = 'wa:points_cache';
-let pointsCache = loadPointsCache();
-let pointsSelTier = 50; // 默认选中主推档
 
-function loadPointsCache() {
-  try { return JSON.parse(localStorage.getItem(POINTS_CACHE_KEY)) || { balance: 0, activeToday: false, ts: 0 }; }
-  catch (e) { return { balance: 0, activeToday: false, ts: 0 }; }
-}
-function savePointsCache() {
-  try { localStorage.setItem(POINTS_CACHE_KEY, JSON.stringify(pointsCache)); } catch (e) {}
-}
-function pointsAuthHeaders() {
-  const t = window.DaoBox && DaoBox.getToken();
-  return t ? { Authorization: 'Bearer ' + t } : {};
-}
+
+
+// ===== DaoBox 学习会员（2026-10-22 统一会员模式：登录解锁词库、会员不限时，充值在账号中心支付宝） =====
 function pointsLoggedIn() {
   return !!(window.DaoBox && DaoBox.getToken());
 }
-async function refreshPointsStatus() {
-  if (!pointsLoggedIn()) { pointsCache = { balance: 0, activeToday: false, ts: 0 }; savePointsCache(); return pointsCache; }
-  try {
-    const r = await fetch(POINTS_API + '/status', { headers: pointsAuthHeaders() });
-    const d = await r.json().catch(() => ({}));
-    if (d.ok) {
-      pointsCache = { balance: d.balance, activeToday: d.activeToday, ts: Date.now() };
-      savePointsCache();
-    }
-  } catch (e) { /* 离线/网络异常沿用缓存 */ }
-  return pointsCache;
-}
-async function consumePointsToday(app) {
-  try {
-    const r = await fetch(POINTS_API + '/consume', {
-      method: 'POST',
-      headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
-      body: JSON.stringify({ app }),
-    });
-    const d = await r.json().catch(() => ({}));
-    if (d.ok) {
-      pointsCache.balance = (typeof d.balance === 'number') ? d.balance : pointsCache.balance;
-      pointsCache.activeToday = true;
-      savePointsCache();
-      return 'ok';
-    }
-    pointsCache.balance = (typeof d.balance === 'number') ? d.balance : pointsCache.balance;
-    savePointsCache();
-    return 'exhausted';
-  } catch (e) { return 'error'; }
-}
-async function submitPointsOrder(tier, contact, screenshot) {
-  try {
-    const r = await fetch(POINTS_API + '/order', {
-      method: 'POST',
-      headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
-      body: JSON.stringify({ tier, contact, screenshot }),
-    });
-    const d = await r.json().catch(() => ({}));
-    if (d.ok) return d;
-    showToast(d.error || '登记失败，请稍后再试', 'error');
-  } catch (e) { showToast('网络异常，请稍后再试', 'error'); }
-  return null;
-}
-
-/** 付款截图压缩：长边 ≤1280px，JPEG 质量从 0.7 逐步降到 ≤120KB */
-function compressImageFile(file) {
-  return new Promise((resolve) => {
-    if (!file || !file.type.startsWith('image/')) return resolve(null);
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.onload = () => {
-      try {
-        const max = 1280;
-        let { width, height } = img;
-        if (width > max || height > max) {
-          const k = max / Math.max(width, height);
-          width = Math.round(width * k); height = Math.round(height * k);
-        }
-        const cv = document.createElement('canvas');
-        cv.width = width; cv.height = height;
-        cv.getContext('2d').drawImage(img, 0, 0, width, height);
-        URL.revokeObjectURL(url);
-        let q = 0.7, out = cv.toDataURL('image/jpeg', q);
-        while (out.length > 120000 && q > 0.35) { q -= 0.1; out = cv.toDataURL('image/jpeg', q); }
-        resolve(out);
-      } catch (e) { URL.revokeObjectURL(url); resolve(null); }
-    };
-    img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
-    img.src = url;
-  });
-}
+// 推广期档位（与 daobox-home worker/src/tiers.js 保持一致；t=天数，promo/regular=价格）
+const POINT_TIERS = [
+  { t: 99,   promo: 9.9,  regular: 19.9 },
+  { t: 320,  promo: 29.9, regular: 49.9 },
+  { t: 750,  promo: 69.9, regular: 109.9 },
+  { t: 1095, promo: 99.9, regular: 159.9 },
+];
 
 // ===== 免费时长（按天计时：未登录 5 分钟 / 登录 15 分钟，本地判定，过午夜重置） =====
 const TRIAL_SECONDS = { anon: 5 * 60, user: 15 * 60 };
@@ -213,7 +69,7 @@ function trialRemainSeconds() { return Math.max(0, trialLimitSeconds() - trialUs
 function trialBarSync() {
   const el = document.getElementById('trial-bar');
   if (!el) return;
-  if (isUnlocked() || pointsCache.activeToday) {
+  if (isUnlocked()) {
     el.textContent = '✨ 会员畅学中';
     el.className = 'trial-bar member';
     return;
@@ -243,23 +99,12 @@ function trialStartTicker() {
 }
 function trialStopTicker() { if (trialTickerId) { clearInterval(trialTickerId); trialTickerId = null; } }
 
-// 学习门槛：已激活（激活码 / 今日点数）→ 放行；
-// 否则走本地免费时长（未登录 5 分钟 / 登录 15 分钟），用完且登录有余额 → 自动扣 1 点激活今日；
-// 都没有 → 引导充值。完全离线 → 放行（轻量防护，防君子不防小人）。
+// 学习门槛：登录（或激活码）→ 放行（时长由 portal 时长池限制）；
+// 未登录走本地免费时长，用完 → 引导注册/开通会员（统一会员模式，无点数消耗）
 async function gateStudy(cb) {
   if (isUnlocked()) { trialBarSync(); return cb(); }
-  await refreshPointsStatus();
-  if (pointsCache.activeToday) { trialBarSync(); return cb(); }
   if (trialRemainSeconds() > 0) { trialStartTicker(); trialBarSync(); return cb(); }
-  // 免费时长用完：登录用户尝试扣 1 点（自动开通今日会员）
-  if (pointsLoggedIn()) {
-    const res = await consumePointsToday('vocab');
-    if (res === 'ok') { trialBarSync(); return cb(); }
-    if (res === 'error') return cb(); // 离线放行
-    showToast('今日免费时长与点数均已用完，充值 1 点 = 全天畅学', 'error');
-  } else {
-    showToast('今日免费 5 分钟已用完，注册登录每天 15 分钟', 'error');
-  }
+  showToast(pointsLoggedIn() ? '今日免费时长已用完，开通学习会员不限时' : '今日免费时长已用完，注册每天 60 分钟，会员不限时', 'error');
   location.hash = '#/unlock';
 }
 
@@ -286,7 +131,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.40';
+const APP_VERSION = 'v1.2.41';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1326,7 +1171,6 @@ function route() {
   window.scrollTo(0, 0);
   // 注入 footer 邮箱（innerHTML 不执行 <script>，必须在这里手动调用）
   if (typeof updateContactEmail === 'function') updateContactEmail();
-  if (p === 'unlock' && typeof initUnlockPoints === 'function') initUnlockPoints();
   // 路由渲染完，如果是学习页，立即把当前圆环进度渲染出来
   const p2 = (location.hash.slice(1) || '/').split('/').filter(Boolean)[0] || 'home';
   if (p2 === 'study' && timer.id) timerRender();
@@ -1369,7 +1213,7 @@ function renderHome() {
   const unlockCard = compactCard({
     icon: '🔓', name: '解锁全部词本', color: '#ff6b35', action: 'go-unlock',
     badge: '未解锁', badgeColor: '#ff6b35',
-    footer: '点数畅学 · ¥5=50天 · ¥50=750天最划算'
+    footer: '会员不限时 · 推广价 ¥9.9 起'
   });
     const statsCard = compactCard({
     icon: '📊', name: '学习统计', color: '#3a63e8', action: 'go-stats', className: 'system-card',
@@ -1561,8 +1405,8 @@ function renderCat(cat) {
         ${LABEL_ORDER.map(l => `<button class="tag tag-btn" style="background:${LABELS[l].color}" data-action="go-label-book" data-cat="${cat}" data-label="${l}" title="整理${LABELS[l].name}词表">${LABELS[l].name} ${lb[l]}</button>`).join('')}
       </div>
       ${isTrial ? `
-      <div class="trial-banner">🆓 免费试学前 <b>${accessibleCount}</b> 词（本词本共 <b>${total}</b> 词）<br><small>点数畅学全库：1 点 = 1 天 · ¥50 = 750 天最划算</small></div>
-      <button class="btn-main" data-action="go-unlock">🔓 获取激活码 · 解锁全部词本</button>
+      <div class="trial-banner">🆓 免费试学前 <b>${accessibleCount}</b> 词（本词本共 <b>${total}</b> 词）<br><small>会员不限时畅学：推广价 ¥9.9 起 · 截止 12-31</small></div>
+      <button class="btn-main" data-action="go-unlock">🔓 解锁全部词本 · 开通会员</button>
       ` : ''}
     </div>
 
@@ -1577,13 +1421,11 @@ function renderCat(cat) {
   </main>`;
 }
 
-/** 解锁全部词本页（点数畅学为主推，买断永久解锁弱化为折叠项） */
+/** 解锁页（2026-10-22 统一会员模式：会员充值引导，支付宝在账号中心） */
 function renderUnlock() {
   const unlocked = isUnlocked();
   const tiersHtml = POINT_TIERS.map(t => `
-      <button class="tier-btn${t.t === pointsSelTier ? ' sel' : ''}" data-action="tier-select" data-tier="${t.t}">
-        <b>¥${t.t}</b><span>${t.p} 点</span><small>= ${t.p} 天</small>
-      </button>`).join('');
+      <div class="tier-btn"><b>¥${t.promo}</b><del>¥${t.regular}</del><span>${t.t} 天${t.t >= 1095 ? ' · 3 年' : ''}</span><small>推广价截止 12-31</small></div>`).join('');
   return `
   <header class="topbar">
     <button class="back" data-action="go-home">‹ 返回</button>
@@ -1594,63 +1436,19 @@ function renderUnlock() {
       <h3>🔓 解锁全部词本</h3>
       <p class="hint">覆盖初中 / 高中 / 四级 / 六级 / 专业词本，掌握 4000+ 核心词汇。</p>
       ${unlocked ? `
-      <p class="hint">✅ 当前已永久解锁全部词本（激活码）。</p>
+      <p class="hint">✅ 当前已解锁全部词本${localStorage.getItem(UNLOCK_KEY) === '1' ? '（激活码）' : ''}。</p>
       ` : `
-      <div id="points-box">
-        <h3 style="font-size:16px;margin:18px 0 6px">⚡ 点数畅学（推荐）</h3>
-        <p class="hint">1 点 = 1 天，<b>背单词 / 诗词 / 口算三个工具通用</b>，换设备登录即恢复。</p>
-        <div id="points-status" class="hint">账号状态加载中…</div>
-        <div class="tier-grid">
-          ${tiersHtml}
-        </div>
-        <div class="search-box">
-          <input type="text" id="points-nick" placeholder="② 已付款？填微信昵称（收款方看到的名称）" autocomplete="off">
-          <button class="search-btn" data-action="points-order-submit">登记</button>
-        </div>
-        <p class="hint"><b>① 选档</b> → <b>② 微信扫码付款（转账时在留言栏填你的手机号）</b> → <b>③ 填昵称登记</b>（可附付款截图，核对更快）。管理员确认后点数自动到账，我们尽量在 <b>48 小时内</b>处理；超时未到账请发邮件至 <span class="contact-email"></span>。</p>
-        <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款">
-        <div class="search-box">
-          <input type="file" id="points-shot" accept="image/*" style="width:auto;font-size:12px">
-          <span class="hint" style="font-size:11px">付款截图（可选，自动压缩）</span>
-        </div>
-        <img id="points-shot-preview" style="display:none;max-width:200px;border-radius:8px;margin:6px 0" alt="付款截图预览">
+      <h3 style="font-size:16px;margin:18px 0 6px">⚡ 学习会员充值（推荐）</h3>
+      <p class="hint">会员期内<b>学习不限时</b>、全部词本开放；选档后到账号中心用<b>支付宝</b>付款，到账自动延长会员。</p>
+      <div class="tier-grid">
+        ${tiersHtml}
       </div>
-      <details style="margin-top:16px">
-        <summary style="cursor:pointer;font-size:13px;color:#6b7280">想永久解锁本工具？（激活码买断）</summary>
-        <div style="margin-top:12px">
-          <button class="btn-ghost" data-action="buyout-interest" style="width:100%;margin-bottom:12px">📝 想要永久买断？先登记意向（不付款，仅统计需求，攒够了再开放）</button>
-          <p class="price-line"><span class="price-now">早鸟价 ¥9.9</span><span class="price-badge">一次付费 · 永久解锁本工具</span></p>
-          <p class="hint"><b>① 微信扫码付款：</b></p>
-          <img class="pay-qr" src="./qr-wechat.jpg" alt="微信扫码付款 ¥9.9">
-          <div class="search-box">
-            <input type="tel" id="order-phone" placeholder="② 已付款？填手机号登记" autocomplete="off" inputmode="numeric" maxlength="11">
-            <input type="text" id="order-nick" placeholder="③ 微信昵称（收款方看到的名称）" autocomplete="off">
-            <button class="search-btn" data-action="order-submit">登记</button>
-          </div>
-          <p class="hint">登记后打开你的专属「取码页」，请收藏 / 截图保存。管理员确认收款后，取码页会自动显示激活码。</p>
-          <div class="search-box">
-            <input type="text" id="unlock-code" placeholder="④ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
-            <button class="search-btn" data-action="unlock-submit">解锁</button>
-          </div>
-          <p class="hint">激活码是购买凭证，永久有效。清除数据或更换设备后重新输入即可，无需重复购买。</p>
-        </div>
-      </details>
+      ${!pointsLoggedIn() ? `<a class="login-cta" href="${window.DaoBox ? DaoBox.loginUrl() : '#'}" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">注册 / 登录 DaoBox 账号后充值 →</a>` : ''}
+      <a class="login-cta" href="${window.DB_HOME || 'https://daobox.app'}/account.html?src=vocab" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">去账号中心充值（支付宝，到账自动）→</a>
+      <p class="hint"><b>推广价截止 2026-12-31，之后恢复原价。</b>会员绑定 DaoBox 账号，背单词、口算宝、古诗词、奥数通用。</p>
       `}
     </div>
   </main>`;
-}
-
-/** 解锁页渲染后的异步状态注入 */
-async function initUnlockPoints() {
-  if (isUnlocked()) return;
-  const box = document.getElementById('points-status');
-  if (!box) return;
-  if (!pointsLoggedIn()) {
-    box.innerHTML = '<a href="' + (window.DaoBox ? DaoBox.loginUrl() : '#') + '" style="display:block;margin:10px 0;padding:12px;background:#111827;color:#fff;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;text-align:center">注册 / 登录 DaoBox 账号后充值 →</a><p class="hint">点数绑定 DaoBox 账号，三个学习工具通用；未注册每天免费 5 分钟，注册登录每天 15 分钟；充值 1 点 = 1 天畅学。</p>';
-    return;
-  }
-  const st = await refreshPointsStatus();
-  box.innerHTML = '✅ 已登录 · 余额 <b>' + st.balance + '</b> 点' + (st.activeToday ? ' · 今日已激活' : ' · 今日未激活（开始学习时自动扣 1 点）');
 }
 
 // ===== 标签词表管理（全词本通用） =====
@@ -2274,36 +2072,6 @@ function onAction(e) {
     case 'flip-affix': flipAffixCard(); break;
     case 'label-affix': markAffixLabel(el.dataset.label); break;
     case 'go-unlock':location.hash = '#/unlock'; break;
-    case 'order-submit': {
-      const pInput = document.getElementById('order-phone');
-      const nInput = document.getElementById('order-nick');
-      const cBtn = pInput?.parentElement?.querySelector('button');
-      const phone = (pInput?.value || '').trim();
-      const nick = (nInput?.value || '').trim();
-      if (!/^1[3-9]\d{9}$/.test(phone)) {
-        showToast('请填写正确的11位手机号', 'error');
-        break;
-      }
-      if (nick.length < 1) {
-        showToast('请填写微信昵称（收款方看到的名称）', 'error');
-        break;
-      }
-      const contact = phone + ' / ' + nick;
-      if (cBtn) { cBtn.disabled = true; cBtn.textContent = '提交中…'; }
-      submitOrder(contact).finally(() => {
-        if (cBtn) { cBtn.disabled = false; cBtn.textContent = '登记'; }
-      });
-      break;
-    }
-    case 'unlock-submit': {
-      const input = document.getElementById('unlock-code');
-      const btn = input?.parentElement?.querySelector('button');
-      if (btn) { btn.disabled = true; btn.textContent = '验证中…'; }
-      submitUnlock(input?.value).finally(() => {
-        if (btn) { btn.disabled = false; btn.textContent = '解锁'; }
-      });
-      break;
-    }
     case 'refresh-app': refreshApp(); break;
     case 'search':  doSearch(); break;
     case 'lookup-study': {
@@ -2331,52 +2099,6 @@ function onAction(e) {
       if (words.length === 0) { alert('短语本为空或已全部过关'); return; }
       startSession('phrase', words);
       location.hash = `#/study/phrase/${n}`;
-      break;
-    }
-    case 'tier-select': {
-      pointsSelTier = parseInt(el.dataset.tier || '50', 10);
-      document.querySelectorAll('.tier-btn').forEach(b => b.classList.toggle('sel', parseInt(b.dataset.tier, 10) === pointsSelTier));
-      break;
-    }
-    case 'points-order-submit': {
-      if (!pointsLoggedIn()) {
-        showToast('请先登录 DaoBox 账号', 'error');
-        if (window.DaoBox) location.href = DaoBox.loginUrl();
-        return;
-      }
-      const nick = (document.getElementById('points-nick') || {}).value || '';
-      if (!nick.trim()) { showToast('请填写微信昵称，方便核对收款', 'error'); return; }
-      const tier = POINT_TIERS.find(t => t.t === pointsSelTier) || POINT_TIERS[4];
-      el.disabled = true; el.textContent = '登记中…';
-      const shotInput = document.getElementById('points-shot');
-      const shotFile = shotInput && shotInput.files && shotInput.files[0];
-      (async () => {
-        const shot = shotFile ? await compressImageFile(shotFile) : null;
-        const d = await submitPointsOrder(tier.t, nick.trim(), shot);
-        el.disabled = false; el.textContent = '登记';
-        if (d) showToast(`已登记 ¥${d.tier} = ${d.points} 点（单号 ${d.orderNo}），确认收款后自动到账`, 'success');
-      })();
-      break;
-    }
-    case 'buyout-interest': {
-      if (!pointsLoggedIn()) {
-        showToast('请先登录 DaoBox 账号', 'error');
-        if (window.DaoBox) location.href = DaoBox.loginUrl();
-        return;
-      }
-      (async () => {
-        el.disabled = true;
-        try {
-          const r = await fetch(POINTS_API.replace('/points', '') + '/buyout/interest', {
-            method: 'POST',
-            headers: Object.assign({ 'Content-Type': 'application/json' }, pointsAuthHeaders()),
-            body: JSON.stringify({ app: 'vocab' }),
-          });
-          const d = await r.json().catch(() => ({}));
-          if (d.ok) { el.textContent = `已登记（累计 ${d.total} 人）· 感谢反馈`; showToast('已登记买断意向，感谢反馈！', 'success'); }
-          else { el.disabled = false; showToast(d.error || '登记失败，请稍后再试', 'error'); }
-        } catch (e) { el.disabled = false; showToast('网络异常，请稍后再试', 'error'); }
-      })();
       break;
     }
     case 'study': {
