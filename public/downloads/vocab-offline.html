@@ -3501,7 +3501,7 @@ function renderUnlock() {
       <a class="btn-main" href="${window.DB_HOME || 'https://daobox.net.cn'}/login?src=vocab&redirect=https%3A%2F%2Fvocab.daobox.net.cn%2F%23%2Funlock" style="text-align:center;display:block;text-decoration:none">登录 / 注册 DaoBox 账号</a>
       <p class="hint">登录后返回本站即自动解锁全部词库，并免费获得云备份（换设备一键恢复）。</p>
       <hr style="border:none;border-top:1px solid #e5e7eb;margin:18px 0">`}
-      <p class="hint">${window.VOCAB_OFFLINE ? '<b>单机版用户：</b>输入购买时获得的 6 位激活码完成激活（首次需联网，之后永久离线可用）。' : '此前单购通道已下线；已购用户如需激活支持，请发邮件至 hinewly@163.com。'}</p>
+      <p class="hint">${window.VOCAB_OFFLINE ? '<b>单机版用户：</b>输入购买时获得的 6 位激活码完成激活（首次需联网，之后永久离线可用）。' : '此前单购通道已下线；已购用户如需激活支持，请发邮件至 support@daobox.net.cn。'}</p>
 
       <div class="search-box">
         <input type="text" id="unlock-code" placeholder="④ 输入 6 位数字激活码" autocomplete="off" inputmode="numeric" maxlength="6">
@@ -4737,7 +4737,7 @@ function renderProfile() {
 function updateContactEmail() {
   const el = document.getElementById('contact-email');
   if (!el) return;
-  const u = 'hinewly', d = '163.com';
+  const u = 'support', d = 'daobox.net.cn';
   const addr = u + '@' + d;
   el.innerHTML = '<a href="mailto:' + addr + '?subject=' + encodeURIComponent('背单词 PWA 反馈') + '">' + addr + '</a>';
 }

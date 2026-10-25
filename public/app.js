@@ -2289,7 +2289,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) maybe
 function updateContactEmail() {
   const el = document.getElementById('contact-email');
   if (!el) return;
-  const u = 'hinewly', d = '163.com';
+  const u = 'support', d = 'daobox.net.cn';
   const addr = u + '@' + d;
   el.innerHTML = '<a href="mailto:' + addr + '?subject=' + encodeURIComponent('背单词 PWA 反馈') + '">' + addr + '</a>';
 }

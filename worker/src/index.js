@@ -263,7 +263,7 @@ function orderPageHtml(token) {
     <div class="btn-row">
       <button class="btn-primary" onclick="goBack()">返回上页</button>
     </div>
-    <p class="mail">超过 24 小时仍未显示激活码？<br>请发邮件至 <a href="mailto:hinewly@163.com">hinewly@163.com</a> 联系我们。</p>
+    <p class="mail">超过 24 小时仍未显示激活码？<br>请发邮件至 <a href="mailto:support@daobox.net.cn">support@daobox.net.cn</a> 联系我们。</p>
   </div>
   <div id="done" class="hidden">
     <h1>🎉 开通成功！</h1>
