@@ -131,7 +131,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.42';
+const APP_VERSION = 'v1.2.43';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1263,7 +1263,7 @@ function renderHome() {
     <h3 class="section-header"><span>📚</span><span>学习</span></h3>
     <div class="cats-grid">
       ${cards}
-      ${lookupCard}${phraseCard}${affixCard}
+      ${lookupCard}${phraseCard}${/* 词缀功能未完善，入口暂时隐藏（affixCard 构造保留）*/''}
       ${isUnlocked() ? '' : unlockCard}
     </div>
     <h3 class="section-header"><span>🛠️</span><span>系统</span></h3>
