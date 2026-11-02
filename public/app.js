@@ -131,7 +131,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.43';
+const APP_VERSION = 'v1.2.44';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1248,7 +1248,7 @@ function renderHome() {
   <header class="topbar">
     <div class="brand">📚 背单词</div>
     <span class="version-badge" id="app-version" title="Build version · 与 service-worker.js CACHE_VERSION 同步">v1.0.0</span>
-    <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" title="强制刷新 · 清缓存重载" aria-label="强制刷新">↻</button>
+    <button class="refresh-app-btn" id="refresh-app-btn" type="button" data-action="refresh-app" aria-label="更新到最新版">🔄<span class="rb-full">更新到最新版</span><span class="rb-short">更新</span></button>
   </header>
   <main class="page">
     <div class="hero">
@@ -2297,7 +2297,7 @@ function updateContactEmail() {
 async function refreshApp() {
   const btn = document.getElementById('refresh-app-btn');
   if (!btn) return;
-  const original = btn.textContent;
+  const original = btn.innerHTML;
   btn.textContent = '⏳';
   btn.disabled = true;
   try {
@@ -2314,7 +2314,7 @@ async function refreshApp() {
     location.replace(url);
   } catch (e) {
     showToast('刷新失败: ' + e.message, 'error', 6000);
-    btn.textContent = original;
+    btn.innerHTML = original;
     btn.disabled = false;
   }
 }
