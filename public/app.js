@@ -131,7 +131,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.44';
+const APP_VERSION = 'v1.2.45';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1271,6 +1271,7 @@ function renderHome() {
       ${statsCard}
     </div>
     <footer class="contact-footer">
+      <small><a href="/guides/">📖 背单词方法与复习指南</a></small><br>
       <small>📮 问题反馈 · <span id="contact-email"></span></small>
     </footer>
     <p class="hint" style="text-align:center;margin-top:6px;"><a href="${(window.DB_HOME || 'https://daobox.app')}?src=vocab" style="color:#2563eb;text-decoration:none;">← 返回 DaoBox 工具箱</a></p>
