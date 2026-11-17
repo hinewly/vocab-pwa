@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 Sitemap: https://vocab.daobox.net.cn/sitemap.xml
 Sitemap: https://vocab.daobox.app/sitemap-app.xml
