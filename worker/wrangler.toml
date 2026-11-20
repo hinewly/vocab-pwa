@@ -16,7 +16,9 @@ database_id = "ce6de996-0995-485c-b0ea-5ae0c5a11417"
 
 # 管理密钥：用于 /admin/* 接口（生成激活码、确认订单、解绑）。
 [vars]
-ADMIN_KEY = "91fe1d1ae28599d0031c64832e6de56619b80ea51193ef96"
+# ADMIN_KEY 已于 2026-11-20 从本文件移除（此前随公开仓库泄露，等同公开 API 凭证）。
+# 现改用 Cloudflare 加密 Secret：cd worker && <wrangler> secret put ADMIN_KEY
+# 必须是 32 位十六进制字符串（与 daobox-home / suan-pwa 三家同值，部署链路依赖它对齐）
 
 # 前端静态资源（public/）由 Worker 直接托管 → vocab.daobox.app 就是完整站点
 # 注意：[assets] 必须放在所有顶层 key 之后（TOML 表作用域）
