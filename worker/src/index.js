@@ -1083,9 +1083,14 @@ export default {
     // ---- 管理接口 ----
     if (path === '/admin' || path.startsWith('/admin/')) {
       // 2026-10-24 moon-tiger 激活码管理台下线（激活码体系已废弃，统一管理后台在 daobox-home）
-      // 仅保留 /admin/portal-schema（daobox-home 部署流程调用）
+      // 仅保留 /admin/portal-schema（建远程 D1 表用）
+      // 2026-11-20：凭证由 ADMIN_KEY 改为专用的 DEPLOY_SCHEMA_KEY ——
+      //   原 ADMIN_KEY 与 daobox-home / suan-pwa 三家共用，是「一个 key 通吃全家族管理接口」，
+      //   曾随本仓库（public）泄漏。现改为只守这一个建表接口的窄权限钥匙，
+      //   即使泄漏也建不了表之外的任何东西。调用方式：
+      //   curl -X POST -H "X-Deploy-Schema-Key: <值>" https://vocab.daobox.app/admin/portal-schema
       if (request.method === 'POST' && path === '/admin/portal-schema') {
-        if (!env.ADMIN_KEY || request.headers.get('X-Admin-Key') !== env.ADMIN_KEY) {
+        if (!env.DEPLOY_SCHEMA_KEY || request.headers.get('X-Deploy-Schema-Key') !== env.DEPLOY_SCHEMA_KEY) {
           return json({ ok: false, error: 'unauthorized' }, 401);
         }
         const ddl = [
