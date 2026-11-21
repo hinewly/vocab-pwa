@@ -28,6 +28,10 @@
 </head>
 <body>
   <div id="app"></div>
+  <!-- 静态内容入口：爬虫不执行 JS，只能靠这里的真实 <a> 才能发现内容页（2026-11-22 修） -->
+  <nav class="seo-foot" style="text-align:center;font-size:12px;color:#6b7280;margin:16px 0 28px;line-height:1.7">
+    <a href="/guides/" style="color:#6b7280;text-decoration:none;">📖 背单词方法与复习指南</a>
+  </nav>
   <script src="data.js"></script>
   <script src="phrases.js"></script>
   <script src="data-affixes.js"></script>
