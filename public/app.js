@@ -131,7 +131,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.45';
+const APP_VERSION = 'v1.2.46';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
