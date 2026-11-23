@@ -550,9 +550,10 @@ body {
 }
 
 .refresh-app-btn {
-  background: rgba(255,255,255,0.15);
-  border: none;
-  color: white;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+  font-weight: 600;
   border-radius: 999px;
   height: 28px;
   font-size: 12px;
@@ -564,7 +565,7 @@ body {
   white-space: nowrap;
   transition: all 0.2s ease;
 }
-.refresh-app-btn:hover { background: rgba(255,255,255,0.28); }
+.refresh-app-btn:hover { background: #d1fae5; }
 .refresh-app-btn:active { transform: scale(0.92); }
 .refresh-app-btn:disabled { opacity: 0.6; cursor: wait; }
 
