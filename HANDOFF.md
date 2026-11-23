@@ -22,3 +22,10 @@
 - 撤销 vocab 服务端只统计豁免与本地 5/15 分钟双计时，改由 portal 全家族共享池统一控制。
 - 游客 10 分钟/天、注册免费用户 20 分钟/天、有效会员不限时；邀请加成与儿童模式不变。
 - 学习入口和超时事件均接入硬门禁，v1.2.48。
+
+## 2026-11-23 SEO 索引试点第一、二阶段
+
+- 首页补国内域 canonical；试点指南 `guides/ebbinghaus-word-memory.html` 补 Article 结构化数据、同站相关阅读和 sitemap `lastmod`
+- 版本递增至 v1.2.52（`APP_VERSION`、SW cache、脚本 `?v=` 同步）
+- 已部署 `vocab.daobox.net.cn` 并验证首页、指南、sitemap、app.js、service-worker.js 全部 HTTP 200
+- 已通过 IndexNow 推送首页与试点指南，API 返回 HTTP 200
