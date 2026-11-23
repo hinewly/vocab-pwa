@@ -46,73 +46,60 @@ const POINT_TIERS = [
   { t: 1095, promo: 99.9, regular: 159.9 },
 ];
 
-// ===== 免费时长（按天计时：未登录 5 分钟 / 登录 15 分钟，本地判定，过午夜重置） =====
-const TRIAL_SECONDS = { anon: 5 * 60, user: 15 * 60 };
-const TRIAL_STORE_PREFIX = 'wa:trial:';
-let trialTickerId = null;
-
-function trialDateKey() {
-  const d = new Date();
-  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+// ===== 免费时长（全家族共享池：游客 10 分钟 / 注册免费用户 20 分钟 / 会员不限时） =====
+function timeLocked() {
+  return !!(window.DaoBox && window.DaoBox.timeExceeded);
 }
-function trialStoreKey() { return TRIAL_STORE_PREFIX + trialDateKey(); }
-function trialUsedSeconds() {
-  try { return parseInt(localStorage.getItem(trialStoreKey()) || '0', 10) || 0; } catch (e) { return 0; }
-}
-function trialSaveUsedSeconds(sec) {
-  try { localStorage.setItem(trialStoreKey(), String(Math.max(0, Math.round(sec)))); } catch (e) {}
-}
-function trialLimitSeconds() { return pointsLoggedIn() ? TRIAL_SECONDS.user : TRIAL_SECONDS.anon; }
-function trialRemainSeconds() { return Math.max(0, trialLimitSeconds() - trialUsedSeconds()); }
 
 /** 学习页顶部倒计时条（study 页渲染后由 trialBarSync 更新） */
 function trialBarSync() {
   const el = document.getElementById('trial-bar');
   if (!el) return;
-  if (isUnlocked()) {
+  const t = window.DaoBox && window.DaoBox.timeInfo;
+  if (!t) {
+    el.textContent = '今日免费时长加载中…';
+    el.className = 'trial-bar';
+    return;
+  }
+  if (t.unlimited) {
     el.textContent = '✨ 会员畅学中';
     el.className = 'trial-bar member';
     return;
   }
-  const remain = trialRemainSeconds();
-  if (remain <= 0) {
-    el.textContent = pointsLoggedIn() ? '今日免费 15 分钟已用完' : '今日免费 5 分钟已用完';
+  const remain = Math.max(0, Number(t.remaining) || 0);
+  if (t.exceeded || remain <= 0) {
+    el.textContent = '今日免费时长已用完';
     el.className = 'trial-bar expired';
     return;
   }
-  const m = Math.floor(remain / 60), s = remain % 60;
-  el.textContent = '今日免费 ' + m + ':' + String(s).padStart(2, '0');
+  el.textContent = '今日免费剩余 ' + remain + ' 分钟';
   el.className = 'trial-bar running';
 }
 
-/** 免费时段计时器：墙钟扣时间（切后台/锁屏照扣），持久化到 localStorage */
-function trialStartTicker() {
-  trialStopTicker();
-  let last = Date.now();
-  trialTickerId = setInterval(() => {
-    const now = Date.now();
-    trialSaveUsedSeconds(trialUsedSeconds() + (now - last) / 1000);
-    last = now;
-    trialBarSync();
-    if (trialRemainSeconds() <= 0) trialStopTicker();
-  }, 1000);
-}
-function trialStopTicker() { if (trialTickerId) { clearInterval(trialTickerId); trialTickerId = null; } }
-
-// 学习门槛：登录（或激活码）→ 放行（时长由 portal 时长池限制）；
-// 未登录走本地免费时长，用完 → 引导注册/开通会员（统一会员模式，无点数消耗）
+// 学习门槛：由 portal 全家族共享时长池统一判定，避免本地计时与服务端双扣
 async function gateStudy(cb) {
-  if (isUnlocked()) { trialBarSync(); return cb(); }
-  if (trialRemainSeconds() > 0) { trialStartTicker(); trialBarSync(); return cb(); }
-  showToast(pointsLoggedIn() ? '今日免费时长已用完，开通学习会员不限时' : '今日免费时长已用完，注册每天 60 分钟，会员不限时', 'error');
-  location.hash = '#/unlock';
+  trialBarSync();
+  if (timeLocked()) {
+    showToast(pointsLoggedIn() ? '今日免费时长已用完，开通学习会员不限时' : '今日免费时长已用完，注册免费用户每天 20 分钟，会员不限时', 'error');
+    location.hash = '#/unlock';
+    return;
+  }
+  return cb();
+}
+
+function handleTimeExceeded() {
+  trialBarSync();
+  if (location.hash.startsWith('#/study/') || location.hash === '#/affix-study') {
+    showToast('今日免费时长已用完，开通学习会员不限时', 'error');
+    location.hash = '#/unlock';
+  }
 }
 
 const TRIAL_LIMITS = { senior: 300, cet4: 100, cet6: 100, major: 100 };
 function isUnlocked() {
   try {
     // 2026-10-12 定调（方案A）：登录即解锁全部词库（内容全给），使用时长由 portal 时长池限制
-    // 游客 30 分/天 · 注册 60 分/天 · 付费会员不限时；激活码（单机/兑换）仍然直接解锁
+    // 游客 10 分/天 · 注册免费用户 20 分/天 · 付费会员不限时；激活码（单机/兑换）仍然直接解锁
     return localStorage.getItem(UNLOCK_KEY) === '1' || pointsLoggedIn();
   } catch (e) { return false; }
 }
@@ -131,7 +118,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.47';
+const APP_VERSION = 'v1.2.48';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -2058,14 +2045,16 @@ function onAction(e) {
       const n = parseInt(el.dataset.n || '20', 10);
       const words = pickAffixExampleWords(['fuzzy', 'key', 'must'], n);
       if (!words.length) { alert('暂无可复习的词缀例词，先在例词上标记「模糊 / 重点 / 必背」吧'); return; }
-      startSession('affix-words', words);
-      location.hash = `#/study/affix-words/${n}`;
+      gateStudy(() => {
+        startSession('affix-words', words);
+        location.hash = `#/study/affix-words/${n}`;
+      });
       break;
     }
     case 'affix-batch-check': updateAffixBatchCount(); break;
     case 'affix-batch-select': selectAffixBatch(el.dataset.mode); break;
     case 'affix-batch-label': markAffixBatchLabel(el.dataset.label); break;
-    case 'affix-batch-study': startAffixStudyFromBatch(el.dataset.mode === 'checked'); break;
+    case 'affix-batch-study': gateStudy(() => startAffixStudyFromBatch(el.dataset.mode === 'checked')); break;
     case 'affix-words-filter': affixWordsFilter = el.dataset.filter || 'all'; route(); break;
     case 'affix-words-select': selectAffixBatch(el.dataset.mode); break;
     case 'affix-words-label': markAffixWordsBookLabel(el.dataset.label); break;
@@ -2078,8 +2067,10 @@ function onAction(e) {
       const n = parseInt(el.dataset.n || '20', 10);
       const words = pickFromLookups(n);
       if (words.length === 0) { alert('查词本为空，先去首页搜几个单词吧'); return; }
-      startSession('lookup', words);
-      location.hash = `#/study/lookup/${n}`;
+      gateStudy(() => {
+        startSession('lookup', words);
+        location.hash = `#/study/lookup/${n}`;
+      });
       break;
     }
     case 'lookup-label': {
@@ -2097,8 +2088,10 @@ function onAction(e) {
       const n = parseInt(el.dataset.n || '20', 10);
       const words = pickPhrases(n);
       if (words.length === 0) { alert('短语本为空或已全部过关'); return; }
-      startSession('phrase', words);
-      location.hash = `#/study/phrase/${n}`;
+      gateStudy(() => {
+        startSession('phrase', words);
+        location.hash = `#/study/phrase/${n}`;
+      });
       break;
     }
     case 'study': {
@@ -2256,6 +2249,8 @@ async function maybeAutoBackup() {
 
 // ===== 启动（2026-10-12：先解析身份再加载，账号即用户）=====
 window.addEventListener('hashchange', route);
+window.addEventListener('daobox:timeexceeded', handleTimeExceeded);
+window.addEventListener('daobox:timeupdate', trialBarSync);
 document.addEventListener('visibilitychange', timerOnVisibility);
 document.addEventListener('visibilitychange', () => { if (document.hidden) maybeAutoBackup(); });
 (async () => {
