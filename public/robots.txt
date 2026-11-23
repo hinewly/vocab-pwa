@@ -3,6 +3,6 @@ Allow: /
 Disallow: /api/
 Disallow: /download.html
 Disallow: /downloads/
-Disallow: /DEVPLAN.md
+Disallow: /开发计划.md
 Sitemap: https://vocab.daobox.net.cn/sitemap.xml
 Sitemap: https://vocab.daobox.app/sitemap-app.xml

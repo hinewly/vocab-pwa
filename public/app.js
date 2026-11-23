@@ -118,7 +118,7 @@ function isWordAccessible(cat, word) {
 }
 
 /** 应用版本号 · 每次发版 bump（跟 service-worker.js CACHE_VERSION 同步）*/
-const APP_VERSION = 'v1.2.50';
+const APP_VERSION = 'v1.2.51';
 
 /** 紧凑卡模板：所有首页卡片统一风格 */
 function compactCard(opts) {
@@ -1798,7 +1798,7 @@ async function renderDevPlan(app) {
   </main>`;
   try {
     // fetch 本地 开发计划.md 文本内容（需通过 http server 访问，不能用 file://）
-    const res = await fetch('DEVPLAN.md');
+    const res = await fetch('开发计划.md');
     const text = await res.text();
     const body = app.querySelector('.devplan-body');
     // 用 marked 渲染 markdown（支持标题/表格/粗体/HTML 标签如红色 span），失败则纯文本
@@ -1823,7 +1823,7 @@ async function renderChangelog(app) {
     <div class="devplan-body">加载中...</div>
   </main>`;
   try {
-    const res = await fetch('CHANGELOG.md');
+    const res = await fetch('更新日志.md');
     const text = await res.text();
     const body = app.querySelector('.devplan-body');
     if (window.marked) {

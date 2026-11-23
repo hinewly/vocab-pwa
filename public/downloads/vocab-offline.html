@@ -3890,7 +3890,7 @@ async function renderChangelog(app) {
     <div class="devplan-body">加载中...</div>
   </main>`;
   try {
-    const res = await fetch('CHANGELOG.md');
+    const res = await fetch('更新日志.md');
     const text = await res.text();
     const body = app.querySelector('.devplan-body');
     if (window.marked) {
