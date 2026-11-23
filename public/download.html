@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#059669">
-<meta name="description" content="背单词单机版 · 下载后离线永久使用，注册码激活">
-<title>背单词 · 单机版下载</title>
+<meta name="description" content="背单词单机版已停止提供，请使用在线版或 DaoBox 学习会员。">
+<meta name="robots" content="noindex,nofollow">
+<title>背单词 · 单机版已停止提供</title>
 <style>
   :root{--bg:#f7faf8;--panel:#fff;--text:#1f2937;--muted:#6b7280;--accent:#059669;--line:#e5e7eb;}
   *{box-sizing:border-box}
@@ -24,32 +25,27 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>背单词 · 单机版</h1>
-  <p class="sub"><span class="tag">离线可用</span><span class="tag">无需安装</span><span class="tag">双击即用</span></p>
+  <h1>背单词 · 单机版已停止提供</h1>
+  <p class="sub"><span class="tag">已下线</span><span class="tag">请使用在线版</span></p>
 
   <div class="card">
-    <a class="btn" href="./downloads/vocab-offline.html" download="背单词-单机版.html">⬇️ 下载单机版（约 1 MB）</a>
-    <p class="hint" style="margin-top:10px">手机端：点击下载后在「文件」里打开，选择用浏览器打开即可。<br>电脑端：下载后直接双击文件，会用浏览器打开。</p>
+    <p style="margin:6px 0">单机版和淘宝激活码已于 2026-10-21 停止销售，不再提供新下载或新激活。</p>
+    <p class="hint">此前已经在旧设备上完成激活的用户，如遇到使用问题，请联系 support@daobox.net.cn。</p>
   </div>
 
   <div class="card">
-    <h3 style="margin:0 0 8px">激活教程（4 步）</h3>
-    <ol>
-      <li>下载并打开单机版文件</li>
-      <li>点底部「我的」→「解锁全部词本」</li>
-      <li>输入淘宝购买时获得的 6 位激活码（<b>首次激活需联网</b>）</li>
-      <li>激活成功后永久离线可用，全部词库开放</li>
-    </ol>
-    <p class="hint">一个激活码可绑定 3 台设备；清除浏览器数据后重新输入激活码即可恢复。</p>
+    <h3 style="margin:0 0 8px">现在怎么用</h3>
+    <p style="margin:6px 0">直接使用在线版：登录 DaoBox 账号即可解锁全部词库；免费用户每天 20 分钟，开通学习会员后不限时。</p>
+    <a class="btn" href="/">返回背单词在线版</a>
   </div>
 
-  <div class="card">
-    <h3 style="margin:0 0 8px">功能说明</h3>
-    <p style="margin:6px 0">与在线版完全一致：初中 / 高中 / 四级 / 六级 / 专业词库共 5000+ 核心词汇，记忆曲线复习、错词本、短语本、词缀本、学习统计。</p>
-    <p class="hint">在线版用户：登录 DaoBox 账号即可免费解锁全部词库，无需购买。</p>
-  </div>
-
-  <p class="hint" style="text-align:center">问题反馈：support@daobox.net.cn · <a href="/" style="color:var(--accent)">返回在线版</a></p>
+  <p class="hint" style="text-align:center">问题反馈：<span id="contact-email"></span> · <a href="/" style="color:var(--accent)">返回在线版</a></p>
 </div>
+<script>
+  var contactUser = "support";
+  var contactDomain = "daobox.net.cn";
+  document.getElementById("contact-email").innerHTML =
+    '<a href="mailto:' + contactUser + '@' + contactDomain + '">' + contactUser + '@' + contactDomain + '</a>';
+</script>
 </body>
 </html>
